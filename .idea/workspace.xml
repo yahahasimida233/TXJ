@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="819dd31a-3431-4100-8b25-41ad794cb473" name="Default" comment="修改首页">
+    <list default="true" id="819dd31a-3431-4100-8b25-41ad794cb473" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/index.html" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -80,8 +79,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            <state relative-caret-position="196">
+              <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -184,10 +183,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-165" />
-    <option name="y" value="121" />
+    <option name="x" value="-156" />
+    <option name="y" value="360" />
     <option name="width" value="1946" />
-    <option name="height" value="788" />
+    <option name="height" value="665" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -315,7 +314,7 @@
       <workItem from="1530515833984" duration="2000" />
       <workItem from="1530694025257" duration="692000" />
       <workItem from="1530715711553" duration="1456000" />
-      <workItem from="1530802392370" duration="223000" />
+      <workItem from="1530802392370" duration="1723000" />
     </task>
     <task id="LOCAL-00001" summary="文件路径创建完成">
       <created>1530339385732</created>
@@ -338,14 +337,21 @@
       <option name="project" value="LOCAL" />
       <updated>1530802443582</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="修改首页">
+      <created>1530802622670</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1530802622670</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12429000" />
+    <option name="totallyTimeSpent" value="13929000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-165" y="121" width="1946" height="788" extended-state="0" />
+    <frame x="-156" y="360" width="1946" height="665" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -744,8 +750,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        <state relative-caret-position="196">
+          <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
           <folding />
         </state>
       </provider>
