@@ -1,3 +1,18 @@
+html {
+  font-size: 100px; }
 
+body {
+  font-size: 15px; }
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none; }
+
+*:hover {
+  text-decoration: none; }
+
+.glyphicon {
+  top: 0; }
 
 /*# sourceMappingURL=global.css.map */
