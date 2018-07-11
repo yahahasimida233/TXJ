@@ -1,11 +1,11 @@
-app.controller("userCtrl",function ($http,$state,serviceHTTP) {
+app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
     var vm = this;
+
     serviceHTTP.userListHTTP().then(function successCallback(response) {
         // 请求成功执行代码
-        console.log(response.data);
         if(response.data.message === "success") {
-            vm.userList = response.data.data.accountList;
-            console.log(vm.userList);
+            vm.list = response.data.data.accountList;
+            console.log(vm.list);
         }
         else {
 

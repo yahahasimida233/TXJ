@@ -41,7 +41,7 @@
                 <td><strong>状态</strong></td>
                 <td><strong>操作</strong></td>
             </tr>
-            <tr ng-repeat="x in vm.userList">
+            <tr ng-repeat="x in vm.list">
                 <td>{{$index+1}}</td>
                 <td>{{x.phoneNum}}</td>
                 <td>{{x.actualName}}</td>
@@ -51,8 +51,8 @@
                 <td>{{x.createAt}}</td>
                 <td>{{x.state | userState}}</td>
                 <td>
-                    <button class="btn btn-default" ng-click="vm.editUser(x.id,x.status)">{{x.status | status | statusFilter }}</button>
-                    <button class="btn btn-info" ng-click="vm.userDetailed(x.id)">查看</button>
+                    <button class="btn btn-default" >{{x.status | status}}</button>
+                    <button class="btn btn-info" >查看</button>
                 </td>
             </tr>
         </table>
