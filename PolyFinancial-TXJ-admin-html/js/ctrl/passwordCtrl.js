@@ -1,3 +1,3 @@
-// app.controller("passwordCtrl", function ($http, $state, serviceHTTP){
+app.controller("passwordCtrl", function ($http, $state, serviceHTTP){
 
-// })
+})

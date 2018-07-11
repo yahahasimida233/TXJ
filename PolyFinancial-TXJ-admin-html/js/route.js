@@ -148,15 +148,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 loadMyFile: [
                     "$ocLazyLoad",
                     function ($ocLazyLoad) {
-                        return $ocLazyLoad.load("./js/ctrl/passwordCtrl.js");
-                    }
+                        return $ocLazyLoad.load(
+                            "./js/ctrl/passwordCtrl.js",
+                            "./css/modules/password.css"
+                    );}
                 ]
             }
-            // resolve: { //懒加载文件
-            //     loadMyFile: _lazyLoad([
-            //         // 'css/login.css', 
-            //         './js/ctrl/passwordCtrl.js'])
-            // }
         })
         .state('backStage.account',{
             url:"/account",
