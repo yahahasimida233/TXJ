@@ -1,5 +1,19 @@
-var app = angular.module("txj",["ngAnimate","ui.router"]);
+var app = angular.module("txj", ["ngAnimate", "ui.router", "oc.lazyLoad"]);
+
+// //懒加载
+app.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvider", "$ocLazyLoadProvider",
+    function ($provide, $compileProvider, $controllerProvider, $filterProvider, $ocLazyLoadProvider) {
+        app.controller = $controllerProvider.register;
+        app.directive = $compileProvider.directive;
+        app.filter = $filterProvider.register;
+        app.factory = $provide.factory;
+        app.service = $provide.service;
+        app.constant = $provide.constant;
+    }
+]);
+
 app.config(function ($stateProvider, $urlRouterProvider) {
+    
     $urlRouterProvider.otherwise("/login");
     $stateProvider
         .state('login',{
@@ -129,8 +143,20 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('backStage.password',{
             url:"/password",
             templateUrl: 'view/html/password.html',
-            controller: 'passwordCtrl',
-            controllerAs:'vm'
+            controller: 'passwordCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load("./js/ctrl/passwordCtrl.js");
+                    }
+                ]
+            }
+            // resolve: { //懒加载文件
+            //     loadMyFile: _lazyLoad([
+            //         // 'css/login.css', 
+            //         './js/ctrl/passwordCtrl.js'])
+            // }
         })
         .state('backStage.account',{
             url:"/account",

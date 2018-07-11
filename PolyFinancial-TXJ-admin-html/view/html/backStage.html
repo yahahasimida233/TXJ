@@ -20,9 +20,7 @@
                  ng-click="vm.content(y.name,$parent.$index)"
                  ng-class="{true:'backStage-active',false:''}[y.name == vm.sideBarContent]"
                  class="backStage-nav-list">
-                <a  ui-sref = {{y.url}}
-
-                    >
+                <a  ui-sref = {{y.url}}>
                     <span>{{y.name}}</span>
                 </a>
             </div>
@@ -31,7 +29,7 @@
     <div class="col-md-9 col-xs-12" >
         <div ui-view class="backStage-view">
             <h1>
-                welcome
+                Welcome!
             </h1>
         </div>
     </div>
