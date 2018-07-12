@@ -52,7 +52,7 @@
                 <td>{{x.createAt}}</td>
                 <td>{{x.state | statusFilter}}</td>
                 <td>
-                    <button class="btn btn-default" >{{x.state | status}}</button>
+                    <button class="btn btn-default"  ng-click = "vm.frozen(x.id,x.state)">{{x.state | status}}</button>
                     <button class="btn btn-info" ui-sref ="backStage.userDetailed({id:x.id})" >查看</button>
                 </td>
             </tr>

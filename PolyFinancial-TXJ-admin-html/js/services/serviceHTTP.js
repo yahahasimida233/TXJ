@@ -46,6 +46,42 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
+            userFrozenHTTP: function (id) {   //冻结或者解冻用户
+                return $http({
+                    method: "post",
+                    url: serviceURL.userFrozenURL,
+                    params: id,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+            userTradeHTTP: function (id) {   //获取用户的交易记录列表
+                return $http({
+                    method: "get",
+                    url: serviceURL.userTradeURL,
+                    params: id,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+            userContractListHTTP: function (id) {   //获取用户的交易记录列表
+                return $http({
+                    method: "get",
+                    url: serviceURL.userContractListURL,
+                    params: id,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+            userContractHTTP: function (id) {   //获取用户的交易记录列表
+                return $http({
+                    method: "get",
+                    url: serviceURL.userContractURL,
+                    params: id,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
             searchHTTP: function (data) {  //搜索 
                 return $http({
                     url: serviceURL.searchURL,

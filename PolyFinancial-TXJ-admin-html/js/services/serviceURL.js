@@ -5,6 +5,7 @@ angular.module("txj").factory("serviceURL", function() {
         userListURL:"/admin/admin/a/u/user/list",
         userSearchURL:"/admin/admin/a/u/user/search",
         userDetailedURL:"/admin/admin/a/u/user/search",
+        userFrozenURL:"/admin/admin/a/u/user/search",
         userTradeURL:"/admin/admin/a/u/user/trade",
         userContractListURL:"/admin/admin/a/u/user/contract/list",
         userContractURL:"/admin/admin/a/u/user/contract/details",
