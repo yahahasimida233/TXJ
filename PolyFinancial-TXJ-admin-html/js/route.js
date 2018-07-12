@@ -1,4 +1,4 @@
-var app = angular.module("txj", ["ngAnimate", "ui.router", "oc.lazyLoad"]);
+var app = angular.module("txj", ["ngAnimate", "ui.router","ui.bootstrap","oc.lazyLoad"]);
 
 // //懒加载
 app.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvider", "$ocLazyLoadProvider",
@@ -40,8 +40,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('backStage.userDetailed',{
             url:"/userDetailed",
             templateUrl: 'view/html/userDetailed.html',
-            controller: 'userDetailedCtrl',
-            controllerAs:'vm'
+            controller: 'userDetailedCtrl as vm',
+            // resolve: {
+            //     loadMyFile: [
+            //         "$ocLazyLoad",
+            //         function ($ocLazyLoad) {
+            //             return $ocLazyLoad.load("js/ctrl/userDetailedCtrl.js");
+            //         }
+            //     ]
+            // }
 
         })
         .state('backStage.debt',{

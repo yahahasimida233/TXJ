@@ -15,4 +15,7 @@ body {
 .glyphicon {
   top: 0; }
 
+.row {
+  width: 100% !important; }
+
 /*# sourceMappingURL=global.css.map */
