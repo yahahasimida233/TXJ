@@ -1,4 +1,5 @@
 app.controller("backStageCtrl",function ($http,$state,yahaha) {
+
     var vm = this;
     // serviceHTTP.moduleHTTP().then(function successCallback(res) {
     //     // 请求成功执行代码
@@ -12,6 +13,11 @@ app.controller("backStageCtrl",function ($http,$state,yahaha) {
     // }, function errorCallback(res) {
     //     // 请求失败执行代码
     // });
+    vm.logo = sessionStorage.getItem("logo");//验证是否登录
+    if (vm.logo !== "233"){
+        $state.go('login');
+    }
+
     vm.yahaha= yahaha;
     vm.sideBar= [];//用于存储处理过后的数组对象
     console.log(vm.yahaha);
@@ -48,6 +54,14 @@ app.controller("backStageCtrl",function ($http,$state,yahaha) {
     vm.sideBarTitleIndex = sessionStorage.getItem("title");
     //刷新也保持高亮
 
+    vm.exit = function(){
+        if(confirm("确定要退出登录嘛")){
+            alert("ヾ(￣▽￣)Bye~Bye~");
+            sessionStorage.clear();
+            $state.go('login');
+        }
+
+    }
 });
 
 app.constant('yahaha',[

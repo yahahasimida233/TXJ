@@ -16,6 +16,15 @@ app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
     // 目前分页数据假数据没有提供，先写一下，正式接口中再做修改
     vm.totalItems = 2;
 
+    // 清除按钮
+    vm.reset = function(){
+        vm.userId = undefined;
+        vm.userName = undefined;
+        vm.phone = undefined;
+        vm.status = undefined;
+    };
+
+
     //搜索用户列表功能
     vm.userSearch = function(){
         //搜索的四个值
@@ -40,23 +49,4 @@ app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
         });
     };
 
-    //查看用户详情
-    vm.userDetailed = function(id){
-        $state.go('backStage.userDetailed',{id:id});
-
-
-
-        serviceHTTP.userDetailedHTTP(id).then(function successCallback(response) {
-            // 请求成功执行代码
-            console.log(response);
-            if(response.data.message === "success") {
-
-            }
-            else {
-
-            }
-        }, function errorCallback(res) {
-            // 请求失败执行代码
-        });
-    };
 });
