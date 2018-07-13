@@ -9,6 +9,7 @@ angular.module("txj").factory("serviceURL", function() {
         userTradeURL:"/admin/admin/a/u/user/trade",
         userContractListURL:"/admin/admin/a/u/user/contract/list",
         userContractURL:"/admin/admin/a/u/user/contract/details",
+        debtURL:"/admin/admin/a/u/debt/list",
         searchURL: "/carrots-admin-ajax/a/article/search",
         offlineURL: "/carrots-admin-ajax/a/u/article/status",
         addURL: "/carrots-admin-ajax/a/article/",

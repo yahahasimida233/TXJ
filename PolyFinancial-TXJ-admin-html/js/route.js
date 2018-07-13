@@ -95,7 +95,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 债权编辑
         .state('backStage.debtEdit',{
-            url:"/debtEdit",
+            url:"/debtEdit?id",
             templateUrl: 'view/html/business/debtEdit.html',
             controller: 'debtEditCtrl',
             controllerAs:'vm'
@@ -104,7 +104,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 债权匹配
         .state('backStage.matching',{
-            url:"/matching",
+            url:"/matching?id",
             templateUrl: 'view/html/business/matching.html',
             controller: 'matchingCtrl',
             controllerAs:'vm'

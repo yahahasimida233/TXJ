@@ -73,11 +73,19 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
-            userContractHTTP: function (id) {   //获取用户的交易记录列表
+            userContractHTTP: function (id) {
                 return $http({
                     method: "get",
                     url: serviceURL.userContractURL,
                     params: id,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+            debtHTTP: function () {
+                return $http({
+                    method: "get",
+                    url: serviceURL.debtURL,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })

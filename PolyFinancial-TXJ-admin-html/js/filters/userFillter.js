@@ -96,3 +96,21 @@ app.filter('money',function(){
         return s.replace(/(零.)*零元/, '元').replace(/(零.)+/g, '零').replace(/^整$/, '零元整');
     }
 });
+
+app.filter('debtState',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "已匹配";
+                break;
+            case "2":
+                a = "未匹配";
+                break;
+            case "1":
+                a = "匹配中";
+                break;
+
+        }
+        return a;
+    }
+});
