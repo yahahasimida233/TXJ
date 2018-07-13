@@ -1,9 +1,9 @@
-app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
+app.controller("debtCtrl",function ($http,$state,serviceHTTP,$stateParams){
     var vm = this;
-    serviceHTTP.userListHTTP().then(function successCallback(response) {
+    serviceHTTP.debtHTTP().then(function successCallback(response) {
         // 请求成功执行代码
         if(response.data.message === "success") {
-            vm.list = response.data.data.accountList;
+            vm.list = response.data.data;
             console.log(vm.list);
         }
         else {
@@ -18,9 +18,9 @@ app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
 
     // 清除按钮
     vm.reset = function(){
-        vm.userId = undefined;
-        vm.userName = undefined;
-        vm.phone = undefined;
+        vm.debtId= undefined;
+        vm.companyName = undefined;
+        vm.obligor= undefined;
         vm.status = undefined;
     };
 
@@ -51,8 +51,8 @@ app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
 
     vm.frozen = function (a,b) {
         var userInfo = {
-          id:a,
-          state:b
+            id:a,
+            state:b
         };
         if(b == 0){
             vm.tip ="<p style='text-align: center'>是否要冻结该用户？</p>"
