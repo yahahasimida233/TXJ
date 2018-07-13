@@ -1,3 +1,4 @@
+
 app.controller("passwordCtrl", function ($scope, $state, serviceHTTP, $stateParams,$timeout) {
     var vm = this;
     vm.changePassword = function (params) {
@@ -15,6 +16,7 @@ app.controller("passwordCtrl", function ($scope, $state, serviceHTTP, $statePara
             serviceHTTP.changePwHTTP(password).then(function (res) {
                 console.log(res.data.code);
                 if (res.data.code == 0) {
+                    alert("密码修改成功。")
                     $state.go( "backStage.password", {}, { reload: true })
                 }
                 if (res.data.code == -5005) {
