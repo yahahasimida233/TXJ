@@ -16,7 +16,11 @@ body{
 .glyphicon{
   top: 0;
 }
-
+// bootstrap样式重置
+.form-control{
+    display: inline-block;
+    width: auto;
+}
 .row{
   width: 100%!important;
   margin: 0!important;

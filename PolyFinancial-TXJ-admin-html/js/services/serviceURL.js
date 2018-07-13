@@ -14,6 +14,8 @@ angular.module("txj").factory("serviceURL", function() {
         offlineURL: "/carrots-admin-ajax/a/u/article/status",
         addURL: "/carrots-admin-ajax/a/article/",
         articleURL: "/carrots-admin-ajax/a/u/article/",
-        uploadURL: "/carrots-admin-ajax/a/u/img/task"
+        uploadURL: "/carrots-admin-ajax/a/u/img/task",
+        // 后台管理
+        changePwURL: "/admin/admin/a/u/account/password"  //更改密码
     };
 });
