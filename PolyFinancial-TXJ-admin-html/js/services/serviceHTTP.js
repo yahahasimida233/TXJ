@@ -15,6 +15,7 @@ angular.module("txj")
                 return $http({
                     method: "POST",
                     url: serviceURL.logoutURL,
+
                     headers: { 
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -23,6 +24,24 @@ angular.module("txj")
                 return $http({
                     method: "get",
                     url: serviceURL.userListURL,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+            userSearchHTTP: function (userInfo) {   //获取用户列表
+                return $http({
+                    method: "get",
+                    url: serviceURL.userListURL,
+                    params: userInfo,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+            userDetailedHTTP: function (id) {   //获取用户详细信息
+                return $http({
+                    method: "get",
+                    url: serviceURL.userDetailedURL,
+                    params: id,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })

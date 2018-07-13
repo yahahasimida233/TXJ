@@ -1,4 +1,7 @@
-.backStage{}
+.backStage{
+}
+
+//左边标题的样式
 .backStage-side-nav-title{
   padding-left: .2rem;
   margin: 0;
@@ -9,6 +12,8 @@
   font-weight: bolder;
   font-size: .3rem;
 }
+
+//右边登陆用户名模块样式
 .backStage-title-right{
   padding-right: .2rem;
   height: .7rem;
@@ -33,24 +38,27 @@
   height: .7rem;
   line-height: .7rem;
 }
+
+//镶套路由样式
 .backStage-view{
   padding: .2rem;
 }
+
+//侧边栏样式
 .backStage-side-nav{
   div{
     height: .6rem;
     line-height: .6rem;
     text-align: center;
-    font-size: .2rem
-
-  ;
-
+    font-size: .2rem;
     span{
       text-align: center;
       line-height: .6rem;
     }
   }
 }
+
+//左边侧边栏样式
 .backStage-side-nav-menu{
   padding: .2rem;
   color: #ffffff;
@@ -81,6 +89,8 @@
   background-color: lightgreen;
 
 }
+
+//侧边栏被激活时样式
 .backStage-active{
   background-color: lightgreen;
 }

@@ -13,10 +13,14 @@ body{
 *:hover{
   text-decoration: none;
 }
-.glyphicon{ 
+.glyphicon{
   top: 0;
 }
-// 标题样式
-.title{
-    font-size: 0.2rem; 
+
+.row{
+  width: 100%!important;
+  margin: 0!important;
+}
+.col-md-3,.col-md-4，.col-md-9,.col-md-8,.col-xs-12{
+  padding: 0 !important;
 }
