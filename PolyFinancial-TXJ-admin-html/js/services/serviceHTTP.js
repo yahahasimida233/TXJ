@@ -157,6 +157,15 @@ angular.module("txj")
                     params: article,
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                 })
+            },
+            // 后台管理模块
+            changePwHTTP: function (password) { //更改密码
+                return $http({
+                    url: serviceURL.changePwURL,
+                    method: "PUT",
+                    params: password,
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                })
             }
         }
 })

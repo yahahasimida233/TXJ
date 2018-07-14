@@ -218,7 +218,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 loadMyFile: [
                     "$ocLazyLoad",
                     function ($ocLazyLoad) {
-                        return $ocLazyLoad.load("./js/ctrl/backstage/passwordCtrl.js");
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/backstage/passwordCtrl.js",
+                            "./css/modules/password.css"
+                        ]);
                     }
                 ]
             }
