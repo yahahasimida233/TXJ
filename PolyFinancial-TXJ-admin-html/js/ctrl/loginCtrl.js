@@ -4,6 +4,9 @@ app.controller("loginCtrl",function ($http,$state,serviceHTTP) {
         name:vm.name,
         pwd:vm.password
     };
+    vm.change = function(){
+      alert("233")
+    };
     vm.login = function() {
         serviceHTTP.loginHTTP(user).then(function successCallback(response) {
             // 请求成功执行代码
