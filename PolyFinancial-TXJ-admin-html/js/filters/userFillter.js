@@ -114,6 +114,7 @@ app.filter('debtState',function(){
         return a;
     }
 });
+<<<<<<< HEAD
 // 角色状态过滤
 app.filter("userState", function () {
     return function (num) {
@@ -144,3 +145,51 @@ app.filter("btnDisabled", function () {
         return newEdit;
     }
 })
+=======
+
+app.filter('productMode',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "本息返还";
+                break;
+            case "1":
+                a = "先息后本";
+                break;
+
+        }
+        return a;
+    }
+});
+
+
+app.filter('productState',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "上架";
+                break;
+            case "1":
+                a = "下架";
+                break;
+
+        }
+        return a;
+    }
+});
+
+app.filter('productStateChange',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "下架";
+                break;
+            case "1":
+                a = "上架";
+                break;
+
+        }
+        return a;
+    }
+});
+>>>>>>> 9608a9288d5490b5b9c59af01d6c650407c577d1

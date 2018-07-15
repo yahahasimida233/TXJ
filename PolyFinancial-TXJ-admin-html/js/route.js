@@ -116,16 +116,42 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/product",
             templateUrl: 'view/html/business/product.html',
             controller: 'productCtrl',
+<<<<<<< HEAD
             controllerAs:'vm'
+=======
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/business/productCtrl.js",
+                            "./css/modules/business/product.css"
+                        ]);
+                    }
+                ]
+            }
+>>>>>>> 9608a9288d5490b5b9c59af01d6c650407c577d1
 
         })
 
         // 产品编辑
         .state('backStage.productEdit',{
-            url:"/productEdit",
+            url:"/productEdit?id",
             templateUrl: 'view/html/business/productEdit.html',
             controller: 'productEditCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/business/productEdit.js",
+                            "./css/modules/business/productEdit.css"
+                        ]);
+                    }
+                ]
+            }
 
         })
 
@@ -220,7 +246,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     function ($ocLazyLoad) {
                         return $ocLazyLoad.load([
                             "./js/ctrl/backstage/passwordCtrl.js",
-                            "./css/modules/password.css"
+                            "./css/modules/backstage/password.css"
                         ]);
                     }
                 ]
