@@ -114,3 +114,49 @@ app.filter('debtState',function(){
         return a;
     }
 });
+
+app.filter('productMode',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "本息返还";
+                break;
+            case "1":
+                a = "先息后本";
+                break;
+
+        }
+        return a;
+    }
+});
+
+
+app.filter('productState',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "上架";
+                break;
+            case "1":
+                a = "下架";
+                break;
+
+        }
+        return a;
+    }
+});
+
+app.filter('productStateChange',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "下架";
+                break;
+            case "1":
+                a = "上架";
+                break;
+
+        }
+        return a;
+    }
+});

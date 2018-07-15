@@ -2,6 +2,7 @@ angular.module("txj").factory("serviceURL", function() {
     return {
         // 登陆
         loginURL: "/admin/admin/a/u/loginIn",
+
         //登出
         logoutURL: "/carrots-admin-ajax/a/logout",
 
@@ -19,6 +20,13 @@ angular.module("txj").factory("serviceURL", function() {
         debtNewURL:"/admin/admin/a/u/debt",
         debtDeleteURL:"/admin/admin/a/u/debt",
 
+        // 产品管理
+        productURL:"/admin/admin/a/u/product/search",
+        productDetialURL:"/admin/admin/a/u/product/updateBy",
+        productEditURL:"/admin/admin/a/u/product/updateBy",
+        productNewURL:"/admin/admin/a/u/product",
+        productDeleteURL:"/admin/admin/a/u/product",
+        porductGroundingURL:"/admin/admin/a/u/product/state",
 
         searchURL: "/carrots-admin-ajax/a/article/search",
         offlineURL: "/carrots-admin-ajax/a/u/article/status",

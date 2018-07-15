@@ -141,6 +141,77 @@ angular.module("txj")
                 })
             },
 
+            // 产品管理列表
+            productHTTP: function () {
+                return $http({
+                    method: "get",
+                    url: serviceURL.productURL,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            // 产品具体信息
+            productDetialHTTP: function (info) {
+                return $http({
+                    method: "get",
+                    url: serviceURL.productDetialURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 提交产品编辑
+            productEditHTTP: function (info) {
+                return $http({
+                    method: "put",
+                    url: serviceURL.productEditURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 新增产品
+            productNewHTTP: function (info) {
+                return $http({
+                    method: "post",
+                    url: serviceURL.productNewURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 上下架产品
+            porductGroundingHTTP: function (info) {
+                return $http({
+                    method: "post",
+                    url: serviceURL.porductGroundingURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 删除产品
+            productDeleteHTTP: function (info) {
+                return $http({
+                    method: "delete",
+                    url: serviceURL.productDeleteURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+
             searchHTTP: function (data) {  //搜索 
                 return $http({
                     url: serviceURL.searchURL,

@@ -1,9 +1,9 @@
 <div class="row user ">
     <div class="col-xs-4">
-        <span>债务ID：</span><input class="form-control" type="text" ng-model ="vm.debtId">
+        <span>产品ID：</span><input class="form-control" type="text" ng-model ="vm.productId">
     </div>
     <div class="col-xs-4">
-        <span>企业名称：</span><input class="form-control" type="text" ng-model ="vm.companyName">
+        <span>产品名称：</span><input class="form-control" type="text" ng-model ="vm.productName">
     </div>
     <div class="col-xs-4">
         <span></span>
@@ -11,14 +11,13 @@
         <span></span>
     </div>
     <div class="col-xs-4">
-        <span>债务人：</span><input class="form-control" type="text" ng-model = "vm.obligor" >
+        <span>创建人：</span><input class="form-control" type="text" ng-model = "vm.createBy" >
     </div>
     <div class="col-xs-4">
         <span>状态：</span>
         <select class="form-control" ng-model = "vm.status" >
-            <option value="0">已匹配</option>
-            <option value="1">匹配中</option>
-            <option value="2">未匹配</option>
+            <option value="0">上架</option>
+            <option value="1">下架</option>
         </select>
     </div>
     <div class="col-xs-4">
@@ -36,40 +35,33 @@
     <div class="table-responsive col-xs-12" style="min-height: 5rem">
         <table id="tb" class="table table-striped table-hover table-responsive table-condensed table-bordered table-content">
             <tr>
-                <td><strong>序号</strong></td>
-                <td><strong>企业名称</strong></td>
-                <td><strong>债务人（企业法人）</strong></td>
-                <td><strong>手机号</strong></td>
-                <td><strong>身份证号码</strong></td>
-                <td><strong>借款金额</strong></td>
-                <td><strong>借款期限</strong></td>
-                <td><strong>借款日期</strong></td>
-                <td><strong>还款日期</strong></td>
-                <td><strong>投资合同ID</strong></td>
-                <td><strong>投资金额</strong></td>
-                <td><strong>理财期限</strong></td>
-                <td><strong>待匹配金额</strong></td>
+                <td><strong>产品ID</strong></td>
+                <td><strong>产品名称</strong></td>
+                <td><strong>预期年利率（%）</strong></td>
+                <td><strong>投资周期（天）</strong></td>
+                <td><strong>起投金额（元）</strong></td>
+                <td><strong>最小增减金额（元）</strong></td>
+                <td><strong>还款方式</strong></td>
+                <td><strong>创建人</strong></td>
+                <td><strong>创建时间</strong></td>
                 <td><strong>状态</strong></td>
                 <td><strong>操作</strong></td>
             </tr>
             <tr ng-repeat="x in vm.list">
-                <td>{{$index+1}}</td>
-                <td>{{x.enterpriseName}}</td>
-                <td>{{x.creditor}}</td>
-                <td>{{x.phoneNum}}</td>
-                <td>{{x.cardID}}</td>
-                <td>{{x.loanAmount}}</td>
-                <td>{{x.loanPeriod}}</td>
-                <td>{{x.loanAt}}</td>
-                <td>{{x.repaymentAt}}</td>
-                <td>{{x.contractId}}</td>
-                <td>{{x.investment}}</td>
+                <td>{{x.productId}}</td>
+                <td>{{x.productName}}</td>
+                <td>{{x.interestYear}}</td>
                 <td>{{x.productTerm}}</td>
-                <td>{{x.sruplusAmount}}</td>
-                <td>{{x.state | debtState}}</td>
+                <td>{{x.startMoney}}</td>
+                <td>{{x.minMoney}}</td>
+                <td>{{x.repaymentMode | productMode }}</td>
+                <td>{{x.createBy }}</td>
+                <td>{{x.createAt}</td>
+                <td>{{x.state productState}}</td>
+
                 <td>
-                    <button class="btn btn-default"  ui-sref ="backStage.matching({id:x.id})">匹配</button>
-                    <button class="btn btn-info" ui-sref ="backStage.debtEdit({id:x.id})">编辑</button>
+                    <button class="btn btn-default"  ng-click = "vm.stateChange(x.id,x.state)">{{x.state | productStateChange}}</button>
+                    <button class="btn btn-info" ui-sref ="backStage.productEdit({id:x.id})">编辑</button>
                     <button class="btn btn-default"  ng-click = "vm.delete(x.id,x.state)">删除</button>
                 </td>
             </tr>

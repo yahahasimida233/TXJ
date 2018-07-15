@@ -50,18 +50,35 @@ app.controller("debtCtrl",function ($http,$state,serviceHTTP,$stateParams){
 
 
     vm.delete = function(id){
-        serviceHTTP.debtDeleteHTTP(id).then(function successCallback(response) {
-            // 请求成功执行代码
-            if(response.data.message === "success") {
-                bootbox.alert("删除成功");
-                $state.reload('backStage.debt');
-            }
-            else {
+        bootbox.confirm({
+            title: '操作提示',
+            message: "<p style='text-align: center'>确认要删除这个债权？</p>",
+            buttons: {
+                cancel: {
+                    label: '取消'
+                },
+                confirm: {
+                    label: '确认'
+                }
+            },
+            callback: function(result) {
+                if(result === true){
+                    serviceHTTP.debtDeleteHTTP(id).then(function successCallback(response) {
+                        // 请求成功执行代码
+                        if(response.data.message === "success") {
+                            bootbox.alert("删除成功");
+                            $state.reload('backStage.debt');
+                        }
+                        else {
 
+                        }
+                    }, function errorCallback(res) {
+                        // 请求失败执行代码
+                    });
+
+                }
             }
-        }, function errorCallback(res) {
-            // 请求失败执行代码
-        });
+        })
     };
 
 
