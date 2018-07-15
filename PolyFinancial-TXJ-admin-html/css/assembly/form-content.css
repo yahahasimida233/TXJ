@@ -1,0 +1,42 @@
+.all-content {
+  border: #29b078 2px solid; }
+
+.form-title {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border-bottom: #29b078 2px solid;
+  height: .6rem; }
+  .form-title h3 {
+    margin: 0 .2rem;
+    height: .6rem;
+    line-height: .6rem; }
+  .form-title button {
+    height: .4rem;
+    margin-top: .1rem;
+    margin-right: .4rem;
+    background-color: #29b078;
+    color: white;
+    font-weight: bold; }
+
+.form-content tr td {
+  text-align: center;
+  vertical-align: middle; }
+
+.form-foot {
+  display: flex;
+  justify-content: space-between; }
+  .form-foot div {
+    display: flex;
+    align-items: center; }
+    .form-foot div input {
+      width: .45rem;
+      height: .3rem; }
+    .form-foot div button {
+      width: .5rem;
+      height: .3rem; }
+    .form-foot div span {
+      text-align: center; }
+
+/*# sourceMappingURL=form-content.css.map */

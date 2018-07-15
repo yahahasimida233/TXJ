@@ -1,0 +1,59 @@
+//整体边框
+.all-content{
+  border: #29b078 2px solid;
+}
+
+//标题样式
+.table-title{
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border-bottom: #29b078 2px solid;
+  height: .6rem;
+  h3{
+    margin: 0 .2rem;
+    height: .6rem;
+    line-height: .6rem;
+  }
+  button{
+    height: .4rem;
+    margin-top: .1rem;
+    margin-right: .4rem;
+    background-color: #29b078;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+//中间表格样式
+.table-content{
+  tr{
+    td{
+      text-align: center;
+      vertical-align: middle;
+    }
+
+  }
+}
+
+//底部分页样式
+.table-foot{
+  display: flex;
+  justify-content: space-between;
+  div{
+    display: flex;
+    align-items: center;
+    input{
+      width: .45rem;
+      height: .3rem;
+    }
+    button{
+      width: .5rem;
+      height: .3rem;
+    }
+    span{
+      text-align: center;
+    }
+  }
+}

@@ -1,7 +1,8 @@
 angular.module("txj")
     .factory('serviceHTTP', function ($http, serviceURL) {
         return {
-            loginHTTP: function (user) {   //登陆
+            //登陆
+            loginHTTP: function (user) {
                 return $http({
                     method: "POST",
                     url: serviceURL.loginURL,
@@ -11,7 +12,8 @@ angular.module("txj")
                     }
                 })
             },
-            logoutHTTP: function () {   //登出
+            //登出
+            logoutHTTP: function () {
                 return $http({
                     method: "POST",
                     url: serviceURL.logoutURL,
@@ -20,7 +22,9 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
-            userListHTTP: function () {   //获取用户列表
+
+            //获取用户列表
+            userListHTTP: function () {
                 return $http({
                     method: "get",
                     url: serviceURL.userListURL,
@@ -28,7 +32,9 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
-            userSearchHTTP: function (userInfo) {   //获取用户列表
+
+            //用户管理-用户搜索
+            userSearchHTTP: function (userInfo) {
                 return $http({
                     method: "get",
                     url: serviceURL.userListURL,
@@ -37,7 +43,9 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
-            userDetailedHTTP: function (id) {   //获取用户详细信息
+
+            //获取用户详细信息
+            userDetailedHTTP: function (id) {
                 return $http({
                     method: "get",
                     url: serviceURL.userDetailedURL,
@@ -46,7 +54,9 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
-            userFrozenHTTP: function (id) {   //冻结或者解冻用户
+
+            //冻结或者解冻用户
+            userFrozenHTTP: function (id) {
                 return $http({
                     method: "post",
                     url: serviceURL.userFrozenURL,
@@ -55,7 +65,9 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
-            userTradeHTTP: function (id) {   //获取用户的交易记录列表
+
+            //获取用户的交易记录列表
+            userTradeHTTP: function (id) {
                 return $http({
                     method: "get",
                     url: serviceURL.userTradeURL,
@@ -64,7 +76,9 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
-            userContractListHTTP: function (id) {   //获取用户的交易记录列表
+
+            //获取用户的合同列表
+            userContractListHTTP: function (id) {
                 return $http({
                     method: "get",
                     url: serviceURL.userContractListURL,
@@ -73,6 +87,8 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
+
+            //获取用户的合同的具体信息
             userContractHTTP: function (id) {
                 return $http({
                     method: "get",
@@ -82,6 +98,8 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
+
+            // 债权管理
             debtHTTP: function () {
                 return $http({
                     method: "get",
@@ -90,6 +108,28 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
+
+            // 债权编辑
+            debtEditHTTP: function () {
+                return $http({
+                    method: "put",
+                    url: serviceURL.debtNewURL,
+                    params: id,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            // 债权新增
+            debtNewHTTP: function () {
+                return $http({
+                    method: "post",
+                    url: serviceURL.debtNewURL,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
             searchHTTP: function (data) {  //搜索 
                 return $http({
                     url: serviceURL.searchURL,
