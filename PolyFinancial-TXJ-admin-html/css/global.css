@@ -111,6 +111,7 @@ u {
   justify-content: space-between;
   padding: 12px 55px;
   margin: 20px 0;
+<<<<<<< HEAD
   background-color: #fff;
   border-radius: 4px;
 }
@@ -118,6 +119,11 @@ u {
 .title-warp .title {
   font-size: .2rem;
 }
+=======
+  border: 3px solid #fff; }
+  .title-warp .title {
+    font-size: .2rem; }
+>>>>>>> 9608a9288d5490b5b9c59af01d6c650407c577d1
 
 .searchCondition {
   padding: 10px;
