@@ -1,6 +1,6 @@
 var app = angular.module("txj", ["ngAnimate", "ui.router","ui.bootstrap","oc.lazyLoad"]);
 
-//懒加载
+// 懒加载
 app.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvider", "$ocLazyLoadProvider",
     function ($provide, $compileProvider, $controllerProvider, $filterProvider, $ocLazyLoadProvider) {
         app.controller = $controllerProvider.register;
@@ -116,7 +116,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/product",
             templateUrl: 'view/html/business/product.html',
             controller: 'productCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/business/productCtrl.js",
+                            "./css/modules/product.css"
+                        ]);
+                    }
+                ]
+            }
 
         })
 
