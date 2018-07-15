@@ -225,24 +225,28 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     }
                 ]
             }
-            // resolve: { //懒加载文件
-            //     loadMyFile: _lazyLoad([
-            //         // 'css/login.css', 
-            //         './js/ctrl/passwordCtrl.js'])
-            // }
         })
 
         // 账户管理
         .state('backStage.account',{
-            url:"/account",
+            url: "/account/:role",
             templateUrl: 'view/html/backstage/account.html',
-            controller: 'accountCtrl',
-            controllerAs:'vm'
+            controller: 'accountCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/backstage/accountCtrl.js"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 账户编辑
         .state('backStage.accountEdit',{
-            url:"/account",
+            url:"/accountEdit",
             templateUrl: 'view/html/backstage/accountEdit.html',
             controller: 'accountEditCtrl',
             controllerAs:'vm'

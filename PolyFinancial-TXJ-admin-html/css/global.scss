@@ -22,6 +22,15 @@ body{
     display: inline-block;
     width: auto;
 }
+// 标题样式
+.title-warp {
+    padding: 10px 0px 10px 20px;
+    margin: 20px 0;
+    border: 3px solid #fff;
+    .title {
+        font-size: .2rem;
+    }
+}
 .row{
   width: 100%!important;
   margin: 0!important;
