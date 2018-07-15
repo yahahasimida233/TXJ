@@ -25,20 +25,19 @@ app.controller("debtCtrl",function ($http,$state,serviceHTTP,$stateParams){
     };
 
 
-    //搜索用户列表功能
+    //搜索债权列表功能
     vm.userSearch = function(){
         //搜索的四个值
-        var userInfo = {
+        var debtInfo = {
             userID: vm.userId,
             actualName:vm.userName,
             phoneNum:vm.phone,
             state:vm.status
         };
-        serviceHTTP.userSearchHTTP(userInfo).then(function successCallback(response) {
+        serviceHTTP.debtHTTP(debtInfo).then(function successCallback(response) {
             // 请求成功执行代码
-            console.log(response);
             if(response.data.message === "success") {
-                vm.list = response.data.data.accountList;
+                vm.list = response.data.data;
                 console.log(vm.list);
             }
             else {
@@ -49,44 +48,22 @@ app.controller("debtCtrl",function ($http,$state,serviceHTTP,$stateParams){
         });
     };
 
-    vm.frozen = function (a,b) {
-        var userInfo = {
-            id:a,
-            state:b
-        };
-        if(b == 0){
-            vm.tip ="<p style='text-align: center'>是否要冻结该用户？</p>"
-        }else {
-            vm.tip ="<p style='text-align: center'>是否要为该用户解冻？</p>"
-        }
-        bootbox.confirm({
-            title: '操作提示',
-            message: vm.tip,
-            buttons: {
-                cancel: {
-                    label: '取消'
-                },
-                confirm: {
-                    label: '确认'
-                }
-            },
-            callback: function(result) {
-                if(result === true){
-                    serviceHTTP.userSearchHTTP(userInfo).then(function successCallback(response) {
-                        // 请求成功执行代码
-                        console.log(response);
-                        if(response.data.message === "success") {
-                            bootbox.alert("修改成功，即将刷新页面");
-                            $state.reload('backStage.user');
-                        }
-                    }, function errorCallback(res) {
-                        // 请求失败执行代码
-                        bootbox.alert("修改状态失败！请稍后再试")
-                    });
 
-                }
+    vm.delete = function(id){
+        serviceHTTP.debtDeleteHTTP(id).then(function successCallback(response) {
+            // 请求成功执行代码
+            if(response.data.message === "success") {
+                bootbox.alert("删除成功");
+                $state.reload('backStage.debt');
             }
-        })
+            else {
+
+            }
+        }, function errorCallback(res) {
+            // 请求失败执行代码
+        });
     };
+
+
 
 });

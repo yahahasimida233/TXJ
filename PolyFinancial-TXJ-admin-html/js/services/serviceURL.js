@@ -17,6 +17,7 @@ angular.module("txj").factory("serviceURL", function() {
         // 债权管理
         debtURL:"/admin/admin/a/u/debt/list",
         debtNewURL:"/admin/admin/a/u/debt",
+        debtDeleteURL:"/admin/admin/a/u/debt",
 
 
         searchURL: "/carrots-admin-ajax/a/article/search",

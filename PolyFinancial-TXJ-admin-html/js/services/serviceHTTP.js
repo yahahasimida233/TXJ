@@ -130,6 +130,17 @@ angular.module("txj")
                 })
             },
 
+            // 债权删除
+            debtDeleteHTTP: function (id) {
+                return $http({
+                    method: "delete",
+                    url: serviceURL.debtDeleteURL,
+                    params: id,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
             searchHTTP: function (data) {  //搜索 
                 return $http({
                     url: serviceURL.searchURL,
