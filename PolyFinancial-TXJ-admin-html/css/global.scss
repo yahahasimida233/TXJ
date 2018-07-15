@@ -1,3 +1,5 @@
+@import "assembly/form-content";
+
 html{
   font-size: 100px;
 }
@@ -17,6 +19,11 @@ body{
 .glyphicon{
   top: 0;
 }
+
+u{
+  border-bottom: #29b078 solid;
+}
+
 // bootstrap样式重置
 .form-control{
     display: inline-block;

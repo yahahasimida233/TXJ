@@ -10,7 +10,8 @@
   display: flex;
   justify-content: space-between; }
   .contractContent-bottom div img {
-    width: 2rem;
-    height: 2rem; }
+    margin: 0 0 -.5rem -.8rem;
+    width: 1.7rem;
+    height: 1.7rem; }
 
 /*# sourceMappingURL=contractDetailed.css.map */

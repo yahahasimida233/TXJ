@@ -1,0 +1,114 @@
+<div class="debtEdit all-content">
+    <div class="table-title">
+        <h3>{{vm.title}}</h3>
+        <button class="btn btn-default" ui-sref ="backStage.debt">返回</button>
+    </div>
+    <form class="debtEditContent"  name="debtEditForm">
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': debtEditForm.enterpriseName.$dirty && debtEditForm.enterpriseName.$invalid}">
+            <span>*企&#12288业&#12288名&#12288&#12288</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model ="vm.enterpriseName"
+                   name="enterpriseName"
+                   placeholder="请输入企业名称（8-20个汉字）"
+                   ng-pattern="/^[\u4e00-\u9fa5]{8,20}$/">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="debtEditForm.enterpriseName.$error.pattern ">请输入8-20个汉字</span>
+        </div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': debtEditForm.creditor.$dirty && debtEditForm.creditor.$invalid}">
+            <span>*债&#12288&#12288务&#12288人&#12288</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model ="vm.creditor"
+                   name="creditor"
+                   ng-pattern="/^[\u4e00-\u9fa5]{2,4}$/"
+                   placeholder="请输入真实姓名（2~4个汉字）">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="debtEditForm.creditor.$error.pattern ">请输入2-4个汉字</span>
+        </div>
+        <div class="debtEditContent-row">
+            <span>*手&#12288&#12288机&#12288号&#12288</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model = "vm.phoneNum"
+                   name = "phoneNum"
+                   ng-pattern="/^(((\+86)|(86))?1[0-9]{10})$/"
+                   placeholder="请输入手机号（11位数字）">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="debtEditForm.phoneNum.$error.pattern ">请输入正确的手机号码</span>
+        </div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': debtEditForm.cardID.$dirty && debtEditForm.cardID.$invalid}">
+            <span>*身&#12288份&#12288证&#12288号</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model = "vm.cardID"
+                   name = "cardID"
+                   ng-pattern="/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|[xX])$/"
+                   placeholder="请输入身份证号码（18位数字）">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="debtEditForm.cardID.$error.pattern ">请输入正确的身份证号码</span>
+        </div>
+        <div class="debtEditContent-data">
+            <span class="debtEditContent-span">*借&#12288款&#12288日&#12288&#12288</span>
+            <input type="text"
+
+                   class="form-control date-input"
+                   uib-datepicker-popup="{{vm.startDate}}"
+                   ng-model="vm.loanAt"
+                   is-open="vm.popup.opened"
+                   ng-required="true"
+                   close-text="关闭"
+                   clear-text="清空"
+                   current-text="今天"
+                   alt-input-formats="vm.altInputFormats"
+                   ng-click="vm.open()"
+                   placeholder="请输入借款日期"
+                   required="required">
+        </div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': debtEditForm.loanAmount.$dirty && debtEditForm.loanAmount.$invalid}">
+            <span>*借款金额（元）</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model = "vm.loanAmount"
+                   name = "loanAmount"
+                   ng-pattern="/^[0-9]*$/"
+                   placeholder="请输入借款金额（数字组成的整数）">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="debtEditForm.loanAmount.$error.pattern ">请输入正确的借款金额</span>
+        </div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': debtEditForm.loanPeriod.$dirty && debtEditForm.loanPeriod.$invalid}">
+            <span>*借款期限（月）</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model = "vm.loanPeriod"
+                   name = "loanPeriod"
+                   ng-pattern="/^[0-9]*$/"
+                   placeholder="请输入借款期限（数字组成的整数）">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="debtEditForm.loanPeriod.$error.pattern ">请输入正确的借款期限</span>
+        </div>
+        <div class="debtEditContent-row">
+            <button class="btn btn-success"
+                    ng-disabled="debtEditForm.$invalid"
+            >保存</button>
+            <button class="btn btn-danger"  ui-sref ="backStage.debt">>取消</button>
+        </div>
+    </form>
+</div>

@@ -1,36 +1,34 @@
 <div class="row user">
-    <form>
-        <div class="col-xs-4">
-            <span>用户ID：</span><input class="form-control" type="text" ng-model ="vm.userId">
-        </div>
-        <div class="col-xs-4">
-            <span>真实姓名：</span><input class="form-control" type="text" ng-model ="vm.userName">
-        </div>
-        <div class="col-xs-4">
-            <span></span>
-            <button class="btn btn-danger" ng-click = "vm.reset()">重置</button>
-            <span></span>
-        </div>
-        <div class="col-xs-4">
-            <span>手机号：</span><input class="form-control" type="text" ng-model = "vm.phone" >
-        </div>
-        <div class="col-xs-4">
-            <span>状态：</span>
-            <select class="form-control" ng-model = "vm.status" >
-                <option value="0">正常</option>
-                <option value="1">冻结</option>
-            </select>
-        </div>
-        <div class="col-xs-4">
-            <span></span>
-            <button class="btn btn-success" ng-click = "vm.userSearch()">搜索</button>
-            <span></span>
-        </div>
-    </form>
+    <div class="col-xs-4">
+        <span>用户ID：</span><input class="form-control" type="text" ng-model ="vm.userId">
+    </div>
+    <div class="col-xs-4">
+        <span>真实姓名：</span><input class="form-control" type="text" ng-model ="vm.userName">
+    </div>
+    <div class="col-xs-4">
+        <span></span>
+        <button class="btn btn-danger" ng-click = "vm.reset()">重置</button>
+        <span></span>
+    </div>
+    <div class="col-xs-4">
+        <span>手机号：</span><input class="form-control" type="text" ng-model = "vm.phone" >
+    </div>
+    <div class="col-xs-4">
+        <span>状态：</span>
+        <select class="form-control" ng-model = "vm.status" >
+            <option value="0">正常</option>
+            <option value="1">冻结</option>
+        </select>
+    </div>
+    <div class="col-xs-4">
+        <span></span>
+        <button class="btn btn-success" ng-click = "vm.userSearch()">搜索</button>
+        <span></span>
+    </div>
 
     <h2 class="col-xs-12">用户列表</h2>
-    <div class="table-responsive col-xs-12">
-        <table id="tb" class="table table-striped table-hover table-responsive table-condensed table-bordered user-list-table">
+    <div class="table-responsive col-xs-12" style="min-height: 2rem">
+        <table id="tb" class="table table-striped table-hover table-responsive table-condensed table-bordered table-content">
             <tr>
                 <td><strong>序号</strong></td>
                 <td><strong>手机号</strong></td>
@@ -58,8 +56,8 @@
             </tr>
         </table>
     </div>
-    <div class="user-list-footer col-xs-12">
-        <div class="btn-list-size ">
+    <div class="table-foot col-xs-12">
+        <div>
             <span>每页显示</span>
             <input type="text" class="form-control  small" ng-model="vm.size" ng-init="vm.size = 10 ">
             <span>条</span>
