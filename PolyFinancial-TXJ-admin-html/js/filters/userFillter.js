@@ -114,3 +114,33 @@ app.filter('debtState',function(){
         return a;
     }
 });
+// 角色状态过滤
+app.filter("userState", function () {
+    return function (num) {
+        switch (num) {
+            case 0:
+                return "启用";
+                break;
+            case 1:
+                return "禁用";
+                break;
+        }
+    }
+})
+// 角色不可编辑按钮
+// app.filter("btnDisabled", function () {
+//     return function (edit) {
+//         if(edit==true){
+//             return false;    
+//         }
+//         else{
+//             return true
+//         }
+//     }
+// })
+app.filter("btnDisabled", function () {
+    return function (edit) {
+        var newEdit = edit == true ? false : true;
+        return newEdit;
+    }
+})

@@ -19,7 +19,17 @@ body{
 .glyphicon{
   top: 0;
 }
-
+ //列表渲染
+table{
+    background-color: #fff;
+}
+td {
+    vertical-align: middle !important;
+    // word-break: break-all;
+}
+.time{
+    width: 10%;
+}
 u{
   border-bottom: #29b078 solid;
 }
@@ -29,15 +39,54 @@ u{
     display: inline-block;
     width: auto;
 }
+.border{
+    border-radius: 4px; 
+}
 // 标题样式
 .title-warp {
-    padding: 10px 0px 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 55px;
     margin: 20px 0;
-    border: 3px solid #fff;
+    background-color: #fff;
+    border-radius: 4px;
     .title {
         font-size: .2rem;
     }
 }
+// 搜索模块
+.searchCondition{
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    .search-row{  //单行
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 20px 0;
+        .form-18{
+            width: 18%;
+        }
+        .tips{    
+            width: 6%;
+        }
+    }
+}
+// 列表模块
+tr{
+    .index-title{
+        padding: 20px 0px 20px 20px !important;
+    }
+    .list-title{
+        padding: 20px 0 !important;
+    }
+    .index{
+        padding-left: 20px !important;
+    }
+}
+
 .row{
   width: 100%!important;
   margin: 0!important;
