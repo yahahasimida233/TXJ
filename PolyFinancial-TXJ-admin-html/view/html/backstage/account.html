@@ -1,0 +1,60 @@
+<!-- 搜索条件 -->
+<form class="serchCondition">
+    <div class="row">
+        <span class="tips">帐号ID</span>
+        <input type="text" class="form-control">
+        <!-- 对象写法 -->
+    <!-- <select ng-model="vm.xxx">
+        <option value="">--请选择--</option>
+    <option value="{{val}}" 
+            ng-repeat="(key, val) in vm.roles track by val" 
+            ng-selected = "vm.params.role == val">{{val}}</option>
+    </select> {{vm.xxx}} -->
+    <!-- 数组写法 -->
+    <select ng-model="vm.xxx">
+        <option value="">--请选择--</option>
+        <option value="{{x}}" ng-repeat="x in vm.roles" ng-selected="vm.params.role == x">{{x}} </option>
+    </select>
+    <button ng-click="vm.pipi()">皮皮兽师兄</button>
+    </div>
+</form>
+<!-- list-title -->
+<div class="title-warp">
+    <strong class="title">帐号列表</strong>
+</div>
+<select class="form-control" id="sel2" ng-model="checkStatus" ng-options="item.num as item.name for item in vm.model.status"></select>
+<div class="table-responsive">
+    <td ng-model="vm.role">123</td>{{vm.role}}
+    <td>
+        <button class="btn" ng-disabled="vm.sure">编辑</button>
+    </td>
+<table class="table table-hover">
+<tbody>
+    <tr ng-repeat="list in vm.lists">
+        <!-- <td class="text-center" ng-bind="$index + 1"></td>
+        <td class="text-center" ng-bind="list.title"></td>
+        <td class="text-center" ng-bind=" list.type | type"></td>
+        <td class="text-center" ng-bind=" list.updateAt | date:'yyyy-MM-dd HH:mm:ss'"></td>
+        <td class="text-center" ng-bind=" list.createAt | date:'yyyy-MM-dd HH:mm:ss'"></td> -->
+        <td class="text-center" ng-bind="list.role"></td>
+        <!-- <td class="text-center" ng-bind=" list.status | statusFilter"></td> -->
+        <td class="text-center articleCtrl">
+            <!-- <a>
+                <button class="btn" ng-class="{'btn-success': list.status==1,'btn-warning': list.status==2}" ng-click="vm.offline(list.id,list.status)"
+                    ng-bind="list.status | unStatusFilter">
+                </button>
+            </a> -->
+            <!-- <a>
+                <button class="btn btn-info" ng-click="vm.write(list.id)">编辑</button>
+            </a> -->
+            <!-- <a>
+                <button class="btn btn-danger" ng-click="vm.delete(list.id)">删除</button>
+            </a> -->
+            <a>
+                <button ng-click="vm.edit(list.role)" ng-disabled="vm.sure">编辑</button>
+            </a>
+        </td> 
+    </tr>
+</tbody>
+</table>
+</div>

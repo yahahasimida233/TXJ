@@ -217,6 +217,14 @@ angular.module("txj")
                     params: password,
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 })
+            },
+            sAccountHTTP: function (account) {   //搜索用户
+                return $http({
+                    url:serviceURL.sAccountURL,
+                    method: "GET",
+                    params: account,
+                    headers: {"Conten-Type": "application/x-www-from-urlencoded"}
+                })
             }
         }
 })
