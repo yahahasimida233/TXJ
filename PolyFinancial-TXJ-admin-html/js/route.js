@@ -1,6 +1,6 @@
 var app = angular.module("txj", ["ngAnimate", "ui.router","ui.bootstrap","oc.lazyLoad"]);
 
-// 懒加载
+//懒加载
 app.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvider", "$ocLazyLoadProvider",
     function ($provide, $compileProvider, $controllerProvider, $filterProvider, $ocLazyLoadProvider) {
         app.controller = $controllerProvider.register;
@@ -116,6 +116,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/product",
             templateUrl: 'view/html/business/product.html',
             controller: 'productCtrl',
+<<<<<<< HEAD
+            controllerAs:'vm'
+=======
             controllerAs:'vm',
             resolve: {
                 loadMyFile: [
@@ -128,6 +131,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     }
                 ]
             }
+>>>>>>> 9608a9288d5490b5b9c59af01d6c650407c577d1
 
         })
 
@@ -251,7 +255,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 账户管理
         .state('backStage.account',{
-            url: "/account/:role",
+            // params: {role: null },
+            url: "/account?role",
             templateUrl: 'view/html/backstage/account.html',
             controller: 'accountCtrl as vm',
             resolve: {

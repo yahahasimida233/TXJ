@@ -6,160 +6,134 @@ app.controller("accountCtrl", function ($scope, $state, $stateParams, serviceHTT
     //     account = undefined,
     //     createBy = undefined
     // };
-
-    // if (vm.role == 123){
-    //     vm.sure = true;
-    // }
-
-    var list = {
-        status:[
+  
+    var lists = {
+    "code": 0,
+    "data": {
+        "total": 5,
+        "roles": [
             {
-                name: '全部',
-                num: undefined
-            }, 
+                "id": 1,
+                "role": "超级管理员",
+                "createAt": 1,
+                "updateAt": 1,
+                "createBy": "1",
+                "updateBy": "1"
+            },
             {
-                name: '首页',
-                num: 0
-            }, 
+                "id": 2,
+                "role": "管理员",
+                "createAt": 1,
+                "updateAt": 1,
+                "createBy": "1",
+                "updateBy": "1"
+            },
             {
-                name: '找职位',
-                num: 1
-            }, 
+                "id": 3,
+                "role": "运营",
+                "createAt": 1,
+                "updateAt": 1,
+                "createBy": "1",
+                "updateBy": "1"
+            },
             {
-                name: '找精英',
-                num: 2
-            }, 
+                "id": 4,
+                "role": "客服",
+                "createAt": 1,
+                "updateAt": 1,
+                "createBy": "1",
+                "updateBy": "1"
+            }
+        ],
+        "accountList": [
             {
-                name: '行业大图',
-                num: 3
+                "createAt": 1531470437788,
+                "role": "超级管理员",
+                "updateBy": "admin",
+                "edit": false,
+                "updateAt": 1531490017342,
+                "id": 10,
+                "state": 0,
+                "account": "admin",
+                "createBy": "admin"
+            },
+            {
+                "createAt": 1531472969997,
+                "role": "管理员",
+                "updateBy": "admin",
+                "edit": true,
+                "updateAt": 1531472969997,
+                "id": 11,
+                "state": 0,
+                "account": "张三",
+                "createBy": "admin"
+            },
+            {
+                "createAt": 1531472981636,
+                "role": "运营",
+                "updateBy": "admin",
+                "edit": true,
+                "updateAt": 1531472981636,
+                "id": 12,
+                "state": 0,
+                "account": "李四",
+                "createBy": "admin"
+            },
+            {
+                "createAt": 1531473015987,
+                "role": "运营",
+                "updateBy": "admin",
+                "edit": true,
+                "updateAt": 1531473015987,
+                "id": 13,
+                "state": 0,
+                "account": "王五",
+                "createBy": "admin"
+            },
+            {
+                "createAt": 1531473015987,
+                "role": "客服",
+                "updateBy": "admin",
+                "edit": true,
+                "updateAt": 1531473015987,
+                "id": 13,
+                "state": 0,
+                "account": "王五",
+                "createBy": "admin"
             }
         ]
-    };
-    // vm.model = list; 
+    },
+    "message": "success"
+}
 
-    // vm.lists = {
-        
-    // "code": 0,
-    // "data": {
-    //     "total": 5,
-        // roles: [
-        //     {
-        //         "id": 1,
-        //         "role": "超级管理员",
-        //         "createAt": 1,
-        //         "updateAt": 1,
-        //         "createBy": "1",
-        //         "updateBy": "1"
-        //     },
-        //     {
-        //         "id": 2,
-        //         "role": "管理员",
-        //         "createAt": 1,
-        //         "updateAt": 1,
-        //         "createBy": "1",
-        //         "updateBy": "1"
-        //     },
-        //     {
-        //         "id": 3,
-        //         "role": "运营",
-        //         "createAt": 1,
-        //         "updateAt": 1,
-        //         "createBy": "1",
-        //         "updateBy": "1"
-        //     },
-        //     {
-        //         "id": 4,
-        //         "role": "客服",
-        //         "createAt": 1,
-        //         "updateAt": 1,
-        //         "createBy": "1",
-        //         "updateBy": "1"
-        //     }
-        // ]
-        // vm.list = roles.role;
-//         "accountList": [
-//             {
-//                 "createBy": 1531470437788,
-//                 "role": "超级管理员",
-//                 "updateBy": "admin",
-//                 "edit": false,
-//                 "updateAt": 1531490017342,
-//                 "id": 10,
-//                 "state": 0,
-//                 "account": "admin",
-//                 "createAt": "admin"
-//             },
-//             {
-//                 "createBy": 1531472969997,
-//                 "role": "管理员",
-//                 "updateBy": "admin",
-//                 "edit": true,
-//                 "updateAt": 1531472969997,
-//                 "id": 11,
-//                 "state": 0,
-//                 "account": "张三",
-//                 "createAt": "admin"
-//             },
-//             {
-//                 "createBy": 1531472981636,
-//                 "role": "运营",
-//                 "updateBy": "admin",
-//                 "edit": true,
-//                 "updateAt": 1531472981636,
-//                 "id": 12,
-//                 "state": 0,
-//                 "account": "李四",
-//                 "createAt": "admin"
-//             },
-//             {
-//                 "createBy": 1531473015987,
-//                 "role": "运营",
-//                 "updateBy": "admin",
-//                 "edit": true,
-//                 "updateAt": 1531473015987,
-//                 "id": 13,
-//                 "state": 0,
-//                 "account": "王五",
-//                 "createAt": "admin"
-//             },
-//             {
-//                 "createBy": 1531473015987,
-//                 "role": "客服",
-//                 "updateBy": "admin",
-//                 "edit": true,
-//                 "updateAt": 1531473015987,
-//                 "id": 13,
-//                 "state": 0,
-//                 "account": "王五",
-//                 "createAt": "admin"
-//             }
-//         ]
-//     },
-//     "message": "success"
 // }
-
-    // }
     vm.params = $stateParams;
-    console.log(vm.params.role);    
-
+    // console.log(vm.params.role);    
+    // if ($stateParams.role) {
+    vm.adminId = $stateParams.role;
+    // }
+        
     // serviceHTTP.sAccountHTTP().then(function (res) {
     //     console.log(res);
-    //     var lists = res.data.data.accountList;
-    //     vm.lists = lists;
-    //     console.log(lists);
-    //     // var roles = res.data.data.roles;
-    //     vm.roles = res.data.data.roles;
-    //     console.log(vm.roles);
+    //     vm.lists = res.data.data.accountList;
+    //     // vm.lists = res.data.accountList;  //返回的数据列表
+        vm.lists = lists.data.accountList;
+    //     // vm.admin = res.data.roles; // 返回的角色类型
+    //     console.log(vm.lists); 
+    //     console.log(vm.admin);
     //     console.log(vm.params.role);
     // });
+    vm.admin = lists.data.roles;
+    // vm.admin = res.data.roles; // 返回的角色类型
+    console.log(vm.admin);
 
-    vm.roles = [
-        "超级管理员",
-        "管理",
-        "运营",
-        "客服"
-    ]
-    vm.pipi = function () {
-        $state.go("backStage.account" ,{role: vm.xxx}, {reload:true} )
-    }
+    // vm.pipi = function () {
+    //     $state.go("backStage.account" ,{role: vm.adminId}, {reload:true} )
+    // }
+
+  
+    // 不可编辑状态
+//     if (vm.list.edit == false) {
+//         vm.edit = true;
+//     }
 })
