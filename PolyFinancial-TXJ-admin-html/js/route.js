@@ -116,9 +116,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/product",
             templateUrl: 'view/html/business/product.html',
             controller: 'productCtrl',
-<<<<<<< HEAD
-            controllerAs:'vm'
-=======
             controllerAs:'vm',
             resolve: {
                 loadMyFile: [
@@ -131,7 +128,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     }
                 ]
             }
->>>>>>> 9608a9288d5490b5b9c59af01d6c650407c577d1
 
         })
 

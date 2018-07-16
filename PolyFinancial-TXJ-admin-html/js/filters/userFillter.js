@@ -114,8 +114,7 @@ app.filter('debtState',function(){
         return a;
     }
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 // 角色状态过滤
 app.filter("userState", function () {
     return function (num) {
@@ -146,9 +145,6 @@ app.filter("btnDisabled", function () {
         return newEdit;
     }
 })
-=======
-=======
->>>>>>> 9608a9288d5490b5b9c59af01d6c650407c577d1
 
 app.filter('productMode',function(){
     return function (a){
@@ -194,9 +190,6 @@ app.filter('productStateChange',function(){
         }
         return a;
     }
-<<<<<<< HEAD
+
 });
->>>>>>> 9608a9288d5490b5b9c59af01d6c650407c577d1
-=======
-});
->>>>>>> 9608a9288d5490b5b9c59af01d6c650407c577d1
+
