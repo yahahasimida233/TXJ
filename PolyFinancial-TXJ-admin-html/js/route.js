@@ -155,16 +155,37 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('backStage.banner',{
             url:"/banner",
             templateUrl: 'view/html/operate/banner.html',
-            controller: 'bannerCtrl',
-            controllerAs:'vm'
+            controller: 'bannerCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/operate/bannerCtrl.js",
+                            "./css/modules/operate/banner.css"
+                        ]);
+                    }
+                ]
+            }
         })
 
         // banner图编辑
         .state('backStage.bannerEdit',{
-            url:"/bannerEdit",
+            url:"/bannerEdit?id",
             templateUrl: 'view/html/operate/bannerEdit.html',
             controller: 'bannerEditCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/operate/bannerEdit.js",
+                            "./css/modules/operate/bannerEdit.css"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 鼎立推荐
@@ -172,15 +193,37 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/recommend",
             templateUrl: 'view/html/operate/recommend.html',
             controller: 'recommendCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/operate/recommendCtrl.js",
+                            "./css/modules/operate/recommend.css"
+                        ]);
+                    }
+                ]
+            }
         })
 
         // 鼎力推荐编辑
         .state('backStage.recommendEdit',{
-            url:"/recommendEdit",
+            url:"/recommendEdit?id",
             templateUrl: 'view/html/operate/recommendEdit.html',
             controller: 'recommendEditCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/operate/recommendEdit.js",
+                            "./css/modules/operate/recommendEdit.css"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 消息管理
@@ -188,23 +231,56 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/message",
             templateUrl: 'view/html/operate/message.html',
             controller: 'messageCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/operate/messageCtrl.js",
+                            "./css/modules/operate/message.css"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 消息编辑
         .state('backStage.messageEdit',{
-            url:"/messageEdit",
+            url:"/messageEdit?id",
             templateUrl: 'view/html/operate/messageEdit.html',
             controller: 'messageEditCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/operate/messageEdit.js",
+                            "./css/modules/operate/messageEdit.css"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 消息查看
         .state('backStage.messageSee',{
-            url:"/messageSee",
+            url:"/messageSee?id",
             templateUrl: 'view/html/operate/messageSee.html',
             controller: 'messageSeeCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/operate/messageDetailed.js",
+                            "./css/modules/operate/messageDetailed.css"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 意见反馈
@@ -212,23 +288,56 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/feedback",
             templateUrl: 'view/html/operate/feedback.html',
             controller: 'feedbackCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/operate/feedbackCtrl.js",
+                            "./css/modules/operate/feedback.css"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 意见编辑
-        .state('backStage.feedbackEdit',{
-            url:"/feedbackEdit",
+        .state('backStage.feedbackReply',{
+            url:"/feedbackEdit?id",
             templateUrl: 'view/html/operate/feedbackEdit.html',
-            controller: 'feedbackEditCtrl',
-            controllerAs:'vm'
+            controller: 'feedbackReplyCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/operate/feedbackReply.js",
+                            "./css/modules/operate/feedbackReply.css"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 意见查看
-        .state('backStage.feedbackSee',{
-            url:"/feedbackSee",
+        .state('backStage.feedbackDetailed',{
+            url:"/feedbackDetailed?id",
             templateUrl: 'view/html/operate/feedbackSee.html',
-            controller: 'feedbackSeeCtrl',
-            controllerAs:'vm'
+            controller: 'feedbackDetailedCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/operate/feedbackDetailed.js",
+                            "./css/modules/operate/feedbackDetailed.css"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 密码管理

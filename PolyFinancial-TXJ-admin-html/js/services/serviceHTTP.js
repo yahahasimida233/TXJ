@@ -23,6 +23,49 @@ angular.module("txj")
                 })
             },
 
+            //手机短信验证码
+            verificationCodeHTTP: function (phoneNum) {
+                return $http({
+                    method: "POST",
+                    url: serviceURL.verificationCodeURL,
+                    params: phoneNum ,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            //手机号码注册验证
+            phoneRegisterHTTP : function (info) {
+                return $http({
+                    method: "POST",
+                    url: serviceURL.phoneRegisterURL,
+                    params: info ,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            //获取图片（伪）验证码
+            imgCodeHTTP : function (info) {
+                return $http({
+                    method: "get",
+                    url: serviceURL.imgCodeURL,
+                    params: info ,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            //图片上传
+            imgUploadURL : function (info) {
+                return $http({
+                    method: "post",
+                    url: serviceURL.imgUploadURL,
+                    data:info,
+                    headers: {'Content-Type': undefined},
+                })
+            },
+
             //获取用户列表
             userListHTTP: function () {
                 return $http({
@@ -110,21 +153,22 @@ angular.module("txj")
             },
 
             // 债权编辑
-            debtEditHTTP: function () {
+            debtEditHTTP: function (info) {
                 return $http({
                     method: "put",
                     url: serviceURL.debtNewURL,
-                    params: id,
+                    params: info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
 
             // 债权新增
-            debtNewHTTP: function () {
+            debtNewHTTP: function (info) {
                 return $http({
                     method: "post",
                     url: serviceURL.debtNewURL,
+                    params: info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -152,10 +196,10 @@ angular.module("txj")
             },
 
             // 产品具体信息
-            productDetialHTTP: function (info) {
+            productDetailHTTP: function (info) {
                 return $http({
                     method: "get",
-                    url: serviceURL.productDetialURL,
+                    url: serviceURL.productDetailURL,
                     params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
@@ -211,75 +255,269 @@ angular.module("txj")
                 })
             },
 
+            // banner管理列表
+            bannerHTTP: function (info) {
+                return $http({
+                    method: "get",
+                    url: serviceURL.bannerURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
 
-            searchHTTP: function (data) {  //搜索 
+            // 产品具体信息
+            bannerDetailedHTTP: function (info) {
                 return $http({
-                    url: serviceURL.searchURL,
-                    method: "GET",
-                    params: data,
+                    method: "get",
+                    url: serviceURL.bannerDetailedURL,
+                    params:info,
                     headers: {
-                        "content-type": "application/x-www-form-urlencoded"
+                        "Content-Type": "application/x-www-form-urlencoded"
                     }
                 })
             },
-            delateHTTP: function (id) {   //删除
+
+            // 提交产品编辑
+            bannerEditHTTP: function (info) {
                 return $http({
-                    url: serviceURL.articleURL + id,
-                    method: "DELETE",
+                    method: "put",
+                    url: serviceURL.bannerEditURL,
+                    params:info,
                     headers: {
-                        "content-type": "application/x-www-form-urlencoded"
+                        "Content-Type": "application/x-www-form-urlencoded"
                     }
                 })
             },
-            offlineHTTP: function (state) {    //上下线
+
+            // 新增产品
+            bannerNewHTTP: function (info) {
                 return $http({
-                    url: serviceURL.offlineURL,
-                    method: "PUT",
-                    params: state,
-                    headers: { 
-                        'Content-Type': 'application/x-www-form-urlencoded' 
+                    method: "post",
+                    url: serviceURL.bannerNewURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
                     }
                 })
             },
-            uploadHTTP: function (formData) { //上传图片
+
+            // 上下架产品info
+            bannerGroundingHTTP: function (info) {
                 return $http({
-                    url: serviceURL.uploadURL,
-                    method: "POST",
-                    data: formData,
-                    headers: { "Content-Type": undefined } 
+                    method: "post",
+                    url: serviceURL.bannerGroundingURL+info,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
                 })
             },
-            addHTTP: function (article) {   //新增文章
+
+            // 删除产品
+            bannerDeleteHTTP: function (info) {
                 return $http({
-                    url: serviceURL.addURL,
-                    method: "POST",
-                    params: article,
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                    method: "delete",
+                    url: serviceURL.bannerDeleteURL+info,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
                 })
             },
-            addOfflineHTTP: function (article) {  //新增文章的上下线
+
+            // 鼎力推荐管理列表
+            recommendHTTP: function (info) {
                 return $http({
-                    url: serviceURL.articleURL,
-                    method: "POST",
-                    params: article,
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" } 
+                    method: "get",
+                    url: serviceURL.recommendURl,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
-            getArticle: function (id) {  //编辑页面获取数据
+
+            // 产品具体信息
+            recommendDetailedHTTP: function (info) {
                 return $http({
-                    url: serviceURL.addURL + id,
-                    method: "GET",
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                    method: "get",
+                    url: serviceURL.recommendDetailedURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
                 })
             },
-            writeOfflineHTTP: function (id, article) {
+
+            // 提交产品编辑
+            recommendEditHTTP: function (info) {
                 return $http({
-                    url: serviceURL.articleURL + id,
-                    method: "PUT",
-                    params: article,
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                    method: "put",
+                    url: serviceURL.recommendEditURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
                 })
             },
+
+            // 新增产品
+            recommendNewHTTP: function (info) {
+                return $http({
+                    method: "post",
+                    url: serviceURL.recommendNewURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 上下架产品
+            recommendroundingHTTP: function (info) {
+                return $http({
+                    method: "post",
+                    url: serviceURL.recommendGroundingURL+info,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 删除产品
+            recommendDeleteHTTP: function (info) {
+                return $http({
+                    method: "delete",
+                    url: serviceURL.recommendDeleteURL+info,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 意见反馈管理列表获取
+            feedbackHTTP: function (info) {
+                return $http({
+                    method: "get",
+                    url: serviceURL.feedbackURl,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 意见反馈详情
+            feedbackDetailedHTTP: function (info) {
+                return $http({
+                    method: "get",
+                    url: serviceURL.feedbackDetailedURl+info,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 意见反馈详情
+            feedbackDeleteHTTP: function (info) {
+                return $http({
+                    method: "delete",
+                    url: serviceURL.feedbackDeleteURl+info,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 意见反馈回复
+            feedbackReplyHTTP: function (info) {
+                return $http({
+                    method: "put",
+                    url: serviceURL.feedbackReplyURl+info,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+
+            // 消息管理列表
+            messageHTTP: function (info) {
+            return $http({
+                method: "get",
+                url: serviceURL.messageURl,
+                params:info,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded" }
+            })
+        },
+
+        // 产品具体信息
+        messageDetailedHTTP: function (info) {
+            return $http({
+                method: "get",
+                url: serviceURL.messageDetailedURL,
+                params:info,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            })
+        },
+
+        // 提交产品编辑
+        messageEditHTTP: function (info) {
+            return $http({
+                method: "put",
+                url: serviceURL.messageEditURL,
+                params:info,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            })
+        },
+
+        // 新增产品
+        messageNewHTTP: function (info) {
+            return $http({
+                method: "post",
+                url: serviceURL.messageNewURL,
+                params:info,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            })
+        },
+
+        // 上下架产品
+        messageCancelHTTP: function (info) {
+            return $http({
+                method: "post",
+                url: serviceURL.messageCancelURL+info,
+                params:info,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            })
+        },
+
+        // 删除产品
+        messageDeleteHTTP: function (info) {
+            return $http({
+                method: "delete",
+                url: serviceURL.messageDeleteURL+info,
+                params:info,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            })
+        },
+
+
             // 后台管理模块
             changePwHTTP: function (password) { //更改密码
                 return $http({

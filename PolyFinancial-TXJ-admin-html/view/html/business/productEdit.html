@@ -1,7 +1,7 @@
 <div class="debtEdit all-content">
     <div class="table-title">
         <h3>{{vm.title}}</h3>
-        <button class="btn btn-default" ui-sref ="backStage.debt">返回</button>
+        <button class="btn btn-default" ui-sref ="backStage.product">返回</button>
     </div>
     <form class="debtEditContent"  name="productEditForm">
         <div class="debtEditContent-row"
@@ -119,6 +119,7 @@
         <div class="debtEditContent-row">
             <button class="btn btn-success"
                     ng-disabled="productEditForm.$invalid"
+                    ng-click = "vm.save()"
             >保存</button>
             <button class="btn btn-danger"  ui-sref ="backStage.product">取消</button>
         </div>

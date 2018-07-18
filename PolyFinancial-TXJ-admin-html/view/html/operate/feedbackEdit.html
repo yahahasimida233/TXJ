@@ -1,0 +1,31 @@
+<div class="feedbackReply all-content">
+    <div class="table-title">
+        <h3>意见回复</h3>
+        <button class="btn btn-default"
+                ui-sref ="backStage.feedback">返回</button>
+    </div>
+    <form class="bannerEditContent"  name="feedbackForm">
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': feedbackForm.introduction.$dirty && feedbackForm.introduction.$invalid}">
+            <textarea type="text"
+                      required
+                      class="form-control productEdit-bigInput"
+                      ng-model = "vm.introduction "
+                      name = "introduction"
+                      ng-maxlength="200"
+                      placeholder="请详细描述您要填写的内容。（限制字数100字以内）"></textarea>
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="feedbackForm.introduction.$error.maxlength">字数已超过上限，建议重新编辑。</span>
+        </div>
+
+
+        <div class="debtEditContent-row">
+            <button class="btn btn-success"
+                    ng-disabled="feedbackForm.$invalid"
+                    ng-click = "vm.change()"
+            >保存</button>
+            <button class="btn btn-danger"  ui-sref ="backStage.feedback">取消</button>
+        </div>
+    </form>
+</div>

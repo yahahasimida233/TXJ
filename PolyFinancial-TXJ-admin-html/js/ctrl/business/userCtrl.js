@@ -50,10 +50,7 @@ app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
     };
 
     vm.frozen = function (a,b) {
-        var userInfo = {
-          id:a,
-          state:b
-        };
+
         if(b == 0){
             vm.tip ="<p style='text-align: center'>是否要冻结该用户？</p>"
         }else {
@@ -72,7 +69,7 @@ app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
             },
             callback: function(result) {
                 if(result === true){
-                    serviceHTTP.userSearchHTTP(userInfo).then(function successCallback(response) {
+                    serviceHTTP.bannerGroundingHTTP(a).then(function successCallback(response) {
                         // 请求成功执行代码
                         console.log(response);
                         if(response.data.message === "success") {
