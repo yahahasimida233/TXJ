@@ -1,0 +1,117 @@
+<!-- 搜索条件 -->
+<form class="searchCondition">
+    <div class="search-row">
+
+        <label class="tips" for="adminId">Banner图ID</label>
+        <input type="text"
+               id="adminID"
+               ng-model = "vm.id"
+               class="form-control form-18">
+
+        <label class="tips" for="title">Banner图标题</label>
+        <input type="text"
+               id="title"
+               ng-model = "vm.title"
+               class="form-control form-18">
+
+
+        <button class="btn btn-danger"
+                ng-click = "vm.reset()"
+        >重置</button>
+
+    </div>
+    <div class="search-row">
+
+        <label class="tips" for="username">创建人</label>
+        <input type="text"
+               id="username"
+               ng-model = "vm.createBy"
+               class="form-control form-18">
+
+
+        <label class="tips" for="creater">更新人</label>
+        <input type="text"
+               id="creater"
+               ng-model = "vm.updateBy"
+               class="form-control form-18">
+
+        <button class="btn btn-primary"
+                ng-click = "vm.search()"
+        >查询</button>
+    </div>
+</form>
+<!-- 列表标题 -->
+<div class="title-warp">
+    <strong class="title">Banner图列表</strong>
+    <button class="btn btn-success"
+            ui-sref ="backStage.bannerEdit({id:0})"
+    >新增</button>
+</div>
+
+<div class="table-responsive border">
+    <table class="table table-hover">
+        <tbody>
+        <tr>
+            <th class="text-center index-title">图片编号</th>
+            <th class="text-center list-title">图片标题</th>
+            <th class="text-center list-title">缩略图</th>
+            <th class="text-center list-title">创建人</th>
+            <th class="text-center list-title">创建时间</th>
+            <th class="text-center list-title">更新人</th>
+            <th class="text-center list-title">更新时间</th>
+            <th class="text-center list-title">状态</th>
+            <th class="text-center list-title">操作</th>
+
+        </tr>
+        <tr ng-repeat="x in vm.list">
+            <td class="text-center index" ng-bind="x.id"></td>
+            <td class="text-center" ng-bind="x.title"></td>
+            <td class="text-center" >
+                <!--<img ng-src = "x.productUrl" alt="">-->
+            </td>
+            <td class="text-center" ng-bind="x.createBy"></td>
+            <td class="text-center time" ng-bind="x.createAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
+            <td class="text-center " ng-bind="x.updateBy"></td>
+            <td class="text-center time" ng-bind="x.updateAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
+            <td class="text-center ">{{x.state | bannerState}}</td>
+
+
+            <td class="text-center">
+                <button class="btn btn-default"  ng-click = "vm.stateChange(x.id,x.state)">{{x.state | productStateChange}}</button>
+                <button class="btn btn-info" ui-sref ="backStage.bannerEdit({id:x.id})">编辑</button>
+                <button class="btn btn-default"  ng-click = "vm.delete(x.id,x.state)">删除</button>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="table-foot">
+    <div class="btn-list-size ">
+        <span>每页显示</span>
+        <input type="text" class="form-control  small" ng-model="vm.size" ng-init="vm.size = 10 ">
+        <span>条</span>
+    </div>
+    <ul    class="apage "
+           uib-pagination
+           total-items="vm.totalItems"
+           ng-model="vm.page"
+           max-size="5"
+           items-per-page = "vm.size"
+           first-text="第一页"
+           previous-text = "<"
+           next-text = ">"
+           ng-click="vm.search()"
+           rotate = "true"
+           force-ellipses = "true"
+           last-text="最后页"
+           boundary-links="true"
+           boundary-link-numbers="true">
+    </ul>
+    <div class="btn-list-page">
+        <span>去第</span>
+        <input type="text" class="form-control small" ng-model="vm.newPage">
+        <span>页</span>
+        <button class="btn btn-default" ng-click="vm.search()" >确定</button>
+    </div>
+</div>

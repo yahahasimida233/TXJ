@@ -1,0 +1,14 @@
+<div>
+    <label for="upLoadImg" class="img-input">
+        <span ng-hide ="vm.imgUploadSuccess === 'success'">点击添加图片</span>
+        <img ng-src = "vm.imgSrc"
+             class="img-responsive"
+             ng-show ="vm.imgUploadSuccess === 'success'">
+    </label>
+    <input style="display:none;"
+           id = "upLoadImg"
+           type="file"
+           accept="image/*"
+           ng-value="file"
+           onchange="angular.element(this).scope().vm.imgUpload(this.files)">
+</div>

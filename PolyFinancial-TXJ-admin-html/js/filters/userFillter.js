@@ -1,4 +1,5 @@
-app.filter('status', function() { //可以注入依赖
+
+app.filter('status', function() {
     return function(text) {
         if(text == 0){
             return text = "冻结"
@@ -126,14 +127,14 @@ app.filter("userState", function () {
                 break;
         }
     }
-})
+});
 // 角色不可编辑按钮
 app.filter("btnDisabled", function () {
     return function (edit) {
         var newEdit = edit == true ? false : true;
         return newEdit;
     }
-})
+});
 
 app.filter('productMode',function(){
     return function (a){
@@ -180,3 +181,57 @@ app.filter('productStateChange',function(){
         return a;
     }
 });
+<<<<<<< HEAD
+=======
+
+app.filter('bannerState',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "上架";
+                break;
+            case "1":
+                a = "下架";
+                break;
+
+        }
+        return a;
+    }
+
+});
+
+app.filter('feedbackState',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "已回复";
+                break;
+            case "1":
+                a = "回复";
+                break;
+
+        }
+        return a;
+    }
+
+});
+
+app.filter('messageState',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "已推送";
+                break;
+            case "1":
+                a = "待推送";
+                break;
+            case "2":
+                a = "已取消";
+                break;
+
+        }
+        return a;
+    }
+
+});
+>>>>>>> ed7e1b81ac311523c8807d82640c1ddf3ed7fa9d

@@ -62,7 +62,6 @@
         <div class="debtEditContent-data">
             <span class="debtEditContent-span">*借&#12288款&#12288日&#12288&#12288</span>
             <input type="text"
-
                    class="form-control date-input"
                    uib-datepicker-popup="{{vm.startDate}}"
                    ng-model="vm.loanAt"
@@ -107,6 +106,7 @@
         <div class="debtEditContent-row">
             <button class="btn btn-success"
                     ng-disabled="debtEditForm.$invalid"
+                    ng-click = "vm.change()"
             >保存</button>
             <button class="btn btn-danger"  ui-sref ="backStage.debt">取消</button>
         </div>

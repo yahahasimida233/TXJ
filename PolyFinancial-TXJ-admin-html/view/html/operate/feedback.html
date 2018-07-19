@@ -1,0 +1,110 @@
+<!-- 搜索条件 -->
+<form class="searchCondition">
+    <div class="search-row">
+
+        <label class="tips" for="adminId">意见ID</label>
+        <input type="text"
+               id="adminID"
+               ng-model = "vm.id"
+               class="form-control form-18">
+
+        <label class="tips" for="title">关键词</label>
+        <input type="text"
+               id="title"
+               ng-model = "vm.keyword"
+               class="form-control form-18">
+
+
+        <button class="btn btn-danger"
+                ng-click = "vm.reset()"
+        >重置</button>
+
+    </div>
+    <div class="search-row">
+
+        <label class="tips" for="username">提交人</label>
+        <input type="text"
+               id="username"
+               ng-model = "vm.submitBy"
+               class="form-control form-18">
+
+
+        <label class="tips" for="creater">手机号</label>
+        <input type="text"
+               id="creater"
+               ng-model = "vm.phoneNum"
+               class="form-control form-18">
+
+        <button class="btn btn-primary"
+                ng-click = "vm.search()"
+        >查询</button>
+    </div>
+</form>
+<!-- 列表标题 -->
+<div class="title-warp">
+    <strong class="title">推荐列表</strong>
+</div>
+
+<div class="table-responsive border">
+    <table class="table table-hover">
+        <tbody>
+        <tr>
+            <th class="text-center index-title">意见ID</th>
+            <th class="text-center list-title">意见内容</th>
+            <th class="text-center list-title">提交人</th>
+            <th class="text-center list-title">手机号</th>
+            <th class="text-center list-title">提交时间</th>
+            <th class="text-center list-title">回复人</th>
+            <th class="text-center list-title">回复时间</th>
+            <th class="text-center list-title">操作</th>
+
+        </tr>
+        <tr ng-repeat="x in vm.list">
+            <td class="text-center index" ng-bind="x.id"></td>
+            <td class="text-center" ng-bind="x.opinionContent"></td>
+            <td class="text-center" ng-bind="x.submitBy" ></td>
+            <td class="text-center" ng-bind="x.phoneNum"></td>
+            <td class="text-center time" ng-bind="x.submitTime | date:'yyyy/MM/dd HH:mm:ss'"></td>
+            <td class="text-center " ng-bind="x.replyBy"></td>
+            <td class="text-center time" ng-bind="x.replyAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
+            <td class="text-center">
+                <button class="btn btn-default"
+                        ng-disabled = "x.opinionState == 0"
+                        ui-sref ="backStage.feedbackReply({id:x.id})">{{x.opinionState | feedbackState}}</button>
+                <button class="btn btn-info" ui-sref ="backStage.feedbackDetailed({id:x.id})">查看</button>
+                <button class="btn btn-default"  ng-click = "vm.delete(x.id,x.state)">删除</button>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="table-foot">
+    <div class="btn-list-size ">
+        <span>每页显示</span>
+        <input type="text" class="form-control  small" ng-model="vm.size" ng-init="vm.size = 10 ">
+        <span>条</span>
+    </div>
+    <ul    class="apage "
+           uib-pagination
+           total-items="vm.totalItems"
+           ng-model="vm.page"
+           max-size="5"
+           items-per-page = "vm.size"
+           first-text="第一页"
+           previous-text = "<"
+           next-text = ">"
+           ng-click="vm.search()"
+           rotate = "true"
+           force-ellipses = "true"
+           last-text="最后页"
+           boundary-links="true"
+           boundary-link-numbers="true">
+    </ul>
+    <div class="btn-list-page">
+        <span>去第</span>
+        <input type="text" class="form-control small" ng-model="vm.newPage">
+        <span>页</span>
+        <button class="btn btn-default" ng-click="vm.search()" >确定</button>
+    </div>
+</div>

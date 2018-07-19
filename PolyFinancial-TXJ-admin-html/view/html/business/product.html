@@ -1,99 +1,118 @@
-<div class="row user ">
-    <div class="col-xs-4">
-        <span>产品ID：</span><input class="form-control" type="text" ng-model ="vm.productId">
+<!-- 搜索条件 -->
+<form class="searchCondition">
+    <div class="search-row">
+
+        <label class="tips" for="adminId">产品ID</label>
+        <input type="text"
+               id="adminID"
+               ng-model = "vm.productId"
+               class="form-control form-18">
+
+        <label class="tips" for="title">产品名称</label>
+        <input type="text"
+               id="title"
+               ng-model = "vm.productName"
+               class="form-control form-18">
+
+
+        <button class="btn btn-danger"
+                ng-click = "vm.reset()"
+        >重置</button>
+
     </div>
-    <div class="col-xs-4">
-        <span>产品名称：</span><input class="form-control" type="text" ng-model ="vm.productName">
-    </div>
-    <div class="col-xs-4">
-        <span></span>
-        <button class="btn btn-danger" ng-click = "vm.reset()">重置</button>
-        <span></span>
-    </div>
-    <div class="col-xs-4">
-        <span>创建人：</span><input class="form-control" type="text" ng-model = "vm.createBy" >
-    </div>
-    <div class="col-xs-4">
-        <span>状态：</span>
-        <select class="form-control" ng-model = "vm.status" >
+    <div class="search-row">
+
+        <label class="tips" for="username">创建人</label>
+        <input type="text"
+               id="username"
+               ng-model = "vm.createBy"
+               class="form-control form-18">
+
+
+        <label class="tips" for="creater">状态</label>
+        <select class="form-control" id="creater" ng-model = "vm.status" >
+            <option value="">--请选择一个状态--</option>
             <option value="0">上架</option>
             <option value="1">下架</option>
         </select>
-    </div>
-    <div class="col-xs-4">
-        <span></span>
-        <button class="btn btn-success" ng-click = "vm.debtSearch()">搜索</button>
-        <span></span>
-    </div>
-    <div class="col-xs-12">
-        <h2 >产品列表</h2>
-        <button class="btn btn-info"
-                ui-sref ="backStage.productEdit({id:0})"
-        >新增</button>
-    </div>
 
-    <div class="table-responsive col-xs-12" style="min-height: 5rem">
-        <table id="tb" class="table table-striped table-hover table-responsive table-condensed table-bordered table-content">
-            <tr>
-                <td><strong>产品ID</strong></td>
-                <td><strong>产品名称</strong></td>
-                <td><strong>预期年利率（%）</strong></td>
-                <td><strong>投资周期（天）</strong></td>
-                <td><strong>起投金额（元）</strong></td>
-                <td><strong>最小增减金额（元）</strong></td>
-                <td><strong>还款方式</strong></td>
-                <td><strong>创建人</strong></td>
-                <td><strong>创建时间</strong></td>
-                <td><strong>状态</strong></td>
-                <td><strong>操作</strong></td>
-            </tr>
-            <tr ng-repeat="x in vm.list">
-                <td>{{x.productId}}</td>
-                <td>{{x.productName}}</td>
-                <td>{{x.interestYear}}</td>
-                <td>{{x.productTerm}}</td>
-                <td>{{x.startMoney}}</td>
-                <td>{{x.minMoney}}</td>
-                <td>{{x.repaymentMode | productMode }}</td>
-                <td>{{x.createBy }}</td>
-                <td>{{x.createAt}</td>
-                <td>{{x.state productState}}</td>
-
-                <td>
-                    <button class="btn btn-default"  ng-click = "vm.stateChange(x.id,x.state)">{{x.state | productStateChange}}</button>
-                    <button class="btn btn-info" ui-sref ="backStage.productEdit({id:x.id})">编辑</button>
-                    <button class="btn btn-default"  ng-click = "vm.delete(x.id,x.state)">删除</button>
-                </td>
-            </tr>
-        </table>
+        <button class="btn btn-primary"
+                ng-click = "vm.search()"
+        >查询</button>
     </div>
-    <div class="table-foot col-xs-12">
-        <div class="btn-list-size ">
-            <span>每页显示</span>
-            <input type="text" class="form-control  small" ng-model="vm.size" ng-init="vm.size = 10 ">
-            <span>条</span>
-        </div>
-        <ul    class="apage "
-               uib-pagination
-               total-items="vm.totalItems"
-               ng-model="vm.page"
-               max-size="5"
-               items-per-page = "vm.size"
-               first-text="第一页"
-               previous-text = "<"
-               next-text = ">"
-               ng-click="vm.search()"
-               rotate = "true"
-               force-ellipses = "true"
-               last-text="最后页"
-               boundary-links="true"
-               boundary-link-numbers="true">
-        </ul>
-        <div class="btn-list-page">
-            <span>去第</span>
-            <input type="text" class="form-control small" ng-model="vm.newPage">
-            <span>页</span>
-            <button class="btn btn-default" ng-click="vm.search()" >确定</button>
-        </div>
+</form>
+<!-- 列表标题 -->
+<div class="title-warp">
+    <strong class="title">产品列表</strong>
+    <button class="btn btn-success"
+            ui-sref ="backStage.productEdit({id:0})"
+    >新增</button>
+</div>
+
+<div class="table-responsive border">
+    <table class="table table-hover">
+        <tbody>
+        <tr>
+            <td class="text-center index-title"><strong>产品ID</strong></td>
+            <td class="text-center list-title"><strong>产品名称</strong></td>
+            <td class="text-center list-title"><strong>预期年利率（%）</strong></td>
+            <td class="text-center list-title"><strong>投资周期（天）</strong></td>
+            <td class="text-center list-title"><strong>起投金额（元）</strong></td>
+            <td class="text-center list-title"><strong>最小增减金额（元）</strong></td>
+            <td class="text-center list-title"><strong>还款方式</strong></td>
+            <td class="text-center list-title"><strong>创建人</strong></td>
+            <td class="text-center list-title" ><strong>创建时间</strong></td>
+            <td class="text-center list-title"><strong>状态</strong></td>
+            <td class="text-center list-title"><strong>操作</strong></td>
+        </tr>
+        <tr ng-repeat="x in vm.list">
+            <!--正式接口productId改为id-->
+            <td class="text-center index">{{x.productId}}</td>
+            <td class="text-center index">{{x.productName}}</td>
+            <td class="text-center index" >{{x.interestYear}}</td>
+            <td class="text-center index" >{{x.productTerm}}</td>
+            <td class="text-center index" >{{x.startMoney}}</td>
+            <td class="text-center index">{{x.minMoney}}</td>
+            <td class="text-center index">{{x.repaymentMode | productMode }}</td>
+            <td class="text-center index">{{x.createBy }}</td>
+            <td class="text-center index">{{x.createAt}</td>
+            <td class="text-center index">{{x.state productState}}</td>
+
+            <td>
+                <button class="btn btn-default"  ng-click = "vm.stateChange(x.id,x.state)">{{x.state | productStateChange}}</button>
+                <button class="btn btn-info" ui-sref ="backStage.productEdit({id:x.id})">编辑</button>
+                <button class="btn btn-default"  ng-click = "vm.delete(x.id,x.state)">删除</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="table-foot">
+    <div class="btn-list-size ">
+        <span>每页显示</span>
+        <input type="text" class="form-control  small" ng-model="vm.size" ng-init="vm.size = 10 ">
+        <span>条</span>
+    </div>
+    <ul    class="apage "
+           uib-pagination
+           total-items="vm.totalItems"
+           ng-model="vm.page"
+           max-size="5"
+           items-per-page = "vm.size"
+           first-text="第一页"
+           previous-text = "<"
+           next-text = ">"
+           ng-click="vm.search()"
+           rotate = "true"
+           force-ellipses = "true"
+           last-text="最后页"
+           boundary-links="true"
+           boundary-link-numbers="true">
+    </ul>
+    <div class="btn-list-page">
+        <span>去第</span>
+        <input type="text" class="form-control small" ng-model="vm.newPage">
+        <span>页</span>
+        <button class="btn btn-default" ng-click="vm.search()" >确定</button>
     </div>
 </div>

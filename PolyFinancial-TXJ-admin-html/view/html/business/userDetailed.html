@@ -9,7 +9,7 @@
         <div>ID:{{vm.list.id}}</div>
         <div>
             手机号：{{vm.list.phoneNum}}
-            <button class="btn btn-default" ng-click = "vm.changePhone">更换</button>
+            <button class="btn btn-default" ng-click = "vm.allOpen()">更换</button>
         </div>
 
         <div>银行卡1：{{vm.card1}}</div>
@@ -27,4 +27,33 @@
         <button class="btn btn-default" ui-sref ="backStage.userTrade({id:vm.list.id})" >交易记录</button>
         <button class="btn btn-default " ui-sref ="backStage.userContract({id:vm.list.id})" >投资合同</button>
     </div>
+    <form class="changePhoneNum" ng-show = "vm.all" name="changePhoneNum">
+       <div class="all">
+           <h3>更换</h3>
+           <div class="left">
+               <span>请输入要更换的新手机号码：</span>
+               <input type="text"
+                      name="phoneNum"
+                      ng-pattern="/^(((\+86)|(86))?1[0-9]{10})$/"
+                      ng-model = "phoneNum"
+                      required
+                      class="form-control">
+               <span style="color: red" ng-show="changePhoneNum.phoneNum.$error.pattern ">手机号码格式错误</span>
+               <span style="color: red" ng-show="vm.error1">手机号码已绑定</span>
+               <span>请输入验证码：</span>
+               <input type="text" class="form-control" required>
+               <span style="color: red" ng-show="vm.error2">短信验证码错误请重试</span>
+
+           </div>
+           <div class="right">
+               <button class="btn btn-default" ng-disable ="vm.error2">获取短信验证码</button>
+               <span style="color: red" ng-show="vm.error3">60S后可重新获取</span>
+               <span style="color: red" ng-show="vm.error4">今日获取已达上限冻结2小时后可重新获取</span>
+           </div>
+           <div class="bottom">
+               <button class="btn" ng-click = "vm.changePhone()" ng-disabled="changePhoneNum.$invalid">确认</button>
+               <button class="btn" ng-click ="vm.close()">取消</button>
+           </div>
+       </div>
+    </form>
 </div>

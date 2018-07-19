@@ -1,0 +1,107 @@
+<div class="bannerEdit all-content">
+    <div class="table-title">
+        <h3>{{vm.messageTitle}}</h3>
+        <button class="btn btn-default" ui-sref ="backStage.message">返回</button>
+    </div>
+    <form class="messageEditContent"  name="messageEditForm">
+        <div>推送内容</div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': messageEditForm.pictureName.$dirty && messageEditForm.pictureName.$invalid}">
+            <span>*消息标题</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model ="vm.articleTitle"
+                   name="pictureName"
+                   placeholder="请输入消息标题（20字以内）"
+                   ng-pattern="/^[\u4e00-\u9fa5]{2,10}$/">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="messageEditForm.pictureName.$error.pattern ">请输入2-10个汉字</span>
+        </div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': messageEditForm.carouselTime.$dirty && messageEditForm.carouselTime.$invalid}">
+            <span>*消息内容</span>
+            <textarea type="text"
+                      required
+                      class="form-control productEdit-bigInput"
+                      ng-model = "vm.introduction "
+                      name = "introduction"
+                      ng-maxlength="200"
+                      placeholder="请详细描述您要填写的内容。（限制字数100字以内）"></textarea>
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="messageEditForm.introduction.$error.maxlength">字数已超过上限，建议重新编辑。</span>
+            <div>
+                <label for="upLoadImg" class="img-input">
+                    <span ng-hide ="vm.imgUploadSuccess === 'success'">点击添加图片</span>
+                    <img ng-src = "vm.imgSrc"
+                         class="img-responsive"
+                         ng-show ="vm.imgUploadSuccess === 'success'">
+                </label>
+                <input style="display:none;"
+                       id = "upLoadImg"
+                       type="file"
+                       accept="image/*"
+                       ng-value="file"
+                       onchange="angular.element(this).scope().vm.imgUpload(this.files)">
+            </div>
+        </div>
+        <div>推送设置</div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': messageEditForm.pictureName.$dirty && messageEditForm.pictureName.$invalid}">
+            <span>*推送时间</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model ="vm.articleTitle"
+                   name="pictureName"
+                   placeholder="请输入消息标题（20字以内）"
+                   ng-pattern="/^[\u4e00-\u9fa5]{2,10}$/">
+
+        </div>
+        <div class="debtEditContent-row">
+            <span>*推送时间</span>
+            <div>
+                <label>
+                    <input type="radio" id="rightNow" name="setTime" checked>
+                    <label for="rightNow" >马上推送</label>
+                </label>
+                <label>
+                    <input type="radio" name="setTime" id="setTime" />
+                    <label for="setTime" >
+                        定时推送
+                        <input type="text"
+                               class="form-control date-input"
+                               uib-datepicker-popup="{{vm.startDate}}"
+                               ng-model="vm.loanAt"
+                               is-open="vm.popup.opened"
+                               ng-required="true"
+                               close-text="关闭"
+                               clear-text="清空"
+                               current-text="今天"
+                               alt-input-formats="vm.altInputFormats"
+                               ng-click="vm.open()"
+                               placeholder="请输入日期"
+                               required="required">
+                    </label>
+                </label>
+            </div>
+        </div>
+        <div class="debtEditContent-row">
+            <span>*推送对象</span>
+            <label>
+                <input type="radio" id="all" name="all" checked>
+                <label for="all" >所有人</label>
+            </label>
+        </div>
+
+        <div class="debtEditContent-row">
+            <button class="btn btn-success"
+                    ng-disabled="messageEditForm.$invalid"
+                    ng-click = "vm.change()"
+            >保存</button>
+            <button class="btn btn-danger"  ui-sref ="backStage.banner">取消</button>
+        </div>
+    </form>
+</div>
