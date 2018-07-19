@@ -1,5 +1,6 @@
 angular.module("txj").factory("serviceURL", function() {
     return {
+
         // 登陆
         loginURL: "/admin/admin/a/u/loginIn",
 
@@ -70,6 +71,7 @@ angular.module("txj").factory("serviceURL", function() {
         messageNewURL:"/admin/admin/a/u/article",
         messageDeleteURL:"/admin/admin/a/u/article",
         messageCancelURL:"/admin/admin/a/u/article/state/",
+
 
 
         searchURL: "/carrots-admin-ajax/a/article/search",
