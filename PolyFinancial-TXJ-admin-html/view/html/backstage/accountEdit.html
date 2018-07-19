@@ -1,0 +1,74 @@
+<form name="accountForm" class="passwordForm">
+    <div class="username" ng-class="{'has-error': accountForm.username.$dirty && accountForm.username.$invalid}">  
+        <span class="tips">用户名:</span>
+        <input 
+            type="username" 
+            placeholder="6-18位，由汉字、字母和数字组成。" 
+            class="form-control from-35" 
+            name="username" 
+            id="username" 
+            ng-model="vm.username" 
+            ng-pattern="/^[A-Za-z0-9\u4e00-\u9fa5]+$/"
+            minlength="6" 
+            maxlength="18" 
+            ng-minlength="6" 
+            ng-maxlength="18" 
+            required
+        >
+        <div class="tipsRed" 
+        ng-show="accountForm.username.$error.pattern || accountForm.username.$error.minlength">用户名格式错误，请重试</div>
+    </div>
+
+    <div class="password" ng-class="{'has-error': accountForm.password.$dirty && accountForm.password.$invalid}">
+        <span class="tips">密码:</span>
+        <input 
+            type="password" 
+            placeholder="6-18位，至少含数字/字母/符号2种组合。" 
+            class="form-control from-35" 
+            name="password" 
+            id="password" 
+            ng-model="vm.password" 
+            ng-pattern="/^(?![A-Z]+$)(?![a-z]+$)(?!\d+$)(?![\W_]+$)\S+$/"
+            minlength="6" 
+            maxlength="18" 
+            ng-minlength="6" 
+            ng-maxlength="18" 
+            required
+        >
+        <div class="tipsRed" 
+        ng-show="accountForm.password.$error.pattern || accountForm.password.$error.minlength">旧密码格式错误，请重试</div>
+    </div>
+
+    <input type="checkbox" 
+           id="checkallpigdata" 
+           ng-model="vm.admin2" 
+           ng-click="vm.checkAll(vm.admin2)"/>
+    <label for="checkallpigdata">全选</label>
+
+    <button class="btn" ng-click="vm.id(vm.admin)">上传</button>
+
+
+     <!-- <input type="checkbox" 
+           id="checkallpigdata" 
+           ng-model="$scope.admin" 
+           ng-click="checkAll($scope.admin)" />
+    <label for="checkallpigdata">全选</label> -->
+
+    <!-- <div class="role" ng-class="{'has-error': accountForm.role.$dirty && accountForm.role.$invalid}">
+        <span class="tips">角色:</span>   -->
+
+        <label ng-repeat="item in vm.admin">
+        <input type="checkbox" 
+               ng-model="item.ifChecked"  
+               ng-click="vm.selectCheck(item.ifChecked,$index)"
+               ng-change="vm.log()">{{item.role}}
+        </label>  
+<!-- 
+        <label ng-repeat="item in vm.admin">
+        <input type="checkbox" 
+               ng-model="item.id"  
+               ng-click="vm.selectCheck(item.ifChecked,$index)"
+               ng-change="vm.log()">{{item.role}}
+        </label>   -->
+    </div>
+</form>

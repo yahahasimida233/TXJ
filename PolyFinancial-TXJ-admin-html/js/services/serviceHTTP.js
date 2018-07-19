@@ -289,12 +289,21 @@ angular.module("txj")
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 })
             },
-            sAccountHTTP: function (account) {   //搜索用户
+            sAccountHTTP: function (account) {   //搜索帐号
                 return $http({
                     url:serviceURL.sAccountURL,
                     method: "GET",
                     params: account,
                     headers: {"Conten-Type": "application/x-www-from-urlencoded"}
+                })
+            },
+            dAccountHTTP: function (id) { //删除帐号
+                return $http({
+                    url: serviceURL.dAccountURL + id,
+                    method: "DELETE ",
+                    headers: {
+                        "Conten-Type": "application/x-www-from-urlencoded"
+                    }
                 })
             }
         }

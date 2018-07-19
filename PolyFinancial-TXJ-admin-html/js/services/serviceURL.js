@@ -36,5 +36,6 @@ angular.module("txj").factory("serviceURL", function() {
         // 后台管理
         changePwURL: "/admin/admin/a/u/account/password",  //更改密码
         sAccountURL: "/admin/admin/a/u/account/list",      //搜索帐号
+        dAccountURL: "/admin/admin/a/u/account",           //删除帐号
     };
 });

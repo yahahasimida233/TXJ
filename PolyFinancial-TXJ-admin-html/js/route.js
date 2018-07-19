@@ -252,7 +252,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 账户管理
         .state('backStage.account',{
             // params: {role: null },
-            url: "/account?role",
+            url: "/account?adminId&role&username&creater&goPage&size",
             templateUrl: 'view/html/backstage/account.html',
             controller: 'accountCtrl as vm',
             resolve: {
@@ -269,10 +269,19 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 账户编辑
         .state('backStage.accountEdit',{
-            url:"/accountEdit",
+            url:"/accountEdit?id",
             templateUrl: 'view/html/backstage/accountEdit.html',
-            controller: 'accountEditCtrl',
-            controllerAs:'vm'
+            controller: 'accountEditCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/backstage/accountEditCtrl.js"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 模块管理
