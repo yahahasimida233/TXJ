@@ -20,7 +20,7 @@ angular.module("txj").factory("serviceURL", function() {
 
         // 用户管理
         userListURL:"/admin/admin/a/u/user/list/",
-        userSearchURL:"/admin/admin/a/u/user/search/",
+
         userDetailedURL:"/admin/admin/a/u/user/search/",
         userFrozenURL:"/admin/admin/a/u/user/search/",
         userTradeURL:"/admin/admin/a/u/user/trade/",

@@ -21,7 +21,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/login",
             templateUrl: 'view/html/login.html',
             controller: 'loginCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+
 
         })
 
@@ -39,8 +40,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/user",
             templateUrl: 'view/html/business/user.html',
             controller: 'userCtrl',
-            controllerAs:'vm'
-
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/business/userCtrl.js",
+                            "./css/modules/business/user.css"
+                        ]);
+                    }
+                ]
+            }
         })
 
         // 用户详情
@@ -48,14 +59,17 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/userDetailed?id",
             templateUrl: 'view/html/business/userDetailed.html',
             controller: 'userDetailedCtrl as vm',
-            // resolve: {
-            //     loadMyFile: [
-            //         "$ocLazyLoad",
-            //         function ($ocLazyLoad) {
-            //             return $ocLazyLoad.load("js/ctrl/userDetailedCtrl.js");
-            //         }
-            //     ]
-            // }
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/business/userDetailed.js",
+                            "./css/modules/business/userDetailed.css"
+                        ]);
+                    }
+                ]
+            }
 
         })
 
@@ -64,7 +78,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/userTrade?id",
             templateUrl: 'view/html/business/userTrade.html',
             controller: 'userTradeCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/business/userTradeCtrl.js",
+                            "./css/modules/business/userTrade.css"
+                        ]);
+                    }
+                ]
+            }
 
         })
 
@@ -73,7 +98,17 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/userContract?id",
             templateUrl: 'view/html/business/userContract.html',
             controller: 'userContractCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/business/userContract.js",
+                        ]);
+                    }
+                ]
+            }
         })
 
         // 用户管理投资合同详情查看
@@ -81,7 +116,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/userContractDetailed?id",
             templateUrl: 'view/html/business/userContractDetailed.html',
             controller: 'userContractDetailedCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/business/userContractDetailed.js",
+                            "./css/modules/business/contractDetailed.css"
+                        ]);
+                    }
+                ]
+            }
         })
 
         // 债权管理
@@ -89,7 +135,17 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/debt",
             templateUrl: 'view/html/business/debt.html',
             controller: 'debtCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/business/debt.js",
+                        ]);
+                    }
+                ]
+            }
 
         })
 
@@ -98,7 +154,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/debtEdit?id",
             templateUrl: 'view/html/business/debtEdit.html',
             controller: 'debtEditCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/business/debtEdit.js",
+                            "./css/modules/business/debtEdit.css"
+                        ]);
+                    }
+                ]
+            }
 
         })
 
@@ -107,7 +174,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url:"/matching?id",
             templateUrl: 'view/html/business/matching.html',
             controller: 'matchingCtrl',
-            controllerAs:'vm'
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/business/matching.js",
+                            "./css/modules/business/matching.css"
+                        ]);
+                    }
+                ]
+            }
 
         })
 
@@ -265,10 +343,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 
         // 消息查看
-        .state('backStage.messageSee',{
-            url:"/messageSee?id",
+        .state('backStage.messageDetailed',{
+            url:"/messageDetailed?id",
             templateUrl: 'view/html/operate/messageSee.html',
-            controller: 'messageSeeCtrl',
+            controller: 'messageDetailedCtrl',
             controllerAs:'vm',
             resolve: {
                 loadMyFile: [

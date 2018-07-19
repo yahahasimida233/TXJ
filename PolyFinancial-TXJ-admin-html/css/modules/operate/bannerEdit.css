@@ -1,0 +1,16 @@
+.debtEditContent {
+  padding: .2rem; }
+
+.debtEditContent-row {
+  margin: .2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  .debtEditContent-row span {
+    height: .4rem;
+    line-height: .4rem; }
+  .debtEditContent-row button {
+    margin: .2rem; }
+
+/*# sourceMappingURL=bannerEdit.css.map */

@@ -6,11 +6,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap; }
-  .debtEditContent-row span {
-    height: .4rem;
-    line-height: .4rem; }
-  .debtEditContent-row button {
-    margin: .2rem; }
 
 .debtEditContent-data {
   margin: .2rem 0;

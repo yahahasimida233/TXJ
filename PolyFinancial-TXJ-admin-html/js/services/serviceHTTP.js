@@ -266,7 +266,7 @@ angular.module("txj")
                 })
             },
 
-            // 产品具体信息
+            // banner具体信息
             bannerDetailedHTTP: function (info) {
                 return $http({
                     method: "get",
@@ -278,7 +278,7 @@ angular.module("txj")
                 })
             },
 
-            // 提交产品编辑
+            // 提交banner编辑
             bannerEditHTTP: function (info) {
                 return $http({
                     method: "put",
@@ -290,7 +290,7 @@ angular.module("txj")
                 })
             },
 
-            // 新增产品
+            // 新增banner
             bannerNewHTTP: function (info) {
                 return $http({
                     method: "post",
@@ -302,7 +302,7 @@ angular.module("txj")
                 })
             },
 
-            // 上下架产品info
+            // banner上下架
             bannerGroundingHTTP: function (info) {
                 return $http({
                     method: "post",
@@ -314,7 +314,7 @@ angular.module("txj")
                 })
             },
 
-            // 删除产品
+            // 删除banner
             bannerDeleteHTTP: function (info) {
                 return $http({
                     method: "delete",
@@ -461,7 +461,7 @@ angular.module("txj")
         messageDetailedHTTP: function (info) {
             return $http({
                 method: "get",
-                url: serviceURL.messageDetailedURL,
+                url: serviceURL.messageDetailedURL+info,
                 params:info,
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"
@@ -469,7 +469,7 @@ angular.module("txj")
             })
         },
 
-        // 提交产品编辑
+        // 提交消息编辑
         messageEditHTTP: function (info) {
             return $http({
                 method: "put",
@@ -481,7 +481,7 @@ angular.module("txj")
             })
         },
 
-        // 新增产品
+        // 新增消息
         messageNewHTTP: function (info) {
             return $http({
                 method: "post",
@@ -493,7 +493,7 @@ angular.module("txj")
             })
         },
 
-        // 上下架产品
+        // 取消消息推送
         messageCancelHTTP: function (info) {
             return $http({
                 method: "post",
@@ -505,7 +505,7 @@ angular.module("txj")
             })
         },
 
-        // 删除产品
+        // 删除消息
         messageDeleteHTTP: function (info) {
             return $http({
                 method: "delete",
