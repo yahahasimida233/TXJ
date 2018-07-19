@@ -16,6 +16,14 @@ app.controller("userDetailedCtrl",function ($http,$state,serviceHTTP,$stateParam
         // 请求失败执行代码
     });
 
+    vm.all = false;//查看所有默认隐藏，点击事件才会让其显示，如下
+    vm.allOpen = function () {
+        vm.all = true;
+    };
+    vm.close = function () {
+        vm.all = false;
+    };
+
     // 目前接口中没有银行卡的数据暂时先空着，正确的应该是从请求中获得
     vm.card1 = vm.card2 = "没有绑定银行卡呢"
 });

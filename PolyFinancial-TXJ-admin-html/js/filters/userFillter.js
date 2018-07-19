@@ -1,4 +1,5 @@
-app.filter('status', function() { //可以注入依赖
+
+app.filter('status', function() {
     return function(text) {
         if(text == 0){
             return text = "冻结"
@@ -113,4 +114,133 @@ app.filter('debtState',function(){
         }
         return a;
     }
+});
+
+// 角色状态过滤
+app.filter("userState", function () {
+    return function (num) {
+        switch (num) {
+            case 0:
+                return "启用";
+                break;
+            case 1:
+                return "禁用";
+                break;
+        }
+    }
+});
+// 角色不可编辑按钮
+// app.filter("btnDisabled", function () {
+//     return function (edit) {
+//         if(edit==true){
+//             return false;    
+//         }
+//         else{
+//             return true
+//         }
+//     }
+// })
+app.filter("btnDisabled", function () {
+    return function (edit) {
+        var newEdit = edit == true ? false : true;
+        return newEdit;
+    }
+});
+
+app.filter('productMode',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "本息返还";
+                break;
+            case "1":
+                a = "先息后本";
+                break;
+
+        }
+        return a;
+    }
+});
+
+
+app.filter('productState',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "上架";
+                break;
+            case "1":
+                a = "下架";
+                break;
+
+        }
+        return a;
+    }
+});
+
+app.filter('productStateChange',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "下架";
+                break;
+            case "1":
+                a = "上架";
+                break;
+
+        }
+        return a;
+    }
+
+});
+
+app.filter('bannerState',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "上架";
+                break;
+            case "1":
+                a = "下架";
+                break;
+
+        }
+        return a;
+    }
+
+});
+
+app.filter('feedbackState',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "已回复";
+                break;
+            case "1":
+                a = "回复";
+                break;
+
+        }
+        return a;
+    }
+
+});
+
+app.filter('messageState',function(){
+    return function (a){
+        switch (a){
+            case "0":
+                a = "已推送";
+                break;
+            case "1":
+                a = "待推送";
+                break;
+            case "2":
+                a = "已取消";
+                break;
+
+        }
+        return a;
+    }
+
 });

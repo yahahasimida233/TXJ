@@ -1,0 +1,28 @@
+<div class="messageDetailed all-content">
+    <div class="table-title">
+        <h3>消息详情</h3>
+        <button class="btn btn-default" ui-sref ="backStage.message">返回</button>
+    </div>
+    <div class="messageEditContent">
+
+        <div class="debtEditContent-row">
+            <span>*消息标题：</span>
+            <span>{{vm.list.articleTitle}}</span>
+        </div>
+        <div class="debtEditContent-row">
+            <span>*消息内容：</span>
+            <span>{{vm.list.articleContent}}</span>
+            <div>
+                <img ng-src = "{{vm.list.articlePicture}}" alt="#">
+            </div>
+        </div>
+        <div class="debtEditContent-row">
+            <span>*推送时间：</span>
+            <span>{{vm.list.sendTime | date:'yyyy/MM/dd HH:mm:ss'}}</span>
+        </div>
+        <div class="debtEditContent-row">
+            <span>*推送对象：</span>
+            <span>所有人</span>
+        </div>
+    </div>
+</div>

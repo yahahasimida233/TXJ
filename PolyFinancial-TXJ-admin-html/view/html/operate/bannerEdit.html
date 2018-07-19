@@ -1,0 +1,72 @@
+<div class="bannerEdit all-content">
+    <div class="table-title">
+        <h3>{{vm.title}}</h3>
+        <button class="btn btn-default" ui-sref ="backStage.banner">返回</button>
+    </div>
+    <form class="bannerEditContent"  name="bannerEditForm">
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': bannerEditForm.pictureName.$dirty && bannerEditForm.pictureName.$invalid}">
+            <span>*Banner图标题</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model ="vm.pictureName"
+                   name="pictureName"
+                   placeholder="请输入banner图标题（2~10个汉字）"
+                   ng-pattern="/^[\u4e00-\u9fa5]{2,10}$/">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="bannerEditForm.pictureName.$error.pattern ">请输入2-10个汉字</span>
+        </div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': bannerEditForm.carouselTime.$dirty && bannerEditForm.carouselTime.$invalid}">
+            <span>*轮播间隔（S）</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model ="vm.carouselTime"
+                   name="carouselTime"
+                   ng-pattern="/^[0-9]*$/"
+                   placeholder="请输入轮播间隔（数字组成的整数）">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="bannerEditForm.carouselTime.$error.pattern ">轮播间隔错误，请重试。</span>
+        </div>
+        <div class="debtEditContent-row">
+            <span>*URL地址</span>
+            <input type="text"
+                   class="form-control"
+                   ng-model = "vm.url"
+                   placeholder="请输入URL地址，可为空。">
+        </div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': bannerEditForm.cardID.$dirty && bannerEditForm.cardID.$invalid}">
+            <span>*上传banner图</span>
+            <div>
+                <label for="upLoadImg" class="img-input">
+                    <span ng-hide ="vm.imgUploadSuccess === 'success'">点击添加图片</span>
+                    <img ng-src = "vm.imgSrc"
+                         class="img-responsive"
+                         ng-show ="vm.imgUploadSuccess === 'success'">
+                </label>
+                <input style="display:none;"
+                       id = "upLoadImg"
+                       type="file"
+                       accept="image/*"
+                       ng-value="file"
+                       onchange="angular.element(this).scope().vm.imgUpload(this.files)">
+            </div>
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="bannerEditForm.cardID.$error.pattern ">请输入正确的身份证号码</span>
+        </div>
+
+        <div class="debtEditContent-row">
+            <button class="btn btn-success"
+                    ng-disabled="bannerEditForm.$invalid"
+                    ng-click = "vm.change()"
+            >保存</button>
+            <button class="btn btn-danger"  ui-sref ="backStage.banner">取消</button>
+        </div>
+    </form>
+</div>

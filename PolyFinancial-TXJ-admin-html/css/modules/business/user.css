@@ -1,0 +1,12 @@
+.user div {
+  height: .6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .user div span {
+    flex-shrink: 0; }
+  .user div input {
+    flex-shrink: 1;
+    width: 1.2rem; }
+
+/*# sourceMappingURL=user.css.map */

@@ -1,0 +1,127 @@
+<div class="debtEdit all-content">
+    <div class="table-title">
+        <h3>{{vm.title}}</h3>
+        <button class="btn btn-default" ui-sref ="backStage.product">返回</button>
+    </div>
+    <form class="debtEditContent"  name="productEditForm">
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': productEditForm.productName.$dirty && productEditForm.enterpriseName.$invalid}">
+            <span>*产&#12288品&#12288名&#12288&#12288</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model ="vm.productName"
+                   name="productName"
+                   placeholder="请输入企业名称（2-10个汉字）"
+                   ng-pattern="/^[\u4e00-\u9fa5]{2,10}$/">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="productEditForm.productName.$error.pattern ">请输入2-10个汉字</span>
+        </div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': productEditForm.annualRate.$dirty && productEditForm.annualRate.$invalid}">
+            <span>*预期年利率（%）</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model ="vm.annualRate"
+                   name="annualRate"
+                   ng-pattern="/^[0-9]+([.]{1}[0-9]{1})?$/"
+                   placeholder="请输入预期年利率（百分比，仅保留一位小数点）">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="productEditForm.annualRate.$error.pattern ">请输入预期年利率（百分比，仅保留一位小数点）</span>
+        </div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': productEditForm.productTerm.$dirty && productEditForm.productTerm.$invalid}">
+            <span>*投资周期（天）</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model = "vm.productTerm"
+                   name = "productTerm"
+                   ng-pattern="/^[1-9]\d*$/"
+                   placeholder="请输入投资周期（数字组成的整数）">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="productEditForm.productTerm.$error.pattern ">请输入投资周期（数字组成的整数）</span>
+        </div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': productEditForm.startMoney.$dirty && productEditForm.startMoney.$invalid}">
+            <span>*起投金额（元）</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model = "vm.startMoney"
+                   name = "startMoney"
+                   ng-pattern="/^[1-9]\d*$/"
+                   placeholder="请输入起投金额（数字组成的整数）">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="productEditForm.startMoney.$error.pattern ">请输入起投金额（数字组成的整数）</span>
+        </div>
+        <div class="debtEditContent-data"
+             ng-class="{'has-error': productEditForm.minMoney.$dirty && productEditForm.minMoney.$invalid}">
+            <span class="debtEditContent-span">*最小增减金额（元）</span>
+            <input type="text"
+                   required
+                   class="form-control"
+                   ng-model = "vm.minMoney"
+                   name = "minMoney"
+                   ng-pattern="/^[1-9]\d*$/"
+                   placeholder="请输入最小增减金额（数字组成的整数）">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="productEditForm.minMoney.$error.pattern ">请输入最小增减金额（数字组成的整数）</span>
+        </div>
+        <div class="debtEditContent-row">
+            <span>*还款方式（元）</span>
+            <select class="form-control"
+                    required
+                    name = "loanAmount"
+                    ng-model = "vm.loanAmount">
+                <option value="0">本息返还</option>
+                <option value="1">先息后本</option>
+            </select>
+
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="productEditForm.loanAmount.$error.pattern ">请选择还款方式</span>
+        </div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': productEditForm.introduction.$dirty && productEditForm.introduction.$invalid}">
+            <span>*产品简介</span>
+            <textarea type="text"
+                   required
+                   class="form-control productEdit-bigInput"
+                   ng-model = "vm.introduction "
+                   name = "introduction"
+                   ng-maxlength="200"
+                   placeholder="请详细描述您要填写的内容。（限制字数100字以内）"></textarea>
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="productEditForm.introduction.$error.maxlength">字数已超过上限，建议重新编辑。</span>
+        </div>
+        <div class="debtEditContent-row"
+             ng-class="{'has-error': productEditForm.more.$dirty && productEditForm.more.$invalid}">
+            <span>*更多信息</span>
+            <textarea type="text"
+                   required
+                   class="form-control productEdit-bigInput"
+                   ng-model = "vm.more"
+                   name = "more"
+                   ng-maxlength="200"
+                   placeholder="请详细描述您要填写的内容。（限制字数100字以内）"></textarea>
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="productEditForm.more.$error.maxlength">字数已超过上限，建议重新编辑。</span>
+        </div>
+        <div class="debtEditContent-row">
+            <button class="btn btn-success"
+                    ng-disabled="productEditForm.$invalid"
+                    ng-click = "vm.save()"
+            >保存</button>
+            <button class="btn btn-danger"  ui-sref ="backStage.product">取消</button>
+        </div>
+    </form>
+</div>

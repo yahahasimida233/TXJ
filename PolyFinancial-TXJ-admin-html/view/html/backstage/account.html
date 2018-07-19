@@ -1,0 +1,80 @@
+<!-- 搜索条件 -->
+<form class="searchCondition">
+    <div class="search-row">
+
+        <label class="tips" for="adminId">帐号ID</label>
+        <input type="text" id="adminID" class="form-control form-18">
+
+        <label class="tips" for="role">角色</label>
+        <select id="role" class="form-control form-18" ng-model="vm.adminId" 
+                ng-options="x.role as x.role for x in vm.admin">
+            <option value="">--请选择--</option>
+        </select> 
+        
+        <button class="btn btn-danger">重置</button>
+    <!-- <button ng-click="vm.pipi()">皮皮兽师兄</button> -->
+    </div>
+    <div class="search-row">
+
+        <label class="tips" for="username">用户名</label>
+        <input type="text" id="username" class="form-control form-18">
+
+        
+        <label class="tips" for="creater">创建人</label>
+        <input type="text" id="creater" class="form-control form-18">
+
+        <button class="btn btn-primary">查询</button>
+    </div>
+</form> 
+<!-- 列表标题 -->
+<div class="title-warp">
+    <strong class="title">帐号列表</strong>
+    <button class="btn btn-success">新增</button>
+</div>
+
+<div class="table-responsive border">
+    <!-- <td>
+        <button class="btn" ng-disabled="vm.sure">编辑</button>
+    </td> -->
+<table class="table table-hover">
+<tbody>
+    <tr>
+        <th class="text-center index-title">序号</th>
+        <th class="text-center list-title">帐号ID</th>
+        <th class="text-center list-title">用户名</th>
+        <th class="text-center list-title">角色名</th>
+        <th class="text-center list-title">创建人</th>
+        <th class="text-center list-title">创建时间</th>
+        <th class="text-center list-title">更新人</th>
+        <th class="text-center list-title">更新时间</th>
+        <th class="text-center list-title">状态</th>
+        <th class="text-center list-title">操作</th>
+    </tr>
+    <tr ng-repeat="list in vm.lists">
+        <td class="text-center index" ng-bind="$index + 1"></td>
+        <td class="text-center" ng-bind="list.id"></td> 
+        <td class="text-center" ng-bind="list.account"></td>
+        <td class="text-center" ng-bind="list.role"></td>
+        <td class="text-center" ng-bind="list.createBy"></td>
+        <td class="text-center time" ng-bind=" list.createAt | date:'yyyy/MM/dd HH:mm:ss'"></td> 
+        <td class="text-center" ng-bind="list.updateBy"></td>
+        <td class="text-center time" ng-bind=" list.updateAt | date:'yyyy/MM/dd HH:mm:ss'"></td> 
+        <td class="text-center" ng-bind="list.state | userState"></td>
+
+        <td class="text-center">
+
+            <button class="btn btn-info" 
+                    ng-click="vm.write(list.id,list.edit)" 
+                    ng-disabled="list.edit | btnDisabled">编辑
+            </button>
+
+            <button class="btn btn-danger" 
+                    ng-click="vm.delete(list.id)" 
+                    ng-disabled="list.edit | btnDisabled">删除
+            </button>
+            
+        </td>
+    </tr>
+</tbody>
+</table>
+</div>
