@@ -19,6 +19,9 @@ body{
 .glyphicon{
   top: 0;
 }
+.inline-block{
+    display: inline-block;
+}
  //列表渲染
 table{
     background-color: #fff;
@@ -78,7 +81,7 @@ u{
 // 列表模块
 tr{
     .index-title{
-        padding: 20px 0 20px 20px !important;
+        padding: 30px 0 20px 20px !important;
     }
     .list-title{
         padding: 30px 0 20px !important;

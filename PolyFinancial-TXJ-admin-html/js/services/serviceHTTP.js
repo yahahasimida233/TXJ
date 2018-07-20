@@ -543,6 +543,34 @@ angular.module("txj")
                         "Conten-Type": "application/x-www-from-urlencoded"
                     }
                 })
+            },
+            aAccountHTTP: function (data) {  //新增帐号
+                return $http({
+                    url: serviceURL.aAccountURL,
+                    method: "POST",
+                    headers: {
+                        "Conten-Type": "application/x-www-from-urlencoded"
+                    }
+                })
+            },
+            gAccountHTTP: function (id) {   //编辑帐号页面获取帐号信息
+                return $http({
+                    url: serviceURL.gAccountURL + id,
+                    method: "GET",
+                    headers: {
+                        "Conten-Type": "application/x-www-from-urlencoded"
+                    }
+                })
+            },
+            wAccountHTTP: function (data,id) {  //编辑帐号
+                return $http({
+                    url: serviceURL.wAccountURL + id,
+                    method: "PUT",
+                    params: data,
+                    headers: {
+                        "Conten-Type": "application/x-www-from-urlencoded"
+                    }                                        
+                })
             }
         }
 })

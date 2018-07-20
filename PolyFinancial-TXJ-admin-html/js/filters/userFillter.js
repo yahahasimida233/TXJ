@@ -181,16 +181,26 @@ app.filter('productStateChange',function(){
         return a;
     }
 });
-<<<<<<< HEAD
-=======
 
+// app.filter("userState", function () {
+//     return function (num) {
+//         switch (num) {
+//             case 0:
+//                 return "启用";
+//                 break;
+//             case 1:
+//                 return "禁用";
+//                 break;
+//         }
+//     }
+// });
 app.filter('bannerState',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "上架";
                 break;
-            case "1":
+            case 1:
                 a = "下架";
                 break;
 
@@ -234,4 +244,3 @@ app.filter('messageState',function(){
     }
 
 });
->>>>>>> ed7e1b81ac311523c8807d82640c1ddf3ed7fa9d

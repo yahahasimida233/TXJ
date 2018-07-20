@@ -1,0 +1,24 @@
+@import "password"; 
+
+// 角色多选框（动态改变）
+.checkbox{
+    display: flex;
+    justify-content: center;
+    .checkbox-label{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+}
+// 复选框样式重置
+.radio,.checkbox{
+    margin: 0;
+}
+//左侧启用按钮样式调整
+.width-50{
+    width: 50%;
+}
+// 取消按钮，调整整行样式
+.cancel{
+    margin-left: 108px;
+    margin-right: 38px; 
+}

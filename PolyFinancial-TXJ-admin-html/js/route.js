@@ -464,7 +464,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     "$ocLazyLoad",
                     function ($ocLazyLoad) {
                         return $ocLazyLoad.load([
-                            "./js/ctrl/backstage/accountEditCtrl.js"
+                            "./js/ctrl/backstage/accountEditCtrl.js",
+                            "./css/modules/backstage/accountE.css"
                         ])
                     }
                 ]

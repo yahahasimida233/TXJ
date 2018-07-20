@@ -83,5 +83,8 @@ angular.module("txj").factory("serviceURL", function() {
         changePwURL: "/admin/admin/a/u/account/password",  //更改密码
         sAccountURL: "/admin/admin/a/u/account/list",      //搜索帐号
         dAccountURL: "/admin/admin/a/u/account",           //删除帐号
+        aAccountURL: "/admin/admin/a/u/account",           //新增帐号
+        gAccountURL: "/admin/admin/a/u/account",           //编辑帐号页面获取帐号信息
+        wAccountURL: "/admin/admin/a/u/account"            //编辑帐号
     };
 });

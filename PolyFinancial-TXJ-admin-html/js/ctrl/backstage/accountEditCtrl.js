@@ -1,21 +1,24 @@
 app.controller("accountEditCtrl", function ($scope, serviceHTTP, $state, $stateParams) {
     var vm = this;
-    vm.admin = JSON.parse(sessionStorage.getItem("admin"));
-    $scope.admin = vm.admin;
-    var arr = vm.admin;
-    for (i = 0; i < arr.length; i++) {
-        arr[i].ifChecked = false
+    var id = $state.params.id;
+    if(id){
+        vm.title = "用户编辑"
     }
-    console.log(arr);
-    
-    // angular.forEach(arr, function (data) {
-    //     data.ifChecked = false
-    // })
-    // console.log(vm.admin);
-    //单选
+    else{
+        vm.title = "帐号新增"
+    }
+
+    //拿到角色数组
+    vm.admin = JSON.parse(sessionStorage.getItem("admin"));
+    // $scope.admin = vm.admin;
+    // 给角色数组添加是否勾选的属性ifChecked，默认为不勾选
+    angular.forEach(vm.admin , function (data) {
+        data.ifChecked = false
+    })
+    console.log(vm.admin);
+    //单选角色
     vm.checkRole = function (ifChecked, index) {
         vm.admin[index].ifChecked == true ? false : true;
-        // console.log(vm.admin);
     }
     //监听函数
     vm.log = function () {
@@ -41,16 +44,101 @@ app.controller("accountEditCtrl", function ($scope, serviceHTTP, $state, $stateP
     //     });
     // };
 
-    console.log(vm.anmin);
+    console.log(vm.admin);
     console.log($scope.admin);
-    
-    vm.id = function (x) {
-        var arr2 = [];
-        for (i = 0; i < x.length; i++) {
-            if (x[i].ifChecked == true) {
-                arr2.push(x[i].id)
+
+    //保存
+    vm.sure = function (x) {
+        //确认除角色信息外的信息是否合法
+        if(!vm.username || !vm.password || vm.state == undefined){
+            bootbox.alert({
+                title: "<strong>提示信息</strong>",
+                message: " <p style='text-align: center'>请正确填写帐号信息。</p>",
+                buttons: {
+                    ok: {
+                        label: "确认",
+                        className: "btn-primary"
+                    }
+                }
+            })
+        }
+        else{
+            // 转成ID
+            vm.result = [];
+            for (i = 0; i < x.length; i++) {
+                if (x[i].ifChecked == true) {
+                    vm.result.push(x[i].id)
+                }
+            }
+            if (vm.result.length==0){
+                bootbox.alert({
+                    title: "<strong>提示信息</strong>",
+                    message: " <p style='text-align: center'>请正确填写帐号信息。</p>",
+                    buttons: {
+                        ok: {
+                            label: "确认",
+                            className: "btn-primary"
+                        }
+                    }
+                })
+            }
+            else{ //所有信息合法
+                var data = {  //建立发送请求的对象
+                    account: vm.username,
+                    password: vm.password,
+                    roleId: vm.result,
+                    state: vm.state
+                }
+                if (id){
+                    serviceHTTP.wAccountHTTP(data).then(function (res) {  //发送编辑请求
+                        console.log(res);
+                        if (res.code == -9002) {
+                            bootbox.alert({
+                                title: "<strong>提示信息</strong>",
+                                message: " <p style='text-align: center'>用户名已被占用，请重新输入</p>",
+                                buttons: {
+                                    ok: {
+                                        label: "确认",
+                                        className: "btn-primary"
+                                    }
+                                }
+                            })
+                        }
+                        if (res.code == 0) {
+                            bootbox.alert({
+                                title: "<strong>提示信息</strong>",
+                                message: " <p style='text-align: center'>编辑帐号成功</p>",
+                                buttons: {
+                                    ok: {
+                                        label: "确认",
+                                        className: "btn-primary"
+                                    }
+                                }
+                            }),
+                            $state.go("backStage.account");
+                        }
+                    })
+                }
+                else{
+                    serviceHTTP.aAccountHTTP(data).then(function (res) {  //发送新增请求
+                        console.log(res);
+                         
+                        if (res.code == 0) { //新增成功
+                            bootbox.alert({
+                                    title: "<strong>提示信息</strong>",
+                                    message: " <p style='text-align: center'>编辑帐号成功</p>",
+                                    buttons: {
+                                        ok: {
+                                            label: "确认",
+                                            className: "btn-primary"
+                                        }
+                                    }
+                                }),
+                            $state.go("backStage.account");
+                        }
+                    })
+                }
             }
         }
-        console.log(arr2);
     }
 })
