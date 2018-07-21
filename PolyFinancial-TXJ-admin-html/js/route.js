@@ -439,7 +439,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 账户管理
         .state('backStage.account',{
             // params: {role: null },
-            url: "/account?role",
+            url: "/account?adminId&role&username&creater&goPage&size",
             templateUrl: 'view/html/backstage/account.html',
             controller: 'accountCtrl as vm',
             resolve: {
@@ -456,26 +456,55 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 账户编辑
         .state('backStage.accountEdit',{
-            url:"/accountEdit",
+            url:"/accountEdit?id",
             templateUrl: 'view/html/backstage/accountEdit.html',
-            controller: 'accountEditCtrl',
-            controllerAs:'vm'
+            controller: 'accountEditCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/backstage/accountEditCtrl.js",
+                            "./css/modules/backstage/accountE.css"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 模块管理
         .state('backStage.module',{
-            url:"/module",
+            url: "/module?moduleId&moduleName&parentModuleId&creater&goPage&size",
             templateUrl:'view/html/backstage/module.html',
-            controller:'moduleCtrl',
-            controllerAs:'vm'
+            controller:'moduleCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/backstage/moduleCtrl.js",
+                        ])
+                    }
+                ]
+            }
         })
 
         // 模块编辑
         .state('backStage.moduleEdit',{
             url:"/moduleEdit",
             templateUrl:'view/html/backstage/moduleEdit.html',
-            controller:'moduleEditCtrl',
-            controllerAs:'vm'
+            controller:'moduleEditCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/backstage/moduleEditCtrl.js",
+                            "./css/modules/backstage/moduleE.css"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 角色管理

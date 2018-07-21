@@ -1,0 +1,95 @@
+<!-- 标题 -->
+<div class="title-warp">
+    <strong class="title">{{vm.title}}</strong>
+    <button class="btn btn-success" ui-sref="backStage.account">返回</button>
+</div>
+
+<form name="accountForm" class="passwordForm">
+    <div class="password" ng-class="{'has-error': accountForm.username.$dirty && accountForm.username.$invalid}">  
+        <span class="tips">用户名:</span>
+        <input 
+            type="username" 
+            placeholder="6-18位，由汉字、字母和数字组成。" 
+            class="form-control from-35" 
+            name="username" 
+            id="username" 
+            ng-model="vm.username" 
+            ng-pattern="/^[A-Za-z0-9\u4e00-\u9fa5]+$/"
+            minlength="6" 
+            maxlength="18" 
+            ng-minlength="6" 
+            ng-maxlength="18" 
+            required
+        >
+        <div class="tipsRed" 
+             ng-show="accountForm.username.$error.pattern || accountForm.username.$error.minlength">用户名格式错误，请重试</div>
+    </div>
+
+    <div class="password" ng-class="{'has-error': accountForm.password.$dirty && accountForm.password.$invalid}">
+        <span class="tips">密&emsp;码:</span>
+        <input 
+            type="password" 
+            placeholder="6-18位，至少含数字/字母/符号2种组合。" 
+            class="form-control from-35" 
+            name="password" 
+            id="password" 
+            ng-movm.passworddel="vm.password" 
+            ng-pattern="/^(?![A-Z]+$)(?![a-z]+$)(?!\d+$)(?![\W_]+$)\S+$/"
+            minlength="6" 
+            maxlength="18" 
+            ng-minlength="6" 
+            ng-maxlength="18" 
+            required
+        >
+        <div class="tipsRed" 
+        ng-show="accountForm.password.$error.pattern || accountForm.password.$error.minlength">旧密码格式错误，请重试</div>
+    </div>
+
+    <!-- <input type="checkbox" 
+           id="checkallpigdata" 
+           ng-model="vm.admin2" 
+           ng-click="vm.checkAll(vm.admin2)"/>
+    <label for="checkallpigdata">全选</label> -->
+
+    <!-- <button class="btn" ng-click="vm.id(vm.admin)">上传</button> -->
+
+    <div class="password checkbox">
+        
+        <span class="tips">角&emsp;色:</span>  
+
+        <div class="from-35 inline-block text-left">
+            <label ng-repeat="item in vm.admin" class="checkbox-label">
+            <input type="checkbox" 
+                   name="role"
+                   ng-model="item.ifChecked"  
+                   ng-click="vm.checkRole(item.ifChecked,$index)"
+                   ng-change="vm.log()"
+            >{{item.role}}
+            </label>  
+        </div>
+    </div>
+
+    <div class="password" ng-class="{'has-error': accountForm.state.$dirty && accountForm.state.$invalid}">
+
+        <span class="tips">状&emsp;态:</span>
+        
+        <div class="from-35 inline-block text-left">
+            <label class="width-50">
+                <input type="radio" name="state" ng-value="0" ng-model="vm.state" required>启用
+            </label>
+            <label>
+                <input type="radio" name="state" ng-value="1" ng-model="vm.state" required>禁用
+            </label>
+        </div>        
+    </div>  
+   
+    <div>
+        <button class="btn btn-primary btnSure" ng-click="vm.sure(vm.admin)" ng-disabled="vm.ifSure">
+            保存
+        </button>
+        <button class="btn btn-danger btnSure cancel" ui-sref="backStage.account">取消</button>
+    
+    </div>
+</form>
+
+

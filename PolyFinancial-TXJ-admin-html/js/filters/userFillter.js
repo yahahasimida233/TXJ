@@ -146,22 +146,23 @@ app.filter("userState", function () {
     }
 });
 // 角色不可编辑按钮
-// app.filter("btnDisabled", function () {
-//     return function (edit) {
-//         if(edit==true){
-//             return false;    
-//         }
-//         else{
-//             return true
-//         }
-//     }
-// })
 app.filter("btnDisabled", function () {
     return function (edit) {
         var newEdit = edit == true ? false : true;
         return newEdit;
     }
 });
+// 后台管理模块不可删除按钮
+app.filter("moduleDeleat",function () {
+    return function (name) {
+        if (name == "后台管理"){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+})
 
 app.filter('productMode',function(){
     return function (a){
@@ -197,19 +198,27 @@ app.filter('productState',function(){
 app.filter('productStateChange',function(){
     return function (a){
         switch (a){
-            case 0:
+            case "0":
                 a = "下架";
                 break;
-            case 1:
+            case "1":
                 a = "上架";
                 break;
 
         }
         return a;
     }
-
 });
 
+app.filter('bannerState',function(){
+    return function (a){
+        switch (a){
+            case 0:
+                a = "上架";
+                break;
+            case 1:
+                a = "下架";
+                break;
 
 
 

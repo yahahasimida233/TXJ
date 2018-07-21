@@ -527,12 +527,71 @@ angular.module("txj")
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 })
             },
-            sAccountHTTP: function (account) {   //搜索用户
+            // 帐号模块
+            sAccountHTTP: function (account) {   //搜索帐号
                 return $http({
                     url:serviceURL.sAccountURL,
                     method: "GET",
                     params: account,
                     headers: {"Conten-Type": "application/x-www-from-urlencoded"}
+                })
+            },
+            dAccountHTTP: function (id) { //删除帐号
+                return $http({
+                    url: serviceURL.dAccountURL + id,
+                    method: "DELETE ",
+                    headers: {
+                        "Conten-Type": "application/x-www-from-urlencoded"
+                    }
+                })
+            },
+            aAccountHTTP: function (data) {  //新增帐号
+                return $http({
+                    url: serviceURL.aAccountURL,
+                    method: "POST",
+                    headers: {
+                        "Conten-Type": "application/x-www-from-urlencoded"
+                    }
+                })
+            },
+            gAccountHTTP: function (id) {   //编辑帐号页面获取帐号信息
+                return $http({
+                    url: serviceURL.gAccountURL + id,
+                    method: "GET",
+                    headers: {
+                        "Conten-Type": "application/x-www-from-urlencoded"
+                    }
+                })
+            },
+            wAccountHTTP: function (data,id) {  //编辑帐号
+                return $http({
+                    url: serviceURL.wAccountURL + id,
+                    method: "PUT",
+                    params: data,
+                    headers: {
+                        "Conten-Type": "application/x-www-from-urlencoded"
+                    }                                        
+                })
+            },
+            // 模块管理
+            sModuleHTTP: function (data) {   //搜索模块
+                return $http({
+                    url: serviceURL.sModuleURL,
+                    method: "GET",
+                    params: data,
+                    headers: {
+                        "Conten-Type": "application/x-www-from-urlencoded"
+                    }                                        
+                })
+            },
+            // 删除模块
+            dModuleHTTP: function (id) {
+                return $http({
+                    url: serviceURL.dModuleURL + id,
+                    method: "DELETE",
+                    headers: {
+                        "Conten-Type": "application/x-www-from-urlencoded"
+                    }
                 })
             }
         }

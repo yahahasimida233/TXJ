@@ -24,3 +24,26 @@
 .btnSure {
   margin-top: 40px;
 }
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox .checkbox-label {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.radio, .checkbox {
+  margin: 0;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.cancel {
+  margin-left: 108px;
+  margin-right: 38px;
+}
