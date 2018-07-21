@@ -135,6 +135,17 @@ app.filter("btnDisabled", function () {
         return newEdit;
     }
 });
+// 后台管理模块不可删除按钮
+app.filter("moduleDeleat",function () {
+    return function (name) {
+        if (name == "后台管理"){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+})
 
 app.filter('productMode',function(){
     return function (a){
@@ -182,18 +193,6 @@ app.filter('productStateChange',function(){
     }
 });
 
-// app.filter("userState", function () {
-//     return function (num) {
-//         switch (num) {
-//             case 0:
-//                 return "启用";
-//                 break;
-//             case 1:
-//                 return "禁用";
-//                 break;
-//         }
-//     }
-// });
 app.filter('bannerState',function(){
     return function (a){
         switch (a){

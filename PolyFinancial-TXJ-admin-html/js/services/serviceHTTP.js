@@ -527,6 +527,7 @@ angular.module("txj")
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 })
             },
+            // 帐号模块
             sAccountHTTP: function (account) {   //搜索帐号
                 return $http({
                     url:serviceURL.sAccountURL,
@@ -570,6 +571,27 @@ angular.module("txj")
                     headers: {
                         "Conten-Type": "application/x-www-from-urlencoded"
                     }                                        
+                })
+            },
+            // 模块管理
+            sModuleHTTP: function (data) {   //搜索模块
+                return $http({
+                    url: serviceURL.sModuleURL,
+                    method: "GET",
+                    params: data,
+                    headers: {
+                        "Conten-Type": "application/x-www-from-urlencoded"
+                    }                                        
+                })
+            },
+            // 删除模块
+            dModuleHTTP: function (id) {
+                return $http({
+                    url: serviceURL.dModuleURL + id,
+                    method: "DELETE",
+                    headers: {
+                        "Conten-Type": "application/x-www-from-urlencoded"
+                    }
                 })
             }
         }

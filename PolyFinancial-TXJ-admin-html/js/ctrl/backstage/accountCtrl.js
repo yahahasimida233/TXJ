@@ -161,11 +161,6 @@ app.controller("accountCtrl", function ($scope, $state, $stateParams, serviceHTT
     // vm.admin = res.data.roles; // 返回的角色类型
     // console.log(vm.admin);
 
-    //搜索条件为空时，不能搜索
-    vm.ifSearch = function () {
-        
-    }
-
     // 搜索
     vm.search = function () {
         $state.go("backStage.account",{

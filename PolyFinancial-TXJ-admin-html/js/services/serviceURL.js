@@ -2,7 +2,7 @@ angular.module("txj").factory("serviceURL", function() {
     return {
 
         // 登陆
-        loginURL: "/admin/admin/a/u/loginIn",
+        loginURL: "/admin/admin/a/u/login/",
 
         //登出
         logoutURL: "/admin/admin/a/u/logout/",
@@ -81,10 +81,14 @@ angular.module("txj").factory("serviceURL", function() {
         uploadURL: "/carrots-admin-ajax/a/u/img/task",
         // 后台管理
         changePwURL: "/admin/admin/a/u/account/password",  //更改密码
+        // 账号管理
         sAccountURL: "/admin/admin/a/u/account/list",      //搜索帐号
         dAccountURL: "/admin/admin/a/u/account",           //删除帐号
         aAccountURL: "/admin/admin/a/u/account",           //新增帐号
         gAccountURL: "/admin/admin/a/u/account",           //编辑帐号页面获取帐号信息
-        wAccountURL: "/admin/admin/a/u/account"            //编辑帐号
+        wAccountURL: "/admin/admin/a/u/account",           //编辑帐号
+        // 模块管理
+        sModuleURL: "/admin/admin/a/u/module/search",      //搜索模块
+        dModuleURL: "/admin/admin/a/u/module/"             //删除模块
     };
 });
