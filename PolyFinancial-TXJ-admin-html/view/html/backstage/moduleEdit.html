@@ -14,10 +14,10 @@
             name="moduleName" 
             ng-model="vm.moduleName" 
             required>
-        <div class="tipsRed" ng-show="">模块名重复，请重试</div>
+        <div class="tipsRed" ng-show="vm.repeatTips">模块名重复，请重试</div>
     </div>
     <!-- 新密码 -->
-    <div class="password" ng-class="{'has-error': passwordForm.url.$dirty && passwordForm.url.$invalid}">
+    <div class="password">
         <span class="tips">URL地址:</span>
         <input 
             type="text"
@@ -25,7 +25,6 @@
             class="form-control from-35" 
             name="url" 
             ng-model="vm.url" 
-            required
         >
     </div>
     <!-- 父模块ID -->
@@ -35,7 +34,7 @@
                 placeholder="请输入数字ID，0表示自身为父模块。" 
                 class="form-control from-35" 
                 name="parentModuleId" 
-                ng-model="vm.parentModuleId"
+                ng-model="vm.parentModuleID"
                 ng-pattern="/^\d+(\.\d{0})?$/"
         required>
         <div class="tipsRed" ng-show="passwordForm.parentModuleId.$error.pattern || passwordForm.parentModuleId.$error.minlength">ID格式错误，请重试。</div>
@@ -48,7 +47,7 @@
       <div>
         <!-- 保存按钮 -->
         <button class="btn btn-primary btnSure" 
-                ng-click="vm.changePassword()" ng-disabled="passwordForm.moduleName.$pristine || passwordForm.moduleName.$invalid || passwordForm.url.$pristine || passwordForm.url.$invalid || passwordForm.parentModuleId.$pristine || passwordForm.parentModuleId.$invalid || passwordForm.moduleType.$pristine || passwordForm.moduleType.$invalid">
+                ng-click="vm.sure()" ng-disabled="passwordForm.moduleName.$pristine || passwordForm.moduleName.$invalid || passwordForm.parentModuleId.$pristine || passwordForm.parentModuleId.$invalid || passwordForm.moduleType.$pristine || passwordForm.moduleType.$invalid">
             保存
         </button>        
         <button class="btn btn-danger btnSure cancel" ui-sref="backStage.account">取消</button>

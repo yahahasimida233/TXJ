@@ -491,7 +491,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 模块编辑
         .state('backStage.moduleEdit',{
-            url:"/moduleEdit",
+            url:"/moduleEdit?id",
             templateUrl:'view/html/backstage/moduleEdit.html',
             controller:'moduleEditCtrl as vm',
             resolve: {
@@ -509,17 +509,35 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 角色管理
         .state('backStage.role',{
-            url:"/role",
+            url: "/role?roleId&roleName&creater&updateBy",
             templateUrl:'view/html/backstage/role.html',
-            controller:'roleCtrl',
-            controllerAs:'vm'
+            controller:'roleCtrl as vm',
+            resolve:{
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/backstage/roleCtrl.js"
+                        ])
+                    }
+                ]
+            }
         })
 
-        // 角色编辑
+        //角色编辑
         .state('backStage.roleEdit',{
-            url:"/roleEdit",
+            url:"/roleEdit?id",
             templateUrl:'view/html/backstage/roleEdit.html',
-            controller:'roleEditCtrl',
-            controllerAs:'vm'
+            controller:'roleEditCtrl as vm',
+            resolve:{
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/backstage/roleEditCtrl.js"
+                        ])
+                    }
+                ]
+            }
         })
 });
