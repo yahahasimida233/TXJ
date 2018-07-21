@@ -70,6 +70,22 @@ app.filter('userContract',function(){
     }
 });
 
+app.filter('bannerStateFilter',function(){
+    return function (a){
+        switch (a){
+            case 0:
+                a = "上架";
+                break;
+            case 1:
+                a = "下架";
+                break;
+
+        }
+        return a;
+    }
+});
+
+
 app.filter('money',function(){
     return function (n){
         const fraction = ['角', '分'];
@@ -181,10 +197,10 @@ app.filter('productState',function(){
 app.filter('productStateChange',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "下架";
                 break;
-            case "1":
+            case 1:
                 a = "上架";
                 break;
 
@@ -194,29 +210,17 @@ app.filter('productStateChange',function(){
 
 });
 
-app.filter('bannerState',function(){
-    return function (a){
-        switch (a){
-            case "0":
-                a = "上架";
-                break;
-            case "1":
-                a = "下架";
-                break;
 
-        }
-        return a;
-    }
 
-});
+
 
 app.filter('feedbackState',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "已回复";
                 break;
-            case "1":
+            case 1:
                 a = "回复";
                 break;
 
@@ -229,13 +233,13 @@ app.filter('feedbackState',function(){
 app.filter('messageState',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "已推送";
                 break;
-            case "1":
+            case 1:
                 a = "待推送";
                 break;
-            case "2":
+            case 2:
                 a = "已取消";
                 break;
 

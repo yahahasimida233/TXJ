@@ -1,6 +1,24 @@
-app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
-    var vm = this;
-    serviceHTTP.userListHTTP().then(function successCallback(response) {
+app.controller("userCtrl",function ($scope,$http,$state,$stateParams,serviceHTTP) {
+    let vm = this;
+
+    vm.userId = $stateParams.id || undefined;
+    vm.userName = $stateParams.actualName || undefined;
+    vm.phone = $stateParams.phoneNum || undefined;
+    vm.status = $stateParams.state || undefined;
+    vm.size = $stateParams.size || undefined;
+    vm.page = $stateParams.page || undefined;
+
+
+    let info = {
+        userID: vm.userId,
+        actualName:vm.userName,
+        phoneNum:vm.phone ,
+        state:vm.status ,
+        size: vm.size,
+        page: vm.page
+    };
+
+    serviceHTTP.userListHTTP(info).then(function successCallback(response) {
         // 请求成功执行代码
         if(response.data.message === "success") {
             vm.list = response.data.data.accountList;
@@ -22,6 +40,19 @@ app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
         vm.userName = undefined;
         vm.phone = undefined;
         vm.status = undefined;
+    };
+
+
+    vm.search = function(){
+
+        $state.go('backstage.articleList', {
+            'id': info.userID,
+            'actualName': info.actualName,
+            'phoneNum': info.phoneNum,
+            'state': info.state,
+            'size': info.size,
+            'page': info.page
+        })
     };
 
 

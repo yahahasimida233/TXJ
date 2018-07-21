@@ -38,7 +38,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 用户管理
         .state('backStage.user',{
             url:"/user",
-            templateUrl: 'view/html/business/user.html',
+            templateUrl: 'view/html/business/user.html?id&actualName&phoneNum&state&size&page',
             controller: 'userCtrl',
             controllerAs:'vm',
             resolve: {
@@ -133,7 +133,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 债权管理
         .state('backStage.debt',{
             url:"/debt",
-            templateUrl: 'view/html/business/debt.html',
+            templateUrl: 'view/html/business/debt.html?id&enterpriseName&creditor&state&size&page',
             controller: 'debtCtrl',
             controllerAs:'vm',
             resolve: {
@@ -192,7 +192,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 产品管理
         .state('backStage.product',{
             url:"/product",
-            templateUrl: 'view/html/business/product.html',
+            templateUrl: 'view/html/business/product.html?id&productName&createBy&state&size&page',
             controller: 'productCtrl',
             controllerAs:'vm',
             resolve: {
@@ -232,7 +232,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // banner图
         .state('backStage.banner',{
             url:"/banner",
-            templateUrl: 'view/html/operate/banner.html',
+            templateUrl: 'view/html/operate/banner.html?id&title&createBy&updateBy&size&page',
             controller: 'bannerCtrl as vm',
             resolve: {
                 loadMyFile: [
@@ -269,7 +269,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 鼎立推荐
         .state('backStage.recommend',{
             url:"/recommend",
-            templateUrl: 'view/html/operate/recommend.html',
+            templateUrl: 'view/html/operate/recommend.html?id&title&createBy&updateBy&size&page',
             controller: 'recommendCtrl',
             controllerAs:'vm',
             resolve: {
@@ -307,7 +307,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 消息管理
         .state('backStage.message',{
             url:"/message",
-            templateUrl: 'view/html/operate/message.html',
+            templateUrl: 'view/html/operate/message.html?articleTitle&articleState&createBy&minTime&maxTime&size&page',
             controller: 'messageCtrl',
             controllerAs:'vm',
             resolve: {
@@ -364,7 +364,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 意见反馈
         .state('backStage.feedback',{
             url:"/feedback",
-            templateUrl: 'view/html/operate/feedback.html',
+            templateUrl: 'view/html/operate/feedback.html?id&submitBy&keyword&phoneNum&size&page',
             controller: 'feedbackCtrl',
             controllerAs:'vm',
             resolve: {
