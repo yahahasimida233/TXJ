@@ -1,0 +1,55 @@
+<!-- 标题 -->
+<div class="title-warp">
+    <strong class="title">{{vm.title}}</strong>
+    <button class="btn btn-success" ui-sref="backStage.module">返回</button>
+</div>
+<!-- main -->
+<form name="passwordForm" class="passwordForm">
+    <!-- 旧密码 -->
+    <div class="password" ng-class="{'has-error': passwordForm.moduleName.$dirty && passwordForm.moduleName.$invalid}">
+        <span class="tips">模&ensp;块&ensp;名:</span>
+        <input 
+            type="text" 
+            class="form-control from-35" 
+            name="moduleName" 
+            ng-model="vm.moduleName" 
+            required>
+        <div class="tipsRed" ng-show="vm.repeatTips">模块名重复，请重试</div>
+    </div>
+    <!-- 新密码 -->
+    <div class="password">
+        <span class="tips">URL地址:</span>
+        <input 
+            type="text"
+            placeholder="请输入资源的网络地址，可为空。" 
+            class="form-control from-35" 
+            name="url" 
+            ng-model="vm.url" 
+        >
+    </div>
+    <!-- 父模块ID -->
+    <div class="password" ng-class="{'has-error': passwordForm.parentModuleId.$dirty && passwordForm.parentModuleId.$invalid}">
+        <span class="tips">父模块ID:</span>
+        <input  type="number" 
+                placeholder="请输入数字ID，0表示自身为父模块。" 
+                class="form-control from-35" 
+                name="parentModuleId" 
+                ng-model="vm.parentModuleID"
+                ng-pattern="/^\d+(\.\d{0})?$/"
+        required>
+        <div class="tipsRed" ng-show="passwordForm.parentModuleId.$error.pattern || passwordForm.parentModuleId.$error.minlength">ID格式错误，请重试。</div>
+    </div>
+    <!-- 模块类型 -->
+    <div class="password" ng-class="{'has-error': passwordForm.moduleType.$dirty && passwordForm.moduleType.$invalid}">    
+        <span class="tips">模块类型</span>
+        <input type="text" class="form-control from-35" name="moduleType" ng-model="vm.moduleType" required>
+    </div>  
+      <div>
+        <!-- 保存按钮 -->
+        <button class="btn btn-primary btnSure" 
+                ng-click="vm.sure()" ng-disabled="passwordForm.moduleName.$pristine || passwordForm.moduleName.$invalid || passwordForm.parentModuleId.$pristine || passwordForm.parentModuleId.$invalid || passwordForm.moduleType.$pristine || passwordForm.moduleType.$invalid">
+            保存
+        </button>        
+        <button class="btn btn-danger btnSure cancel" ui-sref="backStage.account">取消</button>
+    </div>
+</form>

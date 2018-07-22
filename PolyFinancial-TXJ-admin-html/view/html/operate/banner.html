@@ -73,9 +73,7 @@
             <td class="text-center time" ng-bind="x.createAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
             <td class="text-center " ng-bind="x.updateBy"></td>
             <td class="text-center time" ng-bind="x.updateAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
-            <td class="text-center ">{{x.state | bannerState}}</td>
-
-
+            <td class="text-center" ng-bind="x.state | bannerStateFilter "></td>
             <td class="text-center">
                 <button class="btn btn-default"  ng-click = "vm.stateChange(x.id,x.state)">{{x.state | productStateChange}}</button>
                 <button class="btn btn-info" ui-sref ="backStage.bannerEdit({id:x.id})">编辑</button>

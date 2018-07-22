@@ -1,13 +1,17 @@
 app.controller("loginCtrl",function ($http,$state,serviceHTTP) {
     var vm = this;
-    var user = {
-        name:vm.name,
-        pwd:vm.password
-    };
-
+    
     vm.login = function() {
+        var user = {
+            account: vm.name,
+            password: vm.password
+        };
+        console.log(user);
+        
         serviceHTTP.loginHTTP(user).then(function successCallback(response) {
             // 请求成功执行代码
+            console.log(response);
+            
             console.log(response.data.message);
             if(response.data.message === "success") {
                 sessionStorage.setItem("logo","233");

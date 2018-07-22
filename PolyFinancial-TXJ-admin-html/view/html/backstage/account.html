@@ -1,41 +1,41 @@
 <!-- 搜索条件 -->
-<form class="searchCondition">
+<form name="searchForm" class="searchCondition">
     <div class="search-row">
 
-        <label class="tips" for="adminId">帐号ID</label>
-        <input type="text" id="adminID" class="form-control form-18">
+        <label class="tips" for="adminId">帐号ID</label> 
+        <input type="text" name="adminId" class="form-control form-18" ng-model="vm.adminId" required>
 
         <label class="tips" for="role">角色</label>
-        <select id="role" class="form-control form-18" ng-model="vm.adminId" 
-                ng-options="x.role as x.role for x in vm.admin">
+        <select name="role" class="form-control form-18" ng-model="vm.role" 
+                ng-options="x.role as x.role for x in vm.admin" required>
             <option value="">--请选择--</option>
         </select> 
         
-        <button class="btn btn-danger">重置</button>
-    <!-- <button ng-click="vm.pipi()">皮皮兽师兄</button> -->
+        <button class="btn btn-danger" 
+                ng-click="vm.reSet()"      
+                ng-disabled="searchForm.adminId.$invalid && searchForm.role.$invalid && searchForm.username.$invalid && searchForm.creater.$invalid" >重置</button>
     </div>
     <div class="search-row">
 
-        <label class="tips" for="username">用户名</label>
-        <input type="text" id="username" class="form-control form-18">
+        <label class="tips" for="username">用户名</label> 
+        <input type="text" name="username" class="form-control form-18" ng-model="vm.username" required>
 
-        
         <label class="tips" for="creater">创建人</label>
-        <input type="text" id="creater" class="form-control form-18">
+        <input type="text" name="creater" class="form-control form-18" ng-model="vm.creater" required>
 
-        <button class="btn btn-primary">查询</button>
+        <button class="btn btn-primary" 
+                ng-click="vm.search()" 
+                ng-disabled="searchForm.adminId.$invalid && searchForm.role.$invalid && searchForm.username.$invalid && searchForm.creater.$invalid" 
+                >查询</button>
     </div>
 </form> 
 <!-- 列表标题 -->
 <div class="title-warp">
     <strong class="title">帐号列表</strong>
-    <button class="btn btn-success">新增</button>
+    <button class="btn btn-success" ui-sref="backStage.accountEdit">新增</button>
 </div>
-
+<!-- 帐号列表 -->
 <div class="table-responsive border">
-    <!-- <td>
-        <button class="btn" ng-disabled="vm.sure">编辑</button>
-    </td> -->
 <table class="table table-hover">
 <tbody>
     <tr>
@@ -60,21 +60,53 @@
         <td class="text-center" ng-bind="list.updateBy"></td>
         <td class="text-center time" ng-bind=" list.updateAt | date:'yyyy/MM/dd HH:mm:ss'"></td> 
         <td class="text-center" ng-bind="list.state | userState"></td>
-
+        <!-- 操作按钮 -->
         <td class="text-center">
 
             <button class="btn btn-info" 
                     ng-click="vm.write(list.id,list.edit)" 
-                    ng-disabled="list.edit | btnDisabled">编辑
+                    ng-disabled="list.edit | btnDisabled" 
+                    ui-sref="backStage.accountEdit({id: list.id})">编辑
             </button>
 
             <button class="btn btn-danger" 
                     ng-click="vm.delete(list.id)" 
                     ng-disabled="list.edit | btnDisabled">删除
             </button>
-            
         </td>
     </tr>
 </tbody>
 </table>
+<!-- 分页 -->
+<div class="table-foot">
+    <div>
+        <span>每页显示</span>
+        <input type="text" class="form-control small" ng-model="vm.size">
+        <span>条</span>
+    </div>
+    <ul class="apage " 
+        uib-pagination 
+        total-items="vm.totalItems" 
+        ng-model="vm.page" 
+        max-size="5" 
+        items-per-page="vm.size" 
+        first-text="第一页"
+        previous-text="<" next-text=">" 
+        ng-click="vm.goPage()" 
+        rotate="true" 
+        force-ellipses="true" 
+        last-text="最后页" 
+        boundary-links="true"
+        boundary-link-numbers="true">
+    </ul>
+    <div class="">
+        <span>去第</span>
+        <input type="text" class="form-control small" ng-model="vm.goPage" ng-init=""> 
+        {{vm.page}}
+        <span>页</span>
+        <button class="btn btn-primary" ng-click="">
+            确定
+        </button>
+    </div>
+</div>
 </div>

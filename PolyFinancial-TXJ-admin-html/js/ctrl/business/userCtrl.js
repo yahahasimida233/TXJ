@@ -1,17 +1,40 @@
-app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
-    var vm = this;
-    serviceHTTP.userListHTTP().then(function successCallback(response) {
-        // 请求成功执行代码
-        if(response.data.message === "success") {
-            vm.list = response.data.data.accountList;
-            console.log(vm.list);
-        }
-        else {
+app.controller("userCtrl",function ($scope,$http,$state,$stateParams,serviceHTTP) {
+    let vm = this;
+    vm.getList = function(){
+        vm.userId = $stateParams.id || undefined;
+        vm.userName = $stateParams.actualName || undefined;
+        vm.phone = $stateParams.phoneNum || undefined;
+        vm.status = $stateParams.state || undefined;
+        vm.size = $stateParams.size || undefined;
+        vm.page = $stateParams.page || undefined;
 
-        }
-    }, function errorCallback(res) {
-        // 请求失败执行代码
-    });
+
+        let info = {
+            userID: vm.userId,
+            actualName:vm.userName,
+            phoneNum:vm.phone ,
+            state:vm.status ,
+            size: vm.size,
+            page: vm.page
+        };
+        console.log("info:",info);
+        serviceHTTP.userListHTTP(info).then(function successCallback(response) {
+            // 请求成功执行代码
+            console.log(response);
+            if(response.data.message === "success") {
+                vm.list = response.data.data;
+                console.log(vm.list);
+            }
+            else {
+                console.log(response.data.message);
+            }
+        }, function errorCallback(res) {
+            // 请求失败执行代码
+        });
+        return info;
+    };
+
+    vm.getList();
 
     // 目前分页数据假数据没有提供，先写一下，正式接口中再做修改
     vm.totalItems = 2;
@@ -25,29 +48,19 @@ app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
     };
 
 
-    //搜索用户列表功能
-    vm.userSearch = function(){
-        //搜索的四个值
-        var userInfo = {
-            userID: vm.userId,
-            actualName:vm.userName,
-            phoneNum:vm.phone,
-            state:vm.status
-        };
-        serviceHTTP.userSearchHTTP(userInfo).then(function successCallback(response) {
-            // 请求成功执行代码
-            console.log(response);
-            if(response.data.message === "success") {
-                vm.list = response.data.data.accountList;
-                console.log(vm.list);
-            }
-            else {
+    vm.search = function(){
 
-            }
-        }, function errorCallback(res) {
-            // 请求失败执行代码
-        });
+        $state.go('backStage.user', {
+            id: info.userID,
+            actualName: info.actualName,
+            phoneNum: info.phoneNum,
+            state: info.state,
+            size: info.size,
+            page: info.page
+        })
     };
+
+
 
     vm.frozen = function (a,b) {
 
@@ -69,7 +82,7 @@ app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
             },
             callback: function(result) {
                 if(result === true){
-                    serviceHTTP.bannerGroundingHTTP(a).then(function successCallback(response) {
+                    serviceHTTP.userFrozenHTTP(a).then(function successCallback(response) {
                         // 请求成功执行代码
                         console.log(response);
                         if(response.data.message === "success") {
@@ -78,7 +91,7 @@ app.controller("userCtrl",function ($scope,$http,$state,serviceHTTP) {
                         }
                     }, function errorCallback(res) {
                         // 请求失败执行代码
-                        bootbox.alert("修改状态失败！请稍后再试")
+                        bootbox.alert(response.data.message)
                     });
 
                 }

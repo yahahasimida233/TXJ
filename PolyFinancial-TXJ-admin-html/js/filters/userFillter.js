@@ -13,10 +13,10 @@ app.filter('status', function() {
 app.filter('statusFilter',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "正常";
                 break;
-            case "1":
+            case 1:
                 a = "冻结";
                 break;
 
@@ -69,6 +69,22 @@ app.filter('userContract',function(){
         return a;
     }
 });
+
+app.filter('bannerStateFilter',function(){
+    return function (a){
+        switch (a){
+            case 0:
+                a = "上架";
+                break;
+            case 1:
+                a = "下架";
+                break;
+
+        }
+        return a;
+    }
+});
+
 
 app.filter('money',function(){
     return function (n){
@@ -130,22 +146,30 @@ app.filter("userState", function () {
     }
 });
 // 角色不可编辑按钮
-// app.filter("btnDisabled", function () {
-//     return function (edit) {
-//         if(edit==true){
-//             return false;    
-//         }
-//         else{
-//             return true
-//         }
-//     }
-// })
 app.filter("btnDisabled", function () {
     return function (edit) {
         var newEdit = edit == true ? false : true;
         return newEdit;
     }
 });
+// 后台管理模块不可删除按钮
+app.filter("moduleDeleat",function () {
+    return function (name) {
+        if (name == "后台管理"){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+})
+// 后台角色管理 超级管理员不可编辑、删除按钮
+app.filter("roleDelet",function () {
+    return function (data) {
+        var ifDelete = data == "超级管理员" ? true : false;
+        return ifDelete;
+    }
+})
 
 app.filter('productMode',function(){
     return function (a){
@@ -191,32 +215,30 @@ app.filter('productStateChange',function(){
         }
         return a;
     }
-
 });
 
-app.filter('bannerState',function(){
-    return function (a){
-        switch (a){
-            case "0":
+app.filter('bannerState',function() {
+    return function (a) {
+        switch (a) {
+            case 0:
                 a = "上架";
                 break;
-            case "1":
+            case 1:
                 a = "下架";
                 break;
-
         }
-        return a;
     }
-
 });
+
+
 
 app.filter('feedbackState',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "已回复";
                 break;
-            case "1":
+            case 1:
                 a = "回复";
                 break;
 
@@ -229,13 +251,13 @@ app.filter('feedbackState',function(){
 app.filter('messageState',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "已推送";
                 break;
-            case "1":
+            case 1:
                 a = "待推送";
                 break;
-            case "2":
+            case 2:
                 a = "已取消";
                 break;
 

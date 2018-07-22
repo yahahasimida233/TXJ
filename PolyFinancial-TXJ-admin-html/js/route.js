@@ -37,7 +37,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 用户管理
         .state('backStage.user',{
-            url:"/user",
+            url:"/user?id&actualName&phoneNum&state&size&page",
             templateUrl: 'view/html/business/user.html',
             controller: 'userCtrl',
             controllerAs:'vm',
@@ -133,7 +133,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 债权管理
         .state('backStage.debt',{
             url:"/debt",
-            templateUrl: 'view/html/business/debt.html',
+            templateUrl: 'view/html/business/debt.html?id&enterpriseName&creditor&state&size&page',
             controller: 'debtCtrl',
             controllerAs:'vm',
             resolve: {
@@ -192,7 +192,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 产品管理
         .state('backStage.product',{
             url:"/product",
-            templateUrl: 'view/html/business/product.html',
+            templateUrl: 'view/html/business/product.html?id&productName&createBy&state&size&page',
             controller: 'productCtrl',
             controllerAs:'vm',
             resolve: {
@@ -232,7 +232,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // banner图
         .state('backStage.banner',{
             url:"/banner",
-            templateUrl: 'view/html/operate/banner.html',
+            templateUrl: 'view/html/operate/banner.html?id&title&createBy&updateBy&size&page',
             controller: 'bannerCtrl as vm',
             resolve: {
                 loadMyFile: [
@@ -269,7 +269,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 鼎立推荐
         .state('backStage.recommend',{
             url:"/recommend",
-            templateUrl: 'view/html/operate/recommend.html',
+            templateUrl: 'view/html/operate/recommend.html?id&title&createBy&updateBy&size&page',
             controller: 'recommendCtrl',
             controllerAs:'vm',
             resolve: {
@@ -307,7 +307,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 消息管理
         .state('backStage.message',{
             url:"/message",
-            templateUrl: 'view/html/operate/message.html',
+            templateUrl: 'view/html/operate/message.html?articleTitle&articleState&createBy&minTime&maxTime&size&page',
             controller: 'messageCtrl',
             controllerAs:'vm',
             resolve: {
@@ -364,7 +364,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 意见反馈
         .state('backStage.feedback',{
             url:"/feedback",
-            templateUrl: 'view/html/operate/feedback.html',
+            templateUrl: 'view/html/operate/feedback.html?id&submitBy&keyword&phoneNum&size&page',
             controller: 'feedbackCtrl',
             controllerAs:'vm',
             resolve: {
@@ -439,7 +439,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // 账户管理
         .state('backStage.account',{
             // params: {role: null },
-            url: "/account?role",
+            url: "/account?adminId&role&username&creater&goPage&size",
             templateUrl: 'view/html/backstage/account.html',
             controller: 'accountCtrl as vm',
             resolve: {
@@ -456,41 +456,88 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 账户编辑
         .state('backStage.accountEdit',{
-            url:"/accountEdit",
+            url:"/accountEdit?id",
             templateUrl: 'view/html/backstage/accountEdit.html',
-            controller: 'accountEditCtrl',
-            controllerAs:'vm'
+            controller: 'accountEditCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/backstage/accountEditCtrl.js",
+                            "./css/modules/backstage/accountE.css"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 模块管理
         .state('backStage.module',{
-            url:"/module",
+            url: "/module?moduleId&moduleName&parentModuleId&creater&goPage&size",
             templateUrl:'view/html/backstage/module.html',
-            controller:'moduleCtrl',
-            controllerAs:'vm'
+            controller:'moduleCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/backstage/moduleCtrl.js",
+                        ])
+                    }
+                ]
+            }
         })
 
         // 模块编辑
         .state('backStage.moduleEdit',{
-            url:"/moduleEdit",
+            url:"/moduleEdit?id",
             templateUrl:'view/html/backstage/moduleEdit.html',
-            controller:'moduleEditCtrl',
-            controllerAs:'vm'
+            controller:'moduleEditCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/backstage/moduleEditCtrl.js",
+                            "./css/modules/backstage/moduleE.css"
+                        ])
+                    }
+                ]
+            }
         })
 
         // 角色管理
         .state('backStage.role',{
-            url:"/role",
+            url: "/role?roleId&roleName&creater&updateBy",
             templateUrl:'view/html/backstage/role.html',
-            controller:'roleCtrl',
-            controllerAs:'vm'
+            controller:'roleCtrl as vm',
+            resolve:{
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/backstage/roleCtrl.js"
+                        ])
+                    }
+                ]
+            }
         })
 
-        // 角色编辑
+        //角色编辑
         .state('backStage.roleEdit',{
-            url:"/roleEdit",
+            url:"/roleEdit?id",
             templateUrl:'view/html/backstage/roleEdit.html',
-            controller:'roleEditCtrl',
-            controllerAs:'vm'
+            controller:'roleEditCtrl as vm',
+            resolve:{
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/backstage/roleEditCtrl.js"
+                        ])
+                    }
+                ]
+            }
         })
 });
