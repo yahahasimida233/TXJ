@@ -37,8 +37,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 用户管理
         .state('backStage.user',{
-            url:"/user",
-            templateUrl: 'view/html/business/user.html?id&actualName&phoneNum&state&size&page',
+            url:"/user?id&actualName&phoneNum&state&size&page",
+            templateUrl: 'view/html/business/user.html',
             controller: 'userCtrl',
             controllerAs:'vm',
             resolve: {

@@ -65,12 +65,13 @@ app.controller("debtCtrl",function ($http,$state,serviceHTTP,$stateParams){
                 if(result === true){
                     serviceHTTP.debtDeleteHTTP(id).then(function successCallback(response) {
                         // 请求成功执行代码
+                        console.log(response);
                         if(response.data.message === "success") {
                             bootbox.alert("删除成功");
                             $state.reload('backStage.debt');
                         }
                         else {
-
+                            bootbox.alert(response.data.message);
                         }
                     }, function errorCallback(res) {
                         // 请求失败执行代码

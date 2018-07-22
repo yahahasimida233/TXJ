@@ -1,49 +1,37 @@
 .from-35 {
-  width: 35%;
-}
+  width: 35%; }
 
 .passwordForm {
   padding: 40px;
   text-align: center;
-  background-color: #fff;
-}
-
-.passwordForm .tips {
-  margin-right: 15px;
-}
-
-.passwordForm .password {
-  padding: 15px;
-}
+  background-color: #fff; }
+  .passwordForm .tips {
+    margin-right: 15px; }
+  .passwordForm .password {
+    padding: 15px; }
 
 .tipsRed {
   padding-top: 10px;
-  color: red;
-}
+  color: red; }
 
 .btnSure {
-  margin-top: 40px;
-}
+  margin-top: 40px; }
 
 .checkbox {
   display: flex;
-  justify-content: center;
-}
-
-.checkbox .checkbox-label {
-  width: 50%;
-  margin-bottom: 10px;
-}
+  justify-content: center; }
+  .checkbox .checkbox-label {
+    width: 50%;
+    margin-bottom: 10px; }
 
 .radio, .checkbox {
-  margin: 0;
-}
+  margin: 0; }
 
 .width-50 {
-  width: 50%;
-}
+  width: 50%; }
 
 .cancel {
   margin-left: 108px;
-  margin-right: 38px;
-}
+  margin-right: 38px; }
+
+/*# sourceMappingURL=accountE.css.map */

@@ -84,7 +84,7 @@
             <td class="text-center " ng-bind="x.udpateBy"></td>
             <td class="text-center time" ng-bind="x.updateAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
             <td class="text-center ">{{x.articleState | messageState}}</td>
-            <td class="text-center time" ng-bind="x.sendTime"></td>
+            <td class="text-center time" ng-bind="x.sendTime  |date : 'yyyy-MM-dd hh:mm:ss'"></td>
 
             <td class="text-center">
                 <button class="btn btn-default"   ui-sref ="backStage.messageDetailed({id:x.id})">查看</button>

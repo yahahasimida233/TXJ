@@ -67,31 +67,32 @@ angular.module("txj")
             },
 
             //获取用户列表
-            userListHTTP: function () {
+            userListHTTP: function (user) {
                 return $http({
                     method: "get",
                     url: serviceURL.userListURL,
+                    params: user,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
 
-            //用户管理-用户搜索
-            userSearchHTTP: function (userInfo) {
-                return $http({
-                    method: "get",
-                    url: serviceURL.userListURL,
-                    params: userInfo,
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded" }
-                })
-            },
+            // //用户管理-用户搜索
+            // userSearchHTTP: function (userInfo) {
+            //     return $http({
+            //         method: "get",
+            //         url: serviceURL.userListURL,
+            //         params: userInfo,
+            //         headers: {
+            //             "Content-Type": "application/x-www-form-urlencoded" }
+            //     })
+            // },
 
             //获取用户详细信息
             userDetailedHTTP: function (id) {
                 return $http({
                     method: "get",
-                    url: serviceURL.userDetailedURL,
+                    url: serviceURL.userDetailedURL+id,
                     params: id,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
@@ -102,8 +103,7 @@ angular.module("txj")
             userFrozenHTTP: function (id) {
                 return $http({
                     method: "post",
-                    url: serviceURL.userFrozenURL,
-                    params: id,
+                    url: serviceURL.userFrozenURL+id,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -143,10 +143,21 @@ angular.module("txj")
             },
 
             // 债权管理
-            debtHTTP: function () {
+            debtHTTP: function (info) {
                 return $http({
                     method: "get",
                     url: serviceURL.debtURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            // 债权详情
+            debtDetailedHTTP: function (info) {
+                return $http({
+                    method: "get",
+                    url: serviceURL.debtNewURL+info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -156,7 +167,7 @@ angular.module("txj")
             debtEditHTTP: function (info) {
                 return $http({
                     method: "put",
-                    url: serviceURL.debtNewURL,
+                    url: serviceURL.debtNewURL+info.id,
                     params: info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
@@ -178,7 +189,7 @@ angular.module("txj")
             debtDeleteHTTP: function (id) {
                 return $http({
                     method: "delete",
-                    url: serviceURL.debtDeleteURL,
+                    url: serviceURL.debtDeleteURL+id,
                     params: id,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }

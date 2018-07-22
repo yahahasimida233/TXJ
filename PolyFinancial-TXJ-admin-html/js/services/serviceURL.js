@@ -20,17 +20,16 @@ angular.module("txj").factory("serviceURL", function() {
         imgUploadURL: "/admin/admin/a/u/picture/",
 
         // 用户管理
-        userListURL:"/admin/admin/a/u/user/list/",
-
-        userDetailedURL:"/admin/admin/a/u/user/search/",
-        userFrozenURL:"/admin/admin/a/u/user/search/",
+        userListURL:"/admin/admin/a/u/user/search/",
+        userDetailedURL:"/admin/admin/a/u/user/details/",
+        userFrozenURL:"/admin/admin/a/u/user/frozen/",
         userTradeURL:"/admin/admin/a/u/user/trade/",
         userContractListURL:"/admin/admin/a/u/user/contract/list/",
         userContractURL:"/admin/admin/a/u/user/contract/details/",
 
         // 债权管理
-        debtURL:"/admin/admin/a/u/debt/list/",
-        debtNewURL:"/admin/admin/a/u/deb/t",
+        debtURL:"/admin/admin/a/u/debt/search/",
+        debtNewURL:"/admin/admin/a/u/debt/",
         debtEditURL:"/admin/admin/a/u/debt/",
         debtDeleteURL:"/admin/admin/a/u/debt/",
 

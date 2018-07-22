@@ -13,10 +13,10 @@ app.filter('status', function() {
 app.filter('statusFilter',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "正常";
                 break;
-            case "1":
+            case 1:
                 a = "冻结";
                 break;
 
@@ -210,16 +210,18 @@ app.filter('productStateChange',function(){
     }
 });
 
-app.filter('bannerState',function(){
-    return function (a){
-        switch (a){
+app.filter('bannerState',function() {
+    return function (a) {
+        switch (a) {
             case 0:
                 a = "上架";
                 break;
             case 1:
                 a = "下架";
                 break;
-
+        }
+    }
+});
 
 
 
