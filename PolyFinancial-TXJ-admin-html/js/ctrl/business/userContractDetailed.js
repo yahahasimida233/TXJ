@@ -1,12 +1,13 @@
 app.controller("userContractDetailedCtrl",function ($http,$state,serviceHTTP,$stateParams) {
     var vm = this;
-    let id = $stateParams.id;
+    let id = $stateParams.id,
+        contractId =  $stateParams.contractId;
     vm.id = id;
-    serviceHTTP.userContractHTTP(id).then(function successCallback(response) {
+    serviceHTTP.userContractHTTP(id,contractId).then(function successCallback(response) {
         // 请求成功执行代码
         console.log(response);
         if(response.data.message === "success") {
-            vm.list = response.data.data;
+            vm.list = response.data.data[0];
             console.log(vm.list);
         }
         else {

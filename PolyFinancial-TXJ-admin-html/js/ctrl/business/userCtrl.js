@@ -1,14 +1,16 @@
 app.controller("userCtrl",function ($scope,$http,$state,$stateParams,serviceHTTP) {
     let vm = this;
+
+    // 从URL获取参数
+    vm.userId = $stateParams.id || undefined;
+    vm.userName = $stateParams.actualName || undefined;
+    vm.phone = $stateParams.phoneNum || undefined;
+    vm.status = $stateParams.state || undefined;
+    vm.size = $stateParams.size || 10;
+    vm.page = $stateParams.page || undefined;
+
+
     vm.getList = function(){
-        vm.userId = $stateParams.id || undefined;
-        vm.userName = $stateParams.actualName || undefined;
-        vm.phone = $stateParams.phoneNum || undefined;
-        vm.status = $stateParams.state || undefined;
-        vm.size = $stateParams.size || undefined;
-        vm.page = $stateParams.page || undefined;
-
-
         let info = {
             userID: vm.userId,
             actualName:vm.userName,
@@ -23,6 +25,7 @@ app.controller("userCtrl",function ($scope,$http,$state,$stateParams,serviceHTTP
             console.log(response);
             if(response.data.message === "success") {
                 vm.list = response.data.data;
+                vm.totalItems = response.data.total;
                 console.log(vm.list);
             }
             else {
@@ -33,11 +36,10 @@ app.controller("userCtrl",function ($scope,$http,$state,$stateParams,serviceHTTP
         });
         return info;
     };
-
     vm.getList();
 
     // 目前分页数据假数据没有提供，先写一下，正式接口中再做修改
-    vm.totalItems = 2;
+    // vm.totalItems = 2;
 
     // 清除按钮
     vm.reset = function(){
@@ -45,18 +47,19 @@ app.controller("userCtrl",function ($scope,$http,$state,$stateParams,serviceHTTP
         vm.userName = undefined;
         vm.phone = undefined;
         vm.status = undefined;
+        vm.getList();
     };
 
 
     vm.search = function(){
 
         $state.go('backStage.user', {
-            id: info.userID,
-            actualName: info.actualName,
-            phoneNum: info.phoneNum,
-            state: info.state,
-            size: info.size,
-            page: info.page
+            id: vm.userId,
+            actualName: vm.userName,
+            phoneNum: vm.phone,
+            state: vm.status,
+            size: vm.size,
+            page: vm.page
         })
     };
 

@@ -15,6 +15,20 @@ app.controller("matchingCtrl",function ($http,$state,serviceHTTP,$stateParams,da
         vm.data2 = {};
     };
 
+    serviceHTTP.matchingHTTP(id).then(function successCallback(response) {
+        // 请求成功执行代码
+        console.log(response);
+        if(response.data.message === "success") {
+            vm.list = response.data.data;
+            console.log(vm.list);
+        }
+        else {
+
+        }
+    }, function errorCallback(res) {
+        // 请求失败执行代码
+    });
+
     vm.all = false;//查看所有默认隐藏，点击事件才会让其显示，如下
     vm.allOpen = function () {
         vm.all = true;

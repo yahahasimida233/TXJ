@@ -7,11 +7,14 @@ angular.module("txj").factory("serviceURL", function() {
         //登出
         logoutURL: "/admin/admin/a/u/logout/",
 
-        //手机短信验证码
-        verificationCodeURL: "/admin/home/a/u/sendcode/",
+        //获取手机短信验证码
+        getCodeURL: "/admin/home/a/u/sendcode/",
 
         //手机号码注册验证
         phoneRegisterURL: "/admin/home/a/u/verify/",
+
+        //更换手机号
+        newPhoneNumURL: "/home/a/u/my/info/newnum/",
 
         //图片（伪）验证码
         imgCodeURL: "/admin/home/a/u/pverify/",
@@ -24,14 +27,16 @@ angular.module("txj").factory("serviceURL", function() {
         userDetailedURL:"/admin/admin/a/u/user/details/",
         userFrozenURL:"/admin/admin/a/u/user/frozen/",
         userTradeURL:"/admin/admin/a/u/user/trade/",
-        userContractListURL:"/admin/admin/a/u/user/contract/list/",
-        userContractURL:"/admin/admin/a/u/user/contract/details/",
+        userContractListURL:"/admin/admin/a/u/user/contract/",
+        userContractURL:"/admin/admin/a/u/user/contract/",
 
         // 债权管理
         debtURL:"/admin/admin/a/u/debt/search/",
         debtNewURL:"/admin/admin/a/u/debt/",
         debtEditURL:"/admin/admin/a/u/debt/",
         debtDeleteURL:"/admin/admin/a/u/debt/",
+        matchingURL:"/admin/admin/a/u/debt/matcher/",
+        matchOverURL:"/admin/admin/a/u/debt/matcher/",
 
         // 产品管理
         productURL:"/admin/admin/a/u/product/search/",
@@ -53,22 +58,22 @@ angular.module("txj").factory("serviceURL", function() {
         recommendURl:"/admin/admin/a/u/recommend/list/",
         recommendDetailedURL:"/admin/admin/a/u/recommend/pictures/",
         recommendEditURL:"/admin/admin/a/u/recommend/",
-        recommendNewURL:"/admin/admin/a/u/recommend",
-        recommendDeleteURL:"/admin/admin/a/u/recommend",
+        recommendNewURL:"/admin/admin/a/u/recommend/",
+        recommendDeleteURL:"/admin/admin/a/u/recommend/",
         recommendGroundingURL:"/admin/admin/a/u/recommend/pictureshelf/",
 
         // 意见管理
         feedbackURl:"/admin/admin/a/u/opinion/keywords/",
         feedbackDetailedURl:"/admin/admin/a/u/opinion/",
         feedbackDeleteURl:"/admin/admin/a/u/opinion/",
-        feedbackReplyURl:"/admin/admin/a/u/opinion",
+        feedbackReplyURl:"/admin/admin/a/u/opinion/",
 
         // 消息管理
         messageURl:"/admin/admin/a/u/article/keywords/",
         messageDetailedURL:"/admin/admin/a/u/article/",
         messageEditURL:"/admin/admin/a/u/article/",
-        messageNewURL:"/admin/admin/a/u/article",
-        messageDeleteURL:"/admin/admin/a/u/article",
+        messageNewURL:"/admin/admin/a/u/article/",
+        messageDeleteURL:"/admin/admin/a/u/article/",
         messageCancelURL:"/admin/admin/a/u/article/state/",
 
 

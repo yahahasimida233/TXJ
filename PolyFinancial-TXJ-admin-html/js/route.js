@@ -113,7 +113,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 用户管理投资合同详情查看
         .state('backStage.userContractDetailed',{
-            url:"/userContractDetailed?id",
+            url:"/userContractDetailed?id&contractId",
             templateUrl: 'view/html/business/userContractDetailed.html',
             controller: 'userContractDetailedCtrl',
             controllerAs:'vm',
@@ -132,8 +132,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 债权管理
         .state('backStage.debt',{
-            url:"/debt",
-            templateUrl: 'view/html/business/debt.html?id&enterpriseName&creditor&state&size&page',
+            url:"/debt?id&enterpriseName&creditor&state&size&page",
+            templateUrl: 'view/html/business/debt.html',
             controller: 'debtCtrl',
             controllerAs:'vm',
             resolve: {

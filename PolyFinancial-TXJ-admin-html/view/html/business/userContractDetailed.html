@@ -16,7 +16,7 @@
         <div>二、授权出借的账户</div>
         <div>（一）授权出借的账户</div>
         <div>聚金融平台账号：<u>{{vm.list.phoneNum}}</u></div>
-        <div>（二）授权出借的金额：人民币（大写）<u>{{vm.list.investmentMoney | money}}</u>，（小写）¥<u>{{vm.list.investmentMoney}}</u>元。</div>
+        <div>（二）授权出借的金额：人民币（大写）<u>{{vm.list.investment | money}}</u>，（小写）¥<u>{{vm.list.investment}}</u>元。</div>
         <div>三、授权期限</div>
         <div>本授权期限自委托人与受托人间签署《聚金融投资合同》之日起至完全退出该理财计划（或紧急退出）之日止。</div>
         <div>  四、本委托书经委托人在聚金融平台以线上点击确认的方式签署。</div>
@@ -26,7 +26,7 @@
                 <img src="img/u934.png" alt="">
                 <div>委托人：<u>{{vm.list.actualName}}</u></div>
                 <div>受托人：<u>聚金融</u></div>
-                <div><u>{{vm.list.createAt}}</u></div>
+                <div><u>{{vm.list.effectiveTime|date : 'yyyy-MM-dd hh:mm:ss'}}</u></div>
             </div>
         </div>
  

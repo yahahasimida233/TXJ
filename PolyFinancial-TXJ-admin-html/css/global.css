@@ -40,6 +40,31 @@
     .table-foot div span {
       text-align: center; }
 
+.debtEditContent {
+  padding: .2rem; }
+
+.debtEditContent-row {
+  margin: .2rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+  .debtEditContent-row textarea {
+    width: 4rem;
+    height: 2.3rem; }
+
+.debtEditContent-data {
+  margin: .2rem 0;
+  display: flex;
+  justify-content: center; }
+
+.debtEditContent-span {
+  height: .4rem;
+  line-height: .4rem; }
+
+.debtEdit-attention {
+  flex-basis: 100%;
+  text-align: center; }
+
 html {
   font-size: 100px; }
 

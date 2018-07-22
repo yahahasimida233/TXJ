@@ -91,8 +91,8 @@
                 <button class="btn btn-info" ui-sref ="backStage.messageEdit({id:x.id})">编辑</button>
                 <button class="btn btn-danger"
                         ng-disabled = "x.articleState == 0 || x.articleState == 2"
-                        ng-click = "vm.cancel(x.id,x.articleState)">取消</button>
-                <button class="btn btn-danger"  ng-click = "vm.delete(x.id,x.state)">删除</button>
+                        ng-click = "vm.cancel(x.id)">取消</button>
+                <button class="btn btn-danger"  ng-click = "vm.delete(x.id)">删除</button>
 
             </td>
         </tr>
