@@ -163,6 +163,13 @@ app.filter("moduleDeleat",function () {
         }
     }
 })
+// 后台角色管理 超级管理员不可编辑、删除按钮
+app.filter("roleDelet",function () {
+    return function (data) {
+        var ifDelete = data == "超级管理员" ? true : false;
+        return ifDelete;
+    }
+})
 
 app.filter('productMode',function(){
     return function (a){

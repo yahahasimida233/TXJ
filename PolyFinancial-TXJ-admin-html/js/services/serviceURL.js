@@ -79,15 +79,18 @@ angular.module("txj").factory("serviceURL", function() {
         articleURL: "/carrots-admin-ajax/a/u/article/",
         uploadURL: "/carrots-admin-ajax/a/u/img/task",
         // 后台管理
-        changePwURL: "/admin/admin/a/u/account/password",  //更改密码
+        changePwURL: "/admin/admin/a/u/account/password/",  //更改密码
         // 账号管理
-        sAccountURL: "/admin/admin/a/u/account/list",      //搜索帐号
-        dAccountURL: "/admin/admin/a/u/account",           //删除帐号
-        aAccountURL: "/admin/admin/a/u/account",           //新增帐号
-        gAccountURL: "/admin/admin/a/u/account",           //编辑帐号页面获取帐号信息
-        wAccountURL: "/admin/admin/a/u/account",           //编辑帐号
+        sAccountURL: "/admin/admin/a/u/account/search/", //搜索帐号
+        dAccountURL: "/admin/admin/a/u/account/",           //删除帐号
+        aAccountURL: "/admin/admin/a/u/account/",           //新增帐号
+        gAccountURL: "/admin/admin/a/u/account/",           //编辑帐号页面获取帐号信息
+        wAccountURL: "/admin/admin/a/u/account/",           //编辑帐号
         // 模块管理
-        sModuleURL: "/admin/admin/a/u/module/search",      //搜索模块
-        dModuleURL: "/admin/admin/a/u/module/"             //删除模块
+        sModuleURL: "/admin/admin/a/u/module/search/",      //搜索模块
+        ModuleURL: "/admin/admin/a/u/module/",             //模块地址
+        // 角色管理
+        sRoleURL: "/admin/admin/a/u/role/search/",          //角色搜索
+        roleURL: "/admin/admin/a/u/role/"                  //角色地址
     };
 });

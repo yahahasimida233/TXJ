@@ -163,6 +163,18 @@ vm.lists = lists.data;
         },
         {reload: true})
     }
+    // 重置按钮
+    vm.reSet = function () {
+        $state.go("backStage.module",{
+            moduleId: undefined, //帐号ID
+            moduleName: undefined, //角色名
+            parentModuleId: undefined, //用户名
+            creater: undefined, //创建人
+            goPage: 1,
+            size: 10
+        },
+        {reload: true})
+    }
     // 删除模块
     vm.delete = function (id) {
         bootbox.confirm({

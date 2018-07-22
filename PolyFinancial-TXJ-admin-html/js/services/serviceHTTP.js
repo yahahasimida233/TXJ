@@ -529,83 +529,135 @@ angular.module("txj")
         },
 
 
-            // 后台管理模块
-            changePwHTTP: function (password) { //更改密码
-                return $http({
-                    url: serviceURL.changePwURL,
-                    method: "PUT",
-                    params: password,
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-                })
-            },
-            // 帐号模块
-            sAccountHTTP: function (account) {   //搜索帐号
-                return $http({
-                    url:serviceURL.sAccountURL,
-                    method: "GET",
-                    params: account,
-                    headers: {"Conten-Type": "application/x-www-from-urlencoded"}
-                })
-            },
-            dAccountHTTP: function (id) { //删除帐号
-                return $http({
-                    url: serviceURL.dAccountURL + id,
-                    method: "DELETE ",
-                    headers: {
-                        "Conten-Type": "application/x-www-from-urlencoded"
-                    }
-                })
-            },
-            aAccountHTTP: function (data) {  //新增帐号
-                return $http({
-                    url: serviceURL.aAccountURL,
-                    method: "POST",
-                    headers: {
-                        "Conten-Type": "application/x-www-from-urlencoded"
-                    }
-                })
-            },
-            gAccountHTTP: function (id) {   //编辑帐号页面获取帐号信息
-                return $http({
-                    url: serviceURL.gAccountURL + id,
-                    method: "GET",
-                    headers: {
-                        "Conten-Type": "application/x-www-from-urlencoded"
-                    }
-                })
-            },
-            wAccountHTTP: function (data,id) {  //编辑帐号
-                return $http({
-                    url: serviceURL.wAccountURL + id,
-                    method: "PUT",
-                    params: data,
-                    headers: {
-                        "Conten-Type": "application/x-www-from-urlencoded"
-                    }                                        
-                })
-            },
-            // 模块管理
-            sModuleHTTP: function (data) {   //搜索模块
-                return $http({
-                    url: serviceURL.sModuleURL,
-                    method: "GET",
-                    params: data,
-                    headers: {
-                        "Conten-Type": "application/x-www-from-urlencoded"
-                    }                                        
-                })
-            },
-            // 删除模块
-            dModuleHTTP: function (id) {
-                return $http({
-                    url: serviceURL.dModuleURL + id,
-                    method: "DELETE",
-                    headers: {
-                        "Conten-Type": "application/x-www-from-urlencoded"
-                    }
-                })
-            }
+        // 后台管理模块
+        changePwHTTP: function (password) { //更改密码
+            return $http({
+                url: serviceURL.changePwURL,
+                method: "PUT",
+                params: password,
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            })
+        },
+        // 帐号模块
+        sAccountHTTP: function (account) {   //搜索帐号
+            return $http({
+                url:serviceURL.sAccountURL,
+                method: "GET",
+                params: account,
+                headers: {"Conten-Type": "application/x-www-from-urlencoded"}
+            })
+        },
+        dAccountHTTP: function (id) { //删除帐号
+            return $http({
+                url: serviceURL.dAccountURL + id,
+                method: "DELETE ",
+                headers: {
+                    "Conten-Type": "application/x-www-from-urlencoded"
+                }
+            })
+        },
+        aAccountHTTP: function (data) {  //新增帐号
+            return $http({
+                url: serviceURL.aAccountURL,
+                method: "POST",
+                headers: {
+                    "Conten-Type": "application/x-www-from-urlencoded"
+                }
+            })
+        },
+        gAccountHTTP: function (id) {   //编辑帐号页面获取帐号信息
+            return $http({
+                url: serviceURL.gAccountURL + id,
+                method: "GET",
+                headers: {
+                    "Conten-Type": "application/x-www-from-urlencoded"
+                }
+            })
+        },
+        wAccountHTTP: function (data,id) {  //编辑帐号
+            return $http({
+                url: serviceURL.wAccountURL + id,
+                method: "PUT",
+                params: data,
+                headers: {
+                    "Conten-Type": "application/x-www-from-urlencoded"
+                }                                        
+            })
+        },
+        // 模块管理
+        sModuleHTTP: function (data) {   //搜索模块
+            return $http({
+                url: serviceURL.sModuleURL,
+                method: "GET",
+                params: data,
+                headers: {
+                    "Conten-Type": "application/x-www-from-urlencoded"
+                }                                        
+            })
+        },
+
+        dModuleHTTP: function (id) {    // 删除模块
+            return $http({
+                url: serviceURL.ModuleURL + id,
+                method: "DELETE",
+                headers: {
+                    "Conten-Type": "application/x-www-from-urlencoded"
+                }
+            })
+        },
+
+        gModuleHTTP: function (id) {     //编辑模块页面获取模块信息
+            return $http({
+                url: serviceURL.ModuleURL + id,
+                method: "GET",
+                headers: {
+                    "Conten-Type": "application/x-www-from-urlencoded"
+                }
+            })
+        },
+
+        wModuleHTTP: function (id) {    // 编辑模块
+            return $http({
+                url: serviceURL.ModuleURL + id,
+                method: "PUT",
+                headers: {
+                    "Conten-Type": "application/x-www-from-urlencoded"
+                }
+            })
+        },
+        
+        aModuleHTTP: function (id) {     // 新增模块
+            return $http({
+                url: serviceURL.ModuleURL + id,
+                method: "POST",
+                headers: {
+                    "Conten-Type": "application/x-www-from-urlencoded"
+                }
+            })
+        },
+
+        // 角色模块
+        sRoleHTTP: function (data) {   //角色搜索
+            return $http({
+                url: serviceURL.sRoleURL,
+                method: "GET",
+                params: data,
+                headers: {
+                    "Conten-Type": "application/x-www-from=urlencoded"
+                }
+            })
+        },
+
+        dRoleHTTP: function (id) {   //删除角色
+            return $http({
+                url: serviceURL.roleURL + id,
+                method: "DELETE",
+                headers: {
+                    "Conten-Type": "application/x-www-from=urlencoded"
+                }
+            })
         }
+    }
 })
 
 // //检查是否登录

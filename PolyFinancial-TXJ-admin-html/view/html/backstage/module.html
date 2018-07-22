@@ -57,10 +57,10 @@
                 <!-- 操作按钮 -->
                 <td class="text-center">
 
-                    <button class="btn btn-info" ng-click="vm.write(list.id)"  ui-sref="backStage.moduleEdit({id: list.id})">编辑
+                    <button class="btn btn-info" ng-click="vm.write(list.moduleID)"  ui-sref="backStage.moduleEdit({id: list.moduleID})">编辑
                     </button>
 
-                    <button class="btn btn-danger" ng-click="vm.delete(list.id)" ng-disabled="list.moduleName | moduleDeleat">删除
+                    <button class="btn btn-danger" ng-click="vm.delete(list.moduleID)" ng-disabled="list.moduleName | moduleDeleat">删除
                     </button>
                 </td>
             </tr>
