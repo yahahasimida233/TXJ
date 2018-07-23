@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="819dd31a-3431-4100-8b25-41ad794cb473" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/global.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/global.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/img/banner.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/img/home-hot.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/img/home-new.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/img/indexloading.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/img/indexloadinglogo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/vendor/canvas.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/business/debtEdit.js" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/business/debtEdit.js" />
+      <change beforePath="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/operate/recommendEdit.html" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/operate/recommendEdit.html" />
+      <change beforePath="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/global.scss" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/global.scss" />
+      <change beforePath="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/modules/home.css" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/modules/home.css" />
+      <change beforePath="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/modules/home.css.map" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/modules/home.css.map" />
+      <change beforePath="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/modules/home.scss" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/modules/home.scss" />
+      <change beforePath="$PROJECT_DIR$/PolyFinancial-TXJ-html/index.html" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/index.html" />
+      <change beforePath="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/home.js" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/home.js" />
+      <change beforePath="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/route.js" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/route.js" />
+      <change beforePath="$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/home.html" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/home.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,40 +33,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="serviceHTTP.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/services/serviceHTTP.js">
+      <file leaf-file-name="route.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/route.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12879">
-              <caret line="477" column="48" lean-forward="false" selection-start-line="477" selection-start-column="48" selection-end-line="477" selection-end-column="48" />
+            <state relative-caret-position="810">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="feedbackReply.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/operate/feedbackReply.js">
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messageCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/operate/messageCtrl.js">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1701">
-              <caret line="63" column="54" lean-forward="false" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
+            <state relative-caret-position="1458">
+              <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
               <folding>
-                <marker date="1532275597161" expanded="true" signature="1272:1290" ph="..." />
+                <element signature="n#canvas#0;n#div#3;n#div#1;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#3;n#div#1;n#!!top" expanded="false" />
+                <element signature="n#script#0;n#div#1;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/route.js">
+      <file leaf-file-name="home.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/css/modules/home.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2160">
+              <caret line="80" column="19" lean-forward="false" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="backStageCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/backStageCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -62,48 +90,48 @@
       <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="189">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backStage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/backStage.html">
+      <file leaf-file-name="recommendEdit.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/operate/recommendEdit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="113">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/login.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+            <state relative-caret-position="1836">
+              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="debtEdit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/business/debtEdit.html">
+      <file leaf-file-name="global.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/css/global.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1782">
-              <caret line="66" column="36" lean-forward="false" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+            <state relative-caret-position="891">
+              <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="debtEdit.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/business/debtEdit.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1021">
-              <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+            <state relative-caret-position="216">
+              <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -169,11 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/operate/recommendEdit.js" />
-        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/operate/recommendEdit.html" />
-        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/operate/feedback.html" />
-        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/operate/feedbackCtrl.js" />
-        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/operate/message.js" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/business/debtEdit.html" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/operate/messageDetial.js" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/operate/messageEdit.js" />
@@ -189,9 +212,6 @@
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/business/product.html" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/index.html" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/operate/recommend.html" />
-        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/route.js" />
-        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/home.html" />
-        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/home.js" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/services/serviceURL.js" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/services/serviceHTTP.js" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/filters/fillter.js" />
@@ -220,6 +240,14 @@
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/services/serviceURL.js" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/operate/messageCtrl.js" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/business/debtEdit.js" />
+        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/global.scss" />
+        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/route.js" />
+        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/vendor/canvas.js" />
+        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/index.html" />
+        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/home.html" />
+        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/modules/home.scss" />
+        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/home.js" />
+        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/operate/recommendEdit.html" />
       </list>
     </option>
   </component>
@@ -236,8 +264,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="307" />
-    <option name="y" value="200" />
+    <option name="x" value="26" />
+    <option name="y" value="283" />
     <option name="width" value="1744" />
     <option name="height" value="778" />
   </component>
@@ -259,6 +287,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -276,27 +305,6 @@
               <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
               <item name="TXJ" type="462c0819:PsiDirectoryNode" />
               <item name="PolyFinancial-TXJ-admin-html" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
-              <item name="PolyFinancial-TXJ-admin-html" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="ctrl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
-              <item name="PolyFinancial-TXJ-admin-html" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="ctrl" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
-              <item name="PolyFinancial-TXJ-admin-html" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -312,38 +320,80 @@
               <item name="PolyFinancial-TXJ-admin-html" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="html" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
+              <item name="operate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
+              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
+              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
+              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
+              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
+              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="ctrl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
+              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
+              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../js/task5-10" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\File\TXJ\PolyFinancial-TXJ-html\js\filters" />
-      <recent name="C:\File\TXJ\PolyFinancial-TXJ-html\js\services" />
-      <recent name="C:\File\TXJ\PolyFinancial-TXJ-html\view\html" />
-      <recent name="C:\File\TXJ\PolyFinancial-TXJ-html\js\ctrl" />
-      <recent name="C:\File\TXJ\PolyFinancial-TXJ-admin-html\js\services" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\File\TXJ\PolyFinancial-TXJ-html\css\modules" />
       <recent name="C:\File\TXJ\PolyFinancial-TXJ-admin-html\js\ctrl\operate" />
       <recent name="C:\File\TXJ\PolyFinancial-TXJ-admin-html\css\modules\backstage" />
       <recent name="C:\File\TXJ\PolyFinancial-TXJ-admin-html\css\modules\business" />
       <recent name="C:\File\TXJ\PolyFinancial-TXJ-admin-html\css\modules" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\File\TXJ\PolyFinancial-TXJ-html\js\filters" />
+      <recent name="C:\File\TXJ\PolyFinancial-TXJ-html\js\services" />
+      <recent name="C:\File\TXJ\PolyFinancial-TXJ-html\view\html" />
+      <recent name="C:\File\TXJ\PolyFinancial-TXJ-html\js\ctrl" />
+      <recent name="C:\File\TXJ\PolyFinancial-TXJ-admin-html\js\services" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -411,7 +461,10 @@
       <workItem from="1532149686528" duration="8664000" />
       <workItem from="1532221515869" duration="11610000" />
       <workItem from="1532259578736" duration="9911000" />
-      <workItem from="1532307465623" duration="194000" />
+      <workItem from="1532307465623" duration="13735000" />
+      <workItem from="1532331322271" duration="6203000" />
+      <workItem from="1532342432073" duration="10417000" />
+      <workItem from="1532390178382" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="文件路径创建完成">
       <created>1530339385732</created>
@@ -581,21 +634,28 @@
       <option name="project" value="LOCAL" />
       <updated>1532275679258</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="完善了部分搜索功能，债权匹配功能返回的数据有待商榷，图片上传功能有待测试">
+      <created>1532307668349</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1532307668349</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253769000" />
+    <option name="totallyTimeSpent" value="283947000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="307" y="200" width="1744" height="778" extended-state="0" />
+    <frame x="26" y="283" width="1744" height="778" extended-state="0" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25493613" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281471" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32220367" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3218391" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -608,6 +668,25 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281471" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3218391" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25493613" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -675,76 +754,6 @@
     <select />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/css/global.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2909">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/css/modules/backstage/password.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-290">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/backstage/accountCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6041">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/filters/fillter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/business/productEdit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/directives/imgUpload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/loginCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/backStageCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/business/userDetailed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/business/userContract.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -784,13 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="134" column="65" lean-forward="false" selection-start-line="134" selection-start-column="65" selection-end-line="134" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -885,20 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/css/global.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-810">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/operate/recommendEdit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/operate/recommend.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -945,7 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12879">
           <caret line="477" column="48" lean-forward="false" selection-start-line="477" selection-start-column="48" selection-end-line="477" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -981,7 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,33 +975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1701">
           <caret line="63" column="54" lean-forward="false" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
-          <folding>
-            <marker date="1532275597161" expanded="true" signature="1272:1290" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/backStage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,7 +982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,14 +989,139 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1782">
           <caret line="66" column="36" lean-forward="false" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/business/debtEdit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1021">
-          <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3807">
+          <caret line="141" column="31" lean-forward="false" selection-start-line="141" selection-start-column="31" selection-end-line="141" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/embed.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/backStage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/services/serviceURL.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/css/global.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/css/global.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/vendor/canvas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1836">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/backStageCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/css/modules/home.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="80" column="19" lean-forward="false" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+          <folding>
+            <element signature="n#canvas#0;n#div#3;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#3;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#script#0;n#div#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/operate/recommendEdit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -17,7 +17,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/home");
     $stateProvider
     // 登陆页面
-        .state('index',{
+        .state('home',{
             url:"/home",
             templateUrl: 'view/html/home.html',
             controller: 'homeCtrl',
@@ -27,23 +27,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     "$ocLazyLoad",
                     function ($ocLazyLoad) {
                         return $ocLazyLoad.load([
-                            "./js/ctrl/homeCtrl.js",
+                            "./js/ctrl/home.js",
+
                             "./css/modules/home.css"
                         ]);
                     }
                 ]
             }
-
         })
 
-        // 后台页面
-        .state('backStage',{
-            url:"/backStage",
-            templateUrl: 'view/html/backStage.html',
-            controller: 'backStageCtrl',
-            controllerAs:'vm'
 
-        })
 
 
 });
