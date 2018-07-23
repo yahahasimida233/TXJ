@@ -6,7 +6,7 @@ app.controller("debtEditCtrl",function ($http,$state,serviceHTTP,$stateParams){
 
     }else{
         vm.title= "债权编辑";
-        serviceHTTP.debtDetailedHTTP(id).then(function successCallback(response) {
+        serviceHTTP.debtDetailedHTTP(vm.id).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
             if(response.data.message === "success") {
