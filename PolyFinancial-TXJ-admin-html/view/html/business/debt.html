@@ -48,7 +48,7 @@
 <div class="title-warp">
     <strong class="title">债权列表</strong>
     <button class="btn btn-success"
-            ui-sref ="backStage.bannerEdit({id:0})"
+            ui-sref ="backStage.debtEdit({id:0})"
     >新增</button>
 </div>
 
@@ -80,15 +80,15 @@
             <td class="text-center">{{x.cardID}}</td>
             <td class="text-center">{{x.loanAmount}}</td>
             <td class="text-center">{{x.loanPeriod}}</td>
-            <td class="text-center">{{x.loanAt}}</td>
-            <td class="text-center">{{x.repaymentAt}}</td>
-            <td class="text-center">{{x.contractId}}</td>
-            <td class="text-center">{{x.investment}}</td>
+            <td class="text-center">{{x.loanAt |date : 'yyyy-MM-dd hh:mm:ss'}}</td>
+            <td class="text-center">{{x.repaymentAt |date : 'yyyy-MM-dd hh:mm:ss' }}</td>
+            <td class="text-center" ><div ng-repeat ="a in x.contractList">{{a.contractId}}</div></td>
+            <td class="text-center"><div ng-repeat ="a in x.contractList">{{a.investment}}</div></td>
             <td class="text-center">{{x.productTerm}}</td>
             <td class="text-center">{{x.sruplusAmount}}</td>
             <td class="text-center">{{x.state | debtState}}</td>
             <td class="text-center">
-                <button class="btn btn-default"  ui-sref ="backStage.matching({id:x.id})">匹配</button>
+                <button class="btn btn-default"  ui-sref ="backStage.matching({id:x.id})"  ng-disabled = "x.state == 0">匹配</button>
                 <button class="btn btn-info" ui-sref ="backStage.debtEdit({id:x.id})">编辑</button>
                 <button class="btn btn-danger"  ng-click = "vm.delete(x.id)">删除</button>
             </td>
@@ -99,7 +99,7 @@
 <div class="table-foot">
     <div class="btn-list-size ">
         <span>每页显示</span>
-        <input type="text" class="form-control  small" ng-model="vm.size" ng-init="vm.size = 10 ">
+        <input type="text" class="form-control  small" ng-model="vm.size" >
         <span>条</span>
     </div>
     <ul    class="apage "

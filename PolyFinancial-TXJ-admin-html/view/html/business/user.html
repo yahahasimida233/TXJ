@@ -1,5 +1,5 @@
 <!-- 搜索条件 -->
-<form class="searchCondition">
+<div class="searchCondition">
     <div class="search-row">
 
         <label class="tips" for="adminId">用户ID：</label>
@@ -40,7 +40,7 @@
                 ng-click = "vm.search()"
         >查询</button>
     </div>
-</form>
+</div>
 <!-- 列表标题 -->
 <div class="title-warp">
     <strong class="title">用户列表</strong>
@@ -80,7 +80,7 @@
 <div class="table-foot">
     <div class="btn-list-size ">
         <span>每页显示</span>
-        <input type="text" class="form-control  small" ng-model="vm.size" ng-init="vm.size = 10 ">
+        <input type="text" class="form-control  small" ng-model="vm.size">
         <span>条</span>
     </div>
     <ul    class="apage "

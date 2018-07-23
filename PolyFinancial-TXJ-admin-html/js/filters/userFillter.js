@@ -58,10 +58,10 @@ app.filter('userState',function(){
 app.filter('userContract',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "生效中";
                 break;
-            case "1":
+            case 1:
                 a = "已失效";
                 break;
 
@@ -117,13 +117,13 @@ app.filter('money',function(){
 app.filter('debtState',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "已匹配";
                 break;
-            case "2":
+            case 2:
                 a = "未匹配";
                 break;
-            case "1":
+            case 1:
                 a = "匹配中";
                 break;
 
@@ -205,10 +205,10 @@ app.filter('productState',function(){
 app.filter('productStateChange',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "下架";
                 break;
-            case "1":
+            case 1:
                 a = "上架";
                 break;
 

@@ -1,43 +1,30 @@
 app.controller("debtCtrl",function ($http,$state,serviceHTTP,$stateParams){
     var vm = this;
-    serviceHTTP.debtHTTP().then(function successCallback(response) {
-        // 请求成功执行代码
-        if(response.data.message === "success") {
-            vm.list = response.data.data;
-            console.log(vm.list);
-        }
-        else {
 
-        }
-    }, function errorCallback(res) {
-        // 请求失败执行代码
-    });
+    // 从URL获取参数
+    vm.debtId = $stateParams.id || undefined;
+    vm.companyName = $stateParams.actualName || undefined;
+    vm.obligor = $stateParams.phoneNum || undefined;
+    vm.status = $stateParams.state || undefined;
+    vm.size = $stateParams.size || 10;
+    vm.page = $stateParams.page || undefined;
 
-    // 目前分页数据假数据没有提供，先写一下，正式接口中再做修改
-    vm.totalItems = 2;
-
-    // 清除按钮
-    vm.reset = function(){
-        vm.debtId= undefined;
-        vm.companyName = undefined;
-        vm.obligor= undefined;
-        vm.status = undefined;
-    };
-
-
-    //搜索债权列表功能
-    vm.userSearch = function(){
-        //搜索的四个值
-        var debtInfo = {
-            userID: vm.userId,
-            actualName:vm.userName,
-            phoneNum:vm.phone,
-            state:vm.status
+    vm.getList = function(){
+        let info = {
+            id: vm.debtId,
+            enterpriseName:vm.companyName,
+            creditor:vm.obligor ,
+            state:vm.status ,
+            size: vm.size,
+            page: vm.page
         };
-        serviceHTTP.debtHTTP(debtInfo).then(function successCallback(response) {
+        console.log("info:",info);
+        serviceHTTP.debtHTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
+            console.log(response);
             if(response.data.message === "success") {
                 vm.list = response.data.data;
+                vm.totalItems = response.data.total;
                 console.log(vm.list);
             }
             else {
@@ -47,6 +34,35 @@ app.controller("debtCtrl",function ($http,$state,serviceHTTP,$stateParams){
             // 请求失败执行代码
         });
     };
+    vm.getList();
+
+    // 搜索功能
+    vm.search = function(){
+
+        $state.go('backStage.debt', {
+            id: vm.debtId,
+            enterpriseName:vm.companyName,
+            creditor:vm.obligor ,
+            state:vm.status ,
+            size: vm.size,
+            page: vm.page
+        })
+    };
+
+
+    // 目前分页数据假数据没有提供，先写一下，正式接口中再做修改
+    // vm.totalItems = 2;
+
+    // 清除按钮
+    vm.reset = function(){
+        vm.debtId= undefined;
+        vm.companyName = undefined;
+        vm.obligor= undefined;
+        vm.status = undefined;
+        vm.getList();
+    };
+
+
 
 
     vm.delete = function(id){
