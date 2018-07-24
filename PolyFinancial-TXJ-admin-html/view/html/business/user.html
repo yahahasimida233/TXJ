@@ -51,6 +51,7 @@
         <tbody>
         <tr>
             <th class="text-center index-title"><strong>序号</strong></th>
+            <th class="text-center index-title"><strong>用户ID</strong></th>
             <th class="text-center list-title"><strong>手机号</strong></th>
             <th class="text-center list-title"><strong>真实姓名</strong></th>
             <th class="text-center list-title"><strong>身份证号码</strong></th>
@@ -62,6 +63,7 @@
         </tr>
         <tr ng-repeat="x in vm.list">
             <td class="text-center">{{$index+1}}</td>
+            <td class="text-center">{{x.id}}</td>
             <td class="text-center">{{x.phoneNum}}</td>
             <td class="text-center">{{x.actualName}}</td>
             <td class="text-center">{{x.cardID}}</td>
