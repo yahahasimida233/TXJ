@@ -1,5 +1,5 @@
 <!-- 搜索条件 -->
-<form class="searchCondition">
+<div class="searchCondition">
     <div class="search-row">
 
         <label class="tips" for="adminId">用户ID：</label>
@@ -22,14 +22,14 @@
     </div>
     <div class="search-row">
 
-        <label class="tips" for="username">手机号</label>
+        <label class="tips" for="username">手机号：</label>
         <input type="text"
                id="username"
                ng-model = "vm.phone"
                class="form-control form-18">
 
 
-        <label class="tips" for="creater">状态</label>
+        <label class="tips" for="creater">状 态：</label>
         <select class="form-control" id="creater" ng-model = "vm.status" >
             <option value="">--请选择一个状态--</option>
             <option value="0">正常</option>
@@ -40,7 +40,7 @@
                 ng-click = "vm.search()"
         >查询</button>
     </div>
-</form>
+</div>
 <!-- 列表标题 -->
 <div class="title-warp">
     <strong class="title">用户列表</strong>
@@ -67,7 +67,7 @@
             <td class="text-center">{{x.cardID}}</td>
             <td class="text-center">{{x.totalAssets}}</td>
             <td class="text-center">{{x.cumulativeIncome}}</td>
-            <td class="text-center">{{x.createAt}}</td>
+            <td class="text-center">{{x.registrationTime |date : 'yyyy-MM-dd hh:mm:ss'}}</td>
             <td class="text-center">{{x.state | statusFilter}}</td>
             <td class="text-center">
                 <button class="btn btn-default"  ng-click = "vm.frozen(x.id,x.state)">{{x.state | status}}</button>
@@ -80,7 +80,7 @@
 <div class="table-foot">
     <div class="btn-list-size ">
         <span>每页显示</span>
-        <input type="text" class="form-control  small" ng-model="vm.size" ng-init="vm.size = 10 ">
+        <input type="text" class="form-control  small" ng-model="vm.size">
         <span>条</span>
     </div>
     <ul    class="apage "
@@ -101,7 +101,7 @@
     </ul>
     <div class="btn-list-page">
         <span>去第</span>
-        <input type="text" class="form-control small" ng-model="vm.newPage">
+        <input type="text" class="form-control small" ng-model="vm.page">
         <span>页</span>
         <button class="btn btn-default" ng-click="vm.search()" >确定</button>
     </div>

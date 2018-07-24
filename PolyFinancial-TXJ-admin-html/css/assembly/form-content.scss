@@ -57,3 +57,42 @@
     }
   }
 }
+
+//下面一坨是债权编辑页面的样式，因为其他页面套用较多，升级为全局样式，望知悉
+.debtEditContent{
+  padding: .2rem;
+
+}
+.debtEditContent-row{
+  margin: .2rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  textarea{
+    width: 4rem;
+    height: 2.3rem;
+  }
+  //span{
+  //  height: .4rem;
+  //  line-height: .4rem;
+  //}
+  //button{
+  //  margin: .2rem;
+  //}
+}
+
+//避免日历插件样式被覆盖单独写
+.debtEditContent-data{
+  margin: .2rem 0;
+  display: flex;
+  justify-content: center;
+}
+.debtEditContent-span{
+  height: .4rem;
+  line-height: .4rem;
+}
+
+.debtEdit-attention{
+  flex-basis: 100%;
+  text-align: center;
+}

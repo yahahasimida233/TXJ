@@ -1,0 +1,126 @@
+.home-title{
+  display: flex;
+  justify-content: space-between;
+  color: #c39d71;
+  height: .4rem;
+  font-size: .2rem;
+  div{
+    height: .4rem;
+    line-height: .4rem;
+    text-align: center;
+  }
+  .glyphicon-cog{
+    padding-right: .1rem;
+  }
+  .home-blank{
+    padding-left: .2rem;
+  }
+}
+
+
+
+//首页底部按钮样式
+.home-bottom{
+  position: absolute;bottom: 0;
+  padding: .1rem 0;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #b9b9b9;
+  background-color: #f9f9f9;
+  .home-bottom-btn{
+    flex-basis: 33.333%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: 200ms all ease;
+  }
+  //.home-bottom-btn:hover{
+  //  color: #c39d71;
+  //}
+}
+//按钮被点击过后的样式
+.home-active{
+  color: #c39d71;
+}
+
+//轮播图的小点点间距变大
+.carousel-indicators{
+  li{
+    margin: 0 .07rem!important;
+  }
+}
+
+//画布样式
+.canvas{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: .1rem;
+}
+#myCanvas{
+  margin:0 auto;
+  text-align: center;
+  border: solid 2px #dca854;
+  border-radius: 50%
+}
+//画布中内容样式
+.canvas-content{
+  position: absolute;left: 0;right: 0;top: .5rem;
+  text-align: center;
+  color: #999;
+  .canvas-content-leek{
+    font-size: .4rem;
+    color: #dca854;
+  }
+}
+.canvas-content-bottom{
+  display: flex;
+  justify-content: center;
+  div{
+    margin: 0 .1rem;
+  }
+
+}
+
+
+//鼎力推荐标题样式
+.home-recommend{
+  position: relative;
+  text-align: center;
+  height: .4rem;
+  line-height: .4rem;
+  font-weight: bold;
+  border-bottom: #eee solid 1px;
+
+  span{
+    position: absolute;top: -.02rem;
+    min-width: .25rem;
+    height: .34rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .home-new{
+    right: .4rem;
+    background-image: url("../../img/home-new.jpg");
+  }
+  .home-hot{
+    right: .1rem;
+    background-image: url("../../img/home-hot.jpg");
+  }
+}
+
+//立刻投资按钮
+.cutLeek{
+  width: 100%;
+  height: .4rem;
+  margin-top: .2rem ;
+  padding: 0 .15rem;
+  button{
+    width: 100%;
+    background: #daa955 ;
+    color: #fff;
+    font-size: .2rem;
+    font-weight: bold;
+  }
+}

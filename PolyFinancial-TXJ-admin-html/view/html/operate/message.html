@@ -84,15 +84,15 @@
             <td class="text-center " ng-bind="x.udpateBy"></td>
             <td class="text-center time" ng-bind="x.updateAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
             <td class="text-center ">{{x.articleState | messageState}}</td>
-            <td class="text-center time" ng-bind="x.sendTime"></td>
+            <td class="text-center time" ng-bind="x.sendTime  |date : 'yyyy-MM-dd hh:mm:ss'"></td>
 
             <td class="text-center">
                 <button class="btn btn-default"   ui-sref ="backStage.messageDetailed({id:x.id})">查看</button>
                 <button class="btn btn-info" ui-sref ="backStage.messageEdit({id:x.id})">编辑</button>
                 <button class="btn btn-danger"
                         ng-disabled = "x.articleState == 0 || x.articleState == 2"
-                        ng-click = "vm.cancel(x.id,x.articleState)">取消</button>
-                <button class="btn btn-danger"  ng-click = "vm.delete(x.id,x.state)">删除</button>
+                        ng-click = "vm.cancel(x.id)">取消</button>
+                <button class="btn btn-danger"  ng-click = "vm.delete(x.id)">删除</button>
 
             </td>
         </tr>

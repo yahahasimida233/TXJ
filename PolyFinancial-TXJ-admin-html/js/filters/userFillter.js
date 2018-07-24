@@ -13,10 +13,10 @@ app.filter('status', function() {
 app.filter('statusFilter',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "正常";
                 break;
-            case "1":
+            case 1:
                 a = "冻结";
                 break;
 
@@ -58,10 +58,10 @@ app.filter('userState',function(){
 app.filter('userContract',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "生效中";
                 break;
-            case "1":
+            case 1:
                 a = "已失效";
                 break;
 
@@ -69,6 +69,22 @@ app.filter('userContract',function(){
         return a;
     }
 });
+
+app.filter('bannerStateFilter',function(){
+    return function (a){
+        switch (a){
+            case 0:
+                a = "上架";
+                break;
+            case 1:
+                a = "下架";
+                break;
+
+        }
+        return a;
+    }
+});
+
 
 app.filter('money',function(){
     return function (n){
@@ -101,13 +117,13 @@ app.filter('money',function(){
 app.filter('debtState',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "已匹配";
                 break;
-            case "2":
+            case 2:
                 a = "未匹配";
                 break;
-            case "1":
+            case 1:
                 a = "匹配中";
                 break;
 
@@ -115,6 +131,7 @@ app.filter('debtState',function(){
         return a;
     }
 });
+
 // 角色状态过滤
 app.filter("userState", function () {
     return function (num) {
@@ -188,10 +205,10 @@ app.filter('productState',function(){
 app.filter('productStateChange',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "下架";
                 break;
-            case "1":
+            case 1:
                 a = "上架";
                 break;
 
@@ -200,29 +217,28 @@ app.filter('productStateChange',function(){
     }
 });
 
-app.filter('bannerState',function(){
-    return function (a){
-        switch (a){
+app.filter('bannerState',function() {
+    return function (a) {
+        switch (a) {
             case 0:
                 a = "上架";
                 break;
             case 1:
                 a = "下架";
                 break;
-
         }
-        return a;
     }
-
 });
+
+
 
 app.filter('feedbackState',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "已回复";
                 break;
-            case "1":
+            case 1:
                 a = "回复";
                 break;
 
@@ -235,13 +251,13 @@ app.filter('feedbackState',function(){
 app.filter('messageState',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "已推送";
                 break;
-            case "1":
+            case 1:
                 a = "待推送";
                 break;
-            case "2":
+            case 2:
                 a = "已取消";
                 break;
 

@@ -24,11 +24,11 @@ angular.module("txj")
             },
 
             //手机短信验证码
-            verificationCodeHTTP: function (phoneNum) {
+            getCodeHTTP: function (phoneNum) {
                 return $http({
                     method: "POST",
-                    url: serviceURL.verificationCodeURL,
-                    params: phoneNum ,
+                    url: serviceURL.getCodeURL,
+                    data: phoneNum,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -38,6 +38,17 @@ angular.module("txj")
             phoneRegisterHTTP : function (info) {
                 return $http({
                     method: "POST",
+                    url: serviceURL.phoneRegisterURL,
+                    params: info ,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            //更换手机号
+            newPhoneNumHTTP : function (info) {
+                return $http({
+                    method: "PUT",
                     url: serviceURL.phoneRegisterURL,
                     params: info ,
                     headers: {
@@ -67,32 +78,32 @@ angular.module("txj")
             },
 
             //获取用户列表
-            userListHTTP: function () {
+            userListHTTP: function (user) {
                 return $http({
                     method: "get",
                     url: serviceURL.userListURL,
+                    params: user,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
 
-            //用户管理-用户搜索
-            userSearchHTTP: function (userInfo) {
-                return $http({
-                    method: "get",
-                    url: serviceURL.userListURL,
-                    params: userInfo,
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded" }
-                })
-            },
+            // //用户管理-用户搜索
+            // userSearchHTTP: function (userInfo) {
+            //     return $http({
+            //         method: "get",
+            //         url: serviceURL.userListURL,
+            //         params: userInfo,
+            //         headers: {
+            //             "Content-Type": "application/x-www-form-urlencoded" }
+            //     })
+            // },
 
             //获取用户详细信息
             userDetailedHTTP: function (id) {
                 return $http({
                     method: "get",
-                    url: serviceURL.userDetailedURL,
-                    params: id,
+                    url: serviceURL.userDetailedURL+id,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -102,8 +113,7 @@ angular.module("txj")
             userFrozenHTTP: function (id) {
                 return $http({
                     method: "post",
-                    url: serviceURL.userFrozenURL,
-                    params: id,
+                    url: serviceURL.userFrozenURL+id,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -113,7 +123,7 @@ angular.module("txj")
             userTradeHTTP: function (id) {
                 return $http({
                     method: "get",
-                    url: serviceURL.userTradeURL,
+                    url: serviceURL.userTradeURL+id,
                     params: id,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
@@ -124,29 +134,39 @@ angular.module("txj")
             userContractListHTTP: function (id) {
                 return $http({
                     method: "get",
-                    url: serviceURL.userContractListURL,
-                    params: id,
+                    url: serviceURL.userContractListURL+id,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
 
             //获取用户的合同的具体信息
-            userContractHTTP: function (id) {
+            userContractHTTP: function (id,b) {
                 return $http({
                     method: "get",
-                    url: serviceURL.userContractURL,
-                    params: id,
+                    url: serviceURL.userContractURL+id,
+                    params: {contractId:b},
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
 
             // 债权管理
-            debtHTTP: function () {
+            debtHTTP: function (info) {
                 return $http({
                     method: "get",
                     url: serviceURL.debtURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            // 债权详情
+            debtDetailedHTTP: function (info) {
+                return $http({
+                    method: "get",
+                    url: serviceURL.debtNewURL+info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -156,7 +176,7 @@ angular.module("txj")
             debtEditHTTP: function (info) {
                 return $http({
                     method: "put",
-                    url: serviceURL.debtNewURL,
+                    url: serviceURL.debtNewURL+info.id,
                     params: info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
@@ -178,8 +198,29 @@ angular.module("txj")
             debtDeleteHTTP: function (id) {
                 return $http({
                     method: "delete",
-                    url: serviceURL.debtDeleteURL,
+                    url: serviceURL.debtDeleteURL+id,
                     params: id,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            //获取匹配所需的信息
+            matchingHTTP: function (id) {
+                return $http({
+                    method: "get",
+                    url: serviceURL.matchingURL+id,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            //获取匹配所需的信息
+            matchOverHTTP: function (info) {
+                return $http({
+                    method: "get",
+                    url: serviceURL.matchOverURL,
+                    data:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -247,7 +288,7 @@ angular.module("txj")
             productDeleteHTTP: function (info) {
                 return $http({
                     method: "delete",
-                    url: serviceURL.productDeleteURL,
+                    url: serviceURL.productDeleteURL+info,
                     params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
@@ -437,8 +478,8 @@ angular.module("txj")
             feedbackReplyHTTP: function (info) {
                 return $http({
                     method: "put",
-                    url: serviceURL.feedbackReplyURl+info,
-                    params:info,
+                    url: serviceURL.feedbackReplyURl+info.id,
+                    data:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
@@ -496,7 +537,7 @@ angular.module("txj")
         // 取消消息推送
         messageCancelHTTP: function (info) {
             return $http({
-                method: "post",
+                method: "put",
                 url: serviceURL.messageCancelURL+info,
                 params:info,
                 headers: {
