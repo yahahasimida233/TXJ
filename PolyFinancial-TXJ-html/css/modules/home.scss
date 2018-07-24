@@ -1,9 +1,14 @@
 .home-title{
+  position: fixed;top: 0;
   display: flex;
   justify-content: space-between;
   color: #c39d71;
+  background: #fff ;
   height: .4rem;
   font-size: .2rem;
+  max-width: 600px;
+  width: 100vw;
+  z-index: 200;
   div{
     height: .4rem;
     line-height: .4rem;
@@ -13,7 +18,7 @@
     padding-right: .1rem;
   }
   .home-blank{
-    padding-left: .2rem;
+    padding-left: .3rem;
   }
 }
 
@@ -21,13 +26,14 @@
 
 //首页底部按钮样式
 .home-bottom{
-  position: absolute;bottom: 0;
+  position: fixed;bottom: 0;
   padding: .1rem 0;
   max-width: 600px;
   width: 100%;
   display: flex;
   border-top: 1px solid #b9b9b9;
   background-color: #f9f9f9;
+  z-index: 200;
   .home-bottom-btn{
     flex-basis: 33.333%;
     display: flex;
@@ -95,9 +101,9 @@
 
   span{
     position: absolute;top: -.02rem;
-    min-width: .25rem;
+    width: .25rem;
     height: .34rem;
-    background-size: 100% 100%;
+    background-size: .25rem .34rem;
     background-repeat: no-repeat;
   }
   .home-new{
@@ -108,6 +114,14 @@
     right: .1rem;
     background-image: url("../../img/home-hot.jpg");
   }
+}
+
+//中间路由样式
+.home-content{
+  height: 100vh;
+  padding-top: .4rem;
+  padding-bottom: .8rem;
+  overflow-y: auto;
 }
 
 //立刻投资按钮

@@ -4,7 +4,7 @@ app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
     // 启动页面定时消失
     $timeout(function(){
         $(".indexLoading").hide(500);
-    },1000);
+    },0);
 
 
     // // 设置轮播图图片间隔
