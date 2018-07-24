@@ -456,7 +456,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 账户编辑
         .state('backStage.accountEdit',{
-            url:"/accountEdit?id",
+            url: "/accountEdit?id&account",
             templateUrl: 'view/html/backstage/accountEdit.html',
             controller: 'accountEditCtrl as vm',
             resolve: {

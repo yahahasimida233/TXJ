@@ -82,7 +82,7 @@ angular.module("txj").factory("serviceURL", function() {
         // 后台管理
         changePwURL: "/admin/admin/a/u/account/password/",  //更改密码
         // 账号管理
-        sAccountURL: "/admin/admin/a/u/account/search/", //搜索帐号
+        sAccountURL: "/admin/admin/a/u/account/search/",    //搜索帐号
         dAccountURL: "/admin/admin/a/u/account/",           //删除帐号
         aAccountURL: "/admin/admin/a/u/account/",           //新增帐号
         gAccountURL: "/admin/admin/a/u/account/",           //编辑帐号页面获取帐号信息

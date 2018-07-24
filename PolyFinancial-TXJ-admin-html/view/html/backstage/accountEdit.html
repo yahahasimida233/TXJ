@@ -9,10 +9,9 @@
         <span class="tips">用户名:</span>
         <input 
             type="username" 
-            placeholder="6-18位，由汉字、字母和数字组成。" 
+            placeholder="6-18位，可由汉字、字母、数字组成。" 
             class="form-control from-35" 
             name="username" 
-            id="username" 
             ng-model="vm.username" 
             ng-pattern="/^[A-Za-z0-9\u4e00-\u9fa5]+$/"
             minlength="6" 
@@ -32,14 +31,11 @@
             placeholder="6-18位，至少含数字/字母/符号2种组合。" 
             class="form-control from-35" 
             name="password" 
-            id="password" 
-            ng-movm.passworddel="vm.password" 
+            ng-model="vm.password" 
             ng-pattern="/^(?![A-Z]+$)(?![a-z]+$)(?!\d+$)(?![\W_]+$)\S+$/"
-            minlength="6" 
             maxlength="18" 
             ng-minlength="6" 
             ng-maxlength="18" 
-            required
         >
         <div class="tipsRed" 
         ng-show="accountForm.password.$error.pattern || accountForm.password.$error.minlength">旧密码格式错误，请重试</div>
@@ -84,7 +80,7 @@
     </div>  
    
     <div>
-        <button class="btn btn-primary btnSure" ng-click="vm.sure(vm.admin)" ng-disabled="vm.ifSure">
+        <button class="btn btn-primary btnSure" ng-click="vm.sure(vm.admin)">
             保存
         </button>
         <button class="btn btn-danger btnSure cancel" ui-sref="backStage.account">取消</button>
