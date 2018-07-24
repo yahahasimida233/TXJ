@@ -534,7 +534,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     "$ocLazyLoad",
                     function ($ocLazyLoad) {
                         return $ocLazyLoad.load([
-                            "./js/ctrl/backstage/roleEditCtrl.js"
+                            "./js/ctrl/backstage/roleEditCtrl.js",
+                            "./css/modules/backstage/roleE.css"
                         ])
                     }
                 ]

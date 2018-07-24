@@ -34,9 +34,9 @@
                 placeholder="请输入数字ID，0表示自身为父模块。" 
                 class="form-control from-35" 
                 name="parentModuleId" 
-                ng-model="vm.parentModuleID"
+                ng-model="vm.parentModuleId"
                 ng-pattern="/^\d+(\.\d{0})?$/"
-        required>
+                required>
         <div class="tipsRed" ng-show="passwordForm.parentModuleId.$error.pattern || passwordForm.parentModuleId.$error.minlength">ID格式错误，请重试。</div>
     </div>
     <!-- 模块类型 -->
@@ -47,9 +47,9 @@
       <div>
         <!-- 保存按钮 -->
         <button class="btn btn-primary btnSure" 
-                ng-click="vm.sure()" ng-disabled="passwordForm.moduleName.$pristine || passwordForm.moduleName.$invalid || passwordForm.parentModuleId.$pristine || passwordForm.parentModuleId.$invalid || passwordForm.moduleType.$pristine || passwordForm.moduleType.$invalid">
+                ng-click="vm.sure()" ng-disabled=" passwordForm.moduleName.$invalid || passwordForm.parentModuleId.$invalid || passwordForm.moduleType.$invalid">
             保存
         </button>        
-        <button class="btn btn-danger btnSure cancel" ui-sref="backStage.account">取消</button>
+        <button class="btn btn-danger btnSure cancel" ui-sref="backStage.module">取消</button>
     </div>
 </form>

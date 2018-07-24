@@ -17,6 +17,9 @@ app.controller("backStageCtrl",function ($http,$state,yahaha) {
     if (vm.logo !== "233"){
         $state.go('login');
     }
+    // 服务器返回的模块数据
+    // vm.sideBar = JSON.parse(sessionStorage.getItem("sideBar"))
+    // console.log(vm.sideBar);
 
     vm.yahaha= yahaha;
     vm.sideBar= [];//用于存储处理过后的数组对象

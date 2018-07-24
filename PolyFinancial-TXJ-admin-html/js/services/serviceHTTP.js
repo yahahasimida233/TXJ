@@ -646,20 +646,22 @@ angular.module("txj")
             })
         },
 
-        wModuleHTTP: function (id) {    // 编辑模块
+        wModuleHTTP: function (id,data) {    // 编辑模块
             return $http({
                 url: serviceURL.ModuleURL + id,
                 method: "PUT",
+                params: data,
                 headers: {
                     "Conten-Type": "application/x-www-from-urlencoded"
                 }
             })
         },
         
-        aModuleHTTP: function (id) {     // 新增模块
+        aModuleHTTP: function (data) {     // 新增模块
             return $http({
-                url: serviceURL.ModuleURL + id,
+                url: serviceURL.ModuleURL,
                 method: "POST",
+                params: data,
                 headers: {
                     "Conten-Type": "application/x-www-from-urlencoded"
                 }
@@ -685,6 +687,36 @@ angular.module("txj")
                 headers: {
                     "Conten-Type": "application/x-www-from=urlencoded"
                 }
+            })
+        },
+
+        gRoleHTTP: function (id) {   //进入编辑页获取该角色信息
+            return $http({
+                url: serviceURL.roleURL + id,
+                method: "GET",
+                headers: {
+                    "Conten-Type": "application/x-www-from=urlencoded"
+                }                
+            })
+        },
+
+        wRoleHTTP: function (data,id) {  //角色编辑
+            return $http({
+                url: serviceURL.roleURL + id,
+                method: "PUT",
+                headers: {
+                    "Conten-Type": "application/x-www-from=urlencoded"
+                }
+            })
+        },
+
+        aRoleHTTP: function (data) {    //角色新增
+            return $http({
+                url: serviceURL.roleURL,
+                method: "POST",
+                headers: {
+                    "Conten-Type": "application/x-www-from=urlencoded"
+                }                
             })
         }
     }

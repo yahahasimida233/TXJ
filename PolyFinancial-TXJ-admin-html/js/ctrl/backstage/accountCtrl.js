@@ -20,9 +20,9 @@ app.controller("accountCtrl", function ($scope, $state, $stateParams, serviceHTT
             if (res.data.code == 0) {
                 vm.lists = res.data.data.accountList;  //返回的数据列表
                 vm.admin = res.data.data.roles; // 返回的角色类型
-                console.log(vm.admin);
                 // 将角色信息存起来
-                var admin = vm.admin;
+                var admin = vm.admin.slice(1);
+                console.log(admin);
                 sessionStorage.setItem("admin", JSON.stringify(admin));
                 
                 vm.adminId = $stateParams.adminId, //帐号ID

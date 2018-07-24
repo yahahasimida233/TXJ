@@ -3,7 +3,7 @@
     <div class="search-row">
         <!-- 模块ID -->
         <label class="tips" for="moduleId">模块ID</label> 
-        <input type="text" name="moduleId" class="form-control form-18" ng-model="vm.moduleId" required>
+        <input type="text" name="moduleId" class="form-control form-18" ng-model="vm.moduleId" ng-pattern="/^\d+(\.\d{0})?$/" required>
         <!-- 模块名 -->
         <label class="tips" for="moduleName">模块名</label>
         <input type="text" name="moduleName" class="form-control form-18" ng-model="vm.moduleName" required>
@@ -13,7 +13,7 @@
     <div class="search-row">
         <!-- 父模块 -->
         <label class="tips" for="parentModuleId">父模块</label>
-        <input type="text" name="parentModuleId" class="form-control form-18" ng-model="vm.parentModuleId" required>
+        <input type="te" name="parentModuleId" class="form-control form-18" ng-model="vm.parentModuleId" required>
         <!-- 创建人 -->
         <label class="tips" for="creater">创建人</label>
         <input type="text" name="creater" class="form-control form-18" ng-model="vm.creater" required>
@@ -45,10 +45,10 @@
             </tr>
             <tr ng-repeat="list in vm.lists">
                 <td class="text-center index" ng-bind="$index + 1"></td>
-                <td class="text-center" ng-bind="list.moduleID"></td>
+                <td class="text-center" ng-bind="list.id"></td>
                 <td class="text-center" ng-bind="list.moduleName"></td>
                 <td class="text-center" ng-bind="list.url"></td>
-                <td class="text-center" ng-bind="list.parentModuleID"></td>
+                <td class="text-center" ng-bind="list.parentModuleId"></td>
                 <td class="text-center" ng-bind="list.moduleType"></td>
                 <td class="text-center time" ng-bind=" list.updateAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
                 <td class="text-center" ng-bind="list.updateBy"></td>
@@ -57,10 +57,10 @@
                 <!-- 操作按钮 -->
                 <td class="text-center">
 
-                    <button class="btn btn-info" ng-click="vm.write(list.moduleID)"  ui-sref="backStage.moduleEdit({id: list.moduleID})">编辑
+                    <button class="btn btn-info" ng-click="vm.write(list.id)"  ui-sref="backStage.moduleEdit({id: list.id})">编辑
                     </button>
 
-                    <button class="btn btn-danger" ng-click="vm.delete(list.moduleID)" ng-disabled="list.moduleName | moduleDeleat">删除
+                    <button class="btn btn-danger" ng-click="vm.delete(list.id)" ng-disabled="list.moduleName | moduleDeleat">删除
                     </button>
                 </td>
             </tr>

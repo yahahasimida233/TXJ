@@ -41,14 +41,6 @@
         ng-show="accountForm.password.$error.pattern || accountForm.password.$error.minlength">旧密码格式错误，请重试</div>
     </div>
 
-    <!-- <input type="checkbox" 
-           id="checkallpigdata" 
-           ng-model="vm.admin2" 
-           ng-click="vm.checkAll(vm.admin2)"/>
-    <label for="checkallpigdata">全选</label> -->
-
-    <!-- <button class="btn" ng-click="vm.id(vm.admin)">上传</button> -->
-
     <div class="password checkbox">
         
         <span class="tips">角&emsp;色:</span>  
@@ -80,7 +72,8 @@
     </div>  
    
     <div>
-        <button class="btn btn-primary btnSure" ng-click="vm.sure(vm.admin)">
+    <button class="btn btn-primary btnSure" ng-click="vm.sure(vm.admin)" 
+    ng-disabled="accountForm.state.$invalid || accountForm.username.$invalid">
             保存
         </button>
         <button class="btn btn-danger btnSure cancel" ui-sref="backStage.account">取消</button>
