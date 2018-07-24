@@ -91,11 +91,19 @@ angular.module("txj").factory("serviceURL", function() {
         // 后台管理
         changePwURL: "/admin/admin/a/u/account/password/",  //更改密码
         // 账号管理
-        sAccountURL: "/admin/admin/a/u/account/search/", //搜索帐号
+<<<<<<< HEAD
+        sAccountURL: "/admin/admin/a/u/account/search/",    //搜索帐号
         dAccountURL: "/admin/admin/a/u/account/",           //删除帐号
         aAccountURL: "/admin/admin/a/u/account/",           //新增帐号
         gAccountURL: "/admin/admin/a/u/account/",           //编辑帐号页面获取帐号信息
         wAccountURL: "/admin/admin/a/u/account/",           //编辑帐号
+
+      sAccountURL: "/admin/a/u/account/search/", //搜索帐号
+        dAccountURL: "/admin/a/u/account/",           //删除帐号
+        aAccountURL: "/admin/a/u/account/",           //新增帐号
+        gAccountURL: "/admin/a/u/account/",           //编辑帐号页面获取帐号信息
+        wAccountURL: "/admin/a/u/account/",           //编辑帐号
+>>>>>>> 78c5632fa6dc4add36a8db30bf3797b07bb7e3d5
         // 模块管理
         sModuleURL: "/admin/admin/a/u/module/search/",      //搜索模块
         ModuleURL: "/admin/admin/a/u/module/",             //模块地址
