@@ -590,6 +590,7 @@ angular.module("txj")
             return $http({
                 url: serviceURL.aAccountURL,
                 method: "POST",
+                params: data,
                 headers: {
                     "Conten-Type": "application/x-www-from-urlencoded"
                 }
@@ -704,6 +705,7 @@ angular.module("txj")
             return $http({
                 url: serviceURL.roleURL + id,
                 method: "PUT",
+                params: data,
                 headers: {
                     "Conten-Type": "application/x-www-from=urlencoded"
                 }
@@ -714,11 +716,33 @@ angular.module("txj")
             return $http({
                 url: serviceURL.roleURL,
                 method: "POST",
+                params: data,
                 headers: {
                     "Conten-Type": "application/x-www-from=urlencoded"
                 }                
             })
         }
+    }
+})
+
+.factory("sideBar",function () {  //特用与编辑角色时候的层级关系处理 ，因为字段不统一
+    return function (e) {
+        var sideBar = []; //用于存储处理过后的数组对象
+            for (var i = 0; i < e.length; i++) { //遍历每一个元素
+                if (e[i].parentModuleId === 0) { //当为父级元素时开始判断
+                    var obj = {}; //创建一个对象用于存储父级标签名，子级标签的信息
+                    obj.sideBarTitle = e[i].moduleName;
+                    obj.id = e[i].id;
+                    obj.sideBarContent = []; //为对象添加属性
+                    for (var j = 0; j < e.length; j++) { //开始第二次遍历，
+                        if (e[j].parentModuleId === e[i].id) { //当元素的parentd和  父级元素id一致时
+                            obj.sideBarContent.push(e[j]) //把这个元素添加到对象的一条属性中去，用于第二次repeat
+                        }
+                    }
+                    sideBar.push(obj); //把obj添加到sideBar中去。
+                }
+            }
+        return sideBar;
     }
 })
 

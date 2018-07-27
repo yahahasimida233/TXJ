@@ -48,7 +48,7 @@ app.controller("accountEditCtrl", function ($scope, serviceHTTP, $state, $stateP
                 vm.result.push(x[i].id)
             }
         }
-        if (vm.result.length==0){
+        if (vm.result.length == 0){
             bootbox.alert({
                 title: "<strong>提示信息</strong>",
                 message: " <p style='text-align: center'>请正确填写帐号信息。</p>",
@@ -61,10 +61,14 @@ app.controller("accountEditCtrl", function ($scope, serviceHTTP, $state, $stateP
             })
         }
         else{ //所有信息合法
+            // 将数组转为字符串格式上传
+            vm.resultS = (vm.result).join(",");
+            console.log(vm.resultS);
+            
             var data = {  //建立发送请求的对象
                 account: vm.username,
                 password: vm.password || "",
-                roleId: vm.result,
+                roleId: vm.resultS,
                 state: vm.state
             }
             console.log(data);
@@ -72,52 +76,47 @@ app.controller("accountEditCtrl", function ($scope, serviceHTTP, $state, $stateP
             if (id){
                 serviceHTTP.wAccountHTTP(data,id).then(function (res) {  //发送编辑请求
                     console.log(res);
-                    if (res.code == -9002) {
-                        bootbox.alert({
-                            title: "<strong>提示信息</strong>",
-                            message: " <p style='text-align: center'>用户名已被占用，请重新输入</p>",
-                            buttons: {
-                                ok: {
-                                    label: "确认",
-                                    className: "btn-primary"
-                                }
-                            }
-                        })
-                    }
-                    if (res.code == 0) {
-                        bootbox.alert({
-                            title: "<strong>提示信息</strong>",
-                            message: " <p style='text-align: center'>编辑帐号成功</p>",
-                            buttons: {
-                                ok: {
-                                    label: "确认",
-                                    className: "btn-primary"
-                                }
-                            }
-                        }),
-                        $state.go("backStage.account");
-                    }
+                    tips(res.data.code);
                 })
             }
             else{
+                if (data.password == "") {
+                    console.log(111);
+                    
+                }
                 serviceHTTP.aAccountHTTP(data).then(function (res) {  //发送新增请求
                     console.log(res);
-                        
-                    if (res.code == 0) { //新增成功
-                        bootbox.alert({
-                                title: "<strong>提示信息</strong>",
-                                message: " <p style='text-align: center'>编辑帐号成功</p>",
-                                buttons: {
-                                    ok: {
-                                        label: "确认",
-                                        className: "btn-primary"
-                                    }
-                                }
-                            }),
-                        $state.go("backStage.account");
-                    }
+                    tips(res.data.code);
                 })
             }
+        }
+    }
+    // 编辑/新增成功消息提示
+    function tips(code){
+        if (code == -9002) {   //用户名重复
+            bootbox.alert({
+                title: "<strong>提示信息</strong>",
+                message: " <p style='text-align: center'>用户名已被占用，请重新输入</p>",
+                buttons: {
+                    ok: {
+                        label: "确认",
+                        className: "btn-primary"
+                    }
+                }
+            })
+        }
+        if (code == 0) {      //编辑、新增成功
+            bootbox.alert({
+                title: "<strong>提示信息</strong>",
+                    message: " <p style='text-align: center'>编辑帐号成功</p>",
+                    buttons: {
+                        ok: {
+                            label: "确认",
+                            className: "btn-primary"
+                        }
+                    }
+                }),
+            $state.go("backStage.account");
         }
     }
 })

@@ -25,6 +25,21 @@
   margin-top: 40px;
 }
 
-#role {
-  font-size: 25px;
+#warp {
+  display: flex;
+  justify-content: center;
+}
+
+#warp label {
+  font-weight: normal;
+  margin-right: 15px;
+}
+
+#warp .parentModule {
+  margin: 6px 0;
+}
+
+.cancel {
+  margin-left: 108px;
+  margin-right: 38px;
 }

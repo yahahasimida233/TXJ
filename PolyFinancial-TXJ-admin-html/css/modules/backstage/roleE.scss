@@ -1,5 +1,17 @@
 @import "password";
-
-#role{
-    font-size: 25px;
+#warp{
+    display: flex;
+    justify-content: center;
+    label{
+        font-weight: normal;
+        margin-right: 15px;
+    }
+    .parentModule{
+        margin: 6px 0;
+    }
+}
+// 取消按钮，调整整行样式
+.cancel {
+    margin-left: 108px;
+    margin-right: 38px;
 }

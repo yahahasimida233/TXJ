@@ -7,32 +7,35 @@
 <form name="passwordForm" class="passwordForm" id="role">
     <!-- 角色名 -->
     <div class="password" ng-class="{'has-error': passwordForm.roleName.$dirty && passwordForm.roleName.$invalid}">
-        <span class="tips">角色名:</span>
+        <span class="tips">角色名：</span>
         <input type="text" class="form-control from-35" name="roleName" ng-model="vm.roleName" required>
         <div class="tipsRed" ng-show="vm.repeatTips">角色名重复，请重试</div>
     </div>
-
-    <div>
-        <span class="tips">权&ensp;限</span>
-        <label for="checkallpigdata">全选/全不选</label>
-        <input type="checkbox" 
-               ng-model="vm.admin2" 
-               ng-click="vm.checkAll(vm.admin2,vm.show)"/>
-
-        <div ng-repeat="x in vm.sideBar">
-            <!-- 父模块 -->
-            <div ng-click="vm.collapse[$index] = !vm.collapse[$index]" ng-disabled="vm.show == true">
-                <strong>{{x.sideBarTitle}}</strong>
-                <span ng-class="{'glyphicon glyphicon-arrow-down': !vm.collapse[$index], 'glyphicon glyphicon-arrow-up': vm.collapse[$index]}"></span>
+    <div id="warp" class="password">
+        <span class="tips" id="moduleTitle">权&emsp;限：</span>
+        <div class="from-35 inline-block text-left">
+            <div>
+                <label for="checkallpigdata">全选/全不选</label>
+                <input type="checkbox" 
+                       ng-model="vm.admin2" 
+                       ng-click="vm.checkAll(vm.admin2,vm.show)"/>
             </div>
-            <!-- 多选框 -->
-            <label ng-repeat="item in x.sideBarContent" ng-show="vm.collapse[$parent.$index] || vm.show">
-                {{item.moduleName}}
-                <input type="checkbox"  
-                    ng-model="item.ifChecked"
-                    ng-change="vm.log()"
-                    >
-            </label> 
+    
+            <div ng-repeat="x in vm.sideBar">
+                <!-- 父模块 -->
+                <div class="parentModule" ng-click="vm.collapse[$index] = !vm.collapse[$index]" ng-disabled="vm.show == true">
+                    <strong>{{x.sideBarTitle}}</strong>
+                    <span ng-class="{'glyphicon glyphicon-arrow-down': !vm.collapse[$index], 'glyphicon glyphicon-arrow-up': vm.collapse[$index]}"></span>
+                </div>
+                <!-- 多选框 -->
+                <label ng-repeat="item in x.sideBarContent" ng-show="vm.collapse[$parent.$index] || vm.show">
+                    {{item.moduleName}}
+                    <input type="checkbox"  
+                        ng-model="item.ifChecked"
+                        ng-change="vm.log()"
+                        >
+                </label> 
+            </div>
         </div>
     </div>
 
