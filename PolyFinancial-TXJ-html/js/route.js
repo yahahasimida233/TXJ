@@ -137,9 +137,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 
         // 修改密码
-        .state('home.changePa',{
-            url:"/changePa",
-            templateUrl: 'view/html/mine/changePa.html',
+        .state('home.changePassword',{
+            url:"/changePassword",
+            templateUrl: 'view/html/mine/changPassword.html',
             controller: 'changePaCtrl',
             controllerAs:'vm',
             resolve: {
@@ -157,24 +157,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 
         // 交易密码
-        .state('home.changeTradePa',{
-            url:"/changeTradePa",
-            templateUrl: 'view/html/mine/changeTradePa.html',
-            controller: 'changeTradePaCtrl',
-            controllerAs:'vm',
-            resolve: {
-                loadMyFile: [
-                    "$ocLazyLoad",
-                    function ($ocLazyLoad) {
-                        return $ocLazyLoad.load([
-                            "./js/ctrl/mine/changeTradePa.js",
-
-                            "./css/modules/mine/changeTradePa.css"
-                        ]);
-                    }
-                ]
-            }
-        })
+        // .state('home.changeTradePa',{
+        //     url:"/changeTradePa",
+        //     templateUrl: 'view/html/mine/changeTradePa.html',
+        //     controller: 'changeTradePaCtrl',
+        //     controllerAs:'vm',
+        //     resolve: {
+        //         loadMyFile: [
+        //             "$ocLazyLoad",
+        //             function ($ocLazyLoad) {
+        //                 return $ocLazyLoad.load([
+        //                     "./js/ctrl/mine/changeTradePa.js",
+        //
+        //                     "./css/modules/mine/changeTradePa.css"
+        //                 ]);
+        //             }
+        //         ]
+        //     }
+        // })
 
         // 关于我们
         .state('home.about',{
@@ -190,6 +190,45 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                             "./js/ctrl/mine/about.js",
 
                             "./css/modules/mine/about.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 升级!!（想多了）
+        .state('home.update',{
+            url:"/update",
+            templateUrl: 'view/html/mine/update.html',
+            controller: 'updateCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/update.js",
+
+                            "./css/modules/mine/update.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 消息中心
+        .state('home.message',{
+            url:"/message",
+            templateUrl: 'view/html/mine/message.html',
+            controller: 'messageCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/message.js",
+                            "./css/modules/mine/message.css"
                         ]);
                     }
                 ]

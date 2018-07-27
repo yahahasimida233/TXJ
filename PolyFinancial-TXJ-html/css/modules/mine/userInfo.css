@@ -4,11 +4,13 @@
   text-align: center;
   height: .4rem;
   line-height: .4rem;
-  background-color: white; }
+  background-color: white;
+  color: #c39d71;
+  font-size: .2rem; }
   .userInfo .userInfo-title .fa-chevron-left {
     position: absolute;
     left: .2rem;
-    top: .13rem; }
+    top: .1rem; }
 .userInfo .userInfo-row {
   background-color: white;
   padding: 0 .2rem;

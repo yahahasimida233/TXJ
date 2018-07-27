@@ -1,3 +1,32 @@
+.CP .CP-title {
+  margin-bottom: .1rem;
+  position: relative;
+  text-align: center;
+  height: .4rem;
+  line-height: .4rem;
+  background-color: white;
+  color: #c39d71;
+  font-size: .2rem; }
+  .CP .CP-title .fa-chevron-left {
+    position: absolute;
+    left: .2rem;
+    top: .1rem; }
 
+.CP-Form {
+  padding: .2rem;
+  text-align: center;
+  background-color: #fff; }
+  .CP-Form .password {
+    padding: .15rem;
+    display: flex;
+    flex-wrap: wrap; }
+    .CP-Form .password .tips {
+      margin-right: .15rem; }
+    .CP-Form .password .tipsRed {
+      flex-basis: 100%;
+      padding-top: .1rem;
+      color: red; }
+  .CP-Form .btnSure {
+    margin-top: .4rem; }
 
 /*# sourceMappingURL=changePa.css.map */

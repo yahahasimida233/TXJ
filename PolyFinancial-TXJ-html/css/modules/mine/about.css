@@ -1,3 +1,39 @@
+.about .about-title {
+  margin-bottom: .1rem;
+  position: relative;
+  text-align: center;
+  height: .4rem;
+  line-height: .4rem;
+  background-color: white;
+  color: #c39d71;
+  font-size: .2rem; }
+  .about .about-title .fa-chevron-left {
+    position: absolute;
+    left: .2rem;
+    top: .1rem; }
+.about .about-row {
+  background-color: white;
+  padding: .1rem .2rem;
+  width: 100%; }
+  .about .about-row img {
+    width: 95%; }
+  .about .about-row .about-row-title {
+    font-size: .17rem;
+    color: #c39d71; }
+  .about .about-row .big {
+    font-size: .3rem;
+    color: #c39d71; }
 
+.about-flex {
+  width: 100%;
+  display: flex; }
+  .about-flex .left-1 {
+    min-width: 1.2rem; }
+  .about-flex .right-1 {
+    width: auto; }
+  .about-flex .left {
+    min-width: .7rem; }
+  .about-flex .right {
+    width: auto; }
 
 /*# sourceMappingURL=about.css.map */

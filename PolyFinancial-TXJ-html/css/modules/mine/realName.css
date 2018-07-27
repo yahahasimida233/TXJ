@@ -6,11 +6,13 @@
     text-align: center;
     height: .4rem;
     line-height: .4rem;
-    background-color: white; }
+    background-color: white;
+    color: #c39d71;
+    font-size: .2rem; }
     .realName .realName-title .fa-chevron-left {
       position: absolute;
       left: .2rem;
-      top: .13rem; }
+      top: .1rem; }
   .realName .realName-step1 {
     background-color: white; }
     .realName .realName-step1 div {
