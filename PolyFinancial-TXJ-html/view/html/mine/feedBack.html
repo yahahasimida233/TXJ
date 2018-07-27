@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div class="feedBack">
+    <div class="feedBack-title">
+        <span class="fa  fa-chevron-left" style="color: #dca854" ui-sref = "home.mine"></span>
+        <div>使用帮助</div>
+    </div>
+    <div class="nav">
 
-</body>
-</html>
+    </div>
+    <form class="content" name="feedbackForm">
+        <textarea type="text"
+                  required
+
+                  ng-model = "vm.feedBackContent "
+                  name = "introduction"
+                  ng-maxlength="200"
+                  placeholder=" 请详细描述您的问题或建议，我们将及时跟进解决。（限制字数100字以内）"></textarea>
+        <div class="attention"
+              style="color: red"
+              ng-show="feedbackForm.introduction.$error.maxlength">字数已超过上限，建议重新编辑。</div>
+    </form>
+    <button class="btn"
+            ng-disabled="feedbackForm.$invalid"
+            ng-click = "vm.change()">提交</button>
+</div>

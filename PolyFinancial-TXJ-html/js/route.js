@@ -16,7 +16,27 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise("/home");
     $stateProvider
-    // 登陆页面
+
+    // 登录页面
+        .state('login',{
+            url:"/login",
+            templateUrl: 'view/html/registerLogin/login.html',
+            controller: 'loginCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/registerLogin/login.js",
+                            "./css/modules/registerLogin/login.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 首页
         .state('home',{
             url:"/home",
             templateUrl: 'view/html/home.html',

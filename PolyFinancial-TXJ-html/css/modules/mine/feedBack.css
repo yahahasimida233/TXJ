@@ -1,3 +1,27 @@
-
+.feedBack .feedBack-title {
+  margin-bottom: .1rem;
+  position: relative;
+  text-align: center;
+  height: .4rem;
+  line-height: .4rem;
+  background-color: white;
+  color: #c39d71;
+  font-size: .2rem; }
+  .feedBack .feedBack-title .fa-chevron-left {
+    position: absolute;
+    left: .2rem;
+    top: .1rem; }
+.feedBack .content textarea {
+  padding: .1rem;
+  width: 100%;
+  border: none;
+  height: 2rem; }
+.feedBack .content .attention {
+  text-align: right; }
+.feedBack .btn {
+  height: .4rem;
+  color: white;
+  background-color: #daa955;
+  width: 100%; }
 
 /*# sourceMappingURL=feedBack.css.map */
