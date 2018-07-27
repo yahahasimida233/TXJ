@@ -36,7 +36,163 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 我的页面
+        .state('home.mine',{
+            url:"/mine",
+            templateUrl: 'view/html/mine/mine.html',
+            controller: 'mineCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/mine.js",
 
+                            "./css/modules/mine/mine.css"
+                        ]);
+                    }
+                ]
+            }
+        })
 
+        // 用户信息页面
+        .state('home.userInfo',{
+            url:"/userInfo",
+            templateUrl: 'view/html/mine/userInfo.html',
+            controller: 'userInfoCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/userInfo.js",
 
+                            "./css/modules/mine/userInfo.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 实名页面
+        .state('home.realName',{
+            url:"/realName",
+            templateUrl: 'view/html/mine/realName.html',
+            controller: 'realNameCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/realName.js",
+
+                            "./css/modules/mine/realName.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 更换绑定手机号码
+        .state('home.changePhone',{
+            url:"/changePhone",
+            templateUrl: 'view/html/mine/changePhone.html',
+            controller: 'changePhoneCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/changePhone.js",
+
+                            "./css/modules/mine/changePhone.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 设置页面
+        .state('home.setting',{
+            url:"/setting",
+            templateUrl: 'view/html/mine/setting.html',
+            controller: 'settingCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/setting.js",
+
+                            "./css/modules/mine/setting.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 修改密码
+        .state('home.changePa',{
+            url:"/changePa",
+            templateUrl: 'view/html/mine/changePa.html',
+            controller: 'changePaCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/changePa.js",
+
+                            "./css/modules/mine/changePa.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 交易密码
+        .state('home.changeTradePa',{
+            url:"/changeTradePa",
+            templateUrl: 'view/html/mine/changeTradePa.html',
+            controller: 'changeTradePaCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/changeTradePa.js",
+
+                            "./css/modules/mine/changeTradePa.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 关于我们
+        .state('home.about',{
+            url:"/about",
+            templateUrl: 'view/html/mine/about.html',
+            controller: 'aboutCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/about.js",
+
+                            "./css/modules/mine/about.css"
+                        ]);
+                    }
+                ]
+            }
+        })
 });

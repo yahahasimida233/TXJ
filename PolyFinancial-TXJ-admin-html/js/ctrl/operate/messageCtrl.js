@@ -6,11 +6,16 @@ app.controller("messageCtrl",function ($http,$state,serviceHTTP,$stateParams) {
     vm.startDate = "yyyy/MM/dd";
     vm.altInputFormats = ['yyyy/M!/d!'];
     vm.popup = {
-        opened: false
+        opened: false,
+        opened2:false
     };
     vm.open = function () {
         vm.popup.opened = true;
     };
+    vm.open2 = function(){
+        vm.popup.opened2 = true;
+    };
+    vm.today = new Date();
 
     serviceHTTP.messageHTTP().then(function successCallback(response) {
         // 请求成功执行代码

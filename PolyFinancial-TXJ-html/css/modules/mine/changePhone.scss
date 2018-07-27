@@ -1,0 +1,80 @@
+.changePhone{
+  //标题样式
+  .changePhone-title{
+    margin-bottom: .1rem;
+    position: relative;
+    text-align: center;
+    height: .4rem;
+    line-height: .4rem;
+    background-color: white;
+    .fa-chevron-left{
+      position: absolute;left: .2rem;top: .13rem;
+
+    }
+  }
+
+  //步骤一
+  .changePhone-step1{
+    background-color: white;
+    div{
+      padding: .1rem .2rem;
+      border: .5px #eee solid;
+    }
+    .step-row{
+      input{
+        padding-left: .1rem;
+        padding-right: .2rem;
+        width: 1rem;
+        border: none;
+
+      }
+      button{
+        width: auto;
+        border: none;
+        padding-left: .2rem;
+        border-left: #eee solid 1px;
+      }
+    }
+    button{
+      width: 100%;
+      background-color: white;
+    }
+    .attention{
+      background-color: #eee;
+      text-align: right;
+      color: red;
+    }
+  }
+
+  .changePhone-step2{
+    background-color: white;
+    div{
+      padding: .1rem .2rem;
+      border: .5px #eee solid;
+    }
+    .step-row{
+
+      input{
+        padding-left: .1rem;
+        border: none;
+        width: 1rem;
+
+      }
+      button{
+        width: auto;
+        border: none;
+        padding-left: .2rem;
+        border-left: #eee solid 1px;
+      }
+    }
+    button{
+      width: 100%;
+      background-color: white;
+    }
+    .attention{
+      background-color: #eee;
+      text-align: right;
+      color: red;
+    }
+  }
+}

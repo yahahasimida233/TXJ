@@ -34,6 +34,23 @@ td {
     width: 10%;
 }
 
+//日期输入框的长度
+.date-input{
+  margin: .1rem 0;
+  width: 1rem!important;
+}
+.date-input-min{
+  margin: .1rem 0;
+  width: .9rem!important;
+}
+
+//简单的flex属性
+.flex{
+  display: flex;
+}
+
+
+//所有u标签都有下划线
 u{
   border-bottom: #29b078 solid;
 }
@@ -73,8 +90,9 @@ u{
         .form-18{
             width: 18%;
         }
-        .tips{    
-            width: 6%;
+        .tips{
+          text-align: right;
+            width: 8%;
         }
     }
 }

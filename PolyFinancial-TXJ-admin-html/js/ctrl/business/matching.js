@@ -1,8 +1,8 @@
 app.controller("matchingCtrl",function ($http,$state,serviceHTTP,$stateParams,data) {
     var vm = this;
     let id = $stateParams.id;
-    vm.data = data;
-    vm.dataThree = [vm.data[0],vm.data[1],vm.data[2]];//将数组前三位单独遍历展示出来
+    // vm.data = data;
+
 
     vm.detail = false;
 
@@ -15,11 +15,20 @@ app.controller("matchingCtrl",function ($http,$state,serviceHTTP,$stateParams,da
         vm.data2 = {};
     };
 
+    vm.dataThree = [];
     serviceHTTP.matchingHTTP(id).then(function successCallback(response) {
         // 请求成功执行代码
         console.log(response);
         if(response.data.message === "success") {
             vm.list = response.data.data;
+            vm.data = response.data.data[1].contractList;
+            vm.sruplusMoney = vm.list[0].waitMatchAmount;
+            for(var i =0;i<2;i++){
+                if(vm.data[i]){
+                    vm.dataThree.push(vm.data[i])
+                }
+            }
+            //将数组前三位单独遍历展示出来
             console.log(vm.list);
         }
         else {
@@ -45,12 +54,39 @@ app.controller("matchingCtrl",function ($http,$state,serviceHTTP,$stateParams,da
             console.log(vm.selected);
             return false;
         }
-        if(vm.sum+e.money > 60000){
-            alert("匹配总额不能超过债权总额哦");
+        if(vm.sum+e.investment > vm.sruplusMoney){
+            bootbox.confirm({
+                title: '操作提示',
+                message: "<p style='text-align: center'>目前选中的投资总额度超过了债权金额，您要拆分选中的这个投资么？</p>",
+                buttons: {
+                    cancel: {
+                        label: '取消'
+                    },
+                    confirm: {
+                        label: '确认'
+                    }
+                },
+                callback: function(result) {
+                    if(result === true){
+                        vm.selected.push(e);
+                        vm.selected[-1].investment = e.investment-vm.sruplusMoney ;
+                        console.log(vm.selected);
+                        vm.sum = vm.sum + e.investment;
+                        vm.sruplusMoney = vm.sruplusMoney -e.investment;
+                        return false;
+                    }else{
+                        return false;
+                    }
+                }
+            })
+        }
+        if(vm.sruplusMoney < 0){
+            bootbox.alert("已经匹配好了，不用再选择投资了，快去点击匹配吧");
             return false;
         }
         vm.selected.push(e);
-        vm.sum = vm.sum + e.money;
+        vm.sum = vm.sum + e.investment;
+        vm.sruplusMoney = vm.sruplusMoney -e.investment;
         console.log(vm.selected);
         console.log("sum"+vm.sum);
     };
@@ -59,8 +95,40 @@ app.controller("matchingCtrl",function ($http,$state,serviceHTTP,$stateParams,da
         console.log(e);
         vm.index = vm.selected.indexOf(e);
         vm.selected.splice(vm.index,1);
-        vm.sum = vm.sum - e.money;
+        vm.sum = vm.sum - e.investment;
+        vm.sruplusMoney = vm.sruplusMoney + e.investment;
         console.log("sum"+vm.sum);
+    };
+
+    // 点击匹配按钮
+    vm.matching = function(){
+        var info = {};
+        info.creditorId = id;
+        info.sruplusMoney = (vm.sruplusMoney < 0)?0: vm.sruplusMoney;
+        info.investList = JSON.parse(JSON.stringify(vm.selected).replace("investment","matched"));
+        // 把字段名称替换成和接口文档一致
+        // info.investList.forEach(function(item){
+        //     item.matched = item.investment;
+        //     delete item.investment
+        // });
+        console.log(info);
+        if(vm.sruplusMoney < 0){
+            info.investList[-1].matched = info.investList[-1].matched + vm.sruplusMoney;
+        }
+        if(vm.sruplusMoney > 0){
+            
+        }
+        serviceHTTP.matchOverHTTP(info).then(function successCallback(response) {
+            // 请求成功执行代码
+            console.log(response);
+            if(response.data.message === "success") {
+            }
+            else {
+                bootbox.alert(response.data.message)
+            }
+        }, function errorCallback(res) {
+            // 请求失败执行代码
+        });
     };
 });
 

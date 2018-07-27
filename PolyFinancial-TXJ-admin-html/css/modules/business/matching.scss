@@ -122,3 +122,11 @@
     font-weight: bold;
   }
 }
+//底部按钮样式
+.matching-bottom{
+  display: flex;
+  justify-content: center;
+  button{
+    margin: 0 .1rem;
+  }
+}

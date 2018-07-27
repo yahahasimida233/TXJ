@@ -191,8 +191,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 产品管理
         .state('backStage.product',{
-            url:"/product",
-            templateUrl: 'view/html/business/product.html?id&productName&createBy&state&size&page',
+            url:"/product?id&productName&createBy&state&size&page",
+            templateUrl: 'view/html/business/product.html',
             controller: 'productCtrl',
             controllerAs:'vm',
             resolve: {

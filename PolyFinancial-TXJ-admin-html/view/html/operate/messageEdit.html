@@ -48,18 +48,7 @@
             </div>
         </div>
         <div>推送设置</div>
-        <div class="debtEditContent-row"
-             ng-class="{'has-error': messageEditForm.pictureName.$dirty && messageEditForm.pictureName.$invalid}">
-            <span>*推送时间</span>
-            <input type="text"
-                   required
-                   class="form-control"
-                   ng-model ="vm.articleTitle"
-                   name="pictureName"
-                   placeholder="请输入消息标题（20字以内）"
-                   ng-pattern="/^[\u4e00-\u9fa5]{2,10}$/">
 
-        </div>
         <div class="debtEditContent-row">
             <span>*推送时间</span>
             <div>
@@ -84,6 +73,8 @@
                                ng-click="vm.open()"
                                placeholder="请输入日期"
                                required="required">
+                        <input class="form-control date-input-min"
+                               type="time">
                     </label>
                 </label>
             </div>

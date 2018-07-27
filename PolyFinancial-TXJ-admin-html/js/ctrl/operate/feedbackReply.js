@@ -8,8 +8,8 @@ app.controller("feedbackReplyCtrl",function ($scope,$http,$state,serviceHTTP,$st
         serviceHTTP.feedbackReplyHTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "查询成功") {
-
+            if(response.data.message === "反馈成功") {
+                $state.go('backStage.feedback');
             }
             else {
                 bootbox.alert(response.data.message);

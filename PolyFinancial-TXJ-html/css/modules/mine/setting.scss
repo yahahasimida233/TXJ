@@ -1,0 +1,25 @@
+.setting{
+  .setting-title{
+    margin-bottom: .1rem;
+    position: relative;
+    text-align: center;
+    height: .4rem;
+    line-height: .4rem;
+    background-color: white;
+    .fa-chevron-left{
+      position: absolute;left: .2rem;top: .13rem;
+
+    }
+  }
+  .setting-row{
+    background-color: white;
+    padding: 0 .2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: .6rem;
+    border-top: solid #eee .5px;
+    border-bottom: solid #eee .5px;
+  }
+}

@@ -21,7 +21,7 @@ angular.module("txj").factory("serviceURL", function() {
         imgCodeURL: "/home/a/u/pverify/",
 
         //图片上传
-        imgUploadURL: "/admin/admin/a/u/picture/",
+        imgUploadURL: "/admin/admin/a/u/picture",
 
         // 用户管理
 
@@ -50,7 +50,7 @@ angular.module("txj").factory("serviceURL", function() {
         porductGroundingURL:"/admin/admin/a/u/product/state/",
 
         // banner管理
-        bannerURL:"/admin/admin/a/u/banner/list/",
+        bannerURL:"/admin/admin/a/u/banner/pictures/keywords/",
         bannerDetailedURL:"/admin/admin/a/u/banner/pictures/",
         bannerEditURL:"/admin/admin/a/u/banner/",
         bannerNewURL:"/admin/admin/a/u/banner/",
@@ -59,7 +59,7 @@ angular.module("txj").factory("serviceURL", function() {
 
         // 鼎力推荐
 
-        recommendURl:"/admin/admin/a/u/recommend/list/",
+        recommendURl:"/admin/admin/a/u/recommend/pictures/keywords/",
         recommendDetailedURL:"/admin/admin/a/u/recommend/pictures/",
         recommendEditURL:"/admin/admin/a/u/recommend/",
         recommendNewURL:"/admin/admin/a/u/recommend/",

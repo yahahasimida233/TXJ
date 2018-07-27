@@ -174,10 +174,10 @@ app.filter("roleDelet",function () {
 app.filter('productMode',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "本息返还";
                 break;
-            case "1":
+            case 1:
                 a = "先息后本";
                 break;
 
@@ -190,10 +190,10 @@ app.filter('productMode',function(){
 app.filter('productState',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "上架";
                 break;
-            case "1":
+            case 1:
                 a = "下架";
                 break;
 

@@ -74,6 +74,7 @@ angular.module("txj")
                     url: serviceURL.imgUploadURL,
                     data:info,
                     headers: {'Content-Type': undefined},
+
                 })
             },
 
@@ -215,21 +216,22 @@ angular.module("txj")
                 })
             },
 
-            //获取匹配所需的信息
+            //匹配完成
             matchOverHTTP: function (info) {
                 return $http({
-                    method: "get",
+                    method: "put",
                     url: serviceURL.matchOverURL,
-                    data:info,
+                    params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
 
             // 产品管理列表
-            productHTTP: function () {
+            productHTTP: function (info) {
                 return $http({
                     method: "get",
+                    params:info,
                     url: serviceURL.productURL,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
@@ -241,7 +243,7 @@ angular.module("txj")
                 return $http({
                     method: "get",
                     url: serviceURL.productDetailURL,
-                    params:info,
+                    params:{id:info},
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
@@ -275,8 +277,8 @@ angular.module("txj")
             // 上下架产品
             porductGroundingHTTP: function (info) {
                 return $http({
-                    method: "post",
-                    url: serviceURL.porductGroundingURL,
+                    method: "put",
+                    url: serviceURL.porductGroundingURL+info,
                     params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
@@ -289,7 +291,7 @@ angular.module("txj")
                 return $http({
                     method: "delete",
                     url: serviceURL.productDeleteURL+info,
-                    params:info,
+                    params:{id:info},
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
@@ -311,8 +313,8 @@ angular.module("txj")
             bannerDetailedHTTP: function (info) {
                 return $http({
                     method: "get",
-                    url: serviceURL.bannerDetailedURL,
-                    params:info,
+                    url: serviceURL.bannerDetailedURL+info,
+                    params:{id:info},
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
@@ -346,7 +348,7 @@ angular.module("txj")
             // banner上下架
             bannerGroundingHTTP: function (info) {
                 return $http({
-                    method: "post",
+                    method: "put",
                     url: serviceURL.bannerGroundingURL+info,
                     params:info,
                     headers: {
@@ -479,7 +481,7 @@ angular.module("txj")
                 return $http({
                     method: "put",
                     url: serviceURL.feedbackReplyURl+info.id,
-                    data:info,
+                    params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }

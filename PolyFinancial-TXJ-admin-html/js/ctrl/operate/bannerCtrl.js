@@ -4,7 +4,7 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
         // 请求成功执行代码
         console.log(response);
         if(response.data.message === "success") {
-            vm.list = response.data.banner;
+            vm.list = response.data.banner.list;
             console.log(vm.list);
         }
         else {
@@ -38,7 +38,7 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
         serviceHTTP.bannerHTTP(Info).then(function successCallback(response) {
             // 请求成功执行代码
             if(response.data.message === "success") {
-                vm.list = response.data.data;
+                vm.list = response.data.banner.list;
                 console.log(vm.list);
             }
             else {
@@ -103,7 +103,7 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
             },
             callback: function(result) {
                 if(result === true){
-                    serviceHTTP.bannerGroundingHTTP().then(function successCallback(response) {
+                    serviceHTTP.bannerGroundingHTTP(a).then(function successCallback(response) {
                         // 请求成功执行代码
                         console.log(response);
                         if(response.data.message === "success") {

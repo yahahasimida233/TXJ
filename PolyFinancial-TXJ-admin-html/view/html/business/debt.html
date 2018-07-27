@@ -56,7 +56,8 @@
     <table class="table table-striped table-hover table-responsive table-condensed table-bordered table-content">
         <tbody>
         <tr>
-            <th class="text-center list-title"><strong>序号</strong></th>
+            <th class="text-center index-title"><strong>序号</strong></th>
+            <th class="text-center list-title"><strong>债务ID</strong></th>
             <th class="text-center list-title"><strong>企业名称</strong></th>
             <th class="text-center list-title"><strong>债务人（企业法人）</strong></th>
             <th class="text-center list-title"><strong>手机号</strong></th>
@@ -73,7 +74,8 @@
             <th class="text-center list-title"><strong>操作</strong></th>
         </tr>
         <tr ng-repeat="x in vm.list">
-            <td class="text-center">{{$index+1}}</td>
+            <td class="text-center index">{{$index+1}}</td>
+            <td class="text-center">{{x.id}}</td>
             <td class="text-center">{{x.enterpriseName}}</td>
             <td class="text-center">{{x.creditor}}</td>
             <td class="text-center">{{x.phoneNum}}</td>
