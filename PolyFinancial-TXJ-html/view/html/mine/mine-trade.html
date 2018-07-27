@@ -1,0 +1,37 @@
+<div class="mineTrade">
+    <div class="mineTrade-title">
+        <span class="fa  fa-chevron-left" style="color: #dca854" ui-sref = "home.mine"></span>
+        <div>我的理财</div>
+    </div>
+    <div class="nav" ng-init ="vm.nav = 0">
+        <div ng-class="{'mTS': vm.nav == 0}" ng-click ="vm.trade1()">已投资</div>
+        <div ng-class="{'mTS': vm.nav == 1}" ng-click ="vm.trade2()">已续投</div>
+        <div ng-class="{'mTS': vm.nav == 2}" ng-click ="vm.trade3()">已退出</div>
+    </div>
+    <div class="mineTrade-list">
+        <div class="top">
+            <span>新手礼</span>
+            <button class="btn">预约续投</button>
+        </div>
+        <div class="content">
+            <div class="content-row">
+                <div>预期年化收益率</div>
+                <div>998%</div>
+            </div>
+            <div class="content-row">
+                <div>持有金额</div>
+                <div>10000.00</div>
+            </div>
+            <div class="content-row">
+                <div>预期收益</div>
+                <div>998</div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div>
+                到期时间：2018-09-09
+            </div>
+            <button class="btn">查看合同</button>
+        </div>
+    </div>
+</div>

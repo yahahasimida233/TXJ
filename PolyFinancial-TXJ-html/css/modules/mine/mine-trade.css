@@ -1,0 +1,56 @@
+.mineTrade .mineTrade-title {
+  position: relative;
+  text-align: center;
+  height: .4rem;
+  line-height: .4rem;
+  background-color: white;
+  color: #c39d71;
+  font-size: .2rem;
+  border-bottom: 1px solid #eee; }
+  .mineTrade .mineTrade-title .fa-chevron-left {
+    position: absolute;
+    left: .2rem;
+    top: .1rem; }
+.mineTrade .nav {
+  display: flex;
+  background-color: white; }
+  .mineTrade .nav div {
+    height: .4rem;
+    line-height: .3rem;
+    flex-basis: 33.333%;
+    text-align: center;
+    border-left: .5px solid #eee;
+    border-right: .5px solid #eee; }
+  .mineTrade .nav div:hover {
+    border-bottom: #daa955 2px solid; }
+.mineTrade .mineTrade-list {
+  margin: .1rem 0;
+  padding: .1rem .2rem;
+  text-align: center;
+  border: 1px solid #eee;
+  background-color: white; }
+  .mineTrade .mineTrade-list button {
+    color: white;
+    background-color: #daa955; }
+  .mineTrade .mineTrade-list .top {
+    padding: .1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .mineTrade .mineTrade-list .content {
+    padding: .1rem 0;
+    display: flex;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee; }
+    .mineTrade .mineTrade-list .content .content-row {
+      flex-basis: 33.333%; }
+  .mineTrade .mineTrade-list .bottom {
+    padding: .1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+
+.mTS {
+  border-bottom: #daa955 2px solid; }
+
+/*# sourceMappingURL=mine-trade.css.map */

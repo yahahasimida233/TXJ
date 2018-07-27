@@ -234,4 +234,99 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 ]
             }
         })
+
+        // 我的理财
+        .state('home.mineTrade',{
+            url:"/mineTrade",
+            templateUrl: 'view/html/mine/mine-trade.html',
+            controller: 'mineTradeCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/mine-trade.js",
+                            "./css/modules/mine/mine-trade.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 我的交易记录
+        .state('home.minePY',{
+            url:"/minePY",
+            templateUrl: 'view/html/mine/minePY.html',
+            controller: 'minePYCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/minePY.js",
+                            "./css/modules/mine/minePY.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 我的银行卡
+        .state('home.mineCard',{
+            url:"/mineCard",
+            templateUrl: 'view/html/mine/mineCard.html',
+            controller: 'mineCardCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/mineCard.js",
+                            "./css/modules/mine/mineCard.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 我的帮助
+        .state('home.mineHelp',{
+            url:"/mineHelp",
+            templateUrl: 'view/html/mine/mineHelp.html',
+            controller: 'mineHelpCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/mineHelp.js",
+                            "./css/modules/mine/mineHelp.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 我的反馈
+        .state('home.feedBack',{
+            url:"/feedBack",
+            templateUrl: 'view/html/mine/feedBack.html',
+            controller: 'feedBackCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/feedBack.js",
+                            "./css/modules/mine/feedBack.css"
+                        ]);
+                    }
+                ]
+            }
+        })
 });
