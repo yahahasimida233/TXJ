@@ -25,6 +25,24 @@ app.controller("roleCtrl",function ($state, $stateParams, serviceHTTP) {
         serviceHTTP.sRoleHTTP(data).then(function (res) {
             console.log(res);
             vm.lists = res.data.data //返回的数据列表
+            if (res.data.code == -8001) {
+                bootbox.alert({
+                    title: "<strong>提示信息</strong>",
+                    message: " <p style='text-align: center'>搜索的信息不存在</p>",
+                    buttons: {
+                        ok: {
+                            label: "确认",
+                            className: "btn-primary"
+                        }
+                }})
+                $state.go("backStage.role", {
+                    roleId: undefined, //帐号ID
+                    roleName: undefined, //角色名
+                    creater: undefined, //用户名
+                    updateBy: undefined, //创建人
+                }, 
+                    { reload: true}
+            );}
 
         })
     }

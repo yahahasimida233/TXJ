@@ -1,0 +1,45 @@
+.from-35 {
+  width: 35%;
+}
+
+.passwordForm {
+  padding: 40px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.passwordForm .tips {
+  margin-right: 15px;
+}
+
+.passwordForm .password {
+  padding: 15px;
+}
+
+.tipsRed {
+  padding-top: 10px;
+  color: red;
+}
+
+.btnSure {
+  margin-top: 40px;
+}
+
+#warp {
+  display: flex;
+  justify-content: center;
+}
+
+#warp label {
+  font-weight: normal;
+  margin-right: 15px;
+}
+
+#warp .parentModule {
+  margin: 6px 0;
+}
+
+.cancel {
+  margin-left: 108px;
+  margin-right: 38px;
+}

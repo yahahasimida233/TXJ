@@ -39,21 +39,16 @@ app.controller("accountEditCtrl", function ($scope, serviceHTTP, $state, $stateP
     vm.log = function () {
         console.log(vm.admin);
     }
-
-     // 全选
-    // vm.checkAll = function(ifChecked){
-    //     //改变全选按钮的状态
-    //     vm.ifChecked = !vm.ifChecked;
-    //     //循环操作数据，将每条数据里面的ifChecked值跟全选状态的值对应起来
-    //     angular.forEach(vm.admin,function(data){
-    //         data.ifChecked = vm.ifChecked;
-    //     });
-    // };
-
     //保存
     vm.sure = function (x) {
-        //确认除角色信息外的信息是否合法
-        if(vm.username == undefined || vm.state == undefined){
+        // 转成ID
+        vm.result = [];
+        for (i = 0; i < x.length; i++) {
+            if (x[i].ifChecked == true) {
+                vm.result.push(x[i].id)
+            }
+        }
+        if (vm.result.length == 0){
             bootbox.alert({
                 title: "<strong>提示信息</strong>",
                 message: " <p style='text-align: center'>请正确填写帐号信息。</p>",
@@ -65,88 +60,63 @@ app.controller("accountEditCtrl", function ($scope, serviceHTTP, $state, $stateP
                 }
             })
         }
-        else{
-            // 转成ID
-            vm.result = [];
-            for (i = 0; i < x.length; i++) {
-                if (x[i].ifChecked == true) {
-                    vm.result.push(x[i].id)
-                }
+        else{ //所有信息合法
+            // 将数组转为字符串格式上传
+            vm.resultS = (vm.result).join(",");
+            console.log(vm.resultS);
+            
+            var data = {  //建立发送请求的对象
+                account: vm.username,
+                password: vm.password || "",
+                roleId: vm.resultS,
+                state: vm.state
             }
-            if (vm.result.length==0){
-                bootbox.alert({
-                    title: "<strong>提示信息</strong>",
-                    message: " <p style='text-align: center'>请正确填写帐号信息。</p>",
+            console.log(data);
+            
+            if (id){
+                serviceHTTP.wAccountHTTP(data,id).then(function (res) {  //发送编辑请求
+                    console.log(res);
+                    tips(res.data.code);
+                })
+            }
+            else{
+                if (data.password == "") {
+                    console.log(111);
+                    
+                }
+                serviceHTTP.aAccountHTTP(data).then(function (res) {  //发送新增请求
+                    console.log(res);
+                    tips(res.data.code);
+                })
+            }
+        }
+    }
+    // 编辑/新增成功消息提示
+    function tips(code){
+        if (code == -9002) {   //用户名重复
+            bootbox.alert({
+                title: "<strong>提示信息</strong>",
+                message: " <p style='text-align: center'>用户名已被占用，请重新输入</p>",
+                buttons: {
+                    ok: {
+                        label: "确认",
+                        className: "btn-primary"
+                    }
+                }
+            })
+        }
+        if (code == 0) {      //编辑、新增成功
+            bootbox.alert({
+                title: "<strong>提示信息</strong>",
+                    message: " <p style='text-align: center'>编辑帐号成功</p>",
                     buttons: {
                         ok: {
                             label: "确认",
                             className: "btn-primary"
                         }
                     }
-                })
-            }
-            else{ //所有信息合法
-                if (vm.password) {
-                    
-                }                
-                var data = {  //建立发送请求的对象
-                    account: vm.username,
-                    password: vm.password || "",
-                    roleId: vm.result,
-                    state: vm.state
-                }
-                console.log(data);
-                
-                if (id){
-                    serviceHTTP.wAccountHTTP(data).then(function (res) {  //发送编辑请求
-                        console.log(res);
-                        if (res.code == -9002) {
-                            bootbox.alert({
-                                title: "<strong>提示信息</strong>",
-                                message: " <p style='text-align: center'>用户名已被占用，请重新输入</p>",
-                                buttons: {
-                                    ok: {
-                                        label: "确认",
-                                        className: "btn-primary"
-                                    }
-                                }
-                            })
-                        }
-                        if (res.code == 0) {
-                            bootbox.alert({
-                                title: "<strong>提示信息</strong>",
-                                message: " <p style='text-align: center'>编辑帐号成功</p>",
-                                buttons: {
-                                    ok: {
-                                        label: "确认",
-                                        className: "btn-primary"
-                                    }
-                                }
-                            }),
-                            $state.go("backStage.account");
-                        }
-                    })
-                }
-                else{
-                    serviceHTTP.aAccountHTTP(data).then(function (res) {  //发送新增请求
-                        console.log(res);
-                         
-                        if (res.code == 0) { //新增成功
-                            bootbox.alert({
-                                    title: "<strong>提示信息</strong>",
-                                    message: " <p style='text-align: center'>编辑帐号成功</p>",
-                                    buttons: {
-                                        ok: {
-                                            label: "确认",
-                                            className: "btn-primary"
-                                        }
-                                    }
-                                }),
-                            $state.go("backStage.account");
-                        }
-                    })
-                }
-            }
+                }),
+            $state.go("backStage.account");
         }
     }
 })
