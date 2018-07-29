@@ -36,6 +36,25 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 忘记密码
+        .state('forget',{
+            url:"/forget",
+            templateUrl: 'view/html/registerLogin/forget.html',
+            controller: 'forgetCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/registerLogin/forget.js",
+                            "./css/modules/registerLogin/forget.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 首页
         .state('home',{
             url:"/home",
