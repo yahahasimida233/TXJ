@@ -1,0 +1,16 @@
+<!-- title -->
+<div class="title-warp text-center">
+    <strong class="title">理财列表</strong>    
+</div>
+<!-- list -->
+<div ng-repeat="list in vm.lists">
+    <div class="listRow">
+        <div class="productName">{{list.productName}}</div>
+        <dir>{{list.annualRate}}%</dir>
+    </div>
+    <div class="listRow">
+        <div>{{list.productTerm}}天</div>
+        <div>预期年化收益率</div>
+    </div>
+
+</div>

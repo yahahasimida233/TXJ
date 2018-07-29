@@ -75,6 +75,25 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 理财
+        .state('home.product',{
+            url: "/product",
+            templateUrl: 'view/html/product/product.html',
+            controller: 'productCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/product/productCtrl.js",
+
+                            "./css/modules/product/product.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 我的页面
         .state('home.mine',{
             url:"/mine",

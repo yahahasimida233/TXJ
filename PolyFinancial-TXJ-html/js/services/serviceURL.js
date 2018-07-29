@@ -18,6 +18,8 @@ angular.module("txj").factory("serviceURL", function() {
         //图片上传
         imgUploadURL: "/admin/admin/a/u/picture/",
 
+        //产品列表
+        productURL: "admin/home/a/u/productlist/"
 
     };
 });

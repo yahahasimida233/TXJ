@@ -66,6 +66,17 @@ angular.module("txj")
                 })
             },
 
+            // 产品列表
+            productListHTTP: function (data) {
+                return $http({
+                    method: "GET",
+                    url: serviceURL.productURL,
+                    params: data,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            }
 
         }
 });
