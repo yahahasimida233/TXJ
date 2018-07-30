@@ -1,4 +1,4 @@
-app.controller("accountCtrl", function ($scope, $state, $stateParams, serviceHTTP,$timeout) {
+app.controller("accountCtrl", function ($scope, $state, $stateParams, serviceHTTP) {
     var vm = this;
     //初始化列表
     getList();

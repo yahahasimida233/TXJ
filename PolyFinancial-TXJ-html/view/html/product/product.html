@@ -1,16 +1,90 @@
-<!-- title -->
-<div class="title-warp text-center">
-    <strong class="title">理财列表</strong>    
-</div>
-<!-- list -->
-<div ng-repeat="list in vm.lists">
-    <div class="listRow">
-        <div class="productName">{{list.productName}}</div>
-        <dir>{{list.annualRate}}%</dir>
+<div class="top">
+    <!-- title -->
+    <div class="titleWarp">
+        <div class="glyphicon glyphicon-chevron-left back" ui-sref="home.product"></div>
+        <strong class="title">{{vm.productName}}</strong>
+        <div>&emsp;</div>
     </div>
-    <div class="listRow">
-        <div>{{list.productTerm}}天</div>
-        <div>预期年化收益率</div>
+    <!-- 收益率 -->
+    <div class="text-center rate-warp">
+        <span class="rate text-center">{{vm.annualRate}}</span>
+        <span>%</span>
+        <div class="new" ng-show="vm.new">新手专享</div>
+    </div>
+    <div class="text-center rate-text">预期年化收益率</div>
+    
+    <div class="flex-around">
+        <span>投资周期</span>
+        <span class="back">起投金额</span>
+        <span>最小递减金额</span>
+    </div>
+    
+    <div class="flex-around">
+        <span>{{vm.productTerm}}天</span>
+        <span>{{vm.startAmount}}</span>
+        <span>{{vm.minAmount}}</span>
+    </div>
+</div>
+
+
+<div class="flex-around productMore">
+    <span ng-click="vm.introduce()" class="gray" ng-class="{'black': vm.introduceP}">产品简介</span>
+    <span ng-click="vm.moreInfo()" class="gray" ng-class="{'black': vm.moreP}">更多信息</span>
+    <span ng-click="vm.recode()" class="gray" ng-class="{'black': vm.recordP}">投资记录</span>
+</div>
+<!-- 下拉刷新 -->
+<!-- <div id="minirefresh" class="minirefresh-wrap" ng-show="vm.recordP">
+    <div class="minirefresh-scroll"> -->
+        
+        <!-- 投资记录 -->
+        <div class="infor" >
+            <table class="table table-hover" ng-show="vm.recordP">
+                <tr>
+                    <th class="text-center">用户</th>
+                    <th class="text-center">投资金额</th>
+                    <th class="text-center">投资时间</th>
+                </tr>
+        
+                <tr ng-repeat="list in vm.lists">
+                    <td class="text-center">{{list.userId}}</td>
+                    <td class="text-center">{{list.dealAmount}}</td>
+                    <td class="text-center">{{list.createAt}}</td>
+                </tr>
+            </table>
+        
+        </div>
+
+    <!-- </div>
+</div> -->
+
+<!-- 产品简介 -->
+<div class="infor" ng-show="vm.introduceP">
+    <div class="introduce">
+        <strong>产品名称:</strong>&emsp;{{vm.productName}}
+    </div>
+    <div class="introduce">
+        <strong>收益规则:</strong>&emsp;本产品起投金额为{{vm.startAmount}}元，最小增减金额为{{vm.minAmount}}元。仅支持本金续投，投资期限内不可提前退出，理财周期每个月以30天为准。
+    </div>
+    
+     <div class="introduce">
+        <strong>保障方式:</strong>&emsp;聚金融承接债权，本息担保。
+    </div>
+    
+    <div class="introduce">
+        <strong>还款方式:</strong>&emsp;{{vm.repay}}
+    </div>
+    
+    <div class="introduce">
+        <strong>起息日期:</strong>&emsp;起息日期：T(自然日)+1日。
     </div>
 
+    <div class="introduce">
+        <strong>还款日期:</strong>&emsp;T(到期日)+1日(如遇周末及节假日，到期日顺延至周末及节假日后的第一个交易日)。
+    </div>
+</div>
+<!-- 更多信息 -->
+<div class="infor" ng-show="vm.moreP">{{vm.more}}</div>
+
+<div class="text-center bottom"> 
+    <button class="btn btn-primary" ng-click="vm.buy()">立即购买</button>
 </div>

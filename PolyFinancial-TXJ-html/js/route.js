@@ -75,9 +75,27 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
-        // 理财
+        // 理财列表
         .state('home.product',{
-            url: "/product",
+            url: "/productList",
+            templateUrl: 'view/html/product/productList.html',
+            controller: 'productListCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/product/productListCtrl.js",
+                            "./css/modules/product/productList.css",
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 理财产品
+        .state('product', {
+            url: "/product?productId",
             templateUrl: 'view/html/product/product.html',
             controller: 'productCtrl as vm',
             resolve: {
@@ -86,8 +104,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     function ($ocLazyLoad) {
                         return $ocLazyLoad.load([
                             "./js/ctrl/product/productCtrl.js",
-
-                            "./css/modules/product/product.css"
+                            "./css/modules/product/product.css",
+                            // "./minirefresh/minirefresh.min.css",
+                            // "./minirefresh/minirefresh.min.js"
                         ]);
                     }
                 ]

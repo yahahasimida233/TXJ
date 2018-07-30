@@ -67,7 +67,19 @@ angular.module("txj")
             },
 
             // 产品列表
-            productListHTTP: function (data) {
+            productListHTTP: function (data) {  //获取产品列表
+                return $http({
+                    method: "GET",
+                    url: serviceURL.productListURL,
+                    params: data,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 产品详情
+            productHTTP: function (data) { //获取产品详情
                 return $http({
                     method: "GET",
                     url: serviceURL.productURL,
@@ -77,6 +89,7 @@ angular.module("txj")
                     }
                 })
             }
+
 
         }
 });
