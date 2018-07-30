@@ -1,0 +1,23 @@
+<!-- title -->
+<div class="titleWarp">
+    <div class="glyphicon glyphicon-chevron-left back" ui-sref="product({productId: vm.productId})"></div>
+    <strong class="title">立即购买</strong>
+    <div>&emsp;</div>
+</div>
+
+<form name="buyForm" class="buyForm">
+    <div class="money" ng-class="{'has-error': buyForm.oldPassword.$dirty && buyForm.oldPassword.$invalid}">
+        <span class="tips">购买金额:</span>
+        <input type="number" 
+               class="form-control money" 
+               placeholder={{vm.start}}元起投，最小增减金额为{{vm.min}}元。
+               ng-model="vm.money"
+               ng-blur="vm.change()"
+               required>
+        <div class="tipsRed" ng-show="buyForm.oldPassword.$error || vm.showTips">
+            购买金额不符合限额要求，请重试！
+        </div>
+    </div>
+</form>
+
+<div>预期收益：&emsp;{{vm.result}}元</div>

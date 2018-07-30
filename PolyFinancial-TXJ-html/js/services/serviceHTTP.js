@@ -88,8 +88,18 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
                 })
-            }
+            },
 
+            //个人信息
+            personInfoHTTP: function () { //获取产品详情
+                return $http({
+                    method: "GET",
+                    url: serviceURL.personInfoURL,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            }
 
         }
 });

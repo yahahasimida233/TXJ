@@ -19,13 +19,13 @@ angular.module("txj").factory("serviceURL", function() {
         imgUploadURL: "/admin/admin/a/u/picture/",
 
         //产品列表
-        productListURL: "admin/home/a/u/productlist/",
+        productListURL: "/admin/home/a/u/productlist/",
 
         // 产品详情
-        productURL: "admin/home/a/u/productDetatil",
+        productURL: "/admin/home/a/u/productDetatil/",
         
-        // productURL: "admin/home/a/u/productDetatil?productId&pageNum&pageSize",
-
+        //个人信息
+        personInfoURL: "/admin/home/a/u/my/info/"
 
     };
 });

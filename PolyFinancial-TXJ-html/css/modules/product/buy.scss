@@ -1,0 +1,23 @@
+// 标题
+.titleWarp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .2rem; // 使标题处于居中位置
+    .title {
+        padding-right: 0.2rem;
+    }
+}
+// 返回按钮
+.back {
+    padding-left: .2rem;
+}
+
+.buyForm{
+    padding: .2rem;
+    .money{
+        margin-top: .1rem;
+    }
+}

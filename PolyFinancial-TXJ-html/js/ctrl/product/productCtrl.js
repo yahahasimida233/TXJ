@@ -84,7 +84,42 @@ app.controller("productCtrl", function ($state, $stateParams, serviceHTTP, $time
     // });
     // 购买
     vm.buy = function () {
-        
+        // 验证该用户是否实名认证
+        serviceHTTP.personInfoHTTP().then(function (res) {
+            console.log(res);
+            if (res.data.user.realnameState == 0) {
+                $state.go("buy", {
+                    startAmount: vm.startAmount,
+                    minAmount: vm.minAmount,
+                    productId: productId,
+                    rate: vm.annualRate,
+                    time: vm.productTerm
+                })
+            } 
+            else{
+                bootbox.confirm({
+                    title: '<strong> 操作提示 </strong>',
+                    message: "<p style='text-align: center'>您还未实名认证，购买前需要完成实名认证，请您先前往实名认证。</p>",
+                    buttons: {
+                        confirm: {
+                            label: '确认'
+                        },
+                        cancel: {
+                            label: '取消'
+                        }
+                    },
+                    callback: function (result) {
+                        if (result == true) {
+                            $state.reload('home.realName');
+                        }
+                        if (result == false) {
+                            $state.reload("product", {productId: 1});
+                        }
+                    }
+                })
+            };
+        }
+        )
     }
     
 })

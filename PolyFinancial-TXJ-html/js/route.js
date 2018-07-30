@@ -113,6 +113,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 购买产品
+        .state('buy', {
+            url: "/buy?startAmount&minAmount&productId&rate&time",
+            templateUrl: 'view/html/product/buy.html',
+            controller: 'buyCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/product/buyCtrl.js",
+                            "./css/modules/product/buy.css",
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 我的页面
         .state('home.mine',{
             url:"/mine",
