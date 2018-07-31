@@ -6,7 +6,7 @@ angular.module("txj")
                 return $http({
                     method: "POST",
                     url: serviceURL.loginURL,
-                    params: user,
+                    data: user,
                     headers: {
                         "content-type": "application/x-www-form-urlencoded"
                     }
@@ -23,6 +23,21 @@ angular.module("txj")
                 })
             },
 
+            //提交注册信息
+            registerHTTP: function (info) {
+                return $http({
+                    method: "POST",
+                    url: serviceURL.registerURL,
+                    data:{
+                        phoneNum:info.phoneNum,
+                        pwd:info.pwd
+                    },
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+
             //手机短信验证码
             verificationCodeHTTP: function (phoneNum) {
                 return $http({
@@ -35,10 +50,10 @@ angular.module("txj")
             },
 
             //手机号码注册验证
-            phoneRegisterHTTP : function (info) {
+            codeConfirmHTTP : function (info) {
                 return $http({
-                    method: "POST",
-                    url: serviceURL.phoneRegisterURL,
+                    method: "get",
+                    url: serviceURL.codeConfirmURL,
                     params: info ,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
@@ -63,6 +78,17 @@ angular.module("txj")
                     url: serviceURL.imgUploadURL,
                     data:info,
                     headers: {'Content-Type': undefined},
+                })
+            },
+
+
+            //我的页面获取消息列表
+            messageHTTP : function () {
+                return $http({
+                    method: "get",
+                    url: serviceURL.messageURL,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
 

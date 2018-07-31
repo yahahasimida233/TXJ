@@ -1,17 +1,17 @@
-.forget {
+.register {
   width: 100%;
   height: 100vh;
   background-color: #eee; }
-  .forget form {
+  .register form {
     margin: .2rem 0; }
-    .forget form .forget-bottom {
+    .register form .register-bottom {
       padding: .2rem; }
-      .forget form .forget-bottom button {
+      .register form .register-bottom button {
         width: 100%;
         height: .4rem;
         color: white;
         background-color: #daa955; }
-  .forget .forget-title {
+  .register .register-title {
     margin-bottom: .1rem;
     position: relative;
     text-align: center;
@@ -20,21 +20,21 @@
     background-color: white;
     color: #c39d71;
     font-size: .2rem; }
-    .forget .forget-title .fa-chevron-left {
+    .register .register-title .fa-chevron-left {
       position: absolute;
       left: .2rem;
       top: .1rem; }
 
-.forget-input {
+.register-input {
   position: relative; }
-  .forget-input .getCode {
+  .register-input .getCode {
     position: absolute;
     top: .17rem;
     right: .2rem;
     color: #daa955;
     padding-left: .1rem;
     border-left: 2px solid #eee; }
-  .forget-input .forget-img {
+  .register-input .register-img {
     position: absolute;
     top: .37rem;
     left: .1rem;
@@ -43,23 +43,23 @@
     margin-top: -.2rem;
     padding-right: .3rem;
     border-right: 2px solid #eee; }
-  .forget-input .phone-img {
+  .register-input .phone-img {
     background: url("../../../img/login/iphone.png") no-repeat;
     background-size: .17rem .2rem; }
-  .forget-input .code-img {
+  .register-input .code-img {
     background: url("../../../img/forgetpassword/code.jpg") no-repeat;
     background-size: .17rem .2rem; }
-  .forget-input .newP-img {
+  .register-input .newP-img {
     background: url("../../../img/forgetpassword/newpassword.jpg") no-repeat;
     background-size: .17rem .2rem; }
-  .forget-input .oldP-img {
+  .register-input .oldP-img {
     background: url("../../../img/forgetpassword/oldpassword.jpg") no-repeat;
     background-size: .17rem .2rem; }
-  .forget-input input {
+  .register-input input {
     width: 100%;
     padding: .15rem 0  .15rem .5rem;
     border: none;
     border-top: 1px solid #eeeeee;
     border-bottom: 1px solid #eee; }
 
-/*# sourceMappingURL=forget.css.map */
+/*# sourceMappingURL=register.css.map */

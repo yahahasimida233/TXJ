@@ -6,25 +6,31 @@
   line-height: .4rem;
   background-color: white;
   color: #c39d71;
-  font-size: .2rem; }
+  font-size: .2rem;
+  z-index: 1000; }
   .message .message-title .fa-chevron-left {
     position: absolute;
     left: .2rem;
     top: .1rem; }
-.message .message-row {
+.message .minirefresh-wrap {
+  margin-top: .4rem;
+  background-color: white; }
+
+.message-row {
+  margin: .05rem 0;
   background-color: white;
   width: 100%;
   height: 1rem;
   border-top: solid #eee .5px;
   border-bottom: solid #eee .5px; }
-  .message .message-row .message-row-flex {
+  .message-row .message-row-flex {
     padding: 0 .2rem;
     height: .4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: #eee solid 1px; }
-  .message .message-row .down {
+  .message-row .down {
     height: .6rem; }
 
 /*# sourceMappingURL=message.css.map */

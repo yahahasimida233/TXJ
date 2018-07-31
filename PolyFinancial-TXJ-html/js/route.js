@@ -55,6 +55,25 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 注册账号
+        .state('register',{
+            url:"/register",
+            templateUrl: 'view/html/registerLogin/register.html',
+            controller: 'registerCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/registerLogin/register.js",
+                            "./css/modules/registerLogin/register.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 首页
         .state('home',{
             url:"/home",

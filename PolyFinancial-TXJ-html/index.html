@@ -64,6 +64,11 @@
 <script src="vendor/minifresh/minirefresh.min.js"></script>
 <!--下拉刷新插件-->
 
+<script>
+    // 每次进入app时初始化登陆状态
+    sessionStorage.setItem("login","false");
+</script>
+
 <!--<script src="node-modules/mock.js"></script>-->
 <!--自动生成假数据，可以拦截ajax请求，用于前端测试-->
 <script src="js/route.js"></script>

@@ -1,9 +1,9 @@
-<div class="mine-top">
+<div class="mine-top" >
     <div class="mine-title" >
         <div class="glyphicon glyphicon-cog" ui-sref="home.setting"></div>
         <div class="glyphicon glyphicon-comment" ui-sref="home.message"></div>
     </div>
-    <div ng-show = "false" class="mine-userInfo" ui-sref = "home.userInfo">
+    <div ng-show = "vm.loginOrNot" class="mine-userInfo" ui-sref = "home.userInfo">
         <div class="left">
             <img src="img/photo_03.jpg" class="img-circle" alt="">
         </div>
@@ -12,7 +12,7 @@
             <div>手机号</div>
         </div>
     </div>
-    <div class="mine-login-btn" ng-show = "true">
+    <div class="mine-login-btn" ng-show = "!vm.loginOrNot">
         <button class="btn" ui-sref = "login">立即登陆</button>
     </div>
 </div>
