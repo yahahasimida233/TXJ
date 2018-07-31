@@ -99,8 +99,20 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
                 })
-            }
+            },
+            
 
+            // 银行卡列表
+            bankCardListHTTP: function (userId) { //获取产品详情
+                return $http({
+                    method: "GET",
+                    url: serviceURL.bankCardListURL,
+                    params: userId,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
         }
 });
 

@@ -28,3 +28,19 @@ app.filter('money',function(){
     }
 });
 
+// 用户名过滤只显示姓
+app.filter("username", function () {
+    return function (username) {
+        var a = username.slice(1).replace(/./g, '*');
+        var showName = username[0].concat(a);
+        return showName;
+    }
+});
+// 银行卡号过滤只剩最后4位（默认银行卡号为19位）
+app.filter("cardNum", function () {
+    return function (data) {
+        var b = data.slice(15);
+        var showNum = "**** **** **** ***" + b;
+        return showNum;
+    }
+});

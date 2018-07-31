@@ -27,7 +27,7 @@ app.controller("productListCtrl", function ($state, $stateParams, serviceHTTP, $
     //             callback: function () {  // 下拉事件
     //                 // $state.reload($state.current.name);
     //                 location.reload();
-    //                 miniRefresh.endDownLoading(); //结束上拉刷新
+    //                 miniRefresh.endDownLoading(true); //结束上拉刷新
     //             }
     //         }
             
@@ -38,11 +38,9 @@ app.controller("productListCtrl", function ($state, $stateParams, serviceHTTP, $
     //     container: '#minirefresh',
     //     down: {
     //         callback: function () { // 下拉事件
-    //             // $state.reload($state.current.name);
-    //             location.reload();
-    //             miniRefresh.endDownLoading(); //结束上拉刷新
+    //             $state.reload($state.current.name); 
+    //             miniRefresh.endDownLoading(true); //结束上拉刷新
     //         }
     //     }
     // });
-
 })

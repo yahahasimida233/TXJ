@@ -16,41 +16,7 @@
   padding-left: .2rem;
 }
 
-.buyForm {
-  padding: .2rem;
-}
-
-.buyForm .money {
-  margin: .1rem 0;
-}
-
-.buyForm .tips {
-  font-size: .17rem;
-}
-
-.tipsRed {
-  color: red;
-}
-
-.contractSure {
-  margin: 0.2rem 0;
-}
-
-.contractSure .btnSure {
-  font-size: .18rem;
-  color: #dcdcdc;
-}
-
-.contractSure .contract {
-  color: #d7a64c;
-}
-
-.black {
-  color: black !important;
-}
-
-#contract {
-  z-index: 100;
+.contract {
   position: fixed;
   top: 0;
   height: 100%;
@@ -59,7 +25,7 @@
   background-color: #fff;
 }
 
-#contract .conText {
+.contract .conText {
   position: fixed;
   top: 81px;
   bottom: .2rem;
@@ -67,7 +33,7 @@
   padding-right: .2rem;
 }
 
-#contract .conText .chapter {
+.contract .conText .chapter {
   position: relative;
   bottom: 0.8rem;
   left: 1.5rem;
