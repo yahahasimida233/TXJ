@@ -80,7 +80,7 @@
       <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/registerLogin/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="108">
               <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
               <folding />
             </state>
@@ -100,8 +100,8 @@
       <file leaf-file-name="serviceHTTP.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/services/serviceHTTP.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="114" column="12" lean-forward="true" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="12" />
+            <state relative-caret-position="135">
+              <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -255,9 +255,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="48" />
-    <option name="y" value="190" />
+    <option name="y" value="229" />
     <option name="width" value="1744" />
-    <option name="height" value="709" />
+    <option name="height" value="670" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -312,6 +312,21 @@
               <item name="TXJ" type="462c0819:PsiDirectoryNode" />
               <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
+              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="ctrl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
+              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="ctrl" type="462c0819:PsiDirectoryNode" />
+              <item name="registerLogin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
@@ -437,7 +452,7 @@
       <workItem from="1532859753654" duration="2941000" />
       <workItem from="1532917642687" duration="7748000" />
       <workItem from="1532999949459" duration="14075000" />
-      <workItem from="1533086784431" duration="5404000" />
+      <workItem from="1533086784431" duration="5490000" />
     </task>
     <task id="LOCAL-00001" summary="文件路径创建完成">
       <created>1530339385732</created>
@@ -698,14 +713,21 @@
       <option name="project" value="LOCAL" />
       <updated>1533094950301</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="登陆请求gg">
+      <created>1533095027630</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1533095027630</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="407015000" />
+    <option name="totallyTimeSpent" value="407101000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="48" y="190" width="1744" height="709" extended-state="0" />
+    <frame x="48" y="229" width="1744" height="670" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28455284" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1145,22 +1167,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/registerLogin/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/services/serviceURL.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/js/ctrl/loginCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1177,10 +1183,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/services/serviceURL.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/registerLogin/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/services/serviceHTTP.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="114" column="12" lean-forward="true" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="12" />
+        <state relative-caret-position="135">
+          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
           <folding />
         </state>
       </provider>

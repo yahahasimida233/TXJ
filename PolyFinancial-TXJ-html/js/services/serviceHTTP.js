@@ -6,7 +6,7 @@ angular.module("txj")
                 return $http({
                     method: "POST",
                     url: serviceURL.loginURL,
-                    params: user,
+                    data: user,
                     headers: {
                         "content-type": "application/x-www-form-urlencoded"
                     }
@@ -112,7 +112,7 @@ angular.module("txj")
             },
 
 
-            
+
 
 
             // 银行卡列表
