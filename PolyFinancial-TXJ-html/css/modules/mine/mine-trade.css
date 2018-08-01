@@ -13,7 +13,8 @@
     top: .1rem; }
 .mineTrade .nav {
   display: flex;
-  background-color: white; }
+  background-color: white;
+  color: #999; }
   .mineTrade .nav div {
     height: .4rem;
     line-height: .3rem;
@@ -51,6 +52,7 @@
     align-items: center; }
 
 .mTS {
-  border-bottom: #daa955 2px solid; }
+  border-bottom: #daa955 2px solid;
+  color: black; }
 
 /*# sourceMappingURL=mine-trade.css.map */

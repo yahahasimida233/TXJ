@@ -6,16 +6,17 @@ angular.module("txj")
                 return $http({
                     method: "POST",
                     url: serviceURL.loginURL,
-                    data: user,
+                    params: user,
                     headers: {
                         "content-type": "application/x-www-form-urlencoded"
                     }
                 })
             },
+
             //登出
             logoutHTTP: function () {
                 return $http({
-                    method: "POST",
+                    method: "get",
                     url: serviceURL.logoutURL,
 
                     headers: { 
@@ -23,12 +24,23 @@ angular.module("txj")
                 })
             },
 
-            //手机短信验证码
+            //找回密码
+            getbackPHTTP: function (info) {
+                return $http({
+                    method: "put",
+                    url: serviceURL.getbackPURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            //手机短信验证码发送
             verificationCodeHTTP: function (phoneNum) {
                 return $http({
                     method: "POST",
                     url: serviceURL.verificationCodeURL,
-                    params: phoneNum ,
+                    params: {phoneNum:phoneNum},
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -45,6 +57,8 @@ angular.module("txj")
                 })
             },
 
+
+
             //获取图片（伪）验证码
             imgCodeHTTP : function (info) {
                 return $http({
@@ -55,6 +69,32 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
+
+
+            // //手机号码注册验证
+            // phoneRegisterHTTP : function (info) {
+            //     return $http({
+            //         method: "POST",
+            //         url: serviceURL.phoneRegisterURL,
+            //         params: info ,
+            //         headers: {
+            //             "Content-Type": "application/x-www-form-urlencoded" }
+            //     })
+            // },
+
+
+
+            //提交注册信息
+            registerHTTP : function (info) {
+                return $http({
+                    method: "post",
+                    url: serviceURL.registerURL,
+                    params: info ,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
 
             //图片上传
             imgUploadURL : function (info) {

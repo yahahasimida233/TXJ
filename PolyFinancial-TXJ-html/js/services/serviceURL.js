@@ -3,15 +3,16 @@ angular.module("txj").factory("serviceURL", function() {
         // 登陆
         loginURL: "/admin/home/a/u/front/login",
 
-
+        //找回密码
+        getbackPURL:"/admin/home/a/u/my/forget",
 
         //登出
         logoutURL: "/admin/admin/a/u/logout/",
 
-        //手机短信验证码
+        //手机短信验证码发送
         verificationCodeURL: "/admin/home/a/u/sendcode/",
 
-        // 验证  验证码是否有效
+        // 验证注册验证码是否有效
         codeConfirmURL: "/admin/home/a/u/verify/",
 
         // 提交注册信息
@@ -37,7 +38,6 @@ angular.module("txj").factory("serviceURL", function() {
 
         // 我的页面-获取消息列表
         messageURL:"/admin/home/a/u/my/articles",
-        personInfoURL: "/admin/home/a/u/my/info/",
 
         // 银行卡列表
         bankCardListURL: "admin/home/a/u/my/bankcards/"

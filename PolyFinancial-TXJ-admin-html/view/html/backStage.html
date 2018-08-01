@@ -5,7 +5,7 @@
     <div class="col-xs-12 col-md-8">
         <div class=" backStage-title-right">
             <span class="backStage-sign-out glyphicon glyphicon-off" ng-click="vm.exit()"></span>
-            <span class="user-name">admin</span>
+            <span class="user-name">{{vm.name}}</span>
         </div>
     </div>
     <div class="col-md-2 col-xs-12"  >
@@ -17,11 +17,11 @@
             </div>
             <div ng-repeat="y in x.sideBarContent"
                  ng-show="vm.sideBarTitleIndex == $parent.$index"
-                 ng-click="vm.content(y.name,$parent.$index)"
-                 ng-class="{true:'backStage-active',false:''}[y.name == vm.sideBarContent]"
+                 ng-click="vm.content(y.moduleName,$parent.$index)"
+                 ng-class="{true:'backStage-active',false:''}[y.moduleName == vm.sideBarContent]"
                  class="backStage-nav-list">
                 <a  ui-sref = {{y.url}}>
-                    <span>{{y.name}}</span>
+                    <span>{{y.moduleName}}</span>
                 </a>
             </div>
         </div>

@@ -18,7 +18,7 @@
   .nav{
     display: flex;
     background-color: white;
-
+    color: #999;
     div{
       height: .4rem;
       line-height: .3rem;
@@ -67,4 +67,5 @@
 }
 .mTS{
   border-bottom: #daa955 2px solid;
+  color: black;
 }

@@ -462,3 +462,19 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 });
+
+// app.run(function ($rootScope,$state) {
+//
+//     $rootScope.$on('$stateChangeStart',function(event){
+//         var loginOrNot = (sessionStorage.getItem("login") == "true")? 1:0;
+//         if(toState.name=='login' || toState.name =='mine'){return}// 如果是进入登录界面则允许
+//         // 如果用户不存在
+//         if(loginOrNot === 0){
+//             console.log("没有登录")
+//             event.preventDefault();// 取消默认跳转行为
+//             $state.go('login')
+//
+//             // $state.go("login",{from:fromState.name,w:'notLogin'});//跳转到登录界面
+//         }
+//     });
+// });

@@ -61,5 +61,10 @@
     border: none;
     border-top: 1px solid #eeeeee;
     border-bottom: 1px solid #eee; }
+  .forget-input #v_container {
+    position: absolute;
+    top: .1rem;
+    right: .2rem;
+    width: 1rem; }
 
 /*# sourceMappingURL=forget.css.map */

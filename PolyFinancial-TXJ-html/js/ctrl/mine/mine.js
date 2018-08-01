@@ -2,4 +2,5 @@ app.controller("mineCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
     var vm = this;
     vm.loginOrNot = (sessionStorage.getItem("login") == "true")? 1:0;
 
+
 });
