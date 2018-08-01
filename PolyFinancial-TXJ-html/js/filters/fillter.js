@@ -104,5 +104,6 @@ app.filter("showImg",function () {
                 data = "../../img/bankLogo/银联.png"
                 break;
         }
+        return data;
     }
 })

@@ -1,15 +1,29 @@
+.bk-gray {
+  height: 100%;
+  background-color: #eee;
+}
+
+.bk-white {
+  background-color: #fff;
+}
+
 .titleWarp {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: .4rem;
   line-height: .4rem;
-  font-size: .2rem; }
-  .titleWarp .title {
-    padding-right: 0.2rem; }
+  font-size: .2rem;
+  color: #d7a64c;
+}
+
+.titleWarp .title {
+  padding-right: 0.2rem;
+}
 
 .back {
-  padding-left: .2rem; }
+  padding-left: .2rem;
+}
 
 .buyForm {
   padding: .2rem;
@@ -33,16 +47,18 @@
 
 .card-warp .card {
   max-width: 60%;
-  margin-left: -.3rem;
+  margin-left: -.2rem;
 }
 
 .card-warp .cardNum {
-  margin: -.3rem;
+  margin: -.1rem;
   font-weight: bold;
 }
 
 .card-warp .cardSure {
-  margin-left: .55rem;
+  position: fixed;
+  top: 2rem;
+  right: .2rem;
   font-size: 0.17rem;
   color: #d7a64c;
 }
@@ -62,10 +78,6 @@
   width: 100%;
   padding: .2rem;
   background-color: #fff;
-}
-
-.showList-warp .cardList-warp .cardList {
-  margin-left: -.7rem;
 }
 
 .showList-warp .cardList-warp .add-warp {
@@ -111,4 +123,12 @@
   padding-right: .2rem;
 }
 
-/*# sourceMappingURL=buy.css.map */
+#contract .conText .chapter {
+  position: relative;
+  bottom: 0.8rem;
+  left: 1.5rem;
+}
+
+.buy-btn {
+  padding: 0.1rem 0 .5rem 0;
+}

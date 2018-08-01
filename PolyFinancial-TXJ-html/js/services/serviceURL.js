@@ -32,12 +32,11 @@ angular.module("txj").factory("serviceURL", function() {
         //个人信息
         personInfoURL: "/admin/home/a/u/my/info/",
 
-        // 首页
-
+        //支付
+        payURL: "admin/home/a/u/pay/",
 
         // 我的页面-获取消息列表
         messageURL:"/admin/home/a/u/my/articles",
-        personInfoURL: "/admin/home/a/u/my/info/",
 
         // 银行卡列表
         bankCardListURL: "admin/home/a/u/my/bankcards/"

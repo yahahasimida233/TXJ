@@ -1,6 +1,13 @@
 // 聚金融金色（）亮金色
 $gold: #d7a64c;
-
+// 背景置灰
+.bk-gray{
+    height: 100%;
+    background-color: #eee;
+}
+.bk-white{
+    background-color: #fff;
+}
 // 标题
 .titleWarp {
     display: flex;
@@ -11,7 +18,7 @@ $gold: #d7a64c;
     font-size: .2rem; // 使标题处于居中位置
     color: $gold;
     .title {
-        padding-right: 0.2rem;
+        padding-right: 0.2rem; 
     }
 }
 // 返回按钮
@@ -37,14 +44,16 @@ $gold: #d7a64c;
     margin-top: .2rem;
     .card{
         max-width: 60%;
-        margin-left: -.3rem;
+        margin-left: -.2rem;
     }
     .cardNum{
-        margin: -.3rem;
+        margin: -.1rem;
         font-weight: bold;
     }
     .cardSure{
-        margin-left: .55rem;
+        position: fixed;
+        top: 2rem;
+        right: .2rem;
         font-size: 0.17rem;
         color: $gold;
     }
@@ -64,7 +73,7 @@ $gold: #d7a64c;
         padding: .2rem;
         background-color: #fff;
         .cardList{
-            margin-left: -.7rem;
+            // margin-left: -.7rem;
         }
         .add-warp{
             margin-top: .2rem;
@@ -110,4 +119,8 @@ $gold: #d7a64c;
             left: 1.5rem;
         }
     }
+}
+// 购买按钮
+.buy-btn{
+    padding: 0.1rem 0 .5rem 0;
 }
