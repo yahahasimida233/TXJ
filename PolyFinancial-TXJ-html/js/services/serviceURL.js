@@ -1,46 +1,46 @@
 angular.module("txj").factory("serviceURL", function() {
     return {
         // 登陆
-        loginURL: "/admin/home/a/u/front/login/",
+        loginURL: "/home/a/u/front/login/",
 
 
 
         //登出
-        logoutURL: "/admin/admin/a/u/logout/",
+        logoutURL: "/admin/a/u/logout/",
 
         //手机短信验证码
-        verificationCodeURL: "/admin/home/a/u/sendcode/",
+        verificationCodeURL: "/home/a/u/sendcode/",
 
         // 验证  验证码是否有效
-        codeConfirmURL: "/admin/home/a/u/verify/",
+        codeConfirmURL: "/home/a/u/verify/",
 
         // 提交注册信息
-        registerURL: "/admin/home/a/u/register",
+        registerURL: "/home/a/u/register",
 
         //图片（伪）验证码
-        imgCodeURL: "/admin/home/a/u/pverify/",
+        imgCodeURL: "/home/a/u/pverify/",
 
         //图片上传
-        imgUploadURL: "/admin/admin/a/u/picture/",
+        imgUploadURL: "/admin/a/u/picture/",
 
         //产品列表
-        productListURL: "/admin/home/a/u/productlist/",
+        productListURL: "/home/a/u/productlist/",
 
         // 产品详情
-        productURL: "/admin/home/a/u/productDetatil/",
+        productURL: "/home/a/u/productDetatil/",
         
         //个人信息
-        personInfoURL: "/admin/home/a/u/my/info/",
+        personInfoURL: "/home/a/u/my/info/",
 
         // 首页
 
 
         // 我的页面-获取消息列表
-        messageURL:"/admin/home/a/u/my/articles",
-        personInfoURL: "/admin/home/a/u/my/info/",
+        messageURL:"/home/a/u/my/articles",
+        personInfoURL: "/home/a/u/my/info/",
 
         // 银行卡列表
-        bankCardListURL: "admin/home/a/u/my/bankcards/"
+        bankCardListURL: "/home/a/u/my/bankcards/"
 
 
 
