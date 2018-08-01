@@ -15,23 +15,32 @@
                ng-model="vm.money"
                ng-blur="vm.change()"
                required>
-        <div class="tipsRed" ng-show="buyForm.money.$invalid && buyForm.money.$dirty">
-            购买金额不符合限额要求，请重试！
-        </div> 
+               <div class="tipsRed" ng-show="buyForm.money.$invalid && buyForm.money.$dirty">
+                   购买金额不符合限额要求，请重试！
+                </div> 
     </div>
     <strong class="tips">预期收益：&emsp;{{vm.result}}元</strong>
+
+    <!-- 银行卡 -->
+    <div class="card-warp">
+        <strong class="tips">支付方式：</strong>
+        <img class="card" ng-src = "{{vm.imgSrc}}">
+        <!-- <span class="cardNum">({{"1234567890123456789" | cardNum}})</span> -->
+        <span class="cardNum">{{vm.cardNum}}</span>
+        <span class="glyphicon glyphicon-chevron-right cardSure" ng-click="vm.payCard = true"></span>
+    </div>
 
     <!-- 合同确认 -->
     <div class="contractSure">
         <span class="glyphicon glyphicon-check btnSure" 
-              ng-click="vm.sureC = !vm.sureC" 
-              ng-class="{'black': vm.sureC}">
+        ng-click="vm.sureC = !vm.sureC" 
+        ng-class="{'black': vm.sureC}">
         </span>
         <span>我已阅读并同意</span>
         <span class="contract" ng-click="vm.contract = true">《聚金融投资合同》</span>
     </div>
 </form>
-
+<!-- 投资合同 -->
 <div id="contract" ng-show="vm.contract">
     <!-- title -->
     <div class="titleWarp">
@@ -61,7 +70,29 @@
         <img class="chapter" src="../../img/u934.png">
     </div>
 </div>
-
+<!-- 支付银行卡列表 -->
+<div class="showList-warp" ng-show="vm.payCard">
+    <div class="cardList-warp"> 
+        <!-- back -->
+        <div class="titleWarp">
+            <div class="glyphicon glyphicon-chevron-left back" ng-click="vm.payCard = false"></div>
+            <strong class="title">支付方式</strong>
+            <div>&emsp;</div>
+        </div>
+        <!-- 银行卡列表 -->
+        <div ng-repeat="x in vm.cardLists" class="card-warp text-center" ng-click="vm.chose(x.bankCard)">
+            <img class="card cardList" ng-src = {{x.bankType | showImg}}>
+            <span class="cardNum">({{x.bankCard | cardNum}})</span>
+            <div>单笔限额3万，日限额20万</div>
+        </div>
+        <!-- 添加银行卡 -->
+        <div class="titleWarp add-warp">
+            <div>&emsp;</div>
+            <strong class="add">添加银行卡</strong>
+            <div class="glyphicon glyphicon-chevron-right" ui-sref="home.mineCard"></div>
+        </div>
+    </div>
+</div>
 
 <!-- {{vm.a | cardNum}} --> {{"1234567890123456789" | cardNum}}
 <div class="text-center bottom">

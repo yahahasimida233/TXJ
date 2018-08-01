@@ -1,4 +1,4 @@
-app.controller("buyCtrl", function ($state, $stateParams, serviceHTTP, $timeout) {
+app.controller("buyCtrl", function ($state, $stateParams, serviceHTTP, $timeout, $filter) {
     var vm = this;
     // 隐藏动画
     $timeout(function () {
@@ -28,12 +28,7 @@ app.controller("buyCtrl", function ($state, $stateParams, serviceHTTP, $timeout)
     console.log('wuhaidong很牛逼的'.replace(/.(?=.)/, '*'));
     // console.log('wuhaidong很牛逼的'.replace(/./g, '*'));
 
-    
-    // var a = "师阿萨德";    
-    // var b = a.slice(1).replace(/./g, '*');
-    // var c = a[0].concat(b);
-    // console.log(c);
-
+    vm.imgSrc = "../../img/bankLogo/中国银行.png";
 
     var a = "1234567890123456789";
     // var b = a.slice(15);
@@ -41,10 +36,19 @@ app.controller("buyCtrl", function ($state, $stateParams, serviceHTTP, $timeout)
     // console.log(c);
     vm.a = a;
 
-    userId = 2
-    serviceHTTP.bankCardListHTTP(userId).then(function (res) {
+    // userId = 2
+    serviceHTTP.bankCardListHTTP().then(function (res) {
         console.log(res);
-        
+        vm.cardLists = res.data.data;
     })
 
+    // 选择支付方式
+    vm.cardNum
+    vm.chose = function (bankCard) {
+        console.log(bankCard);
+        
+        vm.cardNum = "("+ $filter("cardNum")(bankCard) + ")";
+        console.log(vm.cardNum);
+        
+    }
 })

@@ -24,12 +24,61 @@
   margin: .1rem 0;
 }
 
-.buyForm .tips {
+.tips {
   font-size: .17rem;
 }
 
 .tipsRed {
   color: red;
+}
+
+.card-warp {
+  margin-top: .2rem;
+}
+
+.card-warp .card {
+  max-width: 60%;
+  margin-left: -.3rem;
+}
+
+.card-warp .cardNum {
+  margin: -.3rem;
+  font-weight: bold;
+}
+
+.card-warp .cardSure {
+  margin-left: .55rem;
+  font-size: 0.17rem;
+  color: #d7a64c;
+}
+
+.showList-warp {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(27, 27, 27, 0.5);
+}
+
+.showList-warp .cardList-warp {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: .2rem;
+  background-color: #fff;
+}
+
+.showList-warp .cardList-warp .cardList {
+  margin-left: -.7rem;
+}
+
+.showList-warp .cardList-warp .add-warp {
+  margin-top: .2rem;
+}
+
+.showList-warp .cardList-warp .add-warp .add {
+  font-size: 0.2rem;
 }
 
 .contractSure {
