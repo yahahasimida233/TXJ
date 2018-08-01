@@ -1,0 +1,85 @@
+// 聚金融金色（）亮金色
+$gold: #d7a64c;
+
+.top{
+    color: #fff;
+    padding-bottom: .1rem;
+    background-color:$gold;
+}
+// 新手专享
+.new{
+    position: fixed;
+    top: 51px;
+    display: inline-block;
+    padding: 6px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: red;
+}
+.titleWarp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .2rem;
+    // 使标题处于居中位置
+    .title{
+        padding-right: 0.2rem;
+    }
+}
+.back{
+    padding-left: .2rem;
+}
+// 年利率
+.rate-warp{
+    .rate{
+        font-size: .8rem;
+    }
+}
+.rate-text{
+    margin-bottom: .2rem;
+}
+
+.flex-around{
+    display: flex;
+    justify-content: space-around;
+}
+
+.productMore{
+    font-size: .18rem;
+    padding: .2rem 0;
+}
+// 未选择时置灰颜色
+.gray{
+    color: #999999;
+}
+.black{
+    color: black;
+}
+// 信息
+.infor{
+    position: fixed;
+    overflow-y: auto;
+    top: 304px;
+    bottom: 55px;
+    width: 100%;
+    padding: .2rem;
+    .introduce{
+        padding: .1rem;
+    }
+}
+// 投资记录表格
+table{
+    width: 100%;
+    th,td{
+        border: none!important;
+    }
+}
+// 底部提交按钮
+.bottom{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    margin: .1rem 0;
+}

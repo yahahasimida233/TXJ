@@ -1,7 +1,7 @@
 angular.module("txj").factory("serviceURL", function() {
     return {
         // 登陆
-        loginURL: "/admin/home/a/u/login",
+        loginURL: "/admin/home/a/u/front/login",
 
 
 
@@ -23,6 +23,14 @@ angular.module("txj").factory("serviceURL", function() {
         //图片上传
         imgUploadURL: "/admin/admin/a/u/picture/",
 
+        //产品列表
+        productListURL: "/admin/home/a/u/productlist/",
+
+        // 产品详情
+        productURL: "/admin/home/a/u/productDetatil/",
+        
+        //个人信息
+        personInfoURL: "/admin/home/a/u/my/info/",
 
         // 首页
 

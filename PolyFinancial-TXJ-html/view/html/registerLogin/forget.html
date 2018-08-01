@@ -23,6 +23,10 @@
             <input type="password"
                    ng-model = "vm.oldP"
                    required
+                   ng-pattern="/^(?![A-Z]+$)(?![a-z]+$)(?!\d+$)(?![\W_]+$)\S+$/" minlength="6"
+                   maxlength="18"
+                   ng-minlength="6"
+                   ng-maxlength="18"
                    placeholder="请输入新密码">
             <div class="forget-img oldP-img"></div>
         </div>

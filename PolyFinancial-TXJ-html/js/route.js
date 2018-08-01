@@ -94,6 +94,62 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 理财列表
+        .state('home.product',{
+            url: "/productList",
+            templateUrl: 'view/html/product/productList.html',
+            controller: 'productListCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/product/productListCtrl.js",
+                            "./css/modules/product/productList.css",
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 理财产品
+        .state('product', {
+            url: "/product?productId",
+            templateUrl: 'view/html/product/product.html',
+            controller: 'productCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/product/productCtrl.js",
+                            "./css/modules/product/product.css",
+                            // "./minirefresh/minirefresh.min.css",
+                            // "./minirefresh/minirefresh.min.js"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+        // 购买产品
+        .state('buy', {
+            url: "/buy?startAmount&minAmount&productId&rate&time",
+            templateUrl: 'view/html/product/buy.html',
+            controller: 'buyCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/product/buyCtrl.js",
+                            "./css/modules/product/buy.css",
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 我的页面
         .state('home.mine',{
             url:"/mine",
