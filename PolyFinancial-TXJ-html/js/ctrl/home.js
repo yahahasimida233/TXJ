@@ -1,6 +1,9 @@
 app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams,$timeout) {
     var vm = this;
     vm.homeTitle = "首页";
+
+   
+
     // 启动页面定时消失
     $timeout(function(){
         $(".indexLoading").hide(500);

@@ -24,11 +24,11 @@ angular.module("txj")
             },
 
             //手机短信验证码
-            getCodeHTTP: function (phoneNum) {
+            getCodeHTTP: function (info) {
                 return $http({
                     method: "POST",
                     url: serviceURL.getCodeURL,
-                    data: phoneNum,
+                    params: info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })

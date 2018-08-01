@@ -8,7 +8,7 @@ angular.module("txj").factory("serviceURL", function() {
         logoutURL: "/admin/admin/a/u/logout/",
 
         //获取手机短信验证码
-        getCodeURL: "/admin/admin/home/a/u/sendcode/",
+        getCodeURL: "/admin/home/a/u/sendcode/",
 
 
         //手机号码注册验证

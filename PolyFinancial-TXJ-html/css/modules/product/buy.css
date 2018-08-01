@@ -4,19 +4,15 @@
   align-items: center;
   height: .4rem;
   line-height: .4rem;
-  font-size: .2rem;
-  color: #d7a64c;
-}
-
-.titleWarp .title {
-  padding-right: 0.2rem;
-}
+  font-size: .2rem; }
+  .titleWarp .title {
+    padding-right: 0.2rem; }
 
 .back {
-  padding-left: .2rem;
-}
+  padding-left: .2rem; }
 
 .buyForm {
+<<<<<<< HEAD
   padding: .2rem;
 }
 
@@ -115,9 +111,10 @@
   overflow-y: auto;
   padding-right: .2rem;
 }
+=======
+  padding: .2rem; }
+  .buyForm .money {
+    margin-top: .1rem; }
+>>>>>>> fbffff7aa5346efed75eb88a681723d0072faed7
 
-#contract .conText .chapter {
-  position: relative;
-  bottom: 0.8rem;
-  left: 1.5rem;
-}
+/*# sourceMappingURL=buy.css.map */

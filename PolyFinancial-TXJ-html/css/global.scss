@@ -70,3 +70,23 @@ body{
 .glyphicon{
   top: 0;
 }
+
+/* WebKit browsers */
+::-webkit-input-placeholder {
+  font-size: .12rem;
+  color: #999;
+}
+/* Mozilla Firefox 4 to 18 */
+:-moz-placeholder {
+  font-size: .12rem;
+  color: #999;
+}
+/* Mozilla Firefox 19+ */
+::-moz-placeholder {
+  color: #999;
+}
+/* Internet Explorer 10+ */
+:-ms-input-placeholder {
+  font-size: .12rem;
+  color: #999;
+}

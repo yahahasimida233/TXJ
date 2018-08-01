@@ -43,12 +43,8 @@ app.controller("buyCtrl", function ($state, $stateParams, serviceHTTP, $timeout,
     })
 
     // 选择支付方式
-    vm.cardNum
     vm.chose = function (bankCard) {
-        console.log(bankCard);
-        
         vm.cardNum = "("+ $filter("cardNum")(bankCard) + ")";
-        console.log(vm.cardNum);
         
     }
 })

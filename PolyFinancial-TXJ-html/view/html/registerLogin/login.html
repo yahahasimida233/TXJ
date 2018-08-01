@@ -19,9 +19,9 @@
             <div class="password-img"></div>
         </div>
         <div class="login-bottom">
-            <button class="btn" ng-disabled = "loginForm.$invalid">登录</button>
+            <button class="btn" ng-disabled = "loginForm.$invalid" ng-click = "vm.login()">登录</button>
             <div class="login-foot">
-                <span>免费注册</span><span ui-sref="forget">忘记密码</span>
+                <span ui-sref ="register">免费注册</span><span ui-sref="forget">忘记密码</span>
             </div>
         </div>
     </form>
