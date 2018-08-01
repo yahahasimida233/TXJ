@@ -9,7 +9,7 @@ app.controller("loginCtrl",function ($scope,$http,$state,serviceHTTP,$stateParam
     vm.login = function(){
         var info = {
             phoneNum: vm.userName,
-            pwd:vm.passWord
+            pwd: vm.passWord
         };
         serviceHTTP.loginHTTP(info).then(function successCallback(response) {
             // 请求成功执行代码

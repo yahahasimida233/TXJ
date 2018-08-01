@@ -1,7 +1,7 @@
 angular.module("txj").factory("serviceURL", function() {
     return {
         // 登陆
-        loginURL: "/admin/home/a/u/front/login",
+        loginURL: "/admin/home/a/u/front/login/",
 
 
 

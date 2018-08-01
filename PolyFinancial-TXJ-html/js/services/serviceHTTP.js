@@ -6,7 +6,7 @@ angular.module("txj")
                 return $http({
                     method: "POST",
                     url: serviceURL.loginURL,
-                    data: user,
+                    params: user,
                     headers: {
                         "content-type": "application/x-www-form-urlencoded"
                     }
@@ -100,11 +100,6 @@ angular.module("txj")
                     }
                 })
             },
-<<<<<<< HEAD
-            
-            // 银行卡列表
-            bankCardListHTTP: function () { //获取产品详情
-=======
 
             //我的页面获取消息列表
             messageHTTP : function () {
@@ -122,7 +117,6 @@ angular.module("txj")
 
             // 银行卡列表
             bankCardListHTTP:function (userId) { //获取产品详情
->>>>>>> fbffff7aa5346efed75eb88a681723d0072faed7
                 return $http({
                     method: "GET",
                     url: serviceURL.bankCardListURL,
