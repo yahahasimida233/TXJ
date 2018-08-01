@@ -6,7 +6,7 @@ angular.module("txj")
                 return $http({
                     method: "POST",
                     url: serviceURL.loginURL,
-                    data: user,
+                    params: user,
                     headers: {
                         "content-type": "application/x-www-form-urlencoded"
                     }
@@ -23,18 +23,6 @@ angular.module("txj")
                 })
             },
 
-            //提交注册信息
-            registerHTTP: function (info) {
-                return $http({
-                    method: "POST",
-                    url: serviceURL.registerURL,
-                    data:info,
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded" }
-                })
-            },
-
-
             //手机短信验证码
             verificationCodeHTTP: function (phoneNum) {
                 return $http({
@@ -47,10 +35,10 @@ angular.module("txj")
             },
 
             //手机号码注册验证
-            codeConfirmHTTP : function (info) {
+            phoneRegisterHTTP : function (info) {
                 return $http({
-                    method: "get",
-                    url: serviceURL.codeConfirmURL,
+                    method: "POST",
+                    url: serviceURL.phoneRegisterURL,
                     params: info ,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
@@ -124,6 +112,20 @@ angular.module("txj")
             },
 
 
+            },
+
+
+            // 银行卡列表
+            bankCardListHTTP: function (userId) { //获取产品详情
+                return $http({
+                    method: "GET",
+                    url: serviceURL.bankCardListURL,
+                    params: userId,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
         }
 });
 

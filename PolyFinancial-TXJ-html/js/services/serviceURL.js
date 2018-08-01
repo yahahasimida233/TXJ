@@ -37,6 +37,10 @@ angular.module("txj").factory("serviceURL", function() {
 
         // 我的页面-获取消息列表
         messageURL:"/admin/home/a/u/my/articles",
+        personInfoURL: "/admin/home/a/u/my/info/",
+
+        // 银行卡列表
+        bankCardListURL: "admin/home/a/u/my/bankcards/"
 
 
 

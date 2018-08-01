@@ -150,6 +150,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 投资合同
+        .state('contract', {
+            url: "/contract",
+            templateUrl: 'view/html/product/contract.html',
+            controller: 'contractCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/product/contractCtrl.js",
+                            "./css/modules/product/contract.css",
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 我的页面
         .state('home.mine',{
             url:"/mine",

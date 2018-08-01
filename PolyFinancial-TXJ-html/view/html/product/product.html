@@ -46,9 +46,9 @@
                 </tr>
         
                 <tr ng-repeat="list in vm.lists">
-                    <td class="text-center">{{list.userId}}</td>
+                    <td class="text-center">{{list.userName | username}}</td>
                     <td class="text-center">{{list.dealAmount}}</td>
-                    <td class="text-center">{{list.createAt}}</td>
+                    <td class="text-center">{{list.createAt | date:'yyyy-MM-dd HH:mm:ss'}}</td>
                 </tr>
             </table>
         
