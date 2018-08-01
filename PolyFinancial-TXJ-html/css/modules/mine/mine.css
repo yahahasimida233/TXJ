@@ -1,0 +1,76 @@
+.mine-top {
+  height: 1.9rem;
+  background: url("../../../img/mine-background_01.jpg") no-repeat;
+  background-size: 100%; }
+
+.mine-title {
+  padding: 0 .15rem;
+  display: flex;
+  justify-content: space-between;
+  color: #c39d71;
+  background: rgba(0, 0, 0, 0);
+  height: .4rem;
+  font-size: .2rem;
+  max-width: 600px;
+  width: 100vw; }
+  .mine-title .glyphicon-cog {
+    height: .4rem;
+    line-height: .4rem;
+    text-align: center; }
+  .mine-title .glyphicon-comment {
+    height: .4rem;
+    line-height: .4rem;
+    text-align: center; }
+
+.mine-login-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.4rem; }
+  .mine-login-btn button {
+    width: 1rem;
+    height: .4rem;
+    color: #f9f9f9;
+    background-color: #c39d71; }
+
+.mine-userInfo {
+  display: flex;
+  padding: 0 .1rem;
+  height: 1.4rem;
+  align-items: center; }
+  .mine-userInfo .left {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center; }
+    .mine-userInfo .left img {
+      width: .6rem;
+      height: .6rem; }
+  .mine-userInfo .right {
+    flex-basis: 60%;
+    text-align: center;
+    color: #f9f9f9;
+    font-size: .15rem;
+    font-weight: bold; }
+    .mine-userInfo .right div {
+      margin: .1rem 0; }
+
+.mine-content {
+  background-color: #eee; }
+  .mine-content .mine-blank {
+    height: .1rem;
+    background-color: #eee; }
+  .mine-content .mine-content-row {
+    position: relative;
+    width: 100%;
+    padding: .2rem;
+    background-color: #fff;
+    border-bottom: .5px solid #eee;
+    border-top: .5px solid #eee;
+    display: flex; }
+    .mine-content .mine-content-row span {
+      margin: 0 .1rem; }
+    .mine-content .mine-content-row .fa-chevron-right {
+      position: absolute;
+      right: .2rem; }
+
+/*# sourceMappingURL=mine.css.map */

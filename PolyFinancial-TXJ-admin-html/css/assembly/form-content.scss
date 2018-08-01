@@ -76,9 +76,11 @@
   //  height: .4rem;
   //  line-height: .4rem;
   //}
-  //button{
-  //  margin: .2rem;
-  //}
+  .btn-danger,
+  .btn-success{
+    margin: 0 .1rem;
+  }
+  
 }
 
 //避免日历插件样式被覆盖单独写

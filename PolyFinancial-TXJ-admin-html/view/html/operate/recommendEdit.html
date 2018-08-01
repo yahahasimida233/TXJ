@@ -7,13 +7,13 @@
     <form class="bannerEditContent"  name="bannerEditForm">
         <div class="debtEditContent-row"
              ng-class="{'has-error': bannerEditForm.pictureName.$dirty && bannerEditForm.pictureName.$invalid}">
-            <span>*Banner图标题</span>
+            <span>*鼎力推荐标题</span>
             <input type="text"
                    required
                    class="form-control"
                    ng-model ="vm.pictureName"
                    name="pictureName"
-                   placeholder="请输入banner图标题（2~10个汉字）"
+                   placeholder="请输入鼎力推荐标题（2~10个汉字）"
                    ng-pattern="/^[\u4e00-\u9fa5]{2,10}$/">
             <span class="debtEdit-attention"
                   style="color: red"
@@ -22,7 +22,7 @@
 
         <div class="debtEditContent-row"
              ng-class="{'has-error': bannerEditForm.cardID.$dirty && bannerEditForm.cardID.$invalid}">
-            <span>*上传banner图</span>
+            <span>*上传鼎力推荐图</span>
             <div>
                 <label for="upLoadImg" class="img-input">
                     <span ng-hide ="vm.imgUploadSuccess === 'success'">点击添加图片</span>
@@ -37,9 +37,7 @@
                        ng-value="file"
                        onchange="angular.element(this).scope().vm.imgUpload(this.files)">
             </div>
-            <span class="debtEdit-attention"
-                  style="color: red"
-                  ng-show="bannerEditForm.cardID.$error.pattern ">请输入正确的身份证号码</span>
+
         </div>
 
         <div class="debtEditContent-row">

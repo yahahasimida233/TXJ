@@ -1,0 +1,77 @@
+.register{
+  width: 100%;
+  height: 100vh;
+  background-color: #eee;
+
+  form{
+    margin: .2rem 0;
+    .register-bottom{
+      padding: .2rem;
+      button{
+        width: 100%;
+        height: .4rem;
+        color: white;
+        background-color: #daa955;
+      }
+    }
+
+  }
+  .register-title{
+    margin-bottom: .1rem;
+    position: relative;
+    text-align: center;
+    height: .4rem;
+    line-height: .4rem;
+    background-color: white;
+    color: #c39d71;
+    font-size: .2rem;
+    .fa-chevron-left{
+      position: absolute;left: .2rem;top: .1rem;
+
+    }
+  }
+}
+
+.register-input{
+  position: relative;
+  .getCode{
+    position: absolute;top: .17rem;right: .2rem;
+    color: #daa955;
+    padding-left: .1rem;
+    border-left: 2px solid #eee;
+
+  }
+  .register-img{
+    position: absolute;top: .37rem;left: .1rem;
+    width: .17rem;
+    height: .2rem;
+    margin-top: -.2rem;
+    padding-right: .3rem;
+
+    border-right: 2px solid #eee;
+  }
+  .phone-img{
+    background: url("../../../img/login/iphone.png") no-repeat;
+    background-size: .17rem .2rem;
+  }
+  .code-img{
+    background: url("../../../img/forgetpassword/code.jpg") no-repeat;
+    background-size: .17rem .2rem;
+  }
+  .newP-img{
+    background: url("../../../img/forgetpassword/newpassword.jpg") no-repeat;
+    background-size: .17rem .2rem;
+  }
+  .oldP-img{
+    background: url("../../../img/forgetpassword/oldpassword.jpg") no-repeat;
+    background-size: .17rem .2rem;
+  }
+  input{
+    width: 100%;
+    //height: .4rem;
+    padding:  .15rem 0  .15rem .5rem;
+    border: none;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eee;
+  }
+}

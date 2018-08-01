@@ -1,0 +1,78 @@
+<div class="realName">
+    <div class="realName-title" ui-sref = "home.userInfo">
+        <span class="fa  fa-chevron-left" style="color: #dca854"></span>
+        <div>实名认证</div>
+    </div>
+    <div class="realName-step1" ng-show="vm.step1 = true">
+        <div class="step-title">为了保障您的账号和资产安全，请您进行实名认证。</div>
+        <div class="step-row">
+            <span>*持卡人:</span>
+            <input type="text" placeholder="请输入真实姓名（2-4个汉字）">
+        </div>
+        <div class="step-row">
+            <span>*身份证:</span>
+            <input type="tel" placeholder="请输入身份证号码（18位数字）">
+        </div>
+        <div class="step-row">
+            <span>*卡&#12288号:</span>
+            <input type="tel" placeholder="无需网银/免手续费（16~19位数字）">
+        </div>
+        <button class="btn" ng-click = "vm.step1Click()">下一步</button>
+    </div>
+    <div class="realName-step2" ng-show="vm.step2 =  true">
+        <div class="step-row">
+            <span>*卡类型:</span>
+            <span style="margin-left: .1rem">天地银行</span>
+        </div>
+        <div class="step-row">
+            <span>*手机号:</span>
+            <input type="tel" placeholder="请输入银行预留手机号">
+        </div>
+        <div class="agreement">
+            <input id="agreement" type="checkbox"><label for="agreement" ng-click = "vm.agreement = true">我已阅读《富友综合支付服务协议》</label>
+        </div>
+        <button class="btn" ng-click = "vm.step2Click()">完成认证并绑卡</button>
+    </div>
+    <div class="realName-step3" ng-show = "vm.step3 = true">
+        <div class="step-title">本次操作需要短信验证，请输入133XXXX0608收到的短信验证码。</div>
+        <div class="step-row">
+            <span>*验证码:</span>
+            <input type="tel" placeholder="请输入验证码">
+            <button class="">重发验证码</button>
+        </div>
+        <div class="attention">60s后可重新获取</div>
+        <button class="btn" ng-click = "vm.step3Click()">下一步</button>
+    </div>
+    <div class="realName-error" ng-show ="vm.error">
+
+    </div>
+    <div class="Agreement" ng-show ="vm.agreement">
+        <span class="fa  fa-chevron-left"
+              ng-click ="vm.agreement = false"
+              style="color: #dca854"></span>
+        <h1>条款</h1>
+        <div>
+            <div>第一，绝对不意气用事</div>
+            <div>第二，绝对不漏判任何一件坏事</div>
+            <div>第三，绝对裁判的公正漂亮，裁判机器人蜻蜓队长前来觐见！</div>
+            <div>这场和平星争夺战由我来做裁判!</div>
+            <div>第一，绝对不意气用事</div>
+            <div>第二，绝对不漏判任何一件坏事</div>
+            <div>第三，绝对裁判的公正漂亮，裁判机器人蜻蜓队长前来觐见！</div>
+            <div>这场和平星争夺战由我来做裁判!</div>
+            <div>第一，绝对不意气用事</div>
+            <div>第二，绝对不漏判任何一件坏事</div>
+            <div>第三，绝对裁判的公正漂亮，裁判机器人蜻蜓队长前来觐见！</div>
+            <div>这场和平星争夺战由我来做裁判!</div>
+            <div>第一，绝对不意气用事</div>
+            <div>第二，绝对不漏判任何一件坏事</div>
+            <div>第三，绝对裁判的公正漂亮，裁判机器人蜻蜓队长前来觐见！</div>
+            <div>这场和平星争夺战由我来做裁判!</div>
+            <div>第一，绝对不意气用事</div>
+            <div>第二，绝对不漏判任何一件坏事</div>
+            <div>第三，绝对裁判的公正漂亮，裁判机器人蜻蜓队长前来觐见！</div>
+            <div>这场和平星争夺战由我来做裁判!</div>
+        </div>
+    </div>
+
+</div>

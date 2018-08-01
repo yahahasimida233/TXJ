@@ -24,11 +24,11 @@ angular.module("txj")
             },
 
             //手机短信验证码
-            getCodeHTTP: function (phoneNum) {
+            getCodeHTTP: function (info) {
                 return $http({
                     method: "POST",
                     url: serviceURL.getCodeURL,
-                    data: phoneNum,
+                    params: info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -74,6 +74,7 @@ angular.module("txj")
                     url: serviceURL.imgUploadURL,
                     data:info,
                     headers: {'Content-Type': undefined},
+
                 })
             },
 
@@ -215,21 +216,22 @@ angular.module("txj")
                 })
             },
 
-            //获取匹配所需的信息
+            //匹配完成
             matchOverHTTP: function (info) {
                 return $http({
-                    method: "get",
+                    method: "put",
                     url: serviceURL.matchOverURL,
-                    data:info,
+                    params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
 
             // 产品管理列表
-            productHTTP: function () {
+            productHTTP: function (info) {
                 return $http({
                     method: "get",
+                    params:info,
                     url: serviceURL.productURL,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
@@ -241,7 +243,7 @@ angular.module("txj")
                 return $http({
                     method: "get",
                     url: serviceURL.productDetailURL,
-                    params:info,
+                    params:{id:info},
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
@@ -275,8 +277,8 @@ angular.module("txj")
             // 上下架产品
             porductGroundingHTTP: function (info) {
                 return $http({
-                    method: "post",
-                    url: serviceURL.porductGroundingURL,
+                    method: "put",
+                    url: serviceURL.porductGroundingURL+info,
                     params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
@@ -289,7 +291,7 @@ angular.module("txj")
                 return $http({
                     method: "delete",
                     url: serviceURL.productDeleteURL+info,
-                    params:info,
+                    params:{id:info},
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
@@ -311,8 +313,8 @@ angular.module("txj")
             bannerDetailedHTTP: function (info) {
                 return $http({
                     method: "get",
-                    url: serviceURL.bannerDetailedURL,
-                    params:info,
+                    url: serviceURL.bannerDetailedURL+info,
+                    params:{id:info},
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
@@ -346,7 +348,7 @@ angular.module("txj")
             // banner上下架
             bannerGroundingHTTP: function (info) {
                 return $http({
-                    method: "post",
+                    method: "put",
                     url: serviceURL.bannerGroundingURL+info,
                     params:info,
                     headers: {
@@ -479,7 +481,7 @@ angular.module("txj")
                 return $http({
                     method: "put",
                     url: serviceURL.feedbackReplyURl+info.id,
-                    data:info,
+                    params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
@@ -590,6 +592,7 @@ angular.module("txj")
             return $http({
                 url: serviceURL.aAccountURL,
                 method: "POST",
+                params: data,
                 headers: {
                     "Conten-Type": "application/x-www-from-urlencoded"
                 }
@@ -646,20 +649,22 @@ angular.module("txj")
             })
         },
 
-        wModuleHTTP: function (id) {    // 编辑模块
+        wModuleHTTP: function (id,data) {    // 编辑模块
             return $http({
                 url: serviceURL.ModuleURL + id,
                 method: "PUT",
+                params: data,
                 headers: {
                     "Conten-Type": "application/x-www-from-urlencoded"
                 }
             })
         },
         
-        aModuleHTTP: function (id) {     // 新增模块
+        aModuleHTTP: function (data) {     // 新增模块
             return $http({
-                url: serviceURL.ModuleURL + id,
+                url: serviceURL.ModuleURL,
                 method: "POST",
+                params: data,
                 headers: {
                     "Conten-Type": "application/x-www-from-urlencoded"
                 }
@@ -686,7 +691,60 @@ angular.module("txj")
                     "Conten-Type": "application/x-www-from=urlencoded"
                 }
             })
+        },
+
+        gRoleHTTP: function (id) {   //进入编辑页获取该角色信息
+            return $http({
+                url: serviceURL.roleURL + id,
+                method: "GET",
+                headers: {
+                    "Conten-Type": "application/x-www-from=urlencoded"
+                }                
+            })
+        },
+
+        wRoleHTTP: function (data,id) {  //角色编辑
+            return $http({
+                url: serviceURL.roleURL + id,
+                method: "PUT",
+                params: data,
+                headers: {
+                    "Conten-Type": "application/x-www-from=urlencoded"
+                }
+            })
+        },
+
+        aRoleHTTP: function (data) {    //角色新增
+            return $http({
+                url: serviceURL.roleURL,
+                method: "POST",
+                params: data,
+                headers: {
+                    "Conten-Type": "application/x-www-from=urlencoded"
+                }                
+            })
         }
+    }
+})
+
+.factory("sideBar",function () {  //特用与编辑角色时候的层级关系处理 ，因为字段不统一
+    return function (e) {
+        var sideBar = []; //用于存储处理过后的数组对象
+            for (var i = 0; i < e.length; i++) { //遍历每一个元素
+                if (e[i].parentModuleId === 0) { //当为父级元素时开始判断
+                    var obj = {}; //创建一个对象用于存储父级标签名，子级标签的信息
+                    obj.sideBarTitle = e[i].moduleName;
+                    obj.id = e[i].id;
+                    obj.sideBarContent = []; //为对象添加属性
+                    for (var j = 0; j < e.length; j++) { //开始第二次遍历，
+                        if (e[j].parentModuleId === e[i].id) { //当元素的parentd和  父级元素id一致时
+                            obj.sideBarContent.push(e[j]) //把这个元素添加到对象的一条属性中去，用于第二次repeat
+                        }
+                    }
+                    sideBar.push(obj); //把obj添加到sideBar中去。
+                }
+            }
+        return sideBar;
     }
 })
 

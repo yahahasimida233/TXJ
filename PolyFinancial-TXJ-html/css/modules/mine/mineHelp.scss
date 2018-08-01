@@ -1,0 +1,22 @@
+.mineHelp{
+  .mineHelp-title{
+    margin-bottom: .1rem;
+    position: relative;
+    text-align: center;
+    height: .4rem;
+    line-height: .4rem;
+    background-color: white;
+    color: #c39d71;
+    font-size: .2rem;
+    .fa-chevron-left{
+      position: absolute;left: .2rem;top: .1rem;
+
+    }
+  }
+  .content{
+    background-color: white;
+    div{
+      padding: .2rem;
+    }
+  }
+}

@@ -7,7 +7,7 @@ app.controller("productEditCtrl",function ($http,$state,serviceHTTP,$stateParams
 
     }else{
         vm.title= "产品编辑";
-        serviceHTTP.productHTTP().then(function successCallback(response) {
+        serviceHTTP.productDetailHTTP(id).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
             if(response.data.message === "success") {

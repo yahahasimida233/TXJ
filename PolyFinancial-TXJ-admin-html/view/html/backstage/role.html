@@ -42,7 +42,7 @@
             </tr>
             <tr ng-repeat="list in vm.lists">
                 <td class="text-center index" ng-bind="$index + 1"></td>
-                <td class="text-center" ng-bind="list.roleID"></td>
+                <td class="text-center" ng-bind="list.roleId"></td>
                 <td class="text-center" ng-bind="list.roleName"></td>
                 <td class="text-center" ng-bind="list.updateBy"></td>
                 <td class="text-center time" ng-bind=" list.updateAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
@@ -51,10 +51,10 @@
                 <!-- 操作按钮 -->
                 <td class="text-center">
 
-                    <button class="btn btn-info" ng-click="vm.write(list.roleID)" ng-disabled="list.roleName | roleDelet" ui-sref="backStage.roleEdit({id: list.roleID})">编辑
+                    <button class="btn btn-info" ng-click="vm.write(list.roleId)" ng-disabled="list.roleName | roleDelet" ui-sref="backStage.roleEdit({id: list.roleId})">编辑
                     </button>
 
-                    <button class="btn btn-danger" ng-click="vm.delete(list.roleID)" ng-disabled="list.roleName | roleDelet">删除
+                    <button class="btn btn-danger" ng-click="vm.delete(list.roleId)" ng-disabled="list.roleName | roleDelet">删除
                     </button>
                 </td>
             </tr>

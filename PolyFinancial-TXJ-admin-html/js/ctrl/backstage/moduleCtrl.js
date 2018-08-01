@@ -1,132 +1,12 @@
 app.controller("moduleCtrl", function ($state, $stateParams, serviceHTTP) {
     var vm = this;
-
-    var lists = {
-    "total": 15,
-    "code": 0,
-    "data": 
-        [{
-            "createBy": "admin",
-            "moduleType": "web",
-            "updateBy": "admin",
-            "moduleName": "业务管理",
-            "updateAt": 1531478404326,
-            "parentModuleID": 0,
-            "moduleID": 1,
-            "url": "",
-            "createAt": 1531478404326
-        },
-        {
-            "createBy": "admin",
-            "moduleType": "web",
-            "updateBy": "admin",
-            "moduleName": "用户管理",
-            "updateAt": 1531478404326,
-            "parentModuleID": 1,
-            "moduleID": 2,
-            "url": "backStage.user",
-            "createAt": 1531478404326
-        },
-        {
-            "createBy": "admin",
-            "moduleType": "web",
-            "updateBy": "admin",
-            "moduleName": "债权管理",
-            "updateAt": 1531478404326,
-            "parentModuleID": 1,
-            "moduleID": 3,
-            "url": "backStage.debt",
-            "createAt": 1531478404326
-        },
-        {
-            "createBy": "admin",
-            "moduleType": "web",
-            "updateBy": "admin",
-            "moduleName": "产品管理",
-            "updateAt": 1531478404326,
-            "parentModuleID": 1,
-            "moduleID": 4,
-            "url": "backStage.product",
-            "createAt": 1531478404326
-        },
-        {
-            "createBy": "admin",
-            "moduleType": "web",
-            "updateBy": "admin",
-            "moduleName": "运营管理",
-            "updateAt": 1531478404326,
-            "parentModuleID": 0,
-            "moduleID": 5,
-            "url": "",
-            "createAt": 1531478404326
-        },
-        {
-            "createBy": "admin",
-            "moduleType": "web",
-            "updateBy": "admin",
-            "moduleName": "banner图",
-            "updateAt": 1531478404326,
-            "parentModuleID": 5,
-            "moduleID": 6,
-            "url": "backStage.banner",
-            "createAt": 1531478404326
-        },
-        {
-            "createBy": "admin",
-            "moduleType": "web",
-            "updateBy": "admin",
-            "moduleName": "鼎力推荐",
-            "updateAt": 1531478404326,
-            "parentModuleID": 5,
-            "moduleID": 7,
-            "url": "backStage.recommend",
-            "createAt": 1531478404326
-        },
-        {
-            "createBy": "admin",
-            "moduleType": "web",
-            "updateBy": "admin",
-            "moduleName": "消息管理",
-            "updateAt": 1531478404326,
-            "parentModuleID": 5,
-            "moduleID": 8,
-            "url": "backStage.message",
-            "createAt": 1531478404326
-        },
-        {
-            "createBy": "admin",
-            "moduleType": "web",
-            "updateBy": "admin",
-            "moduleName": "意见反馈",
-            "updateAt": 1531478404326,
-            "parentModuleID": 5,
-            "moduleID": 9,
-            "url": "backStage.feedback",
-            "createAt": 1531478404326
-        },
-        {
-            "createBy": "admin",
-            "moduleType": "web",
-            "updateBy": "admin",
-            "moduleName": "后台管理",
-            "updateAt": 1531478404326,
-            "parentModuleID": 0,
-            "moduleID": 10,
-            "url": "",
-            "createAt": 1531478404326
-        }
-    ],
-    "message": "success"
-};
-vm.lists = lists.data;
-
     //初始化列表
     getList();
     
     function getList() {
         // 读取路由里的数据
         var data = {
-            moduleID: $stateParams.moduleID, //模块ID
+            id: $stateParams.moduleId, //模块ID
             moduleName: $stateParams.moduleName, //模块名
             parentModuleId: $stateParams.parentModuleId, //父模块
             createBy: $stateParams.creater, //创建人
@@ -134,23 +14,39 @@ vm.lists = lists.data;
             size: $stateParams.size
         }
         console.log(data);
-        
-        // serviceHTTP.sModuleHTTP(data).then(function (res) {
-        //     console.log(res);
-        //     vm.lists = res.data;  //返回的数据列表
-
+        // 从服务器拿到相应数据
+        serviceHTTP.sModuleHTTP(data).then(function (res) {
+            console.log(res);
+            vm.lists = res.data.data;  //返回的数据注入列表
+            // 将路由的数据注入搜索模块
             vm.moduleId = $stateParams.moduleId, //模块ID
             vm.moduleName = $stateParams.moduleName, //模块名
-            vm.parentModuleId = $stateParams.parentModuleId, //父模块
+            vm.parentModuleId = $stateParams.parentModuleId  , //父模块
             vm.creater = $stateParams.creater, //创建人
             vm.goPage = $stateParams.goPage,
             vm.size = $stateParams.size
-            // vm.admin = res.data.roles; // 返回的角色类型
-        // })
+            if (res.data.code == -5003) {
+                bootbox.alert({
+                    title: "<strong>提示信息</strong>",
+                    message: " <p style='text-align: center'>搜索的信息不存在</p>",
+                    buttons: {
+                        ok: {
+                            label: "确认",
+                            className: "btn-primary"
+                        }
+                }})
+                $state.go("backStage.module", {
+                    moduleId: '', //帐号ID
+                    moduleName: '', //模块名
+                    parentModuleId: '', //父模块
+                    creater: '', //创建人
+                    goPage: vm.goPage,
+                    size: vm.size
+                }, 
+                {reload: true});
+            }
+        })
     }
-    // vm.lists = lists.data.accountList;
-    // vm.admin = lists.data.roles;
-    // var admin = lists.data.roles;
     // 搜索
     vm.search = function () {
         $state.go("backStage.module", {
@@ -192,7 +88,7 @@ vm.lists = lists.data;
             if (result == true) {
                 serviceHTTP.dModuleHTTP(id).then(function successCallback(res) {
                     // 请求成功执行代码
-                    if (res.code == 0) { //需检查
+                    if (res.code == 0) { 
                         bootbox.alert({
                             title: "<strong>提示信息</strong>",
                             message: "<span style='text-align: center'>删除成功</sapn>",

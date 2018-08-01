@@ -46,7 +46,8 @@
 
            </form>
            <div class="right">
-               <button class="btn btn-default" ng-disable ="vm.error2" ng-click = "vm.getCode()">获取短信验证码</button>
+               <label for="getCode" class="btn btn-default">获取短信验证码</label>
+               <input class="btn btn-default" id="getCode" ng-disable ="vm.error2" ng-click = "vm.getCode()" ng-show ="false">
                <span style="color: red" ng-show="vm.error3">60S后可重新获取</span>
                <span style="color: red" ng-show="vm.error4">今日获取已达上限冻结2小时后可重新获取</span>
            </div>

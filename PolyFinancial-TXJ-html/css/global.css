@@ -1,0 +1,73 @@
+html {
+  font-size: 100px;
+}
+
+body {
+  font-size: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none !important;
+}
+
+*:hover {
+  text-decoration: none;
+}
+
+.glyphicon {
+  top: 0;
+}
+
+.app {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.indexLoading {
+  position: relative;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url("../img/indexloading.png");
+  color: #c39d71;
+  z-index: 99999;
+}
+
+.indexLoading img {
+  margin-top: 20vh;
+  width: .8rem;
+  height: .8rem;
+}
+
+.indexLoading .indexSpan-1 {
+  margin-top: .1rem;
+  font-size: .3rem;
+  font-weight: bold;
+}
+
+.indexLoading .indexSpan-2 {
+  font-size: .2rem;
+  font-weight: 200;
+}
+
+.indexLoading .indexBottom {
+  position: absolute;
+  bottom: 10vh;
+  text-align: center;
+  font-size: .12rem;
+  font-weight: 100;
+}
+
+.glyphicon {
+  top: 0;
+}

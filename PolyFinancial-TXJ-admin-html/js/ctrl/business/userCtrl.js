@@ -12,7 +12,7 @@ app.controller("userCtrl",function ($scope,$http,$state,$stateParams,serviceHTTP
 
     vm.getList = function(){
         let info = {
-            userID: vm.userId,
+            id: vm.userId,
             actualName:vm.userName,
             phoneNum:vm.phone ,
             state:vm.status ,
@@ -47,6 +47,8 @@ app.controller("userCtrl",function ($scope,$http,$state,$stateParams,serviceHTTP
         vm.userName = undefined;
         vm.phone = undefined;
         vm.status = undefined;
+        vm.size = 10;
+        vm.page = 1;
         vm.getList();
     };
 

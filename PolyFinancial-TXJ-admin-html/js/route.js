@@ -191,8 +191,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 产品管理
         .state('backStage.product',{
-            url:"/product",
-            templateUrl: 'view/html/business/product.html?id&productName&createBy&state&size&page',
+            url:"/product?id&productName&createBy&state&size&page",
+            templateUrl: 'view/html/business/product.html',
             controller: 'productCtrl',
             controllerAs:'vm',
             resolve: {
@@ -456,7 +456,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 账户编辑
         .state('backStage.accountEdit',{
-            url:"/accountEdit?id",
+            url: "/accountEdit?id&account",
             templateUrl: 'view/html/backstage/accountEdit.html',
             controller: 'accountEditCtrl as vm',
             resolve: {
@@ -534,7 +534,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     "$ocLazyLoad",
                     function ($ocLazyLoad) {
                         return $ocLazyLoad.load([
-                            "./js/ctrl/backstage/roleEditCtrl.js"
+                            "./js/ctrl/backstage/roleEditCtrl.js",
+                            "./css/modules/backstage/roleE.css"
                         ])
                     }
                 ]

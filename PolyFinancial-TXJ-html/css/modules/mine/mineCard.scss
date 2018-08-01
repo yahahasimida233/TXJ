@@ -1,0 +1,25 @@
+.mineCard {
+  .mineCard-title {
+    display: flex;
+    padding: 0 .2rem;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: .4rem;
+    line-height: .4rem;
+    background-color: white;
+    color: #c39d71;
+    font-size: .2rem;
+    border-bottom: 1px solid #eee;
+    .add{
+      font-size: .35rem;
+    }
+
+  }
+  .card-list{
+    margin: .2rem;
+    height: 1.5rem;
+    background-color: white;
+    border-radius: .1rem;
+  }
+}

@@ -1,0 +1,86 @@
+.realName {
+  position: relative; }
+  .realName .realName-title {
+    margin-bottom: .1rem;
+    position: relative;
+    text-align: center;
+    height: .4rem;
+    line-height: .4rem;
+    background-color: white;
+    color: #c39d71;
+    font-size: .2rem; }
+    .realName .realName-title .fa-chevron-left {
+      position: absolute;
+      left: .2rem;
+      top: .1rem; }
+  .realName .realName-step1 {
+    background-color: white; }
+    .realName .realName-step1 div {
+      padding: .1rem .2rem;
+      border: .5px #eee solid; }
+    .realName .realName-step1 .step-row {
+      display: flex; }
+      .realName .realName-step1 .step-row input {
+        padding-left: .1rem;
+        border: none;
+        flex-grow: 1; }
+    .realName .realName-step1 button {
+      width: 100%;
+      background-color: white; }
+  .realName .realName-step2 {
+    background-color: white; }
+    .realName .realName-step2 div {
+      padding: .1rem .2rem;
+      border: .5px #eee solid; }
+    .realName .realName-step2 .step-row {
+      display: flex; }
+      .realName .realName-step2 .step-row input {
+        padding-left: .1rem;
+        border: none;
+        flex-grow: 1; }
+    .realName .realName-step2 button {
+      width: 100%;
+      background-color: white; }
+    .realName .realName-step2 .agreement {
+      background-color: #eee;
+      border: none; }
+  .realName .realName-step3 {
+    background-color: white; }
+    .realName .realName-step3 div {
+      padding: .1rem .2rem;
+      border: .5px #eee solid; }
+    .realName .realName-step3 .step-row input {
+      padding-left: .1rem;
+      padding-right: .2rem;
+      width: 1rem;
+      border: none; }
+    .realName .realName-step3 .step-row button {
+      width: auto;
+      border: none;
+      padding-left: .2rem;
+      border-left: #eee solid 1px; }
+    .realName .realName-step3 button {
+      width: 100%;
+      background-color: white; }
+    .realName .realName-step3 .attention {
+      background-color: #eee;
+      text-align: right;
+      color: red; }
+  .realName .Agreement {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: .2rem;
+    background-color: white;
+    z-index: 500; }
+    .realName .Agreement .fa {
+      position: absolute;
+      top: .2rem; }
+    .realName .Agreement div {
+      text-align: center; }
+    .realName .Agreement h1 {
+      text-align: center; }
+
+/*# sourceMappingURL=realName.css.map */

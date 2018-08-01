@@ -1,0 +1,33 @@
+.minePY .minePY-title {
+  position: relative;
+  text-align: center;
+  height: .4rem;
+  line-height: .4rem;
+  background-color: white;
+  color: #c39d71;
+  font-size: .2rem;
+  border-bottom: 1px solid #eee; }
+  .minePY .minePY-title .fa-chevron-left {
+    position: absolute;
+    left: .2rem;
+    top: .1rem; }
+.minePY .minePY-list {
+  padding: .1rem .2rem;
+  margin: .1rem 0;
+  background-color: white; }
+  .minePY .minePY-list .top {
+    padding: .1rem 0;
+    font-size: .18rem; }
+  .minePY .minePY-list .content {
+    padding: .1rem 0;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee; }
+  .minePY .minePY-list .bottom {
+    padding: .1rem 0;
+    font-size: .13rem;
+    color: #999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+
+/*# sourceMappingURL=minePY.css.map */

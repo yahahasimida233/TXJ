@@ -1,0 +1,33 @@
+.titleWarp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: .4rem;
+  line-height: .4rem;
+  font-size: .2rem;
+  color: #d7a64c; }
+  .titleWarp .title {
+    padding-right: 0.2rem; }
+
+.back {
+  padding-left: .2rem; }
+
+.contract {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: .2rem;
+  background-color: #fff; }
+  .contract .conText {
+    position: fixed;
+    top: 81px;
+    bottom: .2rem;
+    overflow-y: auto;
+    padding-right: .2rem; }
+    .contract .conText .chapter {
+      position: relative;
+      bottom: 0.8rem;
+      left: 1.5rem; }
+
+/*# sourceMappingURL=contract.css.map */

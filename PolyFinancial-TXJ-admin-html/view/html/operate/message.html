@@ -33,19 +33,42 @@
 
         <label class="tips" >发送时间</label>
         <div>
-            <input type="text"
-                   class="form-control date-input"
-                   uib-datepicker-popup="{{vm.startDate}}"
-                   ng-model="vm.loanAt"
-                   is-open="vm.popup.opened"
-                   ng-required="true"
-                   close-text="关闭"
-                   clear-text="清空"
-                   current-text="今天"
-                   alt-input-formats="vm.altInputFormats"
-                   ng-click="vm.open()"
-                   placeholder="请输入日期"
-                   required="required">
+            <div class="flex">
+                <input type="text"
+                       class="form-control date-input"
+                       uib-datepicker-popup="{{vm.startDate}}"
+                       ng-model="vm.loanAtStart"
+                       is-open="vm.popup.opened"
+                       ng-required="true"
+                       close-text="关闭"
+                       clear-text="清空"
+                       current-text="今天"
+                       alt-input-formats="vm.altInputFormats"
+                       ng-click="vm.open()"
+                       datepicker-options="{maxDate:vm.loanAtEnd}"
+                       placeholder="请输入起始日期"
+                       required="required">
+                <input class="form-control date-input-min"
+                        type="time">
+            </div>
+            <div class="flex">
+                <input type="text"
+                       class="form-control date-input"
+                       uib-datepicker-popup="{{vm.startDate}}"
+                       ng-model="vm.loanAtEnd"
+                       is-open="vm.popup.opened2"
+                       ng-required="true"
+                       close-text="关闭"
+                       clear-text="清空"
+                       current-text="今天"
+                       alt-input-formats="vm.altInputFormats"
+                       ng-click="vm.open2()"
+                       datepicker-options="{minDate:vm.loanAtStart,maxDate:vm.today}"
+                       placeholder="请输入截止日期"
+                       required="required">
+                <input class="form-control date-input-min"
+                        type="time">
+            </div>
         </div>
         <button class="btn btn-primary"
                 ng-click = "vm.search()"
@@ -64,8 +87,8 @@
     <table class="table table-hover">
         <tbody>
         <tr>
-            <th class="text-center index-title">消息ID</th>
-
+            <th class="text-center index-title">序号</th>
+            <th class="text-center list-title">消息ID</th>
             <th class="text-center list-title">消息标题</th>
             <th class="text-center list-title">创建人</th>
             <th class="text-center list-title">创建时间</th>
@@ -77,8 +100,9 @@
 
         </tr>
         <tr ng-repeat="x in vm.list">
-            <td class="text-center index" ng-bind="x.id"></td>
-            <td class="text-center " ng-bind="x.articleTile"></td>
+            <td class="text-center index" ng-bind="$index+1"></td>
+            <td class="text-center " ng-bind="x.id"></td>
+            <td class="text-center " ng-bind="x.articleTitle"></td>
             <td class="text-center" ng-bind="x.createBy"></td>
             <td class="text-center time" ng-bind="x.createAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
             <td class="text-center " ng-bind="x.udpateBy"></td>

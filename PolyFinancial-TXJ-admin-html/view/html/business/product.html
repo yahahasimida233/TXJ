@@ -53,7 +53,8 @@
     <table class="table table-hover">
         <tbody>
         <tr>
-            <td class="text-center index-title"><strong>产品ID</strong></td>
+            <td class="text-center index-title"><strong>序号</strong></td>
+            <td class="text-center list-title"><strong>产品ID</strong></td>
             <td class="text-center list-title"><strong>产品名称</strong></td>
             <td class="text-center list-title"><strong>预期年利率（%）</strong></td>
             <td class="text-center list-title"><strong>投资周期（天）</strong></td>
@@ -67,21 +68,22 @@
         </tr>
         <tr ng-repeat="x in vm.list">
             <!--正式接口productId改为id-->
-            <td class="text-center index">{{x.productId}}</td>
-            <td class="text-center index">{{x.productName}}</td>
-            <td class="text-center index" >{{x.interestYear}}</td>
-            <td class="text-center index" >{{x.productTerm}}</td>
-            <td class="text-center index" >{{x.startMoney}}</td>
-            <td class="text-center index">{{x.minMoney}}</td>
-            <td class="text-center index">{{x.repaymentMode | productMode }}</td>
-            <td class="text-center index">{{x.createBy }}</td>
-            <td class="text-center index">{{x.createAt}</td>
-            <td class="text-center index">{{x.state productState}}</td>
+            <td class="text-center index">{{$index+1}}</td>
+            <td class="text-center ">{{x.id}}</td>
+            <td class="text-center ">{{x.productName}}</td>
+            <td class="text-center " >{{x.annualRate}}</td>
+            <td class="text-center " >{{x.productTerm}}</td>
+            <td class="text-center " >{{x.startAmount}}</td>
+            <td class="text-center ">{{x.minAmount}}</td>
+            <td class="text-center ">{{x.repaymentMode | productMode }}</td>
+            <td class="text-center ">{{x.createBy }}</td>
+            <td class="text-center ">{{x.createAt|date : 'yyyy-MM-dd hh:mm:ss'}}</td>
+            <td class="text-center ">{{x.state | productState}}</td>
 
             <td>
                 <button class="btn btn-default"  ng-click = "vm.stateChange(x.id,x.state)">{{x.state | productStateChange}}</button>
                 <button class="btn btn-info" ui-sref ="backStage.productEdit({id:x.id})">编辑</button>
-                <button class="btn btn-default"  ng-click = "vm.delete(x.id,x.state)">删除</button>
+                <button class="btn btn-danger"  ng-click = "vm.delete(x.id)">删除</button>
             </td>
         </tr>
         </tbody>

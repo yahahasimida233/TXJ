@@ -1,0 +1,50 @@
+.about{
+  .about-title{
+    margin-bottom: .1rem;
+    position: relative;
+    text-align: center;
+    height: .4rem;
+    line-height: .4rem;
+    background-color: white;
+    color: #c39d71;
+    font-size: .2rem;
+    .fa-chevron-left{
+      position: absolute;left: .2rem;top: .1rem;
+
+    }
+  }
+  .about-row{
+    background-color: white;
+    padding: .1rem .2rem;
+    width: 100%;
+    img{
+      width: 95%;
+    }
+    .about-row-title{
+      font-size: .17rem;
+      color: #c39d71;
+    }
+    .big{
+      font-size: .3rem;
+      color: #c39d71;
+    }
+
+  }
+}
+
+.about-flex{
+  width: 100%;
+  display: flex;
+  .left-1{
+    min-width: 1.2rem;
+  }
+  .right-1{
+    width: auto;
+  }
+  .left{
+    min-width: .7rem;
+  }
+  .right{
+    width: auto ;
+  }
+}

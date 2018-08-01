@@ -1,0 +1,65 @@
+.forget {
+  width: 100%;
+  height: 100vh;
+  background-color: #eee; }
+  .forget form {
+    margin: .2rem 0; }
+    .forget form .forget-bottom {
+      padding: .2rem; }
+      .forget form .forget-bottom button {
+        width: 100%;
+        height: .4rem;
+        color: white;
+        background-color: #daa955; }
+  .forget .forget-title {
+    margin-bottom: .1rem;
+    position: relative;
+    text-align: center;
+    height: .4rem;
+    line-height: .4rem;
+    background-color: white;
+    color: #c39d71;
+    font-size: .2rem; }
+    .forget .forget-title .fa-chevron-left {
+      position: absolute;
+      left: .2rem;
+      top: .1rem; }
+
+.forget-input {
+  position: relative; }
+  .forget-input .getCode {
+    position: absolute;
+    top: .17rem;
+    right: .2rem;
+    color: #daa955;
+    padding-left: .1rem;
+    border-left: 2px solid #eee; }
+  .forget-input .forget-img {
+    position: absolute;
+    top: .37rem;
+    left: .1rem;
+    width: .17rem;
+    height: .2rem;
+    margin-top: -.2rem;
+    padding-right: .3rem;
+    border-right: 2px solid #eee; }
+  .forget-input .phone-img {
+    background: url("../../../img/login/iphone.png") no-repeat;
+    background-size: .17rem .2rem; }
+  .forget-input .code-img {
+    background: url("../../../img/forgetpassword/code.jpg") no-repeat;
+    background-size: .17rem .2rem; }
+  .forget-input .newP-img {
+    background: url("../../../img/forgetpassword/newpassword.jpg") no-repeat;
+    background-size: .17rem .2rem; }
+  .forget-input .oldP-img {
+    background: url("../../../img/forgetpassword/oldpassword.jpg") no-repeat;
+    background-size: .17rem .2rem; }
+  .forget-input input {
+    width: 100%;
+    padding: .15rem 0  .15rem .5rem;
+    border: none;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eee; }
+
+/*# sourceMappingURL=forget.css.map */

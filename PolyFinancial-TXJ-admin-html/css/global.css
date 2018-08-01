@@ -51,6 +51,9 @@
   .debtEditContent-row textarea {
     width: 4rem;
     height: 2.3rem; }
+  .debtEditContent-row .btn-danger,
+  .debtEditContent-row .btn-success {
+    margin: 0 .1rem; }
 
 .debtEditContent-data {
   margin: .2rem 0;
@@ -96,6 +99,17 @@ td {
 .time {
   width: 10%; }
 
+.date-input {
+  margin: .1rem 0;
+  width: 1rem !important; }
+
+.date-input-min {
+  margin: .1rem 0;
+  width: 0.9rem !important; }
+
+.flex {
+  display: flex; }
+
 u {
   border-bottom: #29b078 solid; }
 
@@ -130,7 +144,8 @@ u {
     .searchCondition .search-row .form-18 {
       width: 18%; }
     .searchCondition .search-row .tips {
-      width: 6%; }
+      text-align: right;
+      width: 8%; }
 
 tr .index-title {
   padding: 30px 0 20px 20px !important; }

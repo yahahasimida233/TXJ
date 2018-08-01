@@ -1,0 +1,30 @@
+<!-- minirefresh开头的class请勿修改 -->
+<!-- 下拉刷新 -->
+<!-- <div id="minirefresh" class="minirefresh-wrap">
+    <div class="minirefresh-scroll"> -->
+
+        <!-- title -->
+        <div class="title-warp text-center">
+            <strong class="title">理财列表</strong>    
+        </div>
+        <!-- list -->
+        <div class="list-warp">
+            <div ng-repeat="list in vm.lists" ng-click="vm.product(list.id)" ui-sref="product({productId: list.id})" class="list">
+                <div class="list-product">
+                    <div class="listRow">
+                        <div class="productName">{{list.productName}}</div>
+                        <dir class="annualRate">{{list.annualRate}}%</dir>
+                    </div>
+                    <div class="listRow">
+                        <div>{{list.productTerm}}天</div>
+                        <div>预期年化收益率</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- </div>
+</div> -->
+
+
+

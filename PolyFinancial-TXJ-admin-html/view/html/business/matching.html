@@ -5,10 +5,10 @@
     </div>
     <div class="matching">
         <div>匹配债权</div>
-        <div><span>{{vm.list}}</span></div>
+        <div><span>债权ID：{{vm.list[0].id}}</span></div>
         <div>推荐投资</div>
         <div class="detail" ng-show = "vm.detail">
-            投资合同：{{vm.data2.id}} 投资金额：{{vm.data2.money}}
+            投资合同：{{vm.data2.contractId}} 投资金额：{{vm.data2.investment}}元
         </div>
         <div class="recommend">
             <div ng-repeat = "x in vm.dataThree"
@@ -16,7 +16,7 @@
                  ng-mouseleave = "vm.leave()"
                  ng-class="{true:'active-1',false : 'none'}[vm.selected.indexOf(x) >= 0]"
                  ng-click = "vm.select(x)"
-            >{{x.id}}</div>
+            >{{x.contractId}}</div>
             <div ng-click = "vm.allOpen()" >查看全部</div>
         </div>
         <div>匹配债权</div>
@@ -24,7 +24,7 @@
             <div ng-repeat = "x in vm.selected" >
             <span class="selected"
                   ng-click = "vm.remove(x)"
-            >{{x.id}}</span>
+            >{{x.contractId}}</span>
 
             </div>
         </div>
@@ -36,8 +36,8 @@
                     <div ng-repeat = "x in vm.data"
                          ng-class="{true:'active-1',false : 'none'}[vm.selected.indexOf(x) >= 0]"
                          ng-click = "vm.select(x)">
-                        <span>投资合同： {{x.id}}</span>
-                        <span>投资金额： {{x.money}}</span>
+                        <span>投资合同： {{x.contractId}}</span>
+                        <span>投资金额： {{x.investment}}元</span>
                     </div>
                 </div>
                 <div class="yahaha">
@@ -47,9 +47,14 @@
 
         </div>
         <div style="margin-top: .2rem">
-            <span>待匹配金额:</span><span>60000元</span>
+            <span>待匹配金额:</span><span>{{vm.sruplusMoney}}元</span>
         </div>
 
+    </div>
+    <div class="matching-bottom">
+        <button class="btn btn-success" ng-click = vm.matching()>匹配</button>
+        <button ui-sref ="backStage.debt"
+                class="btn btn-danger">取消</button>
     </div>
 
 </div>

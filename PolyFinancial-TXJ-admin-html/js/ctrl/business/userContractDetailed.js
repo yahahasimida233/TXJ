@@ -11,7 +11,7 @@ app.controller("userContractDetailedCtrl",function ($http,$state,serviceHTTP,$st
             console.log(vm.list);
         }
         else {
-
+            bootbox.alert(response.data.message)
         }
     }, function errorCallback(res) {
         // 请求失败执行代码

@@ -1,3 +1,119 @@
+.home-title {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  color: #c39d71;
+  background: #fff;
+  height: .4rem;
+  font-size: .2rem;
+  max-width: 600px;
+  width: 100vw;
+  z-index: 200; }
+  .home-title div {
+    height: .4rem;
+    line-height: .4rem;
+    text-align: center; }
+  .home-title .glyphicon-cog {
+    padding-right: .1rem; }
+  .home-title .home-blank {
+    padding-left: .3rem; }
 
+.home-bottom {
+  position: fixed;
+  bottom: 0;
+  padding: .1rem 0;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #b9b9b9;
+  background-color: #f9f9f9;
+  z-index: 200; }
+  .home-bottom .home-bottom-btn {
+    flex-basis: 33.333%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: 200ms all ease; }
+
+.home-active {
+  color: #c39d71; }
+
+.carousel {
+  padding-top: .4rem; }
+
+.carousel-indicators li {
+  margin: 0 0.07rem !important; }
+
+.canvas {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding-top: .1rem; }
+
+#myCanvas {
+  margin: 0 auto;
+  text-align: center;
+  border: solid 2px #dca854;
+  border-radius: 50%; }
+
+.canvas-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: .5rem;
+  text-align: center;
+  color: #999; }
+  .canvas-content .canvas-content-leek {
+    font-size: .4rem;
+    color: #dca854; }
+
+.canvas-content-bottom {
+  display: flex;
+  justify-content: center; }
+  .canvas-content-bottom div {
+    margin: 0 .1rem; }
+
+.home-recommend {
+  position: relative;
+  text-align: center;
+  height: .4rem;
+  line-height: .4rem;
+  font-weight: bold;
+  border-bottom: #eee solid 1px;
+  background-color: white; }
+  .home-recommend span {
+    position: absolute;
+    top: -.02rem;
+    width: .25rem;
+    height: .34rem;
+    background-size: .25rem .34rem;
+    background-repeat: no-repeat; }
+  .home-recommend .home-new {
+    right: .4rem;
+    background-image: url("../../img/home-new.jpg"); }
+  .home-recommend .home-hot {
+    right: .1rem;
+    background-image: url("../../img/home-hot.jpg"); }
+
+.home-content {
+  position: relative;
+  height: 100vh;
+  background-color: #eee;
+  padding-bottom: .55rem;
+  overflow-y: auto; }
+
+.cutLeek {
+  width: 100%;
+  height: .8rem;
+  padding: .2rem .2rem;
+  background-color: white; }
+  .cutLeek button {
+    width: 100%;
+    background: #daa955;
+    color: #fff;
+    font-size: .2rem;
+    font-weight: bold; }
 
 /*# sourceMappingURL=home.css.map */
