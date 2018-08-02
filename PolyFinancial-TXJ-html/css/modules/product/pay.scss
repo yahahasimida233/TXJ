@@ -10,11 +10,9 @@ $gold: #d7a64c;
     align-items: center;
     height: .4rem;
     line-height: .4rem;
+    padding: .2rem;
     font-size: .2rem; // 使标题处于居中位置
     color: $gold;
-    .title {
-        padding-right: 0.2rem;
-    }
 }
 // 返回按钮
 .back {
