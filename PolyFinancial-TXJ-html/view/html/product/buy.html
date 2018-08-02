@@ -1,69 +1,106 @@
-<!-- title -->
-<div class="titleWarp">
-    <div class="glyphicon glyphicon-chevron-left back" ui-sref="product({productId: vm.productId})"></div>
-    <strong class="title">立即购买</strong>
-    <div>&emsp;</div>
+<div class="bk-gray">
+    <div class="bk-white">
+        <!-- title -->
+        <div class="titleWarp">
+            <div class="glyphicon glyphicon-chevron-left back" ui-sref="product({productId: vm.productId})"></div>
+            <strong class="title">立即购买</strong>
+            <div>&emsp;</div>
+        </div>
+        <!-- 购买金额 -->
+        <form name="buyForm" class="buyForm">
+            <div class="money" ng-class="{'has-error': buyForm.money.$dirty && buyForm.money.$invalid}">
+                <strong class="tips">购买金额:</strong>
+                <input type="number" 
+                       class="form-control money" 
+                       name="money"
+                       placeholder={{vm.start}}元起投，最小增减金额为{{vm.min}}元。
+                       ng-model="vm.money"
+                       ng-change="vm.change()"
+                       min="{{vm.start}}"
+                       step="{{vm.min}}"
+                       required>
+                <div class="tipsRed" ng-show="buyForm.money.$invalid && buyForm.money.$dirty">
+                    购买金额不符合限额要求，请重试！
+                </div> 
+            </div>
+            <strong class="tips">预期收益：&emsp;{{vm.result}}元</strong>
+        
+            <!-- 银行卡 -->
+            <div class="card-warp">
+                <strong class="tips">支付方式：</strong>
+                <img class="card" ng-src = "{{vm.imgSrc}}">
+                <span class="cardNum">{{vm.cardNum}}</span>
+                <span class="glyphicon glyphicon-chevron-right cardSure" ng-click="vm.payCard = true"></span>
+            </div>
+            
+            <!-- 合同确认 -->
+            <div class="contractSure">
+                <span class="glyphicon glyphicon-check btnSure" 
+                ng-click="vm.sureC = !vm.sureC" 
+                ng-class="{'black': vm.sureC}">
+                </span>
+                <span>我已阅读并同意</span>
+                <span class="contract" ng-click="vm.contract = true">《聚金融投资合同》</span>
+            </div>
+        </form>
+        <!-- 购买按钮 -->
+        <div class="text-center buy-btn">
+            <button class="btn btn-primary" ng-disabled="!vm.sureC || buyForm.money.$invalid || !vm.cardNum" 
+            ng-click="vm.buy()">确认购买</button>
+        </div>
+    </div>
+    <!-- 投资合同 -->
+    <div id="contract" ng-show="vm.contract">
+        <!-- title -->
+        <div class="titleWarp">
+            <div class="glyphicon glyphicon-chevron-left back" ng-click="vm.contract = !vm.contract"></div>
+            <strong class="title">聚金融投资合同</strong>
+            <div>&emsp;</div>
+        </div>
+        <div class="conText">
+            委托人：_____ <br>
+            身份证号码：_____ <br>
+            手机号：_____<br> 
+            手机号：_____<br> 
+            受托人：聚金融 <br> 
+            住所：XXXXXXXXXX <br> 
+            鉴于委托人为在聚金融平台运营实名的注册用户，现处于聚金融平台的理财计划，为优化委托人用户体验，委托人就理财相关标的、资金划转、退出等相关事项向受托人做出如下授权：<br> 
+            一、授权范围 <br> 
+            （一）代委托人在聚金融平台上点击确认立即购买、预约续投和《富友综合支付服务协议》等业务流程中的全部协议。 <br> 
+            （二）代委托人进行划转理财资金、收回理财本息、收取债权转让款项等业务流程中涉及到全部资金管理。<br>  
+            二、授权投资的账户 <br> 
+            （一）授权投资的账户<br> 
+            聚金融平台账号：___________。 <br> 
+            （二）授权投资的金额：人民币（大写）：_____元整，（小写）：¥_____元。 <br> 
+            三、授权期限 本授权期限自委托人与受托人间签署《聚金融投资合同》之日起至完全退出该理财计划（或紧急退出）之日止。<br>  
+            四、本委托书经委托人在聚金融平台以线上点击确认的方式签署。<br> 
+            委托人：__________ ____年____月____日
+            <!-- 章 -->
+            <img class="chapter" src="../../img/u934.png">
+        </div>
+    </div>
+    <!-- 支付银行卡列表 -->
+    <div class="showList-warp" ng-show="vm.payCard">
+        <div class="cardList-warp"> 
+            <!-- back -->
+            <div class="titleWarp">
+                <div class="glyphicon glyphicon-chevron-left back" ng-click="vm.payCard = false"></div>
+                <strong class="title">支付方式</strong>
+                <div>&emsp;</div>
+            </div>
+            <!-- 银行卡列表 -->
+            <div ng-repeat="x in vm.cardLists" class="card-warp text-center" ng-click="vm.chose(x.bankCard, x.bankType, x.id)">
+                <img class="card cardList" ng-src="{{x.bankType | showImg}}"> 
+                <span class="cardNum">({{x.bankCard | cardNum}})</span>
+                <div>单笔限额3万，日限额20万</div>
+            </div>
+            <!-- 添加银行卡 -->
+            <div class="titleWarp add-warp">
+                <div>&emsp;</div>
+                <strong class="add">添加银行卡</strong>
+                <div class="glyphicon glyphicon-chevron-right" ui-sref="home.mineCard"></div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<form name="buyForm" class="buyForm">
-    <div class="money" ng-class="{'has-error': buyForm.money.$dirty && buyForm.money.$invalid}">
-        <strong class="tips">购买金额:</strong>
-        <input type="number" 
-               class="form-control money" 
-               name="money"
-               placeholder={{vm.start}}元起投，最小增减金额为{{vm.min}}元。
-               ng-model="vm.money"
-               ng-blur="vm.change()"
-               required>
-        <div class="tipsRed" ng-show="buyForm.money.$invalid && buyForm.money.$dirty">
-            购买金额不符合限额要求，请重试！
-        </div> 
-    </div>
-    <strong class="tips">预期收益：&emsp;{{vm.result}}元</strong>
-
-    <!-- 合同确认 -->
-    <div class="contractSure">
-        <span class="glyphicon glyphicon-check btnSure" 
-              ng-click="vm.sureC = !vm.sureC" 
-              ng-class="{'black': vm.sureC}">
-        </span>
-        <span>我已阅读并同意</span>
-        <span class="contract" ng-click="vm.contract = true">《聚金融投资合同》</span>
-    </div>
-</form>
-
-<div id="contract" ng-show="vm.contract">
-    <!-- title -->
-    <div class="titleWarp">
-        <div class="glyphicon glyphicon-chevron-left back" ng-click="vm.contract = !vm.contract"></div>
-        <strong class="title">聚金融投资合同</strong>
-        <div>&emsp;</div>
-    </div>
-    <div class="conText">
-        委托人：_____ <br>
-        身份证号码：_____ <br>
-        手机号：_____<br> 
-        手机号：_____<br> 
-        受托人：聚金融 <br> 
-        住所：XXXXXXXXXX <br> 
-        鉴于委托人为在聚金融平台运营实名的注册用户，现处于聚金融平台的理财计划，为优化委托人用户体验，委托人就理财相关标的、资金划转、退出等相关事项向受托人做出如下授权：<br> 
-        一、授权范围 <br> 
-        （一）代委托人在聚金融平台上点击确认立即购买、预约续投和《富友综合支付服务协议》等业务流程中的全部协议。 <br> 
-        （二）代委托人进行划转理财资金、收回理财本息、收取债权转让款项等业务流程中涉及到全部资金管理。<br>  
-        二、授权投资的账户 <br> 
-        （一）授权投资的账户<br> 
-        聚金融平台账号：___________。 <br> 
-        （二）授权投资的金额：人民币（大写）：_____元整，（小写）：¥_____元。 <br> 
-        三、授权期限 本授权期限自委托人与受托人间签署《聚金融投资合同》之日起至完全退出该理财计划（或紧急退出）之日止。<br>  
-        四、本委托书经委托人在聚金融平台以线上点击确认的方式签署。<br> 
-        委托人：__________ ____年____月____日
-        <!-- 章 -->
-        <img class="chapter" src="../../img/u934.png">
-    </div>
-</div>
-
-
-<!-- {{vm.a | cardNum}} --> {{"1234567890123456789" | cardNum}}
-<div class="text-center bottom">
-    <button class="btn btn-primary" ng-disabled="!vm.sureC" ng-click="vm.buy()">确认购买</button>
-</div>

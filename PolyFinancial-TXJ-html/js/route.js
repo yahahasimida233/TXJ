@@ -150,6 +150,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 支付页面
+        .state('pay', {
+            url: "/pay?money&cardNum&bank&productId&start&min&time&rate&cardId",
+            templateUrl: 'view/html/product/pay.html',
+            controller: 'payCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/product/payCtrl.js",
+                            "./css/modules/product/pay.css",
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 投资合同
         .state('contract', {
             url: "/contract",

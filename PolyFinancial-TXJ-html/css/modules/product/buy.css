@@ -1,19 +1,134 @@
+.bk-gray {
+  height: 100%;
+  background-color: #eee;
+}
+
+.bk-white {
+  background-color: #fff;
+}
+
 .titleWarp {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: .4rem;
   line-height: .4rem;
-  font-size: .2rem; }
-  .titleWarp .title {
-    padding-right: 0.2rem; }
+  font-size: .2rem;
+  color: #d7a64c;
+}
+
+.titleWarp .title {
+  padding-right: 0.2rem;
+}
 
 .back {
-  padding-left: .2rem; }
+  padding-left: .2rem;
+}
 
 .buyForm {
-  padding: .2rem; }
-  .buyForm .money {
-    margin-top: .1rem; }
+  padding: .2rem;
+}
 
-/*# sourceMappingURL=buy.css.map */
+.buyForm .money {
+  margin: .1rem 0;
+}
+
+.tips {
+  font-size: .17rem;
+}
+
+.tipsRed {
+  color: red;
+}
+
+.card-warp {
+  margin-top: .2rem;
+}
+
+.card-warp .card {
+  max-width: 60%;
+  margin-left: -.2rem;
+}
+
+.card-warp .cardNum {
+  margin: -.1rem;
+  font-weight: bold;
+}
+
+.card-warp .cardSure {
+  position: fixed;
+  top: 2rem;
+  right: .2rem;
+  font-size: 0.17rem;
+  color: #d7a64c;
+}
+
+.showList-warp {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(27, 27, 27, 0.5);
+}
+
+.showList-warp .cardList-warp {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: .2rem;
+  background-color: #fff;
+}
+
+.showList-warp .cardList-warp .add-warp {
+  margin-top: .2rem;
+}
+
+.showList-warp .cardList-warp .add-warp .add {
+  font-size: 0.2rem;
+}
+
+.contractSure {
+  margin: 0.2rem 0;
+}
+
+.contractSure .btnSure {
+  font-size: .18rem;
+  color: #dcdcdc;
+}
+
+.contractSure .contract {
+  color: #d7a64c;
+}
+
+.black {
+  color: black !important;
+}
+
+#contract {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: .2rem;
+  background-color: #fff;
+}
+
+#contract .conText {
+  position: fixed;
+  top: 81px;
+  bottom: .2rem;
+  overflow-y: auto;
+  padding-right: .2rem;
+}
+
+#contract .conText .chapter {
+  position: relative;
+  bottom: 0.8rem;
+  left: 1.5rem;
+}
+
+.buy-btn {
+  padding: 0.1rem 0 .5rem 0;
+}

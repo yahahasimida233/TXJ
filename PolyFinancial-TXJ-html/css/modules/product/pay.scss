@@ -1,0 +1,66 @@
+// 聚金融金色（）亮金色
+$gold: #d7a64c;
+.black {
+    color: black !important;
+}
+// 标题
+.titleWarp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .2rem; // 使标题处于居中位置
+    color: $gold;
+    .title {
+        padding-right: 0.2rem;
+    }
+}
+// 返回按钮
+.back {
+    padding-left: .2rem;
+}
+// 确认合同
+.contractSure {
+    margin: 0.2rem 0;
+    .btnSure {
+        font-size: .18rem;
+        color: #dcdcdc;
+    }
+    .contract {
+        color: $gold;
+    }
+}
+// 表单信息
+.payForm{
+    padding: .2rem;
+    .info{
+        padding: .2rem;
+    }
+}
+// 确认支付按钮
+.pay-btn{
+    padding: .5rem;
+}
+// 富友支付合同
+#contract {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: .2rem;
+    background-color: #fff;
+    .conText {
+        position: fixed;
+        top: 81px;
+        bottom: .2rem;
+        overflow-y: auto;
+        padding-right: .2rem;
+        .chapter {
+            position: relative;
+            bottom: 0.8rem;
+            left: 1.5rem;
+        }
+    }
+}

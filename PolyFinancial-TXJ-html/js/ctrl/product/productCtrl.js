@@ -35,6 +35,8 @@ app.controller("productCtrl", function ($state, $stateParams, serviceHTTP, $time
             vm.introduceP = true;
             // 更多信息
             vm.more = vm.product.more;
+            // 产品id
+            vm.id = vm.product.id;
             // 还款方式
             if (vm.product.repaymentMode == 0) {
                 vm.repay = "本息返还";
@@ -93,7 +95,7 @@ app.controller("productCtrl", function ($state, $stateParams, serviceHTTP, $time
                     minAmount: vm.minAmount,
                     productId: productId,
                     rate: vm.annualRate,
-                    time: vm.productTerm
+                    time: vm.productTerm,
                 })
             } 
             else{

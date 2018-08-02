@@ -130,6 +130,18 @@ angular.module("txj")
                 })
             },
 
+            // 支付
+            payHTTP: function (data) { //获取产品详情
+                return $http({
+                    method: "POST",
+                    url: serviceURL.payURL,
+                    data: data,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
             //个人信息
             personInfoHTTP: function () { //获取产品详情
                 return $http({
@@ -160,7 +172,6 @@ angular.module("txj")
                 return $http({
                     method: "GET",
                     url: serviceURL.bankCardListURL,
-                    params: userId,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }

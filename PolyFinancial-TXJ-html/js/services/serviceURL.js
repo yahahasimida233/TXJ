@@ -1,7 +1,7 @@
 angular.module("txj").factory("serviceURL", function() {
     return {
         // 登陆
-        loginURL: "/admin/home/a/u/front/login",
+        loginURL: "/admin/home/a/u/front/login/",
 
         //找回密码
         getbackPURL:"/admin/home/a/u/my/forget",
@@ -33,8 +33,8 @@ angular.module("txj").factory("serviceURL", function() {
         //个人信息
         personInfoURL: "/admin/home/a/u/my/info/",
 
-        // 首页
-
+        //支付
+        payURL: "admin/home/a/u/pay/",
 
         // 我的页面-获取消息列表
         messageURL:"/admin/home/a/u/my/articles",
