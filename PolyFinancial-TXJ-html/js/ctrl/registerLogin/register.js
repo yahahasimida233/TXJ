@@ -38,19 +38,20 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
         }
         setTime();
 
-            // serviceHTTP.verificationCodeHTTP(vm.userName).then(function successCallback(response) {
-        //     // 请求成功执行代码
-        //     console.log(response);
-        //     vm.message = response.data.message;
-        //     if(response.data.message === "success") {
-        //         bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册码已发送请注意查收</div>' });
-        //     }
-        //     else {
-        //     }
-        // }, function errorCallback(res) {
-        //     // 请求失败执行代码
-        //     bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">请求失败，请稍后重试</div>' });
-        // });
+            serviceHTTP.verificationCodeHTTP(vm.userName).then(function successCallback(response) {
+            // 请求成功执行代码
+            console.log(response);
+            vm.message = response.data.message;
+            if(response.data.message === "success") {
+                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册码已发送请注意查收</div>' });
+            }
+            else {
+                bootbox.alert(response.data.message);
+            }
+        }, function errorCallback(res) {
+            // 请求失败执行代码
+            bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">请求失败，请稍后重试</div>' });
+        });
     };
 
 
@@ -111,18 +112,18 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             phoneNum: vm.userName,
             pwd:vm.newP
         };
-        // serviceHTTP.codeConfirmHTTP(phone).then(function successCallback(response) {
-        //     // 请求成功执行代码
-        //     console.log(response);
-        //     if(response.data.message === "success") {
-        //         sessionStorage.setItem("login","true");
-        //     }
-        //     else {
-        //
-        //     }
-        // }, function errorCallback(res) {
-        //     // 请求失败执行代码
-        // });
+        serviceHTTP.verificationCodeHTTP(phone).then(function successCallback(response) {
+            // 请求成功执行代码
+            console.log(response);
+            if(response.data.message === "success") {
+
+            }
+            else {
+                bootbox.alert(response.data.message);
+            }
+        }, function errorCallback(res) {
+            // 请求失败执行代码
+        });
 
         // 当报错三次时，需要增加一个图形验证码进行人机验证
 

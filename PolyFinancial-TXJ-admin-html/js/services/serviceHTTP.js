@@ -56,16 +56,7 @@ angular.module("txj")
                 })
             },
 
-            //获取图片（伪）验证码
-            imgCodeHTTP : function (info) {
-                return $http({
-                    method: "get",
-                    url: serviceURL.imgCodeURL,
-                    params: info ,
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded" }
-                })
-            },
+
 
             //图片上传
             imgUploadURL : function (info) {

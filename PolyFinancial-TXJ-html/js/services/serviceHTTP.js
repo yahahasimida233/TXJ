@@ -35,7 +35,7 @@ angular.module("txj")
                 })
             },
 
-            //手机短信验证码发送
+            //手机注册短信验证码发送
             verificationCodeHTTP: function (phoneNum) {
                 return $http({
                     method: "POST",
@@ -45,6 +45,19 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
+
+            //验证手机注册短信验证码是否一致
+            codeConfirmHTTP: function (info) {
+                return $http({
+                    method: "get",
+                    url: serviceURL.codeConfirmURL,
+                    params: info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+
 
             //手机号码注册验证
             phoneRegisterHTTP : function (info) {
@@ -177,7 +190,22 @@ angular.module("txj")
                     }
                 })
             },
+
+
+            // 设置-修改密码
+            settingCPHTTP:function (info) {
+                return $http({
+                    method: "put",
+                    url: serviceURL.settingCPURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
         }
+
+
 });
 
 // //检查是否登录

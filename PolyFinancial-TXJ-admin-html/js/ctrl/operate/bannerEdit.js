@@ -48,12 +48,13 @@ app.controller("bannerEditCtrl",function ($scope,$http,$state,serviceHTTP,$state
             return false;
         }
         var form = new FormData();
-        form.append("file", vm.img);
+        form.append("pictureFile", vm.img);
         serviceHTTP.imgUploadURL(form).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
             if(response.data.message === "success") {
-                vm.imgSrc = response.data.data.url;
+                vm.imgSrc = response.data.url;
+                vm.imgUploadSuccess = success;
                 console.log("上传成功");
             }
             else {

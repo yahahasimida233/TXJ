@@ -40,9 +40,11 @@ angular.module("txj").factory("serviceURL", function() {
         messageURL:"/admin/home/a/u/my/articles",
 
         // 银行卡列表
-        bankCardListURL: "admin/home/a/u/my/bankcards/"
+        bankCardListURL: "/admin/home/a/u/my/bankcards/",
 
 
+        // 设置-修改密码
+        settingCPURL: "/admin/home/a/u/my/setup/changepwd/"
 
 
 
