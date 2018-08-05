@@ -12,47 +12,68 @@
     left: .2rem;
     top: .1rem; }
 .changePhone .changePhone-step1 {
-  background-color: white; }
-  .changePhone .changePhone-step1 div {
-    padding: .1rem .2rem;
-    border: .5px #eee solid; }
-  .changePhone .changePhone-step1 .step-row input {
-    padding-left: .1rem;
-    padding-right: .2rem;
-    width: 1rem;
-    border: none; }
-  .changePhone .changePhone-step1 .step-row button {
-    width: auto;
-    border: none;
-    padding-left: .2rem;
-    border-left: #eee solid 1px; }
-  .changePhone .changePhone-step1 button {
-    width: 100%;
-    background-color: white; }
-  .changePhone .changePhone-step1 .attention {
-    background-color: #eee;
-    text-align: right;
-    color: red; }
+  margin: .2rem 0; }
+  .changePhone .changePhone-step1 .step-title {
+    height: .6rem;
+    background-color: white;
+    padding: .1rem; }
+  .changePhone .changePhone-step1 .forget-bottom {
+    padding: .2rem; }
+    .changePhone .changePhone-step1 .forget-bottom button {
+      width: 100%;
+      height: .4rem;
+      color: white;
+      background-color: #daa955; }
 .changePhone .changePhone-step2 {
-  background-color: white; }
-  .changePhone .changePhone-step2 div {
-    padding: .1rem .2rem;
-    border: .5px #eee solid; }
-  .changePhone .changePhone-step2 .step-row input {
+  background-color: white;
+  margin: .2rem 0; }
+  .changePhone .changePhone-step2 .forget-bottom {
+    padding: .2rem; }
+    .changePhone .changePhone-step2 .forget-bottom button {
+      width: 100%;
+      height: .4rem;
+      color: white;
+      background-color: #daa955; }
+
+.forget-input {
+  position: relative; }
+  .forget-input .getCode {
+    position: absolute;
+    top: .17rem;
+    right: .2rem;
+    color: #daa955;
     padding-left: .1rem;
-    border: none;
-    width: 1rem; }
-  .changePhone .changePhone-step2 .step-row button {
-    width: auto;
-    border: none;
-    padding-left: .2rem;
-    border-left: #eee solid 1px; }
-  .changePhone .changePhone-step2 button {
+    border-left: 2px solid #eee; }
+  .forget-input .forget-img {
+    position: absolute;
+    top: .37rem;
+    left: .1rem;
+    width: .17rem;
+    height: .2rem;
+    margin-top: -.2rem;
+    padding-right: .3rem;
+    border-right: 2px solid #eee; }
+  .forget-input .phone-img {
+    background: url("../../../img/login/iphone.png") no-repeat;
+    background-size: .17rem .2rem; }
+  .forget-input .code-img {
+    background: url("../../../img/forgetpassword/code.jpg") no-repeat;
+    background-size: .17rem .2rem; }
+  .forget-input input {
     width: 100%;
-    background-color: white; }
-  .changePhone .changePhone-step2 .attention {
-    background-color: #eee;
-    text-align: right;
-    color: red; }
+    padding: .15rem 0  .15rem .5rem;
+    border: none;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eee; }
+  .forget-input #v_container {
+    position: absolute;
+    top: .1rem;
+    right: .2rem;
+    width: 1rem; }
+  .forget-input #v_container2 {
+    position: absolute;
+    top: .1rem;
+    right: .2rem;
+    width: 1rem; }
 
 /*# sourceMappingURL=changePhone.css.map */

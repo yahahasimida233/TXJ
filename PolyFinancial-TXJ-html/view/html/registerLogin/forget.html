@@ -27,7 +27,13 @@
                    ng-show = "false"
                    ng-click = "vm.sendCode()">
         </div>
-
+        <div class="forget-input" ng-show = "vm.countError > 2">
+            <input type="tel"
+                   ng-model = "vm.imgCode"
+                   placeholder="请输入图形验证码">
+            <div class="forget-img code-img"></div>
+            <div id="v_container"></div>
+        </div>
         <div class="forget-input">
             <input type="password"
                    ng-model = "vm.oldP"
@@ -39,13 +45,7 @@
                    placeholder="请设置6-18位由数字、字母或符号组成的密码。">
             <div class="forget-img oldP-img"></div>
         </div>
-        <div class="forget-input" ng-show = "vm.countError > 2">
-            <input type="tel"
-                   ng-model = "vm.imgCode"
-                   placeholder="请输入图形验证码">
-            <div class="forget-img code-img"></div>
-            <div id="v_container"></div>
-        </div>
+
         <div class="forget-input">
             <input type="password"
                    ng-model = "vm.newP"

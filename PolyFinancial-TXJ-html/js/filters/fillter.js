@@ -106,4 +106,20 @@ app.filter("showImg",function () {
         }
         return data;
     }
-})
+});
+
+// 用户是否实名过滤器
+app.filter('userInfoFilter',function(){
+    return function (a){
+        switch (a){
+            case 0:
+                a = "已实名";
+                break;
+            case 1:
+                a = "未实名";
+                break;
+
+        }
+        return a;
+    }
+});

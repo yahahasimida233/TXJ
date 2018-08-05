@@ -7,19 +7,23 @@ app.controller("productEditCtrl",function ($http,$state,serviceHTTP,$stateParams
 
     }else{
         vm.title= "产品编辑";
-        serviceHTTP.productDetailHTTP(id).then(function successCallback(response) {
+        var info = {
+            id: id
+        }
+        serviceHTTP.productHTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
             if(response.data.message === "success") {
-                vm.list = response.data.data;
+                vm.list = response.data.productList.list[0];
                 console.log(vm.list);
                 vm.productId = vm.list.productId;
                 vm.productName = vm.list.productName;
-                vm.interestYear = vm.list.interestYear;
+                vm.annualRate = vm.list.annualRate;
                 vm.productTerm = vm.list.productTerm;
-                vm.startMoney = vm.list.startMoney;
-                vm.minMoney = vm.list.minMoney;
-                vm.repaymentMode = vm.list.repaymentMode;
+                vm.startMoney = vm.list.startAmount;
+                vm.minMoney = vm.list.minAmount;
+                vm.repaymentMode = parseInt(vm.list.repaymentMode);
+                console.log(vm.repaymentMode);
                 vm.introduction = vm.list.introduction;
                 vm.more = vm.list.more;
             }
@@ -37,9 +41,9 @@ app.controller("productEditCtrl",function ($http,$state,serviceHTTP,$stateParams
 
     vm.save = function(){
         var info = {};
-        info.productId = vm.productId;
+        info.id = id;
         info.productName = vm.productName;
-        info.interestYear = vm.interestYear;
+        info.annualRate = vm.annualRate;
         info.productTerm = vm.productTerm;
         info.startMoney = vm.startMoney;
         info.minMoney = vm.minMoney;

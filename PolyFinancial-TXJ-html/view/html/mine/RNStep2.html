@@ -1,0 +1,59 @@
+<form name="realNameForm2" class="realName">
+    <div class="realName-title" ui-sref = "home.userInfo">
+        <span class="fa  fa-chevron-left" style="color: #dca854"></span>
+        <div>实名认证</div>
+    </div>
+
+    <div class="realName-step2" ng-show="vm.step2 =  true">
+        <div class="step-row">
+            <span>*卡类型:</span>
+            <span style="margin-left: .1rem">天地银行</span>
+        </div>
+        <div class="step-row">
+            <span>*手机号:</span>
+            <input type="tel"
+                   required
+                   ng-model = "vm.userName"
+                   placeholder="请输入银行预留手机号">
+        </div>
+        <div class="agreement">
+            <input id="agreement" required type="checkbox"><label for="agreement" ng-click = "vm.agreement = true">我已阅读《富友综合支付服务协议》</label>
+        </div>
+        <div class="input-row">
+            <button class="btn"
+                    ng-disabled = "realNameForm2.$invalid "
+                    ng-click = "vm.step2Click()">完成认证并开始绑卡</button>
+        </div>
+    </div>
+
+
+    <div class="Agreement" ng-show ="vm.agreement">
+        <span class="fa  fa-chevron-left"
+              ng-click ="vm.agreement = false"
+              style="color: #dca854"></span>
+        <h1>条款</h1>
+        <div>
+            <div>第一，绝对不意气用事</div>
+            <div>第二，绝对不漏判任何一件坏事</div>
+            <div>第三，绝对裁判的公正漂亮，裁判机器人蜻蜓队长前来觐见！</div>
+            <div>这场和平星争夺战由我来做裁判!</div>
+            <div>第一，绝对不意气用事</div>
+            <div>第二，绝对不漏判任何一件坏事</div>
+            <div>第三，绝对裁判的公正漂亮，裁判机器人蜻蜓队长前来觐见！</div>
+            <div>这场和平星争夺战由我来做裁判!</div>
+            <div>第一，绝对不意气用事</div>
+            <div>第二，绝对不漏判任何一件坏事</div>
+            <div>第三，绝对裁判的公正漂亮，裁判机器人蜻蜓队长前来觐见！</div>
+            <div>这场和平星争夺战由我来做裁判!</div>
+            <div>第一，绝对不意气用事</div>
+            <div>第二，绝对不漏判任何一件坏事</div>
+            <div>第三，绝对裁判的公正漂亮，裁判机器人蜻蜓队长前来觐见！</div>
+            <div>这场和平星争夺战由我来做裁判!</div>
+            <div>第一，绝对不意气用事</div>
+            <div>第二，绝对不漏判任何一件坏事</div>
+            <div>第三，绝对裁判的公正漂亮，裁判机器人蜻蜓队长前来觐见！</div>
+            <div>这场和平星争夺战由我来做裁判!</div>
+        </div>
+    </div>
+
+</form>

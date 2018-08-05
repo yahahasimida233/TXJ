@@ -6,11 +6,11 @@ app.controller("productCtrl",function ($http,$state,serviceHTTP,$stateParams){
 
     // 从URL获取参数
     vm.productId = $stateParams.id || undefined;
-    vm.productName = $stateParams.actualName || undefined;
+    vm.productName = $stateParams.productName || undefined;
     vm.createBy = $stateParams.createBy || undefined;
     vm.status = $stateParams.state || undefined;
-    vm.size = $stateParams.size || 10;
-    vm.page = $stateParams.page || undefined;
+    vm.size = $stateParams.pageSize || 10;
+    vm.page = $stateParams.pageNum || undefined;
 
 
     vm.getList = function(){
@@ -19,8 +19,8 @@ app.controller("productCtrl",function ($http,$state,serviceHTTP,$stateParams){
             productName:vm.productName,
             createBy:vm.createBy ,
             state:vm.status ,
-            size: vm.size,
-            page: vm.page
+            pageSize: vm.size,
+            pageNum: vm.page
         };
         console.log("info:",info);
         serviceHTTP.productHTTP(info).then(function successCallback(response) {
@@ -58,13 +58,13 @@ app.controller("productCtrl",function ($http,$state,serviceHTTP,$stateParams){
 
     vm.search = function(){
 
-        $state.go('backStage.user', {
-            id: vm.userId,
-            actualName: vm.userName,
-            phoneNum: vm.phone,
+        $state.go('backStage.product', {
+            id: vm.productId,
+            productName: vm.productName,
+            createBy: vm.createBy,
             state: vm.status,
-            size: vm.size,
-            page: vm.page
+            pageSize: vm.size,
+            pageNum: vm.page
         })
     };
 

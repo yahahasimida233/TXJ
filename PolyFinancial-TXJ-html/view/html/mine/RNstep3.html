@@ -1,10 +1,10 @@
-<div class="changePhone">
-    <div class="changePhone-title" ui-sref = "home.userInfo">
+<div class="realName">
+    <div class="realName-title" ui-sref = "home.userInfo">
         <span class="fa  fa-chevron-left" style="color: #dca854"></span>
-        <div>更换手机</div>
+        <div>实名认证</div>
     </div>
 
-    <form name="step1Form" class="changePhone-step1" >
+    <form name="step3Form" class="RNStep3" >
         <div class="step-title">本次操作需要短信验证，请输入{{vm.userName}}收到的短信验证码。</div>
         <div class="forget-input">
             <input type="tel"
@@ -30,12 +30,9 @@
             <div id="v_container"></div>
         </div>
         <div class="forget-bottom">
-            <button class="btn" ng-disabled = "step1Form.$invalid " ng-click = "vm.step1Click()">下一步</button>
+            <button class="btn" ng-disabled = "step3Form.$invalid " ng-click = "vm.step3Click()">下一步</button>
         </div>
     </form>
 
 
-<div>
-    <button ui-sref = "home.changePhoneStep2">2333</button>
-</div>
 </div>

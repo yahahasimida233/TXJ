@@ -1,6 +1,6 @@
 app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams,$timeout,$interval) {
     var vm = this;
-    vm.homeTitle = "首页";
+    vm.homeTitle = (sessionStorage.getItem('homeTitle'))? (sessionStorage.getItem('homeTitle')):'首页';
 
    
 

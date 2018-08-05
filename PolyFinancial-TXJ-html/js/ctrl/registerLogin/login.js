@@ -33,7 +33,10 @@ app.controller("loginCtrl",function ($scope,$http,$state,serviceHTTP,$stateParam
                 bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">该手机号还未注册账号，请前往注册</div>' });
                 vm.passWord = undefined;
                 return false;
+            }else{
+                bootbox.alert(response.data.message)
             }
+
         }, function errorCallback(res) {
             // 请求失败执行代码
         });
