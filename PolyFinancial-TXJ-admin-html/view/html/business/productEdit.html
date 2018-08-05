@@ -6,13 +6,13 @@
     <form class="debtEditContent"  name="productEditForm">
         <div class="debtEditContent-row"
              ng-class="{'has-error': productEditForm.productName.$dirty && productEditForm.enterpriseName.$invalid}">
-            <span>*产&#12288品&#12288名&#12288&#12288</span>
+            <span class="debtEditContent-span">*产&#12288品&#12288名&#12288&#12288</span>
             <input type="text"
                    required
                    class="form-control"
                    ng-model ="vm.productName"
                    name="productName"
-                   placeholder="请输入企业名称（2-10个汉字）"
+                   placeholder="请输入产品名称（2-10个汉字）"
                    ng-pattern="/^[\u4e00-\u9fa5]{2,10}$/">
             <span class="debtEdit-attention"
                   style="color: red"
@@ -20,7 +20,7 @@
         </div>
         <div class="debtEditContent-row"
              ng-class="{'has-error': productEditForm.annualRate.$dirty && productEditForm.annualRate.$invalid}">
-            <span>*预期年利率（%）</span>
+            <span class="debtEditContent-span">*预期年利率（%）</span>
             <input type="text"
                    required
                    class="form-control"
@@ -34,7 +34,7 @@
         </div>
         <div class="debtEditContent-row"
              ng-class="{'has-error': productEditForm.productTerm.$dirty && productEditForm.productTerm.$invalid}">
-            <span>*投资周期（天）</span>
+            <span class="debtEditContent-span">*投资周期（天）</span>
             <input type="text"
                    required
                    class="form-control"
@@ -48,7 +48,7 @@
         </div>
         <div class="debtEditContent-row"
              ng-class="{'has-error': productEditForm.startMoney.$dirty && productEditForm.startMoney.$invalid}">
-            <span>*起投金额（元）</span>
+            <span class="debtEditContent-span">*起投金额（元）</span>
             <input type="text"
                    required
                    class="form-control"
@@ -75,13 +75,13 @@
                   ng-show="productEditForm.minMoney.$error.pattern ">请输入最小增减金额（数字组成的整数）</span>
         </div>
         <div class="debtEditContent-row">
-            <span>*还款方式（元）</span>
+            <span class="debtEditContent-span">*还款方式&#12288&#12288</span>
             <select class="form-control"
                     required
                     name = "loanAmount"
-                    ng-model = "vm.loanAmount">
-                <option value="0">本息返还</option>
-                <option value="1">先息后本</option>
+                    ng-model = "vm.repaymentMode">
+                <option ng-value="0">本息返还</option>
+                <option ng-value="1">先息后本</option>
             </select>
 
             <span class="debtEdit-attention"
@@ -90,7 +90,7 @@
         </div>
         <div class="debtEditContent-row"
              ng-class="{'has-error': productEditForm.introduction.$dirty && productEditForm.introduction.$invalid}">
-            <span>*产品简介</span>
+            <span class="debtEditContent-span">*产品简介</span>
             <textarea type="text"
                    required
                    class="form-control productEdit-bigInput"
@@ -104,7 +104,7 @@
         </div>
         <div class="debtEditContent-row"
              ng-class="{'has-error': productEditForm.more.$dirty && productEditForm.more.$invalid}">
-            <span>*更多信息</span>
+            <span class="debtEditContent-span">*更多信息</span>
             <textarea type="text"
                    required
                    class="form-control productEdit-bigInput"

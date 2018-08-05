@@ -54,7 +54,7 @@ app.controller("bannerEditCtrl",function ($scope,$http,$state,serviceHTTP,$state
             console.log(response);
             if(response.data.message === "success") {
                 vm.imgSrc = response.data.url;
-                vm.imgUploadSuccess = success;
+                vm.success = success;
                 console.log("上传成功");
             }
             else {

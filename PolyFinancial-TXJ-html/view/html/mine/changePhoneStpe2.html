@@ -3,9 +3,14 @@
         <span class="fa  fa-chevron-left" style="color: #dca854"></span>
         <div>更换手机</div>
     </div>
-
-    <form name="step1Form" class="changePhone-step1" >
-        <div class="step-title">本次操作需要短信验证，请输入{{vm.userName}}收到的短信验证码。</div>
+    <form name="step2Form" class="changePhone-step2" >
+        <div class="forget-input">
+            <input  type="tel"
+                    required
+                    ng-model="vm.userName"
+                    placeholder="请输入新的手机号码" />
+            <div class="forget-img phone-img"></div>
+        </div>
         <div class="forget-input">
             <input type="tel"
                    ng-model = "vm.code"
@@ -14,7 +19,7 @@
             <div class="forget-img code-img"></div>
             <label for="code"
                    class="getCode"
-                   ng-bind = "vm.countTime">233</label>
+                   ng-bind = "vm.countTime2">233</label>
             <input type="text"
                    id="code"
                    ng-model = "vm.countTime"
@@ -30,12 +35,8 @@
             <div id="v_container"></div>
         </div>
         <div class="forget-bottom">
-            <button class="btn" ng-disabled = "step1Form.$invalid " ng-click = "vm.step1Click()">下一步</button>
+            <button class="btn" ng-disabled = "step2Form.$invalid " ng-click = "vm.step2Click()">下一步</button>
         </div>
     </form>
-
-
-<div>
-    <button ui-sref = "home.changePhoneStep2">2333</button>
 </div>
-</div>
+

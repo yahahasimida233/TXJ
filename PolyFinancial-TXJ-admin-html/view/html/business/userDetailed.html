@@ -16,7 +16,7 @@
         <div>银行卡2：{{vm.card2}}</div>
         <div>真实姓名：{{vm.list.actualName}}</div>
         <div>身份证号码：{{vm.list.cardID}}</div>
-        <div>注册时间：{{vm.list.createAt}}</div>
+        <div>注册时间：{{vm.list.registrationTime  |date : 'yyyy-MM-dd hh:mm:ss'}}</div>
     </div>
     <h4>资产信息</h4>
     <div>
@@ -48,8 +48,14 @@
            <div class="right">
                <label for="getCode" class="btn btn-default">获取短信验证码</label>
                <input class="btn btn-default" id="getCode" ng-disable ="vm.error2" ng-click = "vm.getCode()" ng-show ="false">
-               <span style="color: red" ng-show="vm.error3">60S后可重新获取</span>
-               <span style="color: red" ng-show="vm.error4">今日获取已达上限冻结2小时后可重新获取</span>
+               <div class="imgCode" ng-show = "vm.countError > 2">
+                   <input type="tel"
+                          class="form-control"
+                          ng-model = "vm.imgCode"
+                          placeholder="请输入图形验证码">
+                   <div class="forget-img code-img"></div>
+                   <div id="v_container"></div>
+               </div>
            </div>
            <div class="bottom">
                <button class="btn" ng-click = "vm.newPhoneNum()" ng-disabled="changePhoneNum.$invalid">确认</button>

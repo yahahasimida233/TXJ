@@ -17,66 +17,78 @@
 
   //步骤一
   .changePhone-step1{
-    background-color: white;
-    div{
-      padding: .1rem .2rem;
-      border: .5px #eee solid;
-    }
-    .step-row{
-      input{
-        padding-left: .1rem;
-        padding-right: .2rem;
-        width: 1rem;
-        border: none;
-
-      }
-      button{
-        width: auto;
-        border: none;
-        padding-left: .2rem;
-        border-left: #eee solid 1px;
-      }
-    }
-    button{
-      width: 100%;
+    .step-title{
+      height: .6rem;
       background-color: white;
+      padding: .1rem;
     }
-    .attention{
-      background-color: #eee;
-      text-align: right;
-      color: red;
+    margin: .2rem 0;
+    .forget-bottom{
+      padding: .2rem;
+      button{
+        width: 100%;
+        height: .4rem;
+        color: white;
+        background-color: #daa955;
+      }
     }
   }
 
   .changePhone-step2{
     background-color: white;
-    div{
-      padding: .1rem .2rem;
-      border: .5px #eee solid;
-    }
-    .step-row{
-
-      input{
-        padding-left: .1rem;
-        border: none;
-        width: 1rem;
-
-      }
+    margin: .2rem 0;
+    .forget-bottom{
+      padding: .2rem;
       button{
-        width: auto;
-        border: none;
-        padding-left: .2rem;
-        border-left: #eee solid 1px;
+        width: 100%;
+        height: .4rem;
+        color: white;
+        background-color: #daa955;
       }
     }
-    button{
-      width: 100%;
-      background-color: white;
-    }
-    .attention{
-      background-color: #eee;
-      text-align: right;
-      color: red;
-    }
+  }
+}
+
+.forget-input{
+  position: relative;
+  .getCode{
+    position: absolute;top: .17rem;right: .2rem;
+    color: #daa955;
+    padding-left: .1rem;
+    border-left: 2px solid #eee;
+
+  }
+  .forget-img{
+    position: absolute;top: .37rem;left: .1rem;
+    width: .17rem;
+    height: .2rem;
+    margin-top: -.2rem;
+    padding-right: .3rem;
+
+    border-right: 2px solid #eee;
+  }
+  .phone-img{
+    background: url("../../../img/login/iphone.png") no-repeat;
+    background-size: .17rem .2rem;
+  }
+  .code-img{
+    background: url("../../../img/forgetpassword/code.jpg") no-repeat;
+    background-size: .17rem .2rem;
+  }
+  input{
+    width: 100%;
+    //height: .4rem;
+    padding:  .15rem 0  .15rem .5rem;
+    border: none;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eee;
+  }
+  #v_container{
+    position: absolute;top: .1rem;right: .2rem;
+    width: 1rem;
+  }
+  #v_container2{
+    position: absolute;top: .1rem;right: .2rem;
+    width: 1rem;
   }
 }

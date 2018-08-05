@@ -35,6 +35,17 @@ angular.module("txj")
                 })
             },
 
+            //普通手机注册短信验证码发送
+            getCodeHTTP: function (phoneNum) {
+                return $http({
+                    method: "POST",
+                    url: serviceURL.getCodeURL,
+                    params: {phoneNum:phoneNum},
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
             //手机注册短信验证码发送
             verificationCodeHTTP: function (phoneNum) {
                 return $http({
@@ -57,8 +68,6 @@ angular.module("txj")
                 })
             },
 
-
-
             //手机号码注册验证
             phoneRegisterHTTP : function (info) {
                 return $http({
@@ -70,8 +79,6 @@ angular.module("txj")
                 })
             },
 
-
-
             //获取图片（伪）验证码
             imgCodeHTTP : function (info) {
                 return $http({
@@ -82,20 +89,6 @@ angular.module("txj")
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
-
-
-            // //手机号码注册验证
-            // phoneRegisterHTTP : function (info) {
-            //     return $http({
-            //         method: "POST",
-            //         url: serviceURL.phoneRegisterURL,
-            //         params: info ,
-            //         headers: {
-            //             "Content-Type": "application/x-www-form-urlencoded" }
-            //     })
-            // },
-
-
 
             //提交注册信息
             registerHTTP : function (info) {
@@ -118,6 +111,68 @@ angular.module("txj")
                     headers: {'Content-Type': undefined},
                 })
             },
+
+            // 获取用户个人信息
+            userInfoHTTP: function () {  //获取产品列表
+                return $http({
+                    method: "GET",
+                    url: serviceURL.userInfoURL,
+
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 实名认证获取手机号验证码
+            RGetCodeHTTPL: function (info) {  //获取产品列表
+                return $http({
+                    method: "post",
+                    url: serviceURL.RGetCodeURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 实名认证验证 验证码
+            RCheckCodeHTTP: function (info) {  //获取产品列表
+                return $http({
+                    method: "post",
+                    url: serviceURL.RCheckCodeURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 实名认证第一步
+            realNameStep1HTTP: function (info) {  //获取产品列表
+                return $http({
+                    method: "post",
+                    url: serviceURL.realNameStep1URL,
+                    data:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 提交更换手机的请求
+            newNumberHTTP: function (info) {  //获取产品列表
+                return $http({
+                    method: "put",
+                    url: serviceURL.newNumberURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+
 
             // 产品列表
             productListHTTP: function (data) {  //获取产品列表
@@ -197,6 +252,18 @@ angular.module("txj")
                 return $http({
                     method: "put",
                     url: serviceURL.settingCPURL,
+                    params:info,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
+            // 设置-修改密码
+            feedBackHTTP:function (info) {
+                return $http({
+                    method: "post",
+                    url: serviceURL.feedBackURL,
                     params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"

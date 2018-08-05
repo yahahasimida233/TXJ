@@ -7,12 +7,11 @@ angular.module("txj").factory("serviceURL", function() {
         //登出
         logoutURL: "/admin/admin/a/u/logout/",
 
-        //获取手机短信验证码
-        getCodeURL: "/admin/home/a/u/sendcode/",
+        //注册用手机短信验证码发送
+        verificationCodeURL: "/admin/home/a/u/sendcode/",
 
-
-        //手机号码注册验证
-        phoneRegisterURL: "/admin/home/a/u/verify/",
+        // 验证注册验证码是否有效
+        codeConfirmURL: "/admin/home/a/u/verify/",
 
         //更换手机号
         newPhoneNumURL: "/admin/home/a/u/my/info/newnum/",
@@ -44,8 +43,8 @@ angular.module("txj").factory("serviceURL", function() {
         // 产品管理
         productURL:"/admin/admin/a/u/product/search/",
         productDetailURL:"/admin/admin/a/u/product/updateBy/",
-        productEditURL:"/admin/admin/a/u/product/updateBy/",
-        productNewURL:"/admin/admin/a/u/product/",
+        productEditURL:"/admin/admin/a/u/admin/product/updateBy",
+        productNewURL:"/admin/admin/a/u/admin/product/creater/",
         productDeleteURL:"/admin/admin/a/u/product/",
         porductGroundingURL:"/admin/admin/a/u/product/state/",
 

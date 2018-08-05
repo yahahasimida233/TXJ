@@ -191,7 +191,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 产品管理
         .state('backStage.product',{
-            url:"/product?id&productName&createBy&state&size&page",
+            url:"/product?id&productName&createBy&state&pageNum&pageSize",
             templateUrl: 'view/html/business/product.html',
             controller: 'productCtrl',
             controllerAs:'vm',
@@ -305,9 +305,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 
         // 消息管理
-        .state('backStage.message',{
-            url:"/message",
-            templateUrl: 'view/html/operate/message.html?articleTitle&articleState&createBy&minTime&maxTime&size&page',
+        .state('backStage.article',{
+            url:"/article?articleTitle&articleState&createBy&minTime&maxTime&size&page",
+            templateUrl: 'view/html/operate/message.html',
             controller: 'messageCtrl',
             controllerAs:'vm',
             resolve: {
@@ -362,9 +362,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 
         // 意见反馈
-        .state('backStage.feedback',{
-            url:"/feedback",
-            templateUrl: 'view/html/operate/feedback.html?id&submitBy&keyword&phoneNum&size&page',
+        .state('backStage.opinion',{
+            url:"/opinion?id&submitBy&keyword&phoneNum&size&page",
+            templateUrl: 'view/html/operate/feedback.html',
             controller: 'feedbackCtrl',
             controllerAs:'vm',
             resolve: {

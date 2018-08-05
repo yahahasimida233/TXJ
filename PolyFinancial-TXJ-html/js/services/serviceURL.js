@@ -9,7 +9,10 @@ angular.module("txj").factory("serviceURL", function() {
         //登出
         logoutURL: "/admin/admin/a/u/logout/",
 
-        //手机短信验证码发送
+        // 普通手机短信验证码发送
+        getCodeURL: "/admin/home/a/u/forget/sendcode/",
+
+        //注册用手机短信验证码发送
         verificationCodeURL: "/admin/home/a/u/sendcode/",
 
         // 验证注册验证码是否有效
@@ -23,6 +26,22 @@ angular.module("txj").factory("serviceURL", function() {
 
         //图片上传
         imgUploadURL: "/admin/admin/a/u/picture/",
+
+        //获取用户个人信息
+        userInfoURL: "/admin/home/a/u/my/info/",
+
+        // 实名认证第一步，提交用户名身份证号码，还有银行卡号码
+        realNameStep1URL: "/admin/home/a/u/my/info/realname/",
+
+
+        // 实名认证收取验证码
+        RGetCodeURL: "/admin/home/a/u/my/info/verifypage/",
+
+        // 实名认证验证 验证码
+        RCheckCodeURL: "/admin/home/a/u/my/info/code",
+
+        //提交更换手机的信息
+        newNumberURL: "/admin/home/a/u/my/info/newnum",
 
         //产品列表
         productListURL: "/admin/home/a/u/productlist/",
@@ -44,9 +63,11 @@ angular.module("txj").factory("serviceURL", function() {
 
 
         // 设置-修改密码
-        settingCPURL: "/admin/home/a/u/my/setup/changepwd/"
+        settingCPURL: "/admin/home/a/u/my/setup/changepwd/",
 
 
+        // 意见反馈接口
+        feedBackURL: "/admin/home/a/u/my/suggestion"
 
         // 理财
     };

@@ -64,18 +64,18 @@
                 <tr>
                     <td><strong>图片名</strong></td>
                     <td><strong>大小</strong></td>
-                    <td><strong>进度</strong></td>
+                    <!--<td><strong>进度</strong></td>-->
                     <td><strong>状态</strong></td>
                     <td><strong>操作</strong></td>
                 </tr>
                 <tr ng-show="vm.onload">
                     <td>{{vm.imgName}}</td>
                     <td >{{vm.imgSize}}</td>
-                    <td>
-                        <div class="progress">
-                            <div class="progress-bar"  role="progressbar" ng-style = "{'width':vm.progress + '%'}"></div>
-                        </div>
-                    </td>
+                    <!--<td>-->
+                        <!--<div class="progress">-->
+                            <!--<div class="progress-bar"  role="progressbar" ng-style = "{'width':vm.progress + '%'}"></div>-->
+                        <!--</div>-->
+                    <!--</td>-->
                     <td><span ng-show ="vm.success === 'success'" class="glyphicon glyphicon-ok-sign"></span></td>
                     <td>
                         <button class="btn btn-default" ng-click = "vm.upLoad()" ng-disabled="vm.success === 'success'">上传</button>

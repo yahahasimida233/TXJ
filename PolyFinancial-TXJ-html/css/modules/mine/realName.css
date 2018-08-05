@@ -1,5 +1,6 @@
 .realName {
-  position: relative; }
+  position: relative;
+  height: 100%; }
   .realName .realName-title {
     margin-bottom: .1rem;
     position: relative;
@@ -26,12 +27,22 @@
         flex-grow: 1; }
     .realName .realName-step1 button {
       width: 100%;
+      height: .4rem;
+      color: #daa955;
       background-color: white; }
   .realName .realName-step2 {
     background-color: white; }
     .realName .realName-step2 div {
       padding: .1rem .2rem;
       border: .5px #eee solid; }
+    .realName .realName-step2 .input-row {
+      padding: .1rem;
+      background-color: #eee;
+      font-weight: bold;
+      font-size: .18rem; }
+      .realName .realName-step2 .input-row button {
+        color: white;
+        background-color: #daa955; }
     .realName .realName-step2 .step-row {
       display: flex; }
       .realName .realName-step2 .step-row input {
@@ -44,28 +55,54 @@
     .realName .realName-step2 .agreement {
       background-color: #eee;
       border: none; }
-  .realName .realName-step3 {
-    background-color: white; }
-    .realName .realName-step3 div {
-      padding: .1rem .2rem;
-      border: .5px #eee solid; }
-    .realName .realName-step3 .step-row input {
-      padding-left: .1rem;
-      padding-right: .2rem;
-      width: 1rem;
-      border: none; }
-    .realName .realName-step3 .step-row button {
-      width: auto;
-      border: none;
-      padding-left: .2rem;
-      border-left: #eee solid 1px; }
-    .realName .realName-step3 button {
-      width: 100%;
-      background-color: white; }
-    .realName .realName-step3 .attention {
-      background-color: #eee;
-      text-align: right;
-      color: red; }
+  .realName .RNStep3 {
+    margin: .2rem 0; }
+    .realName .RNStep3 .step-title {
+      height: .6rem;
+      background-color: white;
+      padding: .1rem; }
+    .realName .RNStep3 .forget-bottom {
+      padding: .2rem; }
+      .realName .RNStep3 .forget-bottom button {
+        width: 100%;
+        height: .4rem;
+        color: white;
+        background-color: #daa955; }
+    .realName .RNStep3 .forget-input {
+      position: relative; }
+      .realName .RNStep3 .forget-input .getCode {
+        position: absolute;
+        top: .17rem;
+        right: .2rem;
+        color: #daa955;
+        padding-left: .1rem;
+        border-left: 2px solid #eee; }
+      .realName .RNStep3 .forget-input .forget-img {
+        position: absolute;
+        top: .37rem;
+        left: .1rem;
+        width: .17rem;
+        height: .2rem;
+        margin-top: -.2rem;
+        padding-right: .3rem;
+        border-right: 2px solid #eee; }
+      .realName .RNStep3 .forget-input .phone-img {
+        background: url("../../../img/login/iphone.png") no-repeat;
+        background-size: .17rem .2rem; }
+      .realName .RNStep3 .forget-input .code-img {
+        background: url("../../../img/forgetpassword/code.jpg") no-repeat;
+        background-size: .17rem .2rem; }
+      .realName .RNStep3 .forget-input input {
+        width: 100%;
+        padding: .15rem 0  .15rem .5rem;
+        border: none;
+        border-top: 1px solid #eeeeee;
+        border-bottom: 1px solid #eee; }
+      .realName .RNStep3 .forget-input #v_container {
+        position: absolute;
+        top: .1rem;
+        right: .2rem;
+        width: 1rem; }
   .realName .Agreement {
     position: absolute;
     top: 0;

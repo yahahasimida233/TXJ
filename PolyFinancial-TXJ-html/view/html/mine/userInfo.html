@@ -5,12 +5,12 @@
     </div>
 
     <div class="btn userInfo-row">
-        <span>用户名</span><span style="color: #999999">133****4568</span><span class=""></span>
+        <span>用户名</span><span style="color: #999999">{{vm.list.phoneNum}}</span><span class=""></span>
     </div>
-    <button class="btn userInfo-row" ui-sref="home.realName">
-        <span>实名认证</span><span style="color: #999999">未实名</span><span class="fa  fa-chevron-right"></span>
+    <button class="btn userInfo-row" ui-sref="home.realName" ng-disabled = "vm.list.realnameState === 0">
+        <span>实名认证</span><span style="color: #999999">{{vm.list.realnameState | userInfoFilter}}</span><span class="fa  fa-chevron-right"></span>
     </button>
     <button class="btn userInfo-row" ui-sref="home.changePhone">
-        <span>更换手机</span><span style="color: #999;">133****4568</span><span class="fa  fa-chevron-right"></span>
+        <span>更换手机</span><span style="color: #999;">{{vm.list.phoneNum }}</span><span class="fa  fa-chevron-right"></span>
     </button>
 </div>

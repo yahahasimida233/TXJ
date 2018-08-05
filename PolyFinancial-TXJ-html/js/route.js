@@ -246,6 +246,47 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 实名页步骤2
+        .state('home.RNStep2',{
+            url:"/RNStep2",
+            templateUrl: 'view/html/mine/RNStep2.html',
+            controller: 'RNStep2Ctrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/RNStep2.js",
+
+                            "./css/modules/mine/realName.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+
+        // 实名页步骤3
+        .state('home.RNStep3',{
+            url:"/RNStep3",
+            templateUrl: 'view/html/mine/RNStep3.html',
+            controller: 'RNStep3Ctrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/RNStep3.js",
+
+                            "./css/modules/mine/realName.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 更换绑定手机号码
         .state('home.changePhone',{
             url:"/changePhone",
@@ -259,6 +300,26 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                         return $ocLazyLoad.load([
                             "./js/ctrl/mine/changePhone.js",
 
+                            "./css/modules/mine/changePhone.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+
+        // 更换绑定手机号码步骤2
+        .state('home.changePhoneStep2',{
+            url:"/changePhoneStep2",
+            templateUrl: 'view/html/mine/changePhoneStpe2.html',
+            controller: 'changePhoneStep2Ctrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/changePhoneStpe2.js",
                             "./css/modules/mine/changePhone.css"
                         ]);
                     }

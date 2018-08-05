@@ -120,10 +120,10 @@ app.filter('debtState',function(){
             case 0:
                 a = "已匹配";
                 break;
-            case 2:
+            case 1:
                 a = "未匹配";
                 break;
-            case 1:
+            case 2:
                 a = "匹配中";
                 break;
 
