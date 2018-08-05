@@ -54,6 +54,7 @@
         }
       }
       .right{
+        position: relative;
         flex-basis: 40%;
         margin: 0;
         padding: .6rem 1rem 0 0;
@@ -61,6 +62,16 @@
         flex-direction: column;
         button{
           margin: .2rem;
+        }
+        .imgCode{
+          position: absolute;top: 1.2rem;left: .15rem;
+          padding: 0;
+          margin: 0;
+
+          #v_container{
+            padding: 0;
+            margin: 0;
+          }
         }
       }
       .bottom{

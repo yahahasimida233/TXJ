@@ -1,5 +1,6 @@
 .realName{
   position: relative;
+  height: 100%;
   //标题样式
   .realName-title{
     margin-bottom: .1rem;
@@ -33,6 +34,8 @@
     }
     button{
       width: 100%;
+      height: .4rem;
+      color: #daa955;
       background-color: white;
     }
   }
@@ -43,8 +46,20 @@
       padding: .1rem .2rem;
       border: .5px #eee solid;
     }
+    .input-row{
+      padding: .1rem;
+
+      background-color: #eee;
+      font-weight: bold;
+      font-size: .18rem;
+      button{
+        color: white;
+        background-color: #daa955;
+      }
+    }
     .step-row{
       display: flex;
+
       input{
         padding-left: .1rem;
         border: none;
@@ -61,35 +76,60 @@
     }
   }
 
-  .realName-step3{
-    background-color: white;
-    div{
-      padding: .1rem .2rem;
-      border: .5px #eee solid;
+  .RNStep3{
+    .step-title{
+      height: .6rem;
+      background-color: white;
+      padding: .1rem;
     }
-    .step-row{
-      input{
+    margin: .2rem 0;
+    .forget-bottom{
+      padding: .2rem;
+      button{
+        width: 100%;
+        height: .4rem;
+        color: white;
+        background-color: #daa955;
+      }
+    }
+    .forget-input{
+      position: relative;
+      .getCode{
+        position: absolute;top: .17rem;right: .2rem;
+        color: #daa955;
         padding-left: .1rem;
-        padding-right: .2rem;
-        width: 1rem;
-        border: none;
+        border-left: 2px solid #eee;
 
       }
-      button{
-        width: auto;
-        border: none;
-        padding-left: .2rem;
-        border-left: #eee solid 1px;
+      .forget-img{
+        position: absolute;top: .37rem;left: .1rem;
+        width: .17rem;
+        height: .2rem;
+        margin-top: -.2rem;
+        padding-right: .3rem;
+
+        border-right: 2px solid #eee;
       }
-    }
-    button{
-      width: 100%;
-      background-color: white;
-    }
-    .attention{
-      background-color: #eee;
-      text-align: right;
-      color: red;
+      .phone-img{
+        background: url("../../../img/login/iphone.png") no-repeat;
+        background-size: .17rem .2rem;
+      }
+      .code-img{
+        background: url("../../../img/forgetpassword/code.jpg") no-repeat;
+        background-size: .17rem .2rem;
+      }
+      input{
+        width: 100%;
+        //height: .4rem;
+        padding:  .15rem 0  .15rem .5rem;
+        border: none;
+        border-top: 1px solid #eeeeee;
+        border-bottom: 1px solid #eee;
+      }
+      #v_container{
+        position: absolute;top: .1rem;right: .2rem;
+        width: 1rem;
+      }
     }
   }
 

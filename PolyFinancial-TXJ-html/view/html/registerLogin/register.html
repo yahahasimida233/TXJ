@@ -1,6 +1,6 @@
 <div class="register">
     <div class="register-title">
-        <span class="fa  fa-chevron-left" style="color: #dca854" ui-sref = "home.mine"></span>
+        <span class="fa  fa-chevron-left" style="color: #dca854" ui-sref = "login"></span>
         <div>免费注册</div>
     </div>
     <form name="registerForm">
@@ -17,7 +17,22 @@
                    required
                    placeholder="请输入验证码">
             <div class="register-img code-img"></div>
-            <div class="getCode">获取验证码</div>
+            <label for="code"
+                   class="getCode"
+                   ng-bind = "vm.countTime">233</label>
+            <input type="text"
+                   id="code"
+                   ng-model = "vm.countTime"
+                   ng-disabled = "vm.countTime != '获取验证码'"
+                   ng-show = "false"
+                   ng-click = "vm.sendCode()">
+        </div>
+        <div class="register-input" ng-show = "vm.countError > 2">
+            <input type="tel"
+                   ng-model = "vm.imgCode"
+                   placeholder="请输入图形验证码">
+            <div class="register-img code-img"></div>
+            <div id="v_container"></div>
         </div>
         <div class="register-input">
             <input type="password"
@@ -38,8 +53,8 @@
 
         </div>
     </form>
-    <div class="error">
-        <div class="content">{{vm.error}}</div>
-    </div>
+    <!--<div class="error" ng-show = "vm.message">-->
+        <!--<div class="content">{{vm.message}}</div>-->
+    <!--</div>-->
 
 </div>

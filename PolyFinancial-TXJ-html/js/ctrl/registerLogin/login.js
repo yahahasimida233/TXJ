@@ -16,10 +16,27 @@ app.controller("loginCtrl",function ($scope,$http,$state,serviceHTTP,$stateParam
             console.log(response);
             if(response.data.message === "success") {
                 sessionStorage.setItem("login","true");
+                sessionStorage.setItem('userName',vm.userName);
+                $state.go('home.mine')
             }
-            else {
+            else if(response.data.code === 5005){
+                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">密码错误请重新输入密码</div>' });
+                vm.passWord = undefined;
+                return false;
+            }
+            else if(response.data.code === 5000){
+                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">该账号已被冻结，若有疑问请电询8008208820</div>' });
+                vm.passWord = undefined;
+                return false;
+            }
+            else if(response.data.code === 2003){
+                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">该手机号还未注册账号，请前往注册</div>' });
+                vm.passWord = undefined;
+                return false;
+            }else{
+                bootbox.alert(response.data.message)
+            }
 
-            }
         }, function errorCallback(res) {
             // 请求失败执行代码
         });

@@ -10,8 +10,14 @@ app.controller("debtEditCtrl",function ($http,$state,serviceHTTP,$stateParams){
             // 请求成功执行代码
             console.log(response);
             if(response.data.message === "success") {
-                bootbox.alert("新增成功！");
-                $state.reload('backStage.debt');
+                vm.list = response.data.data;
+                vm.enterpriseName = vm.list.enterpriseName;
+                vm.creditor = vm.list.creditor;
+                vm.phoneNum= vm.list.phoneNum;
+                vm.cardID= vm.list.cardId;
+                vm.loanAt= vm.list.loanAt;
+                vm.loanAmount= vm.list.loanAmount;
+                vm.loanPeriod= vm.list.loanPeriod;
             }
             else {
 
@@ -38,11 +44,10 @@ app.controller("debtEditCtrl",function ($http,$state,serviceHTTP,$stateParams){
         info.enterpriseName = vm.enterpriseName;
         info.creditor = vm.creditor;
         info.phoneNum = vm.phoneNum;
-        info.cardID = vm.cardID;
+        info.cardId = vm.cardID;
         info.loanAt= Date.parse(vm.loanAt);
         info.loanAmount= vm.loanAmount;
-        info.introduction = vm.loanPeriod;
-        info.more = vm.more;
+        info.loanPeriod = vm.loanPeriod;
         console.log(info);
         if(vm.id == 0){
             serviceHTTP.debtNewHTTP(info).then(function successCallback(response) {
@@ -50,7 +55,7 @@ app.controller("debtEditCtrl",function ($http,$state,serviceHTTP,$stateParams){
                 console.log(response);
                 if(response.data.message === "success") {
                     bootbox.alert("新增成功！");
-                    $state.reload('backStage.debt');
+                    $state.go('backStage.debt');
                 }
                 else {
                     bootbox.alert(response.data.message);

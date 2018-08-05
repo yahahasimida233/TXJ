@@ -23,6 +23,7 @@ app.controller("messageCtrl",function ($http,$state,serviceHTTP,$stateParams) {
         if(response.data.message === "查询成功") {
             vm.list = response.data.data.articleList;
             vm.createByList = response.data.data.createByList;
+            vm.totalItems = response.data.data.total;
             console.log(vm.list);
         }
         else {

@@ -1,25 +1,37 @@
-.setting .setting-title {
-  margin-bottom: .1rem;
-  position: relative;
-  text-align: center;
-  height: .4rem;
-  line-height: .4rem;
-  background-color: white;
-  color: #c39d71;
-  font-size: .2rem; }
-  .setting .setting-title .fa-chevron-left {
+.setting {
+  height: 100%;
+  position: relative; }
+  .setting .setting-title {
+    margin-bottom: .1rem;
+    position: relative;
+    text-align: center;
+    height: .4rem;
+    line-height: .4rem;
+    background-color: white;
+    color: #c39d71;
+    font-size: .2rem; }
+    .setting .setting-title .fa-chevron-left {
+      position: absolute;
+      left: .2rem;
+      top: .1rem; }
+  .setting .setting-row {
+    background-color: white;
+    padding: 0 .2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: .6rem;
+    border-top: solid #eee .5px;
+    border-bottom: solid #eee .5px; }
+  .setting .exit {
+    width: 100%;
     position: absolute;
-    left: .2rem;
-    top: .1rem; }
-.setting .setting-row {
-  background-color: white;
-  padding: 0 .2rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: .6rem;
-  border-top: solid #eee .5px;
-  border-bottom: solid #eee .5px; }
+    bottom: 0;
+    background-color: #d43f3a;
+    color: white;
+    font-size: .18rem;
+    font-weight: bold;
+    height: .6rem; }
 
 /*# sourceMappingURL=setting.css.map */

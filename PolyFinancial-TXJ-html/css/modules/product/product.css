@@ -1,4 +1,7 @@
-.top {
+.white {
+  color: #fff !important; }
+
+.top-warp {
   color: #fff;
   padding-bottom: .1rem;
   background-color: #d7a64c; }

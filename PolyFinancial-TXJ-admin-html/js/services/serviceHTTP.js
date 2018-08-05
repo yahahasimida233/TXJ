@@ -23,23 +23,23 @@ angular.module("txj")
                 })
             },
 
-            //手机短信验证码
-            getCodeHTTP: function (info) {
+            //手机注册短信验证码发送
+            verificationCodeHTTP: function (phoneNum) {
                 return $http({
                     method: "POST",
-                    url: serviceURL.getCodeURL,
-                    params: info,
+                    url: serviceURL.verificationCodeURL,
+                    params: {phoneNum:phoneNum},
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
 
-            //手机号码注册验证
-            phoneRegisterHTTP : function (info) {
+            //验证手机注册短信验证码是否一致
+            codeConfirmHTTP: function (info) {
                 return $http({
-                    method: "POST",
-                    url: serviceURL.phoneRegisterURL,
-                    params: info ,
+                    method: "get",
+                    url: serviceURL.codeConfirmURL,
+                    params: info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -56,16 +56,7 @@ angular.module("txj")
                 })
             },
 
-            //获取图片（伪）验证码
-            imgCodeHTTP : function (info) {
-                return $http({
-                    method: "get",
-                    url: serviceURL.imgCodeURL,
-                    params: info ,
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded" }
-                })
-            },
+
 
             //图片上传
             imgUploadURL : function (info) {
@@ -173,12 +164,12 @@ angular.module("txj")
                 })
             },
 
-            // 债权编辑
+            // 提交债权编辑
             debtEditHTTP: function (info) {
                 return $http({
                     method: "put",
                     url: serviceURL.debtNewURL+info.id,
-                    params: info,
+                    data: info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -223,7 +214,7 @@ angular.module("txj")
                     url: serviceURL.matchOverURL,
                     params:info,
                     headers: {
-                        "Content-Type": "application/x-www-form-urlencoded" }
+                        "Content-Type": "application/json" }
                 })
             },
 
@@ -238,17 +229,17 @@ angular.module("txj")
                 })
             },
 
-            // 产品具体信息
-            productDetailHTTP: function (info) {
-                return $http({
-                    method: "get",
-                    url: serviceURL.productDetailURL,
-                    params:{id:info},
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded"
-                    }
-                })
-            },
+            // // 产品具体信息
+            // productDetailHTTP: function (info) {
+            //     return $http({
+            //         method: "get",
+            //         url: serviceURL.productDetailURL,
+            //         params:{id:info},
+            //         headers: {
+            //             "Content-Type": "application/x-www-form-urlencoded"
+            //         }
+            //     })
+            // },
 
             // 提交产品编辑
             productEditHTTP: function (info) {

@@ -8,6 +8,8 @@ app.controller("userDetailedCtrl",function ($http,$state,serviceHTTP,$stateParam
         if(response.data.message === "success") {
             vm.list = response.data.data;
             console.log(vm.list);
+            vm.card1 = (vm.list.cardInfo[0])?vm.list.cardInfo[0].bankCard:"没有绑定银行卡呢";
+            vm.card2 = (vm.list.cardInfo[1])?vm.list.cardInfo[1].bankCard:"没有绑定银行卡呢";
         }
         else {
 
@@ -25,8 +27,8 @@ app.controller("userDetailedCtrl",function ($http,$state,serviceHTTP,$stateParam
         vm.all = false;
     };
 
-    // 目前接口中没有银行卡的数据暂时先空着，正确的应该是从请求中获得
-    vm.card1 = vm.card2 = "没有绑定银行卡呢";
+
+
 
 
 
@@ -37,13 +39,16 @@ app.controller("userDetailedCtrl",function ($http,$state,serviceHTTP,$stateParam
         }
         var info = {};
         info.phoneNum = vm.phoneNum;
-        serviceHTTP.getCodeHTTP(info).then(function successCallback(response) {
+        // 获取新手机验证码的请求
+        serviceHTTP.verificationCodeHTTP(info.phoneNum).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "success") {
 
+            if(response.data.message === "success") {
+                bootbox.alert('获取成功！')
             }
-            else {
+            else if(response.data.code !==  0) {
+                bootbox.alert(response.data.message);
 
             }
         }, function errorCallback(res) {
@@ -51,23 +56,51 @@ app.controller("userDetailedCtrl",function ($http,$state,serviceHTTP,$stateParam
         });
     };
 
+    // 初始化错误计数器
+    vm.countError = 0;
+
+    // 初始化图形验证
+    var verifyCode = new GVerify("v_container");
+
+
     // 提交手机号还有验证码
     vm.newPhoneNum = function(){
-        var info = {};
-        info.newPhoneNum = vm.phoneNum;
-        info.newCode = vm.code;
-        serviceHTTP.newPhoneNumHTTP(info).then(function successCallback(response) {
+        // 当出错3次时增加人机验证首先判断图形验证码是否正确
+        if(vm.countError > 2){
+            if(!vm.imgCode){
+                bootbox.alert("请输入图形验证码");
+                return false;
+            }
+            var res = verifyCode.validate(vm.imgCode);
+            console.log(vm.imgCode);
+            console.log(res);
+            if(!res){
+                bootbox.alert("图形验证码错误");
+                return false;
+            }
+        }
+
+        var info = {
+            newPhoneNum: vm.phoneNum,
+            newCode: vm.code
+        };
+
+        serviceHTTP.newNumberHTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
             if(response.data.message === "success") {
-
+                vm.message = 'success';
             }
-            else {
-
+            else if(response.data.code !==  0) {
+                bootbox.alert(response.data.message);
+                vm.imgCode = undefined;
+                verifyCode.refresh();
+                vm.countError ++;
             }
         }, function errorCallback(res) {
             // 请求失败执行代码
         });
     }
+
 
 });

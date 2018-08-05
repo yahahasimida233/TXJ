@@ -8,15 +8,15 @@ app.controller("productListCtrl", function ($state, $stateParams, serviceHTTP, $
     })
 
     // 跳转至产品页
-    // vm.product = function (id) {
-    //     vm.logo = sessionStorage.getItem("logo"); //验证是否登录
-    //     if (vm.logo !== "true") {
-    //         $state.go('login');
-    //     }
-    //     else{
-    //         $state.go("product", {productId: list.id} )
-    //     }
-    // }
+    vm.product = function (id) {
+        vm.logo = sessionStorage.getItem("logo"); //验证是否登录
+        if (vm.logo !== "true") {
+            $state.go('login');
+        }
+        else{
+            $state.go("product", {productId: list.id} )
+        }
+    }
 
     // 下拉刷新
     // 引入任何一个主题后，都会有一个 MiniRefresh 全局变量

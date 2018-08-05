@@ -2,6 +2,14 @@ app.controller("messageCtrl",function ($scope,$http,$state,serviceHTTP,$statePar
     var vm = this;
 
 
+    // 验证是否登录，否则转跳到登陆页面
+    vm.loginOrNot = (sessionStorage.getItem("login") == "true")? 1:0;
+    if(vm.loginOrNot === 0){
+        $state.go('login');
+        return false;
+    }
+
+
     serviceHTTP.messageHTTP().then(function successCallback(response) {
         // 请求成功执行代码
         console.log(response);

@@ -150,6 +150,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 支付页面
+        .state('pay', {
+            url: "/pay?money&cardNum&bank&productId&start&min&time&rate&cardId",
+            templateUrl: 'view/html/product/pay.html',
+            controller: 'payCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/product/payCtrl.js",
+                            "./css/modules/product/pay.css",
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 投资合同
         .state('contract', {
             url: "/contract",
@@ -228,6 +246,47 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 实名页步骤2
+        .state('home.RNStep2',{
+            url:"/RNStep2",
+            templateUrl: 'view/html/mine/RNStep2.html',
+            controller: 'RNStep2Ctrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/RNStep2.js",
+
+                            "./css/modules/mine/realName.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+
+        // 实名页步骤3
+        .state('home.RNStep3',{
+            url:"/RNStep3",
+            templateUrl: 'view/html/mine/RNStep3.html',
+            controller: 'RNStep3Ctrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/RNStep3.js",
+
+                            "./css/modules/mine/realName.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 更换绑定手机号码
         .state('home.changePhone',{
             url:"/changePhone",
@@ -241,6 +300,26 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                         return $ocLazyLoad.load([
                             "./js/ctrl/mine/changePhone.js",
 
+                            "./css/modules/mine/changePhone.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
+
+        // 更换绑定手机号码步骤2
+        .state('home.changePhoneStep2',{
+            url:"/changePhoneStep2",
+            templateUrl: 'view/html/mine/changePhoneStpe2.html',
+            controller: 'changePhoneStep2Ctrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/changePhoneStpe2.js",
                             "./css/modules/mine/changePhone.css"
                         ]);
                     }
@@ -462,3 +541,19 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 });
+
+// app.run(function ($rootScope,$state) {
+//
+//     $rootScope.$on('$stateChangeStart',function(event){
+//         var loginOrNot = (sessionStorage.getItem("login") == "true")? 1:0;
+//         if(toState.name=='login' || toState.name =='mine'){return}// 如果是进入登录界面则允许
+//         // 如果用户不存在
+//         if(loginOrNot === 0){
+//             console.log("没有登录")
+//             event.preventDefault();// 取消默认跳转行为
+//             $state.go('login')
+//
+//             // $state.go("login",{from:fromState.name,w:'notLogin'});//跳转到登录界面
+//         }
+//     });
+// });
