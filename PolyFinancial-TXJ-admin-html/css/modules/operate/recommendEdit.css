@@ -1,3 +1,17 @@
-
+.debtEditContent-row {
+  margin: .2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  .debtEditContent-row span {
+    height: .4rem;
+    line-height: .4rem; }
+  .debtEditContent-row button {
+    margin: .2rem; }
+  .debtEditContent-row table {
+    width: 5rem; }
+    .debtEditContent-row table tr td {
+      text-align: center; }
 
 /*# sourceMappingURL=recommendEdit.css.map */

@@ -44,7 +44,7 @@ app.controller("productEditCtrl",function ($http,$state,serviceHTTP,$stateParams
         info.id = id;
         info.productName = vm.productName;
         info.annualRate = vm.annualRate;
-        info.productTerm = vm.productTerm;
+        info.productorTerm = vm.productTerm;
         info.startMoney = vm.startMoney;
         info.minMoney = vm.minMoney;
         info.repaymentMode = vm.repaymentMode;
@@ -56,10 +56,10 @@ app.controller("productEditCtrl",function ($http,$state,serviceHTTP,$stateParams
                 console.log(response);
                 if(response.data.message === "success") {
                     bootbox.alert("新增成功！");
-                    $state.reload('backStage.product');
+                    $state.go('backStage.product');
                 }
                 else {
-
+                    bootbox.alert(response.data.message )
                 }
             }, function errorCallback(res) {
                 // 请求失败执行代码
@@ -71,10 +71,10 @@ app.controller("productEditCtrl",function ($http,$state,serviceHTTP,$stateParams
                 console.log(response);
                 if(response.data.message === "success") {
                     bootbox.alert("修改成功！");
-                    $state.reload('backStage.product');
+                    $state.go('backStage.product');
                 }
                 else {
-
+                    bootbox.alert(response.data.message )
                 }
             }, function errorCallback(res) {
                 // 请求失败执行代码

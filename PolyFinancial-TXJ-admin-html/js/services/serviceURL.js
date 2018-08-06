@@ -43,26 +43,31 @@ angular.module("txj").factory("serviceURL", function() {
         // 产品管理
         productURL:"/admin/a/u/product/search/",
         productDetailURL:"/admin/a/u/product/updateBy/",
-        productEditURL:"/admin/a/u/admin/product/updateBy",
-        productNewURL:"/admin/a/u/admin/product/creater/",
+
+        productEditURL:"/admin/a/u/product/updater/",
+        productNewURL:"/admin/a/u/product/creater/",
+
+       
         productDeleteURL:"/admin/a/u/product/",
         porductGroundingURL:"/admin/a/u/product/state/",
 
         // banner管理
         bannerURL:"/admin/a/u/banner/pictures/keywords/",
         bannerDetailedURL:"/admin/a/u/banner/pictures/",
-        bannerEditURL:"/admin/a/u/banner/",
+
+        bannerEditURL:"/admin/a/u/banner/pictures/",
+
         bannerNewURL:"/admin/a/u/banner/",
         bannerDeleteURL:"/admin/a/u/banner/pictures/",
         bannerGroundingURL:"/admin/a/u/banner/pictureshelf/",
 
         // 鼎力推荐
-
         recommendURl:"/admin/a/u/recommend/pictures/keywords/",
         recommendDetailedURL:"/admin/a/u/recommend/pictures/",
-        recommendEditURL:"/admin/a/u/recommend/",
+        recommendEditURL:"/admin/a/u/recommend/pictures/",
         recommendNewURL:"/admin/a/u/recommend/",
-        recommendDeleteURL:"/admin/a/u/recommend/",
+        recommendDeleteURL:"/admin/a/u/recommend/pictures/",
+
         recommendGroundingURL:"/admin/a/u/recommend/pictureshelf/",
 
         // 意见管理

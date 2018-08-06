@@ -12,5 +12,9 @@
     line-height: .4rem; }
   .debtEditContent-row button {
     margin: .2rem; }
+  .debtEditContent-row table {
+    width: 5rem; }
+    .debtEditContent-row table tr td {
+      text-align: center; }
 
 /*# sourceMappingURL=bannerEdit.css.map */

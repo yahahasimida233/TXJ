@@ -9,7 +9,6 @@ angular.module("txj").factory("serviceURL", function() {
         //登出
         logoutURL: "/admin/a/u/logout/",
 
-
         // 普通手机短信验证码发送
         getCodeURL: "/home/a/u/forget/sendcode/",
 
@@ -18,9 +17,6 @@ angular.module("txj").factory("serviceURL", function() {
 
         // 验证注册验证码是否有效
         codeConfirmURL: "/home/a/u/verify/",
-
-       
-
 
         // 提交注册信息
         registerURL: "/a/u/register",
@@ -65,8 +61,6 @@ angular.module("txj").factory("serviceURL", function() {
 
         // 银行卡列表
         bankCardListURL: "/home/a/u/my/bankcards/",
-
-      
 
 
 

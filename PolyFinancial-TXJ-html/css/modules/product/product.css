@@ -21,12 +21,8 @@
   align-items: center;
   height: .4rem;
   line-height: .4rem;
+  padding: .2rem;
   font-size: .2rem; }
-  .titleWarp .title {
-    padding-right: 0.2rem; }
-
-.back {
-  padding-left: .2rem; }
 
 .rate-warp .rate {
   font-size: .8rem; }
