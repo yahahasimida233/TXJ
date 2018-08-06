@@ -44,13 +44,14 @@
             <span>*上传banner图</span>
             <div>
                 <label for="upLoadImg" class="img-input">
-                    <span ng-hide ="vm.imgUploadSuccess === 'success'">点击添加图片</span>
-                    <img ng-src = "vm.imgSrc"
+                    <span ng-hide ="vm.success === 'success'">点击添加图片</span>
+                    <img ng-src = "{{vm.imgSrc}}"
                          class="img-responsive"
-                         ng-show ="vm.imgUploadSuccess === 'success'">
+                         ng-show ="vm.success == 'success'">
                 </label>
                 <input style="display:none;"
                        id = "upLoadImg"
+                       ng-disabled = 'vm.success== "success"'
                        type="file"
                        accept="image/*"
                        ng-value="vm.file"
@@ -71,12 +72,7 @@
                 <tr ng-show="vm.onload">
                     <td>{{vm.imgName}}</td>
                     <td >{{vm.imgSize}}</td>
-                    <!--<td>-->
-                        <!--<div class="progress">-->
-                            <!--<div class="progress-bar"  role="progressbar" ng-style = "{'width':vm.progress + '%'}"></div>-->
-                        <!--</div>-->
-                    <!--</td>-->
-                    <td><span ng-show ="vm.success === 'success'" class="glyphicon glyphicon-ok-sign"></span></td>
+                    <td><span ng-show ="vm.success == 'success'" class="glyphicon glyphicon-ok-sign"></span></td>
                     <td>
                         <button class="btn btn-default" ng-click = "vm.upLoad()" ng-disabled="vm.success === 'success'">上传</button>
                         <button class="btn btn-info " ng-click = "vm.delete()" >删除</button>
@@ -86,7 +82,7 @@
         </div>
         <div class="debtEditContent-row">
             <button class="btn btn-success"
-                    ng-disabled="bannerEditForm.$invalid"
+                    ng-disabled="bannerEditForm.$invalid || !vm.imgSrc}"
                     ng-click = "vm.change()"
             >保存</button>
             <button class="btn btn-danger"  ui-sref ="backStage.banner">取消</button>

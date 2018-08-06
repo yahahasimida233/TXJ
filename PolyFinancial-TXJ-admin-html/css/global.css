@@ -25,6 +25,10 @@
   text-align: center;
   vertical-align: middle; }
 
+.list-img {
+  max-width: 1.5rem;
+  max-height: 1.5rem; }
+
 .table-foot {
   display: flex;
   justify-content: space-between; }

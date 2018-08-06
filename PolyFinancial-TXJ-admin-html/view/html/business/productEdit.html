@@ -39,12 +39,12 @@
                    required
                    class="form-control"
                    ng-model = "vm.productTerm"
-                   name = "productTerm"
+                   name = "productT"
                    ng-pattern="/^[1-9]\d*$/"
                    placeholder="请输入投资周期（数字组成的整数）">
             <span class="debtEdit-attention"
                   style="color: red"
-                  ng-show="productEditForm.productTerm.$error.pattern ">请输入投资周期（数字组成的整数）</span>
+                  ng-show="productEditForm.productT.$error.pattern ">请输入投资周期（数字组成的整数）</span>
         </div>
         <div class="debtEditContent-row"
              ng-class="{'has-error': productEditForm.startMoney.$dirty && productEditForm.startMoney.$invalid}">
