@@ -40,7 +40,7 @@ app.filter("username", function () {
 app.filter("card", function () {
     return function (data) {
         var b = data.slice(15);
-        var showNum = "**** **** **** ***" + b;
+        var showNum = "**** **** **** *** " + b;
         return showNum;
     }
 });

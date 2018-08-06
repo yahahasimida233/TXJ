@@ -231,10 +231,6 @@ angular.module("txj")
                 })
             },
 
-
-
-
-
             // 银行卡列表
             bankCardListHTTP:function (userId) { //获取产品详情
                 return $http({
@@ -245,7 +241,17 @@ angular.module("txj")
                     }
                 })
             },
-
+            
+            // 银行卡列表
+            unCardHTTP: function (userId) { //获取产品详情
+                return $http({
+                    method: "DELETE",
+                    url: serviceURL.unCardURL + card,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
 
             // 设置-修改密码
             settingCPHTTP:function (info) {

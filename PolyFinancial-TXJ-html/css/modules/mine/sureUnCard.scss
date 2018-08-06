@@ -1,0 +1,24 @@
+// 聚金融金色（）亮金色
+$gold: #d7a64c;
+.bk-white {
+    background-color: #fff;
+}
+//验证码
+.mes-tips {
+    padding: .4rem .2rem;
+    border-top: 1px solid;
+}
+
+.message-warp{
+    padding: .2rem;
+    .message{
+        display: inline-block!important;
+        width: 50%!important;
+    }
+    
+    .getCode {
+        padding-left: .1rem;
+        color: $gold;
+        font-weight: bold;
+    }
+}

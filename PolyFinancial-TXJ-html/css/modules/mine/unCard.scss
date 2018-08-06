@@ -1,0 +1,32 @@
+// 银行卡列表
+.cardWarp {
+    display: table;
+    margin: .3rem .2rem;
+    height: 1.5rem;
+    font-size: .2rem;
+    background-color: white;
+    border-radius: .1rem;
+    .cardList {
+        display: table-cell;
+        vertical-align: middle;
+        .card {
+            max-width: 60%;
+        }
+        .payQ {
+            max-width: 18%;
+        }
+        .cardNum {
+            padding-top: .1rem;
+        }
+    }
+}
+// 解绑按钮
+.buy-btn {
+    padding: 0.1rem 0 .5rem 0;
+    .unCard{
+        width: 90%;
+        padding: .1rem;
+        font-size: .15rem;
+        border-radius: .1rem;
+    }
+}

@@ -1,7 +1,7 @@
 angular.module("txj").factory("serviceURL", function() {
     return {
         // 登陆
-        loginURL: "/home/a/u/front/login/",
+        loginURL: "/admin/home/a/u/front/login/",
 
         //找回密码
         getbackPURL:"/admin/home/a/u/my/forget",
@@ -23,10 +23,10 @@ angular.module("txj").factory("serviceURL", function() {
 
 
         // 提交注册信息
-        registerURL: "/home/a/u/register",
+        registerURL: "/admin/home/a/u/register",
 
         //图片（伪）验证码
-        imgCodeURL: "/home/a/u/pverify/",
+        imgCodeURL: "/admin/home/a/u/pverify/",
 
         //图片上传
         imgUploadURL: "/admin/a/u/picture/",
@@ -48,13 +48,13 @@ angular.module("txj").factory("serviceURL", function() {
         newNumberURL: "/admin/home/a/u/my/info/newnum",
 
         //产品列表
-        productListURL: "/home/a/u/productlist/",
+        productListURL: "/admin/home/a/u/productlist/",
 
         // 产品详情
-        productURL: "/home/a/u/productDetatil/",
+        productURL: "/admin/home/a/u/productDetatil/",
         
         //个人信息
-        personInfoURL: "/home/a/u/my/info/",
+        personInfoURL: "/admin/home/a/u/my/info/",
 
         //支付
         payURL: "admin/home/a/u/pay/",
@@ -66,9 +66,8 @@ angular.module("txj").factory("serviceURL", function() {
         // 银行卡列表
         bankCardListURL: "/admin/home/a/u/my/bankcards/",
 
-      
-
-
+        // 银行卡解除绑定
+        unCardURL: "/admin/home/a/u/my/bankcards/",
 
         // 设置-修改密码
         settingCPURL: "/admin/home/a/u/my/setup/changepwd/",

@@ -573,7 +573,7 @@ angular.module("txj")
         dAccountHTTP: function (id) { //删除帐号
             return $http({
                 url: serviceURL.dAccountURL + id,
-                method: "DELETE ",
+                method: "DELETE",
                 headers: {
                     "Conten-Type": "application/x-www-from-urlencoded"
                 }

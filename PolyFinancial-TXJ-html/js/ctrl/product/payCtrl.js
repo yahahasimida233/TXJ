@@ -1,4 +1,4 @@
-app.controller("payCtrl",function ($state, $stateParams,$timeout, serviceHTTP) {
+app.controller("payCtrl",function ($state, $stateParams,$timeout, serviceHTTP ,$sce) {
     var vm = this;
         // 隐藏动画
         $timeout(function () {
@@ -42,8 +42,13 @@ app.controller("payCtrl",function ($state, $stateParams,$timeout, serviceHTTP) {
             }
             console.log(data);
             serviceHTTP.payHTTP(data).then(function (res) {
-                console.log(res);
-                
+                console.log(res.data.respMsg);
+                vm.respMsg = res.data.respMsg
+
+                vm.html = $sce.trustAsHtml(" ' "+ vm.respMsg + " ' ")
             })
         }
+
+
+        
 })

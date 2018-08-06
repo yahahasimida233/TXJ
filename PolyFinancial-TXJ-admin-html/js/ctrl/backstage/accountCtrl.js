@@ -95,9 +95,9 @@ app.controller("accountCtrl", function ($scope, $state, $stateParams, serviceHTT
             },
             callback: function (result) {
                 if (result == true) {
-                    serviceHTTP.dAccountHTTP(id).then(function successCallback(response) {
+                    serviceHTTP.dAccountHTTP(id).then(function (res) {
                         // 请求成功执行代码
-                        if (response.data.code == 0) {    //需检查
+                        if (res.data.code == 0) {    
                             bootbox.alert({
                                 title: "<strong>提示信息</strong>",
                                     message: "<span style='text-align: center'>删除成功</sapn>",
@@ -121,7 +121,8 @@ app.controller("accountCtrl", function ($scope, $state, $stateParams, serviceHTT
                                 }
                             }
                         }
-                    )})
+                    )}
+                )
                 }
             }
         })

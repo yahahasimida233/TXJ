@@ -57,3 +57,29 @@
   background-color: white;
   border-radius: .1rem;
 }
+
+.cardWarp {
+  display: table;
+  margin: .3rem .2rem;
+  height: 1.5rem;
+  font-size: .2rem;
+  background-color: white;
+  border-radius: .1rem;
+}
+
+.cardWarp .cardList {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.cardWarp .cardList .card {
+  max-width: 60%;
+}
+
+.cardWarp .cardList .payQ {
+  max-width: 18%;
+}
+
+.cardWarp .cardList .cardNum {
+  padding-top: .1rem;
+}

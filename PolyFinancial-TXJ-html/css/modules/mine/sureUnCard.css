@@ -1,0 +1,23 @@
+.bk-white {
+  background-color: #fff;
+}
+
+.mes-tips {
+  padding: .4rem .2rem;
+  border-top: 1px solid;
+}
+
+.message-warp {
+  padding: .2rem;
+}
+
+.message-warp .message {
+  display: inline-block !important;
+  width: 50% !important;
+}
+
+.message-warp .getCode {
+  padding-left: .1rem;
+  color: #d7a64c;
+  font-weight: bold;
+}
