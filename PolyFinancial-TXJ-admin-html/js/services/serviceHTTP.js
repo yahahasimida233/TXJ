@@ -245,7 +245,7 @@ angular.module("txj")
             productEditHTTP: function (info) {
                 return $http({
                     method: "put",
-                    url: serviceURL.productEditURL,
+                    url: serviceURL.productEditURL+info.id,
                     params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
@@ -316,7 +316,7 @@ angular.module("txj")
             bannerEditHTTP: function (info) {
                 return $http({
                     method: "put",
-                    url: serviceURL.bannerEditURL,
+                    url: serviceURL.bannerEditURL+info.pictureId,
                     params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
@@ -375,8 +375,8 @@ angular.module("txj")
             recommendDetailedHTTP: function (info) {
                 return $http({
                     method: "get",
-                    url: serviceURL.recommendDetailedURL,
-                    params:info,
+                    url: serviceURL.recommendDetailedURL+info,
+                    params:{id:info},
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
@@ -387,7 +387,7 @@ angular.module("txj")
             recommendEditHTTP: function (info) {
                 return $http({
                     method: "put",
-                    url: serviceURL.recommendEditURL,
+                    url: serviceURL.recommendEditURL+info.pictureId,
                     params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"

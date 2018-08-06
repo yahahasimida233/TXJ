@@ -231,8 +231,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // banner图
         .state('backStage.banner',{
-            url:"/banner",
-            templateUrl: 'view/html/operate/banner.html?id&title&createBy&updateBy&size&page',
+            url:"/banner?id&title&createBy&updateBy&pageSize&pageNum",
+            templateUrl: 'view/html/operate/banner.html',
             controller: 'bannerCtrl as vm',
             resolve: {
                 loadMyFile: [
@@ -268,8 +268,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 鼎立推荐
         .state('backStage.recommend',{
-            url:"/recommend",
-            templateUrl: 'view/html/operate/recommend.html?id&title&createBy&updateBy&size&page',
+            url:"/recommend?id&title&createBy&updateBy&pageSize&pageNum",
+            templateUrl: 'view/html/operate/recommend.html',
             controller: 'recommendCtrl',
             controllerAs:'vm',
             resolve: {

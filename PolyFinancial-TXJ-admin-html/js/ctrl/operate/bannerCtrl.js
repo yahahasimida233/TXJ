@@ -1,21 +1,47 @@
 app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
     var vm = this;
-    serviceHTTP.bannerHTTP().then(function successCallback(response) {
-        // 请求成功执行代码
-        console.log(response);
-        if(response.data.message === "success") {
-            vm.list = response.data.banner.list;
-            console.log(vm.list);
-        }
-        else {
 
-        }
-    }, function errorCallback(res) {
-        // 请求失败执行代码
-    });
 
-    // 目前分页数据假数据没有提供，先写一下，正式接口中再做修改
-    vm.totalItems = 2;
+    // 从URL获取参数
+    vm.id = $stateParams.id || undefined;
+    vm.title = $stateParams.title || undefined;
+    vm.createBy = $stateParams.createBy || undefined;
+    vm.updateBy = $stateParams.updateBy || undefined;
+    vm.size = $stateParams.pageSize || 10;
+    vm.page = $stateParams.pageNum || undefined;
+
+    vm.getList = function(){
+        let info = {
+            id: vm.id,
+            title:vm.title,
+            createBy:vm.createBy ,
+            updateBy:vm.updateBy ,
+            pageSize: vm.size,
+            pageNum: vm.page
+        };
+        console.log("info:",info);
+        serviceHTTP.bannerHTTP(info).then(function successCallback(response) {
+            // 请求成功执行代码
+            console.log(response);
+            if(response.data.message === "success") {
+                vm.list = response.data.banner.list;
+                vm.totalItems = response.data.banner.total;
+                console.log(vm.list);
+            }
+            else {
+                bootbox.alert(response.data.message);
+            }
+        }, function errorCallback(res) {
+            // 请求失败执行代码
+        });
+    };
+    vm.getList();
+
+
+
+
+    // // 目前分页数据假数据没有提供，先写一下，正式接口中再做修改
+    // vm.totalItems = 2;
 
     // 清除按钮
     vm.reset = function(){
@@ -23,10 +49,13 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
         vm.title = undefined;
         vm.createBy= undefined;
         vm.updateBy = undefined;
+        vm.size = 10;
+        vm.page = 1;
+        vm.getList();
     };
 
 
-    //搜索债权列表功能
+    //搜索功能
     vm.userSearch = function(){
         //搜索的四个值
         var Info = {
@@ -39,10 +68,11 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
             // 请求成功执行代码
             if(response.data.message === "success") {
                 vm.list = response.data.banner.list;
-                console.log(vm.list);
+
+                console.log(vm.totalItems);
             }
             else {
-
+                bootbox.alert(response.data.message);
             }
         }, function errorCallback(res) {
             // 请求失败执行代码
@@ -71,7 +101,7 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
                             $state.reload('backStage.banner');
                         }
                         else {
-
+                            bootbox.alert(response.data.message);
                         }
                     }, function errorCallback(res) {
                         // 请求失败执行代码
@@ -81,6 +111,21 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
             }
         })
     };
+
+    // 搜索功能
+    vm.search = function(){
+
+        $state.go('backStage.banner', {
+            id: vm.id,
+            title: vm.title,
+            createBy: vm.createBy,
+            updateBy: vm.updateBy,
+            pageSize: vm.size,
+            pageNum: vm.page
+        })
+    };
+
+
 
     // 上下架操作
     vm.stateChange = function (a,b) {
@@ -109,6 +154,8 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
                         if(response.data.message === "success") {
                             bootbox.alert("修改成功，即将刷新页面");
                             $state.reload('backStage.banner');
+                        }else{
+                            bootbox.alert(response.data.message);
                         }
                     }, function errorCallback(res) {
                         // 请求失败执行代码

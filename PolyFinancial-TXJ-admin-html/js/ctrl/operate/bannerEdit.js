@@ -1,6 +1,6 @@
 app.controller("bannerEditCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams) {
     var vm = this;
-    let id = $stateParams.id;
+    var id = $stateParams.id;
     if(id == 0){
         vm.title = "Banner新增"
 
@@ -12,7 +12,13 @@ app.controller("bannerEditCtrl",function ($scope,$http,$state,serviceHTTP,$state
             if(response.data.message === "success") {
                 // vm.imgSrc = response.data.data.url;
                 vm.list = response.data.bannerRecommend;
-
+                vm.pictureName = vm.list.title;
+                vm.carouselTime = 6;
+                vm.url = vm.list.productUrl;
+                vm.success = 'success';
+                vm.imgSrc =vm.list.pictureUrl;
+                vm.imgName = vm.list.title;
+                vm.onload = true;
             }
             else {
                 alert(response.data.message);
@@ -52,10 +58,11 @@ app.controller("bannerEditCtrl",function ($scope,$http,$state,serviceHTTP,$state
         serviceHTTP.imgUploadURL(form).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "success") {
+            if(response.data.message === "文件上传成功") {
                 vm.imgSrc = response.data.url;
-                vm.success = success;
-                console.log("上传成功");
+                vm.success = 'success';
+                bootbox.alert("上传成功");
+                console.log(vm.imgSrc)
             }
             else {
                 alert(response.data.message);
@@ -81,20 +88,20 @@ app.controller("bannerEditCtrl",function ($scope,$http,$state,serviceHTTP,$state
 
 
     // 保存按钮
-    vm.change = function(id){
+    vm.change = function(){
         var info = {};
-        info.pictureName = vm.pictureName;
+        info.title = vm.pictureName;
         info.carouselTime = vm.carouselTime;
-        info.url = vm.url ;
-        info.bannerPictureFile = vm.imgSrc ;
+        info.productUrl = vm.url ;
+        info.pictureUrl = vm.imgSrc ;
 
         if(id == 0){
-            serviceHTTP.NewHTTP(info).then(function successCallback(response) {
+            serviceHTTP.bannerNewHTTP(info).then(function successCallback(response) {
                 // 请求成功执行代码
                 console.log(response);
                 if(response.data.message === "success") {
                     bootbox.alert("新增成功！");
-                    $state.reload('backStage.banner');
+                    $state.go('backStage.banner');
                 }
                 else {
 
@@ -104,13 +111,14 @@ app.controller("bannerEditCtrl",function ($scope,$http,$state,serviceHTTP,$state
             });
 
         }else{
-            info.id= id;
+            info.pictureId= id;
+            console.log(info);
             serviceHTTP.bannerEditHTTP(info).then(function successCallback(response) {
                 // 请求成功执行代码
                 console.log(response);
                 if(response.data.message === "success") {
                     bootbox.alert("修改成功!");
-                    $state.reload('backStage.banner');
+                    $state.go('backStage.banner');
                 }
                 else {
 

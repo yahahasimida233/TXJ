@@ -1,0 +1,22 @@
+.debtEditContent-row{
+  margin: .2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  span{
+    height: .4rem;
+    line-height: .4rem;
+  }
+  button{
+    margin: .2rem;
+  }
+  table{
+    width: 5rem;
+    tr{
+      td{
+        text-align: center;
+      }
+    }
+  }
+}

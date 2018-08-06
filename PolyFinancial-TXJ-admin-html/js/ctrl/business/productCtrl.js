@@ -89,7 +89,7 @@ app.controller("productCtrl",function ($http,$state,serviceHTTP,$stateParams){
                         console.log(response);
                         if(response.data.message === "删除成功") {
                             bootbox.alert("删除成功");
-                            $state.reload('backStage.product');
+                            vm.reset();
                         }
                         else {
                             bootbox.alert(response.data.message);

@@ -43,7 +43,7 @@ angular.module("txj").factory("serviceURL", function() {
         // 产品管理
         productURL:"/admin/admin/a/u/product/search/",
         productDetailURL:"/admin/admin/a/u/product/updateBy/",
-        productEditURL:"/admin/admin/a/u/admin/product/updateBy",
+        productEditURL:"/admin/admin/a/u/product/updater/",
         productNewURL:"/admin/admin/a/u/admin/product/creater/",
         productDeleteURL:"/admin/admin/a/u/product/",
         porductGroundingURL:"/admin/admin/a/u/product/state/",
@@ -51,18 +51,17 @@ angular.module("txj").factory("serviceURL", function() {
         // banner管理
         bannerURL:"/admin/admin/a/u/banner/pictures/keywords/",
         bannerDetailedURL:"/admin/admin/a/u/banner/pictures/",
-        bannerEditURL:"/admin/admin/a/u/banner/",
+        bannerEditURL:"/admin/admin/a/u/banner/pictures/",
         bannerNewURL:"/admin/admin/a/u/banner/",
         bannerDeleteURL:"/admin/admin/a/u/banner/pictures/",
         bannerGroundingURL:"/admin/admin/a/u/banner/pictureshelf/",
 
         // 鼎力推荐
-
         recommendURl:"/admin/admin/a/u/recommend/pictures/keywords/",
         recommendDetailedURL:"/admin/admin/a/u/recommend/pictures/",
-        recommendEditURL:"/admin/admin/a/u/recommend/",
+        recommendEditURL:"/admin/admin/a/u/recommend/pictures/",
         recommendNewURL:"/admin/admin/a/u/recommend/",
-        recommendDeleteURL:"/admin/admin/a/u/recommend/",
+        recommendDeleteURL:"/admin/admin/a/u/recommend/pictures/",
         recommendGroundingURL:"/admin/admin/a/u/recommend/pictureshelf/",
 
         // 意见管理
