@@ -13,11 +13,17 @@ $gold: #d7a64c;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .2rem;
     height: .4rem;
     line-height: .4rem;
     font-size: .2rem; // 使标题处于居中位置
     color: $gold;
+    .title {
+        padding-right: 0.2rem; 
+    }
+}
+// 返回按钮
+.back {
+    padding-left: .2rem;
 }
 //购买表单
 .buyForm{
@@ -26,10 +32,10 @@ $gold: #d7a64c;
         margin: .1rem 0;
     }
 }
-.tips{
+    .tips{
         font-size: .17rem;
     }
-    // 提示
+// 提示
 .tipsRed{
     color: red;
 }
@@ -91,16 +97,6 @@ $gold: #d7a64c;
 }
 .black{
     color: black!important;
-}
-// 合同标题
-.CtitleWarp {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: .4rem;
-    line-height: .4rem;
-    font-size: .2rem; // 使标题处于居中位置
-    color: $gold;
 }
 // 聚金融合同
 #contract{

@@ -488,7 +488,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('home.mineCard',{
             url:"/mineCard",
             templateUrl: 'view/html/mine/mineCard.html',
-            controller: 'mineCardCtrl as vm',
+            controller: 'mineCardCtrl',
+            controllerAs:'vm',
             resolve: {
                 loadMyFile: [
                     "$ocLazyLoad",
@@ -496,24 +497,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                         return $ocLazyLoad.load([
                             "./js/ctrl/mine/mineCard.js",
                             "./css/modules/mine/mineCard.css"
-                        ]);
-                    }
-                ]
-            }
-        })
-        
-        // 添加银行卡
-        .state('home.addCard', {
-            url: "/addCard",
-            templateUrl: 'view/html/mine/addCard.html',
-            controller: 'addCardCtrl as vm',
-            resolve: {
-                loadMyFile: [
-                    "$ocLazyLoad",
-                    function ($ocLazyLoad) {
-                        return $ocLazyLoad.load([
-                            "./js/ctrl/mine/addCardCtrl.js",
-                            "./css/modules/mine/addCard.css"
                         ]);
                     }
                 ]

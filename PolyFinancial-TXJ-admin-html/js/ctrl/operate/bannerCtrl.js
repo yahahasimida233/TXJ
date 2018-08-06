@@ -29,7 +29,7 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
                 console.log(vm.list);
             }
             else {
-                bootbox.alert(response.data.message);
+
             }
         }, function errorCallback(res) {
             // 请求失败执行代码
@@ -54,30 +54,30 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
         vm.getList();
     };
 
-
-    //搜索功能
-    vm.userSearch = function(){
-        //搜索的四个值
-        var Info = {
-            id: vm.id,
-            pictureName:vm.title,
-            createBy:vm.createBy,
-            updateBy:vm.updateBy
-        };
-        serviceHTTP.bannerHTTP(Info).then(function successCallback(response) {
-            // 请求成功执行代码
-            if(response.data.message === "success") {
-                vm.list = response.data.banner.list;
-
-                console.log(vm.totalItems);
-            }
-            else {
-                bootbox.alert(response.data.message);
-            }
-        }, function errorCallback(res) {
-            // 请求失败执行代码
-        });
-    };
+    //
+    // //搜索功能
+    // vm.userSearch = function(){
+    //     //搜索的四个值
+    //     var Info = {
+    //         id: vm.id,
+    //         pictureName:vm.title,
+    //         createBy:vm.createBy,
+    //         updateBy:vm.updateBy
+    //     };
+    //     serviceHTTP.bannerHTTP(Info).then(function successCallback(response) {
+    //         // 请求成功执行代码
+    //         if(response.data.message === "success") {
+    //             vm.list = response.data.banner.list;
+    //
+    //             console.log(vm.totalItems);
+    //         }
+    //         else {
+    //
+    //         }
+    //     }, function errorCallback(res) {
+    //         // 请求失败执行代码
+    //     });
+    // };
 
     // 删除banner
     vm.delete = function(id){
@@ -101,7 +101,7 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
                             $state.reload('backStage.banner');
                         }
                         else {
-                            bootbox.alert(response.data.message);
+
                         }
                     }, function errorCallback(res) {
                         // 请求失败执行代码
@@ -154,8 +154,6 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
                         if(response.data.message === "success") {
                             bootbox.alert("修改成功，即将刷新页面");
                             $state.reload('backStage.banner');
-                        }else{
-                            bootbox.alert(response.data.message);
                         }
                     }, function errorCallback(res) {
                         // 请求失败执行代码
