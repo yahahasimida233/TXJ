@@ -9,27 +9,20 @@
   background-color: white;
   color: #c39d71;
   font-size: .2rem;
-  border-bottom: 1px solid #eee;
-}
-
-.mineCard .mineCard-title .add {
-  font-size: .35rem;
-}
-
+  border-bottom: 1px solid #eee; }
+  .mineCard .mineCard-title .add {
+    font-size: .35rem; }
 .mineCard .card-list {
   margin: .2rem;
   height: 1.5rem;
   background-color: white;
-  border-radius: .1rem;
-}
+  border-radius: .1rem; }
 
 .black {
-  color: black !important;
-}
+  color: black !important; }
 
 .bk-white {
-  background-color: #fff;
-}
+  background-color: #fff; }
 
 .titleWarp {
   display: flex;
@@ -39,12 +32,9 @@
   line-height: .4rem;
   padding: .2rem;
   font-size: .2rem;
-  color: #d7a64c;
-}
-
-.titleWarp .title {
-  padding-right: 0.2rem;
-}
+  color: #d7a64c; }
+  .titleWarp .title {
+    padding-right: 0.2rem; }
 
 .card-list {
   display: flex;
@@ -55,5 +45,6 @@
   font-size: .2rem;
   color: #999;
   background-color: white;
-  border-radius: .1rem;
-}
+  border-radius: .1rem; }
+
+/*# sourceMappingURL=mineCard.css.map */
