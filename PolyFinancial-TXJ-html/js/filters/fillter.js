@@ -123,3 +123,10 @@ app.filter('userInfoFilter',function(){
         return a;
     }
 });
+
+// 使网页安全
+app.filter("secHtml", function ($sce) {
+    return function (e) {
+        return $sce.trustAsHtml(e)
+    }
+})

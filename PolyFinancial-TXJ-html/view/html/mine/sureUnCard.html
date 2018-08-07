@@ -13,12 +13,11 @@
     <div class="message-warp bk-white">
         验证码：
         <input type="number" 
-               class="message form-control"
+               class="message form-control text-center"
                placeholder="请输入短信验证码" 
-               name="message"
-               ng-model="vm.message"
-               step="1"
-               maxlength="6"
+               name="code"
+               ng-model="vm.code"
+               ng-pattern="/^\d{6}$/"
                required>
         <label for="code"
                class="getCode"
@@ -30,5 +29,8 @@
                ng-show = "false"
                ng-click = "vm.sendCode()">
     </div>
-
 </form>
+<!-- 解绑按钮 -->
+<div class="text-center">
+    <button class="btn btn-primary sureUnCard" ng-disabled="messageForm.$invalid" ng-click="vm.unCard()">解除绑定</button>
+</div>

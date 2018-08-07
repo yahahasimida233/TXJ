@@ -4,7 +4,8 @@
 
 .mes-tips {
   padding: .4rem .2rem;
-  border-top: 1px solid;
+  margin-top: .1rem;
+  border-bottom: 1px solid #eeeeee;
 }
 
 .message-warp {
@@ -13,11 +14,18 @@
 
 .message-warp .message {
   display: inline-block !important;
-  width: 50% !important;
+  width: 37% !important;
 }
 
 .message-warp .getCode {
   padding-left: .1rem;
   color: #d7a64c;
   font-weight: bold;
+}
+
+.sureUnCard {
+  width: 100%;
+  padding: 0.1rem !important;
+  margin-top: .2rem;
+  font-size: .15rem !important;
 }
