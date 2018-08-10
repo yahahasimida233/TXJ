@@ -89,7 +89,7 @@ app.controller("roleCtrl",function ($state, $stateParams, serviceHTTP) {
                         console.log(res);
                         
                         // 请求成功执行代码
-                        if (res.code == 0) { //需检查
+                        if (res.code == 0) { 
                             bootbox.alert({
                                 title: "<strong>提示信息</strong>",
                                 message: "<span style='text-align: center'>删除成功</sapn>",
@@ -100,7 +100,8 @@ app.controller("roleCtrl",function ($state, $stateParams, serviceHTTP) {
                                     }
                                 }
                             });
-                            $state.reload('backStage.role');
+                            $state.go('backStage.role', {}, { reload: true} );
+                            // $state.reload("backStage.role")
                         }
                         else{
                             function errorCallback(res) {

@@ -40,7 +40,7 @@ app.filter("username", function () {
 app.filter("card", function () {
     return function (data) {
         var b = data.slice(15);
-        var showNum = "**** **** **** ***" + b;
+        var showNum = "**** **** **** *** " + b;
         return showNum;
     }
 });
@@ -123,3 +123,10 @@ app.filter('userInfoFilter',function(){
         return a;
     }
 });
+
+// 使网页安全
+app.filter("secHtml", function ($sce) {
+    return function (e) {
+        return $sce.trustAsHtml(e)
+    }
+})

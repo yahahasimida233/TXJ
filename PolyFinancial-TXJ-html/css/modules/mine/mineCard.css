@@ -18,4 +18,58 @@
   background-color: white;
   border-radius: .1rem; }
 
-/*# sourceMappingURL=mineCard.css.map */
+.black {
+  color: black !important; }
+
+.bk-white {
+  background-color: #fff; }
+
+.titleWarp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: .55rem;
+  line-height: .4rem;
+  padding: .2rem;
+  font-size: .2rem;
+  color: #d7a64c; }
+  .titleWarp .title {
+    padding-right: 0.2rem; }
+
+.card-list {
+  display: flex;
+  justify-content: center;
+  margin: .3rem .2rem;
+  height: 1.5rem;
+  align-items: center;
+  font-size: .2rem;
+  color: #999;
+  background-color: white;
+  border-radius: .1rem;
+}
+
+.cardWarp {
+  display: table;
+  margin: .3rem .2rem;
+  height: 1.5rem;
+  font-size: .2rem;
+  background-color: white;
+  border-radius: .1rem;
+}
+
+.cardWarp .cardList {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.cardWarp .cardList .card {
+  max-width: 60%;
+}
+
+.cardWarp .cardList .payQ {
+  max-width: 18%;
+}
+
+.cardWarp .cardList .cardNum {
+  padding-top: .1rem;
+}

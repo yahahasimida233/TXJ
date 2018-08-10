@@ -21,17 +21,6 @@ app.controller("buyCtrl", function ($state, $stateParams, serviceHTTP, $timeout,
         //有金额时，为相应计算、无值时赋值为0.00
         vm.result = vm.money ? (vm.money * (vm.time / 360) * (vm.rate / 100)).toFixed(2) : 0.00; 
     }
-
-    // console.log('wuhaidong很牛逼的'.replace(/.(?=.)/g, '*'));
-    console.log('wuhaidong很牛逼的'.replace(/.(?=.)/, '*'));
-    // console.log('wuhaidong很牛逼的'.replace(/./g, '*'));
-
-    var a = "1234567890123456789";
-    // var b = a.slice(15);
-    // var c = "**** **** **** ***" + b;
-    // console.log(c);
-
-
     // 用户银行卡列表信息
     serviceHTTP.bankCardListHTTP().then(function (res) {
         console.log(res);

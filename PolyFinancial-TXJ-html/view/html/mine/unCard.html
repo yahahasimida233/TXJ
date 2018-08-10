@@ -1,0 +1,18 @@
+<!-- title -->
+<div class="titleWarp bk-white">
+    <div class="glyphicon glyphicon-chevron-left back" ui-sref="home.mineCard"></div>
+    <strong class="title">解绑银行卡</strong>
+    <div>&emsp;</div>
+</div>
+<!-- card -->
+<div class="cardWarp text-center" >
+    <div class="cardList">
+        <img class="card" ng-src="{{vm.bankType | showImg}}">
+        <img src="./img/payQ.png" class="payQ">
+        <div class="cardNum">{{vm.bankCard | card}}</div>
+    </div>
+</div>
+<!-- 解绑按钮 -->
+<div class="text-center buy-btn">
+    <button class="btn btn-primary unCard" ng-click="vm.unCard()">解除绑定</button>
+</div>

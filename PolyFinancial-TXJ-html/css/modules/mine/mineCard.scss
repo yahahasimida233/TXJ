@@ -23,3 +23,60 @@
     border-radius: .1rem;
   }
 }
+
+// 聚金融金色（）亮金色
+$gold: #d7a64c;
+.black {
+    color: black !important;
+}
+.bk-white {
+    background-color: #fff;
+}
+// 标题
+.titleWarp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: .55rem;
+    line-height: .4rem;
+    padding: .2rem;
+    font-size: .2rem; // 使标题处于居中位置
+    color: $gold;
+    .title {
+        padding-right: 0.2rem;
+    }
+}
+// 未绑定银行卡时
+.card-list {
+    display: flex;
+    justify-content: center;
+    margin: .3rem .2rem;
+    height: 1.5rem;
+    align-items: center;
+    font-size: .2rem;
+    color: #999;
+    background-color: white;
+    border-radius: .1rem;
+}
+// 银行卡列表
+.cardWarp{
+    display: table;
+    margin: .3rem .2rem;
+    height: 1.5rem;
+    font-size: .2rem;
+    background-color: white;
+    border-radius: .1rem;
+    .cardList{
+        display: table-cell;
+        vertical-align: middle;
+        .card{
+            max-width: 60%;
+        }
+        .payQ{
+            max-width: 18%;
+        }
+        .cardNum{
+            padding-top: .1rem;
+        }
+    }
+}

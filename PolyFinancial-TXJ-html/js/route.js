@@ -503,6 +503,42 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 解绑银行卡
+        .state('home.unCard', {
+            url: "/unCard?bankType",
+            templateUrl: 'view/html/mine/unCard.html',
+            controller: 'unCardCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/unCardCtrl.js",
+                            "./css/modules/mine/unCard.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+        
+        // 解绑银行卡
+        .state('home.SureUnCard', {
+            url: "/sureUnCard?bankType",
+            templateUrl: 'view/html/mine/sureUnCard.html',
+            controller: 'sureUnCardCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/sureUnCardCtrl.js",
+                            "./css/modules/mine/sureUnCard.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 我的帮助
         .state('home.mineHelp',{
             url:"/mineHelp",

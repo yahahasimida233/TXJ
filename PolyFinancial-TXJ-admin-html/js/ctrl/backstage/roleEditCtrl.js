@@ -24,6 +24,8 @@ app.controller("roleEditCtrl", function ($state, $stateParams, serviceHTTP, side
             vm.title = "角色编辑"
             // 读取该角色信息
             serviceHTTP.gRoleHTTP(id).then(function (res) {
+                console.log(res);
+                
                 vm.roleName = res.data.data[0].role;    //注入角色名
                 vm.arr = res.data.data;   //有权限角色数组
                 console.log(vm.arr);
