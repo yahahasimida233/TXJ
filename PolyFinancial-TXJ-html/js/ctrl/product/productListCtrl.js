@@ -9,14 +9,12 @@ app.controller("productListCtrl", function ($state, $stateParams, serviceHTTP, $
 
     // 跳转至产品页
     vm.product = function (id) {
-        vm.login = sessionStorage.getItem("login"); //验证是否登录
-        console.log(vm.login);
-        
-        if (vm.login !== "true") {
+        vm.logo = sessionStorage.getItem("logo"); //验证是否登录
+        if (vm.logo !== "true") {
             $state.go('login');
         }
         else{
-            $state.go("product", {productId: id} )
+            $state.go("product", {productId: list.id} )
         }
     }
 

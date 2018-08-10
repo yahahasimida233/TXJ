@@ -1,0 +1,25 @@
+.bk-white {
+  background-color: #fff; }
+
+.mes-tips {
+  padding: .4rem .2rem;
+  margin-top: .1rem;
+  border-bottom: 1px solid #eeeeee; }
+
+.message-warp {
+  padding: .2rem; }
+  .message-warp .message {
+    display: inline-block !important;
+    width: 37% !important; }
+  .message-warp .getCode {
+    padding-left: .1rem;
+    color: #d7a64c;
+    font-weight: bold; }
+
+.sureUnCard {
+  width: 100%;
+  padding: 0.1rem !important;
+  margin-top: .2rem;
+  font-size: .15rem !important; }
+
+/*# sourceMappingURL=sureUnCard.css.map */

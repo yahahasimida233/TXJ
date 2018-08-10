@@ -24,6 +24,8 @@ app.controller("roleEditCtrl", function ($state, $stateParams, serviceHTTP, side
             vm.title = "角色编辑"
             // 读取该角色信息
             serviceHTTP.gRoleHTTP(id).then(function (res) {
+                console.log(res);
+                
                 vm.roleName = res.data.data[0].role;    //注入角色名
                 vm.arr = res.data.data;   //有权限角色数组
                 console.log(vm.arr);
@@ -88,14 +90,12 @@ app.controller("roleEditCtrl", function ($state, $stateParams, serviceHTTP, side
         angular.forEach(vm.sideBar, function (data) {
             angular.forEach(data.sideBarContent,function (data2) {
                 if(data2.ifChecked == true){
-                    vm.result.push(data2.id, data.id) 
+                    vm.result.push(data2.id)
                 }
             })
         });
-        // 数组去重，去重父模块ID
-        let resultAll = Array.from(new Set(vm.result));
-         
-        if (resultAll.length == 0) {
+        console.log(vm.result);
+        if (vm.result.length == 0) {
             bootbox.alert({
                 title: "<strong>提示信息</strong>",
                 message: " <p style='text-align: center'>请正确填写角色信息。</p>",
@@ -109,12 +109,12 @@ app.controller("roleEditCtrl", function ($state, $stateParams, serviceHTTP, side
         } 
         else { //所有信息合法
             // 将数组转为字符串格式上传
+            vm.resultS = (vm.result).join(",");
+            console.log(vm.resultS);
             var data = {
                 role: vm.roleName,
-                moduleId: (resultAll).join(",")
+                moduleId: vm.resultS
             }
-            console.log(data);
-            
             if (id) {
                 console.log(id);
                 

@@ -488,7 +488,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('home.mineCard',{
             url:"/mineCard",
             templateUrl: 'view/html/mine/mineCard.html',
-            controller: 'mineCardCtrl as vm',
+            controller: 'mineCardCtrl',
+            controllerAs:'vm',
             resolve: {
                 loadMyFile: [
                     "$ocLazyLoad",
@@ -501,19 +502,37 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 ]
             }
         })
-        
-        // 添加银行卡
-        .state('home.addCard', {
-            url: "/addCard",
-            templateUrl: 'view/html/mine/addCard.html',
-            controller: 'addCardCtrl as vm',
+
+        // 解绑银行卡
+        .state('home.unCard', {
+            url: "/unCard?bankType",
+            templateUrl: 'view/html/mine/unCard.html',
+            controller: 'unCardCtrl as vm',
             resolve: {
                 loadMyFile: [
                     "$ocLazyLoad",
                     function ($ocLazyLoad) {
                         return $ocLazyLoad.load([
-                            "./js/ctrl/mine/addCardCtrl.js",
-                            "./css/modules/mine/addCard.css"
+                            "./js/ctrl/mine/unCardCtrl.js",
+                            "./css/modules/mine/unCard.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+        
+        // 解绑银行卡
+        .state('home.SureUnCard', {
+            url: "/sureUnCard?bankType",
+            templateUrl: 'view/html/mine/sureUnCard.html',
+            controller: 'sureUnCardCtrl as vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/sureUnCardCtrl.js",
+                            "./css/modules/mine/sureUnCard.css"
                         ]);
                     }
                 ]

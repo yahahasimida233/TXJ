@@ -1,13 +1,13 @@
 angular.module("txj").factory("serviceURL", function() {
     return {
         // 登陆
-        loginURL: "/home/a/u/front/login/",
+        loginURL:"/home/a/u/front/login/",
 
         //找回密码
         getbackPURL:"/home/a/u/my/forget",
 
         //登出
-        logoutURL: "/admin/a/u/logout/",
+        logoutURL:"/admin/a/u/logout/",
 
         // 普通手机短信验证码发送
         getCodeURL: "/home/a/u/forget/sendcode/",
@@ -19,10 +19,10 @@ angular.module("txj").factory("serviceURL", function() {
         codeConfirmURL: "/home/a/u/verify/",
 
         // 提交注册信息
-        registerURL: "/a/u/register",
+        registerURL: "/home/a/u/register",
 
         //图片（伪）验证码
-        imgCodeURL: "/a/u/pverify/",
+        imgCodeURL: "/home/a/u/pverify/",
 
         //图片上传
         imgUploadURL: "/admin/a/u/picture/",
@@ -53,15 +53,13 @@ angular.module("txj").factory("serviceURL", function() {
         personInfoURL: "/home/a/u/my/info/",
 
         //支付
-        payURL: "/home/a/u/pay/",
+        payURL: "/admin/home/a/u/pay/",
 
         // 我的页面-获取消息列表
-
         messageURL:"/home/a/u/my/articles",
 
         // 银行卡列表
         bankCardListURL: "/home/a/u/my/bankcards/",
-
 
 
         // 设置-修改密码

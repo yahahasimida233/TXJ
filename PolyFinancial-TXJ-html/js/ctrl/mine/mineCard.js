@@ -7,13 +7,51 @@ app.controller("mineCardCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
     //     $state.go('login');
     //     return false;
     // }
+    // 用户银行卡列表信息
+    serviceHTTP.bankCardListHTTP().then(function (res) {
+        console.log(res);
+        vm.cardLists = res.data.data;
+        if ((vm.cardLists).length == 0) {
+            vm.noCard = true;
+            vm.card =  false;
+        }
+        else{
+            vm.noCard = false;
+            vm.card = true;
+        }
+    })
 
+    //添加银行卡
     vm.addCard = function () {
         // 验证该用户是否实名认证
         serviceHTTP.personInfoHTTP().then(function (res) {
             console.log(res);
             if (res.data.user.realnameState == 0) {
-                $state.go("home.addCard")
+                if ((vm.cardLists).length == 2) {  //已绑卡上限
+                    bootbox.confirm({
+                        title: '<strong> 操作提示 </strong>',
+                        message: "<p style='text-align: center'>您已达到2张银行卡绑卡上限。若想继续添加银行卡，请您先解绑。</p>",
+                        buttons: {
+                            confirm: {
+                                label: '确认'
+                            },
+                            cancel: {
+                                label: '取消'
+                            }
+                        },
+                        callback: function (result) {
+                            if (result == true) {
+                                $state.go('home.unCard');
+                            }
+                            if (result == false) {
+                                $state.go("home.mineCard");
+                            }
+                        }
+                    })
+                }
+                else{
+                    $state.go("home.addCard")
+                }
             } 
             else {
                 bootbox.confirm({
@@ -39,6 +77,11 @@ app.controller("mineCardCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             };
         })
     }
-
+    // 点击对应银行卡进入解绑银行卡页面
+    vm.chose = function (bankCard, bankType) {
+        var unCardId = bankCard;
+        sessionStorage.setItem("unCardId", JSON.stringify(unCardId));
+        $state.go("home.unCard", {bankType: bankType})
+    }
 
 });
