@@ -45,8 +45,7 @@
   font-size: .2rem;
   color: #999;
   background-color: white;
-  border-radius: .1rem;
-}
+  border-radius: .1rem; }
 
 .cardWarp {
   display: table;
@@ -54,22 +53,15 @@
   height: 1.5rem;
   font-size: .2rem;
   background-color: white;
-  border-radius: .1rem;
-}
+  border-radius: .1rem; }
+  .cardWarp .cardList {
+    display: table-cell;
+    vertical-align: middle; }
+    .cardWarp .cardList .card {
+      max-width: 60%; }
+    .cardWarp .cardList .payQ {
+      max-width: 18%; }
+    .cardWarp .cardList .cardNum {
+      padding-top: .1rem; }
 
-.cardWarp .cardList {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.cardWarp .cardList .card {
-  max-width: 60%;
-}
-
-.cardWarp .cardList .payQ {
-  max-width: 18%;
-}
-
-.cardWarp .cardList .cardNum {
-  padding-top: .1rem;
-}
+/*# sourceMappingURL=mineCard.css.map */
