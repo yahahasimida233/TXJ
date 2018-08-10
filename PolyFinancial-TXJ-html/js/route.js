@@ -538,7 +538,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
         
-        // 解绑银行卡
+        // 确认解绑银行卡
         .state('home.SureUnCard', {
             url: "/sureUnCard?bankType",
             templateUrl: 'view/html/mine/sureUnCard.html',

@@ -5,13 +5,13 @@
     <div class="glyphicon glyphicon-plus" ng-click="vm.addCard()"></div>
 </div>
 <!-- 未绑定银行卡时 -->
-<div class="card-list" ng-show="vm.noCard">
+<div class="card-list" ng-if="(vm.cardLists).length == 0">
     您还未绑定银行卡。
 </div>
 <!-- 银行卡列表 -->
 <div ng-repeat="x in vm.cardLists" class="cardWarp text-center" 
      ng-click="vm.chose(x.bankCard, x.bankType)"
-     ng-show="vm.card">
+     ng-if="(vm.cardLists).length != 0">
     <div class="cardList">
         <img class="card" ng-src="{{x.bankType | showImg}}">
         <img src="./img/payQ.png" class="payQ">

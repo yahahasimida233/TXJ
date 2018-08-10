@@ -36,6 +36,13 @@ app.filter("username", function () {
         return showName;
     }
 });
+// 身份证号隐藏中间8位
+app.filter("IdCard", function () {
+    return function (IdCard) {
+        var showIdCard = IdCard.slice(0, 6) + "********" + IdCard.slice(14);
+        return showIdCard;
+    }
+});
 // 银行卡号过滤 *+显示最后4位（默认银行卡号为19位）
 app.filter("card", function () {
     return function (data) {

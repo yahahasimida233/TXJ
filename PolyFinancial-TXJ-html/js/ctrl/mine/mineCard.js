@@ -11,14 +11,6 @@ app.controller("mineCardCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
     serviceHTTP.bankCardListHTTP().then(function (res) {
         console.log(res);
         vm.cardLists = res.data.data;
-        if ((vm.cardLists).length == 0) {
-            vm.noCard = true;
-            vm.card =  false;
-        }
-        else{
-            vm.noCard = false;
-            vm.card = true;
-        }
     })
 
     //添加银行卡

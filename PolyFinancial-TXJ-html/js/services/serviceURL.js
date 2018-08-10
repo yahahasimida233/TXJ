@@ -28,25 +28,25 @@ angular.module("txj").factory("serviceURL", function() {
         imgUploadURL: "/admin/a/u/picture/",
 
         //获取用户个人信息
-        userInfoURL: "/home/a/u/my/info/",
+        userInfoURL: "/admin/home/a/u/my/info/",
 
         // 实名认证第一步，提交用户名身份证号码，还有银行卡号码
-        realNameStep1URL: "/home/a/u/my/info/realname/",
+        realNameStep1URL: "/admin/home/a/u/my/info/realname/",
 
 
         // 实名认证收取验证码
-        RGetCodeURL: "/home/a/u/my/info/verifypage/",
+        RGetCodeURL: "/admin/home/a/u/my/info/verifypage/",
 
         // 实名认证验证 验证码
-        RCheckCodeURL: "/home/a/u/my/info/code",
+        RCheckCodeURL: "/admin/home/a/u/my/info/code",
 
         //提交更换手机的信息
-        newNumberURL: "/home/a/u/my/info/newnum",
+        newNumberURL: "/admin/home/a/u/my/info/newnum",
 
         //产品列表
         productListURL: "/admin/home/a/u/productlist/",
 
-        // 产品详情
+        //产品详情
         productURL: "/admin/home/a/u/productDetatil/",
         
         //个人信息
@@ -57,7 +57,7 @@ angular.module("txj").factory("serviceURL", function() {
 
         // 我的页面-获取消息列表
 
-        messageURL:"/home/a/u/my/articles",
+        messageURL: "/admin/home/a/u/my/articles",
 
         // 银行卡列表
         bankCardListURL: "/admin/home/a/u/my/bankcards/",
@@ -66,12 +66,10 @@ angular.module("txj").factory("serviceURL", function() {
         unCardURL: "/admin/home/a/u/my/bankcards/",
 
         // 设置-修改密码
-        settingCPURL: "/home/a/u/my/setup/changepwd/",
-
+        settingCPURL: "/admin/home/a/u/my/setup/changepwd/",
 
         // 意见反馈接口
-        feedBackURL: "/home/a/u/my/suggestion"
+        feedBackURL: "/admin/home/a/u/my/suggestion"
 
-        // 理财
     };
 });

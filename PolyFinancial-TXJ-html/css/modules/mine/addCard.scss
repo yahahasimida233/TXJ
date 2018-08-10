@@ -1,1 +1,61 @@
- 
+// 聚金融金色（）亮金色
+$gold: #d7a64c;
+//提示
+.mes-tips {
+    padding: .4rem .2rem;
+    margin-top: .1rem;
+    border-bottom: 1px solid #eeeeee;
+    .font-l6{
+        font-size: 16px;
+    }
+    .showCard{
+        position: absolute;
+        right: 35px;
+        color: $gold;
+    }
+}
+// 卡号表单
+.addCard-warp{
+    padding: .2rem;
+    .introduce{
+        padding: .1rem;
+        .form-control{
+            display: inline-block;            
+            width: 75%;
+        }
+    }
+    // 提示
+    .tips{
+        color: red;
+    }
+}
+// 下一步按钮
+.next{
+    margin: .4rem 0 .2rem;
+}
+// 支持银行
+.bank{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    .bank-warp{
+        padding: .2rem;
+        border-top : solid 10px #eee;
+        .bank-text{
+            margin-bottom: .2rem;
+            font-weight: bold;
+            font-size: 17px;
+            color: $gold;
+        }
+    }
+    table{
+        width: 100%;
+        text-align: center;
+        td{
+            padding: .1rem;
+            border: 1px solid #999!important;
+        }
+    }
+}
