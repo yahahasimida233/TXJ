@@ -23,14 +23,6 @@
 
     </div>
     <div class="search-row">
-
-        <label class="tips" for="createBy">创建人</label>
-        <select id="createBy" class="form-control form-18" ng-model="vm.createBy"
-                ng-options="x as x for x in vm.createByList">
-            <option value="">--请选择--</option>
-        </select>
-
-
         <label class="tips" >发送时间</label>
         <div>
             <div class="flex">
@@ -46,10 +38,12 @@
                        alt-input-formats="vm.altInputFormats"
                        ng-click="vm.open()"
                        datepicker-options="{maxDate:vm.loanAtEnd}"
-                       placeholder="请输入起始日期"
-                       required="required">
+                       placeholder="请输入起始日期">
                 <input class="form-control date-input-min"
-                        type="time">
+                       id="timePicker1"
+                       name="1"
+                       ng-model ="vm.timePicker1"
+                       type="text">
             </div>
             <div class="flex">
                 <input type="text"
@@ -64,12 +58,23 @@
                        alt-input-formats="vm.altInputFormats"
                        ng-click="vm.open2()"
                        datepicker-options="{minDate:vm.loanAtStart,maxDate:vm.today}"
-                       placeholder="请输入截止日期"
-                       required="required">
+                       placeholder="请输入截止日期">
                 <input class="form-control date-input-min"
-                        type="time">
+                       id="timePicker2"
+                       ng-model ="vm.timePicker2"
+                       name="2"
+                       type="text">
             </div>
         </div>
+
+        <label class="tips" for="createBy">创建人</label>
+        <select id="createBy" class="form-control form-18" ng-model="vm.createBy"
+                ng-options="x as x for x in vm.createByList">
+            <option value="">--请选择--</option>
+        </select>
+
+
+
         <button class="btn btn-primary"
                 ng-click = "vm.search()"
         >查询</button>

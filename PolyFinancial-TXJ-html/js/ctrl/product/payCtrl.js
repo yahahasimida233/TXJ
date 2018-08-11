@@ -44,11 +44,8 @@ app.controller("payCtrl",function ($state, $stateParams,$timeout, serviceHTTP ,$
             serviceHTTP.payHTTP(data).then(function (res) {
                 console.log(res.data.respMsg);
                 vm.respMsg = res.data.respMsg
-                // vm.html = $sce.trustAsHtml(" ' "+ vm.respMsg + " ' ")
-                // vm.html = $sce.trustAsHtml(vm.respMsg)
-                $timeout(function () {
-                    document.forwardForm.submit()
-                }, 2000)
+
+                vm.html = $sce.trustAsHtml(" ' "+ vm.respMsg + " ' ")
             })
         }
 

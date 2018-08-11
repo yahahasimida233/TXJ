@@ -1,3 +1,33 @@
+.messageEdit-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+  .messageEdit-row .dateInput {
+    flex-basis: 100%;
+    justify-content: center; }
+  .messageEdit-row .select {
+    margin: .1rem; }
 
+.debtEditContent-row {
+  margin: .2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  .debtEditContent-row span {
+    height: .4rem;
+    line-height: .4rem; }
+  .debtEditContent-row button {
+    margin: .2rem; }
+  .debtEditContent-row .imgTable {
+    width: 5rem; }
+    .debtEditContent-row .imgTable tr td {
+      text-align: center; }
+
+.messageEdit-title {
+  padding: .5rem  .3rem;
+  font-size: .2rem;
+  color: #29b078;
+  font-weight: bold; }
 
 /*# sourceMappingURL=messageEdit.css.map */

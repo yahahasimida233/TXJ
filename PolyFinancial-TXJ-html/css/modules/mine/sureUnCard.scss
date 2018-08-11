@@ -6,15 +6,14 @@ $gold: #d7a64c;
 //验证码
 .mes-tips {
     padding: .4rem .2rem;
-    margin-top: .1rem;
-    border-bottom: 1px solid #eeeeee;
+    border-top: 1px solid;
 }
 
 .message-warp{
     padding: .2rem;
     .message{
         display: inline-block!important;
-        width: 37%!important;
+        width: 50%!important;
     }
     
     .getCode {
@@ -22,11 +21,4 @@ $gold: #d7a64c;
         color: $gold;
         font-weight: bold;
     }
-}
-// 解绑按钮
-.sureUnCard{
-    width: 100%;
-    padding: 0.1rem!important;
-    margin-top: .2rem;
-    font-size: .15rem !important;
 }

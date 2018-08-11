@@ -1,6 +1,8 @@
 app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams,$timeout) {
     var vm = this;
 
+    console.log(bootbox);
+
     // 调试用
     $timeout(function(){
         $(".indexLoading").hide(500);
@@ -10,7 +12,14 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
     vm.countTime = "获取验证码";
     vm.sendCode = function(){
         if(!vm.userName){
-            bootbox.dialog({ message: '<div class="text-center" style="color: #dca854;">输入手机号后再获取验证码拉</div>' });
+            bootbox.dialog({
+                message: '<div class="text-center" style="color: #dca854;">输入手机号后再获取验证码拉</div>',
+                callback: function(){
+                    $timeout(function(){
+                        this.aria_hidden = false;
+                    },3000)
+                },
+            });
             return false;
         }
         if(vm.userName.match(/^(((\+86)|(86))?1[0-9]{10})$/) && vm.userName.length === 11){

@@ -9,7 +9,7 @@ app.controller("feedbackReplyCtrl",function ($scope,$http,$state,serviceHTTP,$st
             // 请求成功执行代码
             console.log(response);
             if(response.data.message == "反馈成功") {
-                $state.go('backStage.feedback');
+                $state.go('backStage.opinion');
             }
             else {
                 bootbox.alert(response.data.message);

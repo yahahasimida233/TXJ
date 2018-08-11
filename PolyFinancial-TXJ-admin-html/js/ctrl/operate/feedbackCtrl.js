@@ -1,22 +1,44 @@
 app.controller("feedbackCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams) {
     var vm = this;
-    let id = $stateParams.id;
-    serviceHTTP.feedbackHTTP().then(function successCallback(response) {
-        // 请求成功执行代码
-        console.log(response);
-        if(response.data.message === "查询成功") {
-            vm.list = response.data.data.opinionList;
-            console.log(vm.list);
-        }
-        else {
 
-        }
-    }, function errorCallback(res) {
-        // 请求失败执行代码
-    });
 
-    // 目前分页数据假数据没有提供，先写一下，正式接口中再做修改
-    vm.totalItems = 2;
+    // 从URL获取参数
+    vm.id = $stateParams.id || undefined;
+    vm.submitBy = $stateParams.submitBy || undefined;
+    vm.keyword = $stateParams.keyword || undefined;
+    vm.phoneNum = $stateParams.phoneNum || undefined;
+    vm.size = $stateParams.size || 10;
+    vm.page = $stateParams.page || undefined;
+
+    vm.getList = function(){
+        let info = {
+            id: vm.id,
+            submitBy:vm.submitBy,
+            keyword:vm.keyword,
+            phoneNum:vm.phoneNum,
+            size: vm.size,
+            page: vm.page
+        };
+        console.log("info:",info);
+        serviceHTTP.feedbackHTTP(info).then(function successCallback(response) {
+            // 请求成功执行代码
+            console.log(response);
+            if(response.data.message === "查询成功") {
+                vm.list = response.data.data.opinionList;
+                console.log(vm.list);
+                vm.totalItems = response.data.data.total;
+                console.log(vm.list);
+            }
+            else {
+                bootbox.alert(response.data.message)
+            }
+        }, function errorCallback(res) {
+            // 请求失败执行代码
+        });
+    };
+    vm.getList();
+
+
 
     // 清除按钮
     vm.reset = function(){
@@ -24,33 +46,24 @@ app.controller("feedbackCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
         vm.submitBy = undefined;
         vm.keyword= undefined;
         vm.phoneNum = undefined;
+        vm.page = 1;
+        vm.size = 10;
+        vm.getList();
     };
 
-
-    //搜索债权列表功能
-    vm.userSearch = function(){
-        //搜索的四个值
-        var Info = {
+    // 搜索功能
+    vm.search = function(){
+        $state.go('backStage.opinion', {
             id: vm.id,
-            submitBy:vm.submitBy,
-            keyword:vm.keyword,
-            phoneNum:vm.phoneNum
-        };
-        serviceHTTP.feedbackHTTP(Info).then(function successCallback(response) {
-            // 请求成功执行代码
-            if(response.data.message === "success") {
-                vm.list = response.data.data;
-                console.log(vm.list);
-            }
-            else {
-
-            }
-        }, function errorCallback(res) {
-            // 请求失败执行代码
-        });
+            submitBy: vm.submitBy,
+            keyword: vm.keyword,
+            phoneNum: vm.phoneNum,
+            size: vm.size,
+            page: vm.page
+        })
     };
 
-    // 删除banner
+    // 删除反馈
     vm.delete = function(id){
         bootbox.confirm({
             title: '操作提示',

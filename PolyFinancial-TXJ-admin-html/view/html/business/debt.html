@@ -68,14 +68,14 @@
             <th class="text-center list-title"><strong>还款日期</strong></th>
             <th class="text-center list-title"><strong>投资合同ID</strong></th>
             <th class="text-center list-title"><strong>投资金额</strong></th>
-            <th class="text-center list-title"><strong>理财期限</strong></th>
+            <th class="text-center list-title"><strong>理财期限(天)</strong></th>
             <th class="text-center list-title"><strong>待匹配金额</strong></th>
             <th class="text-center list-title"><strong>状态</strong></th>
             <th class="text-center list-title"><strong>操作</strong></th>
         </tr>
         <tr ng-repeat="x in vm.list">
             <td class="text-center index">{{$index+1}}</td>
-            <td class="text-center">{{x.id}}</td>
+            <td class="text-center">TXJ0001{{x.id}}</td>
             <td class="text-center">{{x.enterpriseName}}</td>
             <td class="text-center">{{x.creditor}}</td>
             <td class="text-center">{{x.phoneNum}}</td>
@@ -84,9 +84,9 @@
             <td class="text-center">{{x.loanPeriod}}</td>
             <td class="text-center">{{x.loanAt |date : 'yyyy-MM-dd hh:mm:ss'}}</td>
             <td class="text-center">{{x.repaymentAt |date : 'yyyy-MM-dd hh:mm:ss' }}</td>
-            <td class="text-center" ><div ng-repeat ="a in x.contractList">{{a.contractId}}</div></td>
+            <td class="text-center" ><div ng-repeat ="a in x.contractList">TXJ0002{{a.contractId}}</div></td>
             <td class="text-center"><div ng-repeat ="a in x.contractList">{{a.investment}}</div></td>
-            <td class="text-center">{{x.productTerm}}</td>
+            <td class="text-center"><div ng-repeat ="a in x.contractList">{{a.productTerm}}</div></td>
             <td class="text-center">{{x.sruplusAmount}}</td>
             <td class="text-center">{{x.state | debtState}}</td>
             <td class="text-center">

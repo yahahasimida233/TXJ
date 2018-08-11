@@ -1,6 +1,8 @@
 .message .message-title {
   margin-bottom: .1rem;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
   text-align: center;
   height: .4rem;
   line-height: .4rem;
@@ -12,6 +14,8 @@
     position: absolute;
     left: .2rem;
     top: .1rem; }
+.message .message-content {
+  padding-top: .45rem; }
 .message .minirefresh-wrap {
   margin-top: .4rem;
   background-color: white; }
