@@ -22,9 +22,7 @@ app.controller("addCardCtrl", function ($state, $stateParams, serviceHTTP, $time
             });
         }
         else{
-            
+            $state.go("home.RNStep2");
         }
     }
-
-
 })
