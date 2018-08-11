@@ -8,7 +8,7 @@
         <label class="tips" for="roleName">角色名</label>
         <input type="text" name="roleName" class="form-control form-18" ng-model="vm.roleName" required>
         <!-- 重置按钮 -->
-        <button class="btn btn-danger" ng-click="vm.reSet()" ng-disabled="searchForm.roleId.$invalid && searchForm.roleName.$invalid && searchForm.updateBy.$invalid && searchForm.creater.$invalid">重置</button>
+        <button class="btn btn-danger" ng-click="vm.reSet()">重置</button>
     </div>
     <div class="search-row">
         <!-- 创建人 -->
@@ -60,24 +60,22 @@
             </tr>
         </tbody>
     </table>
-    <!-- 分页 -->
-    <div class="table-foot">
-        <div>
-            <span>每页显示</span>
-            <input type="text" class="form-control small" ng-model="vm.size">
-            <span>条</span>
-        </div>
-        <ul class="apage " uib-pagination total-items="vm.totalItems" ng-model="vm.page" max-size="5" items-per-page="vm.size" first-text="第一页"
-            previous-text="<" next-text=">" ng-click="vm.goPage()" rotate="true" force-ellipses="true" last-text="最后页" boundary-links="true"
-            boundary-link-numbers="true">
-        </ul>
-        <div class="">
-            <span>去第</span>
-            <input type="text" class="form-control small" ng-model="vm.goPage" ng-init=""> {{vm.page}}
-            <span>页</span>
-            <button class="btn btn-primary" ng-click="">
-                确定
-            </button>
-        </div>
+</div>
+<!-- 分页 -->
+<div class="table-foot">
+    <div class="btn-list-size ">
+        <span>每页显示</span>
+        <input type="text" class="form-control small" style="text-align: center; margin: 5px;" ng-model="vm.size" ng-bind="vm.size">
+        <span>条</span>
+    </div>
+    <ul class="apage " uib-pagination total-items="vm.totalItems" ng-model="vm.page" max-size="5" items-per-page="vm.size" first-text="第一页"
+        previous-text="<" next-text=">" ng-click="vm.search()" rotate="true" force-ellipses="true" last-text="最后页" boundary-links="true"
+        boundary-link-numbers="true">
+    </ul>
+    <div class="btn-list-page">
+        <span>去第</span>
+        <input type="text" style="text-align: center; margin: 5px;" class="form-control small" ng-model="vm.page">
+        <span>页</span>
+        <button class="btn btn-primary" style="width: auto; height: auto; margin: 5px;" ng-click="vm.search()">确定</button>
     </div>
 </div>

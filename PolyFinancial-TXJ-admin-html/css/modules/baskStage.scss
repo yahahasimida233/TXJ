@@ -8,7 +8,7 @@
   height: .7rem;
   line-height: .7rem;
   width: 100%;
-  color: #29b078;
+  color: #5bc0de;
   font-weight: bolder;
   font-size: .3rem;
 }
@@ -29,7 +29,7 @@
   }
   span:hover{
     font-size: .25rem;
-    background-color: #29b078;
+    background-color: dodgerblue;
     border-radius: .05rem;
   }
 }
@@ -65,12 +65,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #29b078;
+  background-color: #5bc0de;
 
 }
 
 .backStage-nav-list{
-  background-color: khaki;
+//   background-color: khaki;
+    background-color: lightblue;
   font-size: .2rem;
   font-weight: bold;
   //transition: 200ms ease background-color;
@@ -86,11 +87,12 @@
   }
 }
 .backStage-nav-list:hover{
-  background-color: lightgreen;
+  background-color: dodgerblue;
 
 }
 
 //侧边栏被激活时样式
 .backStage-active{
-  background-color: lightgreen;
+//   background-color: lightgreen;
+  background-color: dodgerblue;
 }
