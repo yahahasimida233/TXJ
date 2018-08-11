@@ -4,33 +4,23 @@
   height: 1.5rem;
   font-size: .2rem;
   background-color: white;
-  border-radius: .1rem;
-}
-
-.cardWarp .cardList {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.cardWarp .cardList .card {
-  max-width: 60%;
-}
-
-.cardWarp .cardList .payQ {
-  max-width: 18%;
-}
-
-.cardWarp .cardList .cardNum {
-  padding-top: .1rem;
-}
+  border-radius: .1rem; }
+  .cardWarp .cardList {
+    display: table-cell;
+    vertical-align: middle; }
+    .cardWarp .cardList .card {
+      max-width: 60%; }
+    .cardWarp .cardList .payQ {
+      max-width: 18%; }
+    .cardWarp .cardList .cardNum {
+      padding-top: .1rem; }
 
 .buy-btn {
-  padding: 0.1rem 0 .5rem 0;
-}
+  padding: 0.1rem 0 .5rem 0; }
+  .buy-btn .unCard {
+    width: 90%;
+    padding: .1rem;
+    font-size: .15rem;
+    border-radius: .1rem; }
 
-.buy-btn .unCard {
-  width: 90%;
-  padding: .1rem;
-  font-size: .15rem;
-  border-radius: .1rem;
-}
+/*# sourceMappingURL=unCard.css.map */

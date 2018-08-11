@@ -112,15 +112,16 @@ app.controller("productCtrl", function ($state, $stateParams, serviceHTTP, $time
                     },
                     callback: function (result) {
                         if (result == true) {
-                            $state.go('home.realName');
+                            $state.reload('home.realName');
                         }
                         if (result == false) {
-                            $state.go("product", {productId: 1});
+                            $state.reload("product", {productId: 1});
                         }
                     }
                 })
             };
-        })
+        }
+        )
     }
     
 })

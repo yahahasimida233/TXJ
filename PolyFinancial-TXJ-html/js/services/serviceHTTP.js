@@ -203,7 +203,7 @@ angular.module("txj")
                 return $http({
                     method: "POST",
                     url: serviceURL.payURL,
-                    params: data,
+                    data: data,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }

@@ -43,20 +43,15 @@ angular.module("txj").factory("serviceURL", function() {
         // 产品管理
         productURL:"/admin/admin/a/u/product/search/",
         productDetailURL:"/admin/admin/a/u/product/updateBy/",
-
         productEditURL:"/admin/admin/a/u/product/updater/",
-        productNewURL:"/admin/admin/a/u/product/creater/",
-
-       
+        productNewURL:"/admin/admin/a/u/admin/product/creater/",
         productDeleteURL:"/admin/admin/a/u/product/",
         porductGroundingURL:"/admin/admin/a/u/product/state/",
 
         // banner管理
         bannerURL:"/admin/admin/a/u/banner/pictures/keywords/",
         bannerDetailedURL:"/admin/admin/a/u/banner/pictures/",
-
         bannerEditURL:"/admin/admin/a/u/banner/pictures/",
-
         bannerNewURL:"/admin/admin/a/u/banner/",
         bannerDeleteURL:"/admin/admin/a/u/banner/pictures/",
         bannerGroundingURL:"/admin/admin/a/u/banner/pictureshelf/",
@@ -67,7 +62,6 @@ angular.module("txj").factory("serviceURL", function() {
         recommendEditURL:"/admin/admin/a/u/recommend/pictures/",
         recommendNewURL:"/admin/admin/a/u/recommend/",
         recommendDeleteURL:"/admin/admin/a/u/recommend/pictures/",
-
         recommendGroundingURL:"/admin/admin/a/u/recommend/pictureshelf/",
 
         // 意见管理

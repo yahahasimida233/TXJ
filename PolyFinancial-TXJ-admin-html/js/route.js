@@ -306,7 +306,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 消息管理
         .state('backStage.article',{
-            url:"/article?articleTitle&articleState&createBy&minTime&maxTime&size&page",
+            url:"/article?articleTitle&articleState&createBy&minTime&loanAtStart&loanAtEnd&startHour&maxTime&timePicker1&timePicker2&endHour&size&page",
             templateUrl: 'view/html/operate/message.html',
             controller: 'messageCtrl',
             controllerAs:'vm',

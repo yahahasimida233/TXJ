@@ -1,0 +1,46 @@
+.messageEdit-row{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .dateInput{
+    flex-basis: 100%;
+    justify-content: center;
+  }
+  //span{
+  //  margin: 0 .2rem ;
+  //  padding: .1rem 0;
+  //}
+  .select{
+    margin: .1rem;
+  }
+}
+
+.debtEditContent-row{
+  margin: .2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  span{
+    height: .4rem;
+    line-height: .4rem;
+  }
+  button{
+    margin: .2rem;
+  }
+  .imgTable{
+    width: 5rem;
+    tr{
+      td{
+        text-align: center;
+      }
+    }
+  }
+}
+
+.messageEdit-title{
+  padding: .5rem  .3rem;
+  font-size: .2rem;
+  color: #29b078;
+  font-weight: bold;
+}

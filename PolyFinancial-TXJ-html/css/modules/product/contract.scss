@@ -1,7 +1,7 @@
 // 聚金融金色（）亮金色
 $gold: #d7a64c;
 // 标题
-.CtitleWarp {
+.titleWarp {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,6 +9,13 @@ $gold: #d7a64c;
     line-height: .4rem;
     font-size: .2rem; // 使标题处于居中位置
     color: $gold;
+    .title {
+        padding-right: 0.2rem;
+    }
+}
+// 返回按钮
+.back {
+    padding-left: .2rem;
 }
 // 聚金融合同
 .contract {

@@ -1,13 +1,13 @@
 <form name="realNameForm2" class="realName">
-    <div class="realName-title" ui-sref = "home.userInfo">
-        <span class="fa  fa-chevron-left" style="color: #dca854"></span>
-        <div>实名认证</div>
+    <div class="realName-title">
+        <span class="fa  fa-chevron-left" style="color: #dca854"  ui-sref="(vm.title == '实名认证')？home.userInfo:home"></span>
+        <div>{{vm.title}}</div>
     </div>
 
     <div class="realName-step2" ng-show="vm.step2 =  true">
         <div class="step-row">
             <span>*卡类型:</span>
-            <span style="margin-left: .1rem">天地银行</span>
+            <span style="margin-left: .1rem">修真院成都分行</span>
         </div>
         <div class="step-row">
             <span>*手机号:</span>

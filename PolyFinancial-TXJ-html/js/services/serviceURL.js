@@ -7,7 +7,7 @@ angular.module("txj").factory("serviceURL", function() {
         getbackPURL:"/admin/home/a/u/my/forget",
 
         //登出
-        logoutURL: "/admin/a/u/logout/",
+        logoutURL: "/admin/admin/a/u/logout/",
 
         // 普通手机短信验证码发送
         getCodeURL: "/admin/home/a/u/forget/sendcode/",
@@ -25,7 +25,7 @@ angular.module("txj").factory("serviceURL", function() {
         imgCodeURL: "/admin/home/a/u/pverify/",
 
         //图片上传
-        imgUploadURL: "/admin/a/u/picture/",
+        imgUploadURL: "/admin/admin/a/u/picture/",
 
         //获取用户个人信息
         userInfoURL: "/admin/home/a/u/my/info/",
@@ -53,7 +53,7 @@ angular.module("txj").factory("serviceURL", function() {
         personInfoURL: "/admin/home/a/u/my/info/",
 
         //支付
-        payURL: "/admin/home/a/u/pay/",
+        payURL: "admin/home/a/u/pay/",
 
         // 我的页面-获取消息列表
 
@@ -62,8 +62,6 @@ angular.module("txj").factory("serviceURL", function() {
         // 银行卡列表
         bankCardListURL: "/admin/home/a/u/my/bankcards/",
 
-        // 银行卡解除绑定
-        unCardURL: "/admin/home/a/u/my/bankcards/",
 
         // 设置-修改密码
         settingCPURL: "/admin/home/a/u/my/setup/changepwd/",

@@ -16,7 +16,7 @@ $gold: #d7a64c;
     padding: 6px;
     font-weight: bold;
     border-radius: 10px;
-    background-color: red; 
+    background-color: red;
 }
 .titleWarp{
     display: flex;
@@ -24,8 +24,14 @@ $gold: #d7a64c;
     align-items: center;
     height: .4rem;
     line-height: .4rem;
-    padding: .2rem;
     font-size: .2rem;
+    // 使标题处于居中位置
+    .title{
+        padding-right: 0.2rem;
+    }
+}
+.back{
+    padding-left: .2rem;
 }
 // 年利率
 .rate-warp{
