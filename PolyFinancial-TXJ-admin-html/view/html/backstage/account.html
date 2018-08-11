@@ -79,34 +79,31 @@
 </table>
 <!-- 分页 -->
 <div class="table-foot">
-    <div>
+    <div class="btn-list-size ">
         <span>每页显示</span>
-        <input type="text" class="form-control small" ng-model="vm.size">
+        <input type="text" class="form-control small" ng-model="vm.size" ng-bind="vm.size">
         <span>条</span>
     </div>
-    <ul class="apage " 
-        uib-pagination 
-        total-items="vm.totalItems" 
-        ng-model="vm.page" 
-        max-size="5" 
-        items-per-page="vm.size" 
-        first-text="第一页"
-        previous-text="<" next-text=">" 
-        ng-click="vm.goPage()" 
-        rotate="true" 
-        force-ellipses="true" 
-        last-text="最后页" 
-        boundary-links="true"
-        boundary-link-numbers="true">
+    <ul    class="apage "
+           uib-pagination
+           total-items="vm.totalItems"
+           ng-model="vm.page"
+           max-size="5"
+           items-per-page = "vm.size"
+           first-text="第一页"
+           previous-text = "<"
+           next-text = ">"
+           ng-click="vm.search()"
+           rotate = "true"
+           force-ellipses = "true"
+           last-text="最后页"
+           boundary-links="true"
+           boundary-link-numbers="true">
     </ul>
-    <div class="">
+    <div class="btn-list-page">
         <span>去第</span>
-        <input type="text" class="form-control small" ng-model="vm.goPage" ng-init=""> 
-        {{vm.page}}
+        <input type="text" class="form-control small" ng-model="vm.page">
         <span>页</span>
-        <button class="btn btn-primary" ng-click="">
-            确定
-        </button>
+        <button class="btn btn-default" ng-click="vm.search()" >确定</button>
     </div>
-</div>
 </div>

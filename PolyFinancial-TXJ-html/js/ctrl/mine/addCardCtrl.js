@@ -5,7 +5,6 @@ app.controller("addCardCtrl", function ($state, $stateParams, serviceHTTP, $time
         console.log(res);
         vm.IdCard = res.data.user.cardId;
         vm.userName = res.data.user.userName;
-        
     })
     // 下一步按钮
     vm.next = function (data) {

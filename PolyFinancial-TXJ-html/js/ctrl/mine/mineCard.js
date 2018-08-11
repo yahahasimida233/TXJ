@@ -20,23 +20,12 @@ app.controller("mineCardCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             console.log(res);
             if (res.data.user.realnameState == 0) {
                 if ((vm.cardLists).length == 2) {  //已绑卡上限
-                    bootbox.confirm({
+                    bootbox.alert({
                         title: '<strong> 操作提示 </strong>',
                         message: "<p style='text-align: center'>您已达到2张银行卡绑卡上限。若想继续添加银行卡，请您先解绑。</p>",
                         buttons: {
-                            confirm: {
+                            ok: {
                                 label: '确认'
-                            },
-                            cancel: {
-                                label: '取消'
-                            }
-                        },
-                        callback: function (result) {
-                            if (result == true) {
-                                $state.go('home.unCard');
-                            }
-                            if (result == false) {
-                                $state.go("home.mineCard");
                             }
                         }
                     })

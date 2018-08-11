@@ -503,6 +503,25 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 添加银行卡
+        .state('home.addCard', {
+            url: "/addCard",
+            templateUrl: 'view/html/mine/addCard.html',
+            controller: 'addCardCtrl',
+            controllerAs: 'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/addCardCtrl.js",
+                            "./css/modules/mine/addCard.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 解绑银行卡
         .state('home.unCard', {
             url: "/unCard?bankType",
