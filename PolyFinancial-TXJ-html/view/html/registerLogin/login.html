@@ -15,7 +15,17 @@
             <input type="password"
                    ng-model = "vm.passWord"
                    required
+                   ng-if="!vm.inputType"
                    placeholder="请输入密码">
+            <input type="text"
+                   ng-model = "vm.passWord"
+                   required
+                   ng-if="vm.inputType"
+                   placeholder="请输入密码">
+            <span class="fa eye-btn"
+                  ng-init="vm.inputType = false"
+                  ng-click = "vm.inputType = !vm.inputType"
+                  ng-class="{true : 'fa-eye',false : 'fa-eye-slash' }[vm.inputType]"></span>
             <div class="password-img"></div>
         </div>
         <div class="login-bottom">
@@ -25,5 +35,7 @@
             </div>
         </div>
     </form>
+
+    <!--<button class="btn btn-danger" ng-click = "vm.show()">出来吧form</button>-->
 
 </div>

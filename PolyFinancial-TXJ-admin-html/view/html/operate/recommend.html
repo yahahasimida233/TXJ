@@ -86,10 +86,11 @@
         </tbody>
     </table>
 </div>
+<!-- 分页 -->
 <div class="table-foot">
     <div class="btn-list-size ">
         <span>每页显示</span>
-        <input type="text" class="form-control  small" ng-model="vm.size" >
+        <input type="text" class="form-control small" ng-model="vm.size" ng-bind="vm.size">
         <span>条</span>
     </div>
     <ul    class="apage "

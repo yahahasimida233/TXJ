@@ -112,6 +112,18 @@ angular.module("txj")
                 })
             },
 
+
+            // 获取用户个人消息还有未读消息
+            mineHTTP: function () {  //获取产品列表
+                return $http({
+                    method: "GET",
+                    url: serviceURL.mineURL,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
             // 获取用户个人信息
             userInfoHTTP: function () {  //获取产品列表
                 return $http({
@@ -226,6 +238,66 @@ angular.module("txj")
                 return $http({
                     method: "get",
                     url: serviceURL.messageURL,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            //我的页面获取消息详情
+            messageDetailHTTP : function (info) {
+                return $http({
+                    method: "get",
+                    url: serviceURL.messageDetailURL+info.articleType+"/"+info.id,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            //我的页面-我的理财-获取已投资列表
+            payedHTTP : function () {
+                return $http({
+                    method: "get",
+                    url: serviceURL.payedURL,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            //我的页面-我的理财-续投功能
+            continuedInvestmentHTTP : function (id) {
+                return $http({
+                    method: "put",
+                    url: serviceURL.continuedInvestmentURL+id,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            //我的页面-我的理财-获取已续投列表
+            continueHTTP: function () {
+                return $http({
+                    method: "get",
+                    url: serviceURL.continueURL,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            //我的页面-我的理财-获取已退出列表
+            dropOutHTTP: function () {
+                return $http({
+                    method: "get",
+                    url: serviceURL.dropOutURL,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
+            //我的页面-获取交易记录列表
+            tradeListHTTP : function () {
+                return $http({
+                    method: "get",
+                    url: serviceURL.tradeListURL,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })

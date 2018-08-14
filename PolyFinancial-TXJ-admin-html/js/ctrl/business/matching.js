@@ -1,4 +1,4 @@
-app.controller("matchingCtrl",function ($http,$state,serviceHTTP,$stateParams,data) {
+app.controller("matchingCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams) {
     var vm = this;
     let id = $stateParams.id;
     // vm.data = data;
@@ -52,9 +52,7 @@ app.controller("matchingCtrl",function ($http,$state,serviceHTTP,$stateParams,da
         if(vm.selected.indexOf(e) >= 0){//当投资已经被选过时不进行操作
             console.log(vm.selected.indexOf(e));
             console.log(vm.selected);
-            return false;
-        }
-        if(vm.sum+e.investment > vm.sruplusMoney){
+        }else if(vm.sum+e.investment > vm.sruplusMoney  && vm.sruplusMoney > 0){
             bootbox.confirm({
                 title: '操作提示',
                 message: "<p style='text-align: center'>目前选中的投资总额度超过了债权金额，您要拆分选中的这个投资么？</p>",
@@ -68,27 +66,31 @@ app.controller("matchingCtrl",function ($http,$state,serviceHTTP,$stateParams,da
                 },
                 callback: function(result) {
                     if(result === true){
-                        vm.selected.push(e);
-                        vm.selected[-1].investment = e.investment-vm.sruplusMoney ;
-                        console.log(vm.selected);
-                        vm.sum = vm.sum + e.investment;
-                        vm.sruplusMoney = vm.sruplusMoney -e.investment;
-                        return false;
+                        $scope.$apply(function () {
+                            var objCopy = objDeepCopy(e);
+
+                            vm.selected.push(objCopy);
+                            vm.selected[vm.selected.length-1].investment = vm.sruplusMoney ;
+                            console.log(vm.selected);
+                            vm.sum = vm.sum + vm.selected[vm.selected.length-1].investment;
+                            vm.sruplusMoney = vm.sruplusMoney -vm.selected[vm.selected.length-1].investment;
+                        })
+
                     }else{
-                        return false;
                     }
                 }
             })
-        }
-        if(vm.sruplusMoney < 0){
+        }else if(vm.sruplusMoney <= 0){
             bootbox.alert("已经匹配好了，不用再选择投资了，快去点击匹配吧");
-            return false;
+
+        }else{
+            vm.selected.push(e);
+            vm.sum = vm.sum + e.investment;
+            vm.sruplusMoney = vm.sruplusMoney -e.investment;
+            console.log(vm.selected);
+            console.log("sum"+vm.sum);
         }
-        vm.selected.push(e);
-        vm.sum = vm.sum + e.investment;
-        vm.sruplusMoney = vm.sruplusMoney -e.investment;
-        console.log(vm.selected);
-        console.log("sum"+vm.sum);
+
     };
 
     vm.remove = function (e) {//移除投资
@@ -105,15 +107,16 @@ app.controller("matchingCtrl",function ($http,$state,serviceHTTP,$stateParams,da
         var info = {};
         info.creditorId = id;
         info.sruplusMoney = (vm.sruplusMoney < 0)?0: vm.sruplusMoney;
-        info.investList = JSON.parse(JSON.stringify(vm.selected).replace("investment","matched"));
+        info.investList = JSON.stringify(vm.selected).replace("investment","matched");
         // 把字段名称替换成和接口文档一致
         // info.investList.forEach(function(item){
         //     item.matched = item.investment;
         //     delete item.investment
         // });
         console.log(info);
-        if(vm.sruplusMoney < 0){
-            info.investList[-1].matched = info.investList[-1].matched + vm.sruplusMoney;
+        if(vm.sruplusMoney <= 0){
+            // info.investList[-1].matched = info.investList[-1].matched + vm.sruplusMoney;
+
         }
         if(vm.sruplusMoney > 0){
             
@@ -122,6 +125,8 @@ app.controller("matchingCtrl",function ($http,$state,serviceHTTP,$stateParams,da
             // 请求成功执行代码
             console.log(response);
             if(response.data.message === "success") {
+                bootbox.alert("匹配成功，马上返回债权列表页面");
+                $state.go('backStage.debt')
             }
             else {
                 bootbox.alert(response.data.message)
@@ -130,40 +135,17 @@ app.controller("matchingCtrl",function ($http,$state,serviceHTTP,$stateParams,da
             // 请求失败执行代码
         });
     };
+
+    // 深拷贝对象
+    var objDeepCopy = function (source) {
+        var sourceCopy = source instanceof Array ? [] : {};
+        for (var item in source) {
+            sourceCopy[item] = typeof source[item] === 'object' ? objDeepCopy(source[item]) : source[item];
+        }
+        return sourceCopy;
+    };
+    // var objCopy = objDeepCopy(obj);
 });
 
 
-app.constant('data',[
-    {
-        id : 'TZHT000002',
-        money:10000
-    },
-    {
-        id : 'TZHT000003',
-        money:30000
-    },
-    {
-        id : 'TZHT000004',
-        money:40000
-    },
-    {
-        id : 'TZHT000005',
-        money:60000
-    },
-    {
-        id : 'TZHT000007',
-        money:80000
-    },
-    {
-        id : 'TZHT000008',
-        money:90000
-    },
-    {
-        id : 'TZHT0000010',
-        money:199000
-    },
-    {
-        id : 'TZHT0000022',
-        money:22222000
-    }
-]);
+

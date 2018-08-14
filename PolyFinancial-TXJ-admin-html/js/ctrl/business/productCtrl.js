@@ -2,25 +2,14 @@ app.controller("productCtrl",function ($http,$state,serviceHTTP,$stateParams){
     var vm = this;
     let id = $stateParams.id;
 
-
-
-    // 从URL获取参数
-    vm.productId = $stateParams.id || undefined;
-    vm.productName = $stateParams.productName || undefined;
-    vm.createBy = $stateParams.createBy || undefined;
-    vm.status = $stateParams.state || undefined;
-    vm.size = $stateParams.pageSize || 10;
-    vm.page = $stateParams.pageNum || undefined;
-
-
     vm.getList = function(){
         let info = {
-            id: vm.productId,
-            productName:vm.productName,
-            createBy:vm.createBy ,
-            state:vm.status ,
-            pageSize: vm.size,
-            pageNum: vm.page
+            id: $stateParams.id || undefined,
+            productName: $stateParams.productName || undefined,
+            createBy:$stateParams.createBy || undefined ,
+            state:$stateParams.state || undefined,
+            pageSize:  $stateParams.pageSize || 10,
+            pageNum: $stateParams.pageNum || undefined
         };
         console.log("info:",info);
         serviceHTTP.productHTTP(info).then(function successCallback(response) {
@@ -30,6 +19,13 @@ app.controller("productCtrl",function ($http,$state,serviceHTTP,$stateParams){
                 vm.list = response.data.productList.list;
                 vm.totalItems = response.data.productList.total;
                 console.log(vm.list);
+                // 从URL获取参数
+                vm.productId = $stateParams.id || undefined;
+                vm.productName = $stateParams.productName || undefined;
+                vm.createBy = $stateParams.createBy || undefined;
+                vm.status = $stateParams.state || undefined;
+                vm.size = $stateParams.pageSize || 10;
+                vm.page = $stateParams.pageNum || undefined;
             }
             else {
 
@@ -103,15 +99,7 @@ app.controller("productCtrl",function ($http,$state,serviceHTTP,$stateParams){
         })
     };
 
-
-
-
-
-
-
-
     vm.stateChange = function(a,b){
-
         if(b == 0){
             vm.tip ="<p style='text-align: center'>是否要下架该产品？</p>"
         }else {

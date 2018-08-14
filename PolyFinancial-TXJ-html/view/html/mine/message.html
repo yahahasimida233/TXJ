@@ -3,16 +3,15 @@
         <span class="fa  fa-chevron-left" style="color: #dca854" ui-sref = "home.mine"></span>
         <div>消息中心</div>
     </div>
-
     <div id="minirefresh" class="minirefresh-wrap">
         <div class="minirefresh-scroll">
-            <div class="message-row">
-                <div class="message-row-flex">
-                    <span style="color: #c39d71;font-size: .17rem">投资成功</span>
-                    <span>2018-01-01</span>
+            <div class="message-row" ng-repeat ="x in vm.list" ui-sref ="home.messageDetail({id:x.id,articleType:x.articleType})">
+                <div class="message-row-flex up">
+                    <span style="color: #c39d71;font-size: .17rem">{{x.articleTitle}}</span>
+                    <span class="messageState" ng-class="{'newMessage' :x.articleState == 1 , 'oldMessage' : x.articleState == 0}">{{x.articleState | messageStateFilter}}</span>
                 </div>
                 <div class="message-row-flex down">
-                    <span>老板已经跑路了！快去打官司</span>
+                    <span>{{x.sendTime|date : 'yyyy-MM-dd hh:mm:ss'}}</span>
                     <span class="fa  fa-chevron-right" ></span>
                 </div>
             </div>

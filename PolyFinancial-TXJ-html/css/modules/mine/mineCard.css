@@ -21,21 +21,6 @@
 .black {
   color: black !important; }
 
-.bk-white {
-  background-color: #fff; }
-
-.titleWarp {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: .55rem;
-  line-height: .4rem;
-  padding: .2rem;
-  font-size: .2rem;
-  color: #d7a64c; }
-  .titleWarp .title {
-    padding-right: 0.2rem; }
-
 .card-list {
   display: flex;
   justify-content: center;

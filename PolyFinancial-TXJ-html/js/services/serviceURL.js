@@ -1,13 +1,13 @@
 angular.module("txj").factory("serviceURL", function() {
     return {
         // 登陆
-        loginURL:"/home/a/u/front/login/",
+        loginURL: "/home/a/u/front/login/",
 
         //找回密码
         getbackPURL:"/home/a/u/my/forget",
 
         //登出
-        logoutURL:"/admin/a/u/logout/",
+        logoutURL: "/admin/a/u/logout/",
 
         // 普通手机短信验证码发送
         getCodeURL: "/home/a/u/forget/sendcode/",
@@ -30,6 +30,9 @@ angular.module("txj").factory("serviceURL", function() {
         //获取用户个人信息
         userInfoURL: "/home/a/u/my/info/",
 
+        //获取用户个人信息还有未读消息条数
+        mineURL: "/home/a/u/my/",
+
         // 实名认证第一步，提交用户名身份证号码，还有银行卡号码
         realNameStep1URL: "/home/a/u/my/info/realname/",
 
@@ -46,17 +49,37 @@ angular.module("txj").factory("serviceURL", function() {
         //产品列表
         productListURL: "/home/a/u/productlist/",
 
-        // 产品详情
+        //产品详情
         productURL: "/home/a/u/productDetatil/",
         
         //个人信息
         personInfoURL: "/home/a/u/my/info/",
 
         //支付
-        payURL: "/admin/home/a/u/pay/",
+        payURL: "admin/home/a/u/pay/",
 
         // 我的页面-获取消息列表
-        messageURL:"/home/a/u/my/articles",
+        messageURL: "/home/a/u/my/articles",
+
+        // 我的页面-消息详情
+        messageDetailURL: "/home/a/u/my/articles/",
+
+
+        // 我的页面-获取理财已投资列表
+        payedURL: "/home/a/u/my/investeds/",
+
+        // 我的页面-续投功能
+        continuedInvestmentURL: "/home/a/u/my/continueds/",
+
+        // 我的页面-获取已续投列表
+        continueURL: "/home/a/u/my/continueds/",
+
+        // 我的页面-获取已退出列表
+        dropOutURL: "/admin//home/a/u/my/dropouts/",
+
+
+        // 我的页面-获取我的交易记录
+        tradeListURL: "/home/a/u/my/dealrecord",
 
         // 银行卡列表
         bankCardListURL: "/home/a/u/my/bankcards/",
@@ -65,10 +88,8 @@ angular.module("txj").factory("serviceURL", function() {
         // 设置-修改密码
         settingCPURL: "/home/a/u/my/setup/changepwd/",
 
-
         // 意见反馈接口
         feedBackURL: "/home/a/u/my/suggestion"
 
-        // 理财
     };
 });

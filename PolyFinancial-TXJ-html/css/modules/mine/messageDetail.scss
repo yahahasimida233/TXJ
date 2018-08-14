@@ -1,0 +1,49 @@
+//整体的样式
+.messageDetail{
+  .messageDetail-title{
+    margin-bottom: .1rem;
+    position: fixed;top: 0;
+    width: 100%;
+    text-align: center;
+    height: .4rem;
+    line-height: .4rem;
+    background-color: white;
+    color: #c39d71;
+    font-size: .2rem;
+    z-index: 1000;
+    .fa-chevron-left{
+      position: absolute;left: .2rem;top: .1rem;
+
+    }
+  }
+
+  .messageDetail-content{
+    margin-top: .45rem;
+    padding-bottom: .2rem;
+    background-color: white;
+    min-height: 80vh;
+    .title{
+      text-align: center;
+      padding: .1rem;
+      font-size: .18rem;
+      color: #daa955;
+      font-weight: bold;
+    }
+    .content-img{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: .2rem;
+      img{
+        max-width: 80%;
+      }
+    }
+    .content{
+      margin: .1rem;
+      padding: .2rem;
+      border: 2px solid #daa955;
+      border-radius: 5px;
+    }
+  }
+
+}

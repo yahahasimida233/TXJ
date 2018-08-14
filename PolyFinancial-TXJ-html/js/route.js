@@ -1,4 +1,4 @@
-var app = angular.module("txj", ["ngAnimate", "ui.router","ui.bootstrap","oc.lazyLoad"]);
+
 
 //懒加载
 app.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvider", "$ocLazyLoadProvider",
@@ -446,6 +446,25 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 查看具体此消息
+        .state('home.messageDetail',{
+            url:"/messageDetail?id&articleType",
+            templateUrl: 'view/html/mine/messageDetail.html',
+            controller: 'messageDetailCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/messageDetail.js",
+                            "./css/modules/mine/messageDetail.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 我的理财
         .state('home.mineTrade',{
             url:"/mineTrade",
@@ -503,6 +522,25 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 添加银行卡
+        .state('home.addCard', {
+            url: "/addCard",
+            templateUrl: 'view/html/mine/addCard.html',
+            controller: 'addCardCtrl',
+            controllerAs: 'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/addCardCtrl.js",
+                            "./css/modules/mine/addCard.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 解绑银行卡
         .state('home.unCard', {
             url: "/unCard?bankType",
@@ -521,7 +559,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
         
-        // 解绑银行卡
+        // 确认解绑银行卡
         .state('home.SureUnCard', {
             url: "/sureUnCard?bankType",
             templateUrl: 'view/html/mine/sureUnCard.html',

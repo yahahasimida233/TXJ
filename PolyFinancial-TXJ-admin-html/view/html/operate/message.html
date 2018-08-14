@@ -23,14 +23,6 @@
 
     </div>
     <div class="search-row">
-
-        <label class="tips" for="createBy">创建人</label>
-        <select id="createBy" class="form-control form-18" ng-model="vm.createBy"
-                ng-options="x as x for x in vm.createByList">
-            <option value="">--请选择--</option>
-        </select>
-
-
         <label class="tips" >发送时间</label>
         <div>
             <div class="flex">
@@ -39,17 +31,18 @@
                        uib-datepicker-popup="{{vm.startDate}}"
                        ng-model="vm.loanAtStart"
                        is-open="vm.popup.opened"
-                       ng-required="true"
                        close-text="关闭"
                        clear-text="清空"
                        current-text="今天"
                        alt-input-formats="vm.altInputFormats"
                        ng-click="vm.open()"
                        datepicker-options="{maxDate:vm.loanAtEnd}"
-                       placeholder="请输入起始日期"
-                       required="required">
+                       placeholder="请输入起始日期">
                 <input class="form-control date-input-min"
-                        type="time">
+                       id="timePicker1"
+                       name="1"
+                       ng-model ="vm.timePicker1"
+                       type="text">
             </div>
             <div class="flex">
                 <input type="text"
@@ -57,19 +50,29 @@
                        uib-datepicker-popup="{{vm.startDate}}"
                        ng-model="vm.loanAtEnd"
                        is-open="vm.popup.opened2"
-                       ng-required="true"
                        close-text="关闭"
                        clear-text="清空"
                        current-text="今天"
                        alt-input-formats="vm.altInputFormats"
                        ng-click="vm.open2()"
                        datepicker-options="{minDate:vm.loanAtStart,maxDate:vm.today}"
-                       placeholder="请输入截止日期"
-                       required="required">
+                       placeholder="请输入截止日期">
                 <input class="form-control date-input-min"
-                        type="time">
+                       id="timePicker2"
+                       ng-model ="vm.timePicker2"
+                       name="2"
+                       type="text">
             </div>
         </div>
+
+        <label class="tips" for="createBy">创建人</label>
+        <select id="createBy" class="form-control form-18" ng-model="vm.createBy"
+                ng-options="x as x for x in vm.createByList">
+            <option value="">--请选择--</option>
+        </select>
+
+
+
         <button class="btn btn-primary"
                 ng-click = "vm.search()"
         >查询</button>
@@ -123,10 +126,11 @@
         </tbody>
     </table>
 </div>
+<!-- 分页 -->
 <div class="table-foot">
     <div class="btn-list-size ">
         <span>每页显示</span>
-        <input type="text" class="form-control  small" ng-model="vm.size" ng-init="vm.size = 10 ">
+        <input type="text" class="form-control small" ng-model="vm.size" ng-bind="vm.size">
         <span>条</span>
     </div>
     <ul    class="apage "
@@ -138,7 +142,6 @@
            first-text="第一页"
            previous-text = "<"
            next-text = ">"
-           minMode = "minute"
            ng-click="vm.search()"
            rotate = "true"
            force-ellipses = "true"
@@ -148,7 +151,7 @@
     </ul>
     <div class="btn-list-page">
         <span>去第</span>
-        <input type="text" class="form-control small" ng-model="vm.newPage">
+        <input type="text" class="form-control small" ng-model="vm.page">
         <span>页</span>
         <button class="btn btn-default" ng-click="vm.search()" >确定</button>
     </div>

@@ -10,8 +10,8 @@ app.controller("accountCtrl", function ($scope, $state, $stateParams, serviceHTT
             role: $stateParams.role, //角色名
             account: $stateParams.username, //用户名
             createBy: $stateParams.creater, //创建人
-            goPage: $stateParams.goPage,
-            size: $stateParams.size
+            goPage: $stateParams.goPage || 1,
+            size: $stateParams.size || 10
         }
         console.log(data);
         // 从服务器拿到相应数据
@@ -29,8 +29,9 @@ app.controller("accountCtrl", function ($scope, $state, $stateParams, serviceHTT
                 vm.role = $stateParams.role, //角色名
                 vm.username = $stateParams.username, //用户名
                 vm.creater = $stateParams.creater, //创建人
-                vm.goPage = $stateParams.goPage,
-                vm.size = $stateParams.size
+                vm.totalItems = res.data.data.total //分页总条数                
+                vm.page = $stateParams.goPage || 1,
+                vm.size = $stateParams.size || 10
             }
             if (res.data.code == -5003) {
                 bootbox.alert({
@@ -47,7 +48,7 @@ app.controller("accountCtrl", function ($scope, $state, $stateParams, serviceHTT
                     role: vm.role, //角色名
                     username: vm.username, //用户名
                     creater: vm.creater, //创建人
-                    goPage: vm.goPage,
+                    goPage: vm.page,
                     size: vm.size
                     },
                     { reload: true }
@@ -63,7 +64,7 @@ app.controller("accountCtrl", function ($scope, $state, $stateParams, serviceHTT
             role: vm.role, //角色名
             username: vm.username, //用户名
             creater: vm.creater, //创建人
-            goPage: vm.goPage,
+            goPage: vm.page,
             size: vm.size
         },
         {reload: true})

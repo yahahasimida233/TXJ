@@ -1,0 +1,81 @@
+<!-- title -->
+<div class="titleWarp bk-white">
+    <div class="glyphicon glyphicon-chevron-left back" ui-sref="home.mineCard"></div>
+    <strong class="title">添加银行卡</strong>
+    <div>&emsp;</div>
+</div>
+<!-- tips -->
+<div class="mes-tips bk-white">
+    <span class="font-l6">
+        &emsp;&emsp;请绑定持卡人本人的银行卡（仅支持储蓄卡，绑卡数量上限为2张）。
+    </span>
+    <p></p>
+    <div class="showCard" ng-click="vm.showBank=true">查看支持银行</div>
+</div>
+<form name="addCard" class="bk-white addCard-warp">
+    <div class="introduce">
+        <strong>持卡人:</strong>&emsp;&emsp;{{vm.userName}}
+    </div>
+    <div class="introduce">
+        <strong>身份证:</strong>&emsp;&emsp;{{vm.IdCard | IdCard}}
+    </div>
+    <div class="introduce">
+        <strong>卡&emsp;号:</strong>&emsp;
+        <input type="number" placeholder="无需网银/免手续费（16~19位数字）" class="form-control"
+        name="card"
+        ng-model="card"
+        required
+        ng-pattern="/^\d{16,19}$/">
+    </div>
+    <!-- <div class="tips text-center" ng-show="vm.showTips">卡号格式错误，请重试！</div> -->
+    <!-- 下一步 -->
+    <div class="text-center next"> 
+        <button class="btn btn-primary" ng-click="vm.next(addCard.$invalid)">下一步</button>
+    </div>
+</form>
+
+<!-- 支持银行 -->
+<!-- title -->
+<div class="bk-white bank" ng-if="vm.showBank">
+    <div class="titleWarp">
+        <div class="glyphicon glyphicon-chevron-left back" ng-click="vm.showBank = !vm.showBank"></div>
+        <strong class="title">查看支持银行</strong>
+        <div>&emsp;</div>
+    </div>
+    <!-- top -->
+    <div class="text-center bank-warp">
+        <div class="bank-text">聚金融支持银行</div>
+        <div>由于聚金融支付及风控已委托给富友支付，因此聚金融支持银行与富友支付同步，详情如下：</div>
+    </div>
+    <!-- 银行列表 -->
+    <div style="padding: .2rem">
+        <table>
+            <tr>
+                <td>中国银行</td>
+                <td>工商银行</td>
+                <td>建设银行</td>
+            </tr>
+            <tr>
+                <td>农业银行</td>
+                <td>邮政银行</td>
+                <td>交通银行</td>
+            </tr>
+            <tr>
+                <td>招商银行</td>
+                <td>华夏银行</td>
+                <td>中信银行</td>
+            </tr>
+            <tr>
+                <td>民生银行</td>
+                <td>浦发银行</td>
+                <td>广发银行</td>
+            </tr>
+            <tr>
+                <td>平安银行</td>
+                <td>兴业银行</td>
+                <td>光大银行</td>
+            </tr>
+        </table>
+
+    </div>
+</div>

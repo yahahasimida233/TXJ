@@ -1,7 +1,9 @@
+//整体的样式
 .message{
   .message-title{
     margin-bottom: .1rem;
-    position: relative;
+    position: fixed;top: 0;
+    width: 100%;
     text-align: center;
     height: .4rem;
     line-height: .4rem;
@@ -14,16 +16,17 @@
 
     }
   }
-
+  .message-content{
+    padding-top: .45rem;
+  }
   .minirefresh-wrap{
     margin-top: .4rem;
-    background-color: white;
   }
 
 }
 
 
-
+//每条消息的样式
 .message-row{
   margin: .05rem 0;
   background-color: white;
@@ -37,9 +40,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+  }
+  .up{
     border-top: #eee solid 1px;
+    .messageState{
+      padding: .035rem;
+      text-align: center;
+      border-radius: .05rem;
+      border: 2px solid;
+
+    }
   }
   .down{
     height: .6rem;
+    border-bottom: #eee solid 1px;
   }
+}
+
+//已读样式
+.newMessage{
+  color: #daa955;
+  border: #daa955;
+
+}
+
+//未读样式
+.oldMessage{
+  color: #999;
+  border: #999;
 }
