@@ -7,19 +7,12 @@ app.controller("messageCtrl",function ($http,$state,serviceHTTP,$stateParams) {
     vm.createBy = $stateParams.createBy || undefined;
     vm.minTime = $stateParams.minTime || undefined;
     vm.maxTime = $stateParams.maxTime || undefined;
-    vm.loanAtStart = $stateParams.loanAtStart || undefined;
+    vm.loanAtStart = new Date(Number( $stateParams.loanAtStart ))|| undefined;
+    vm.loanAtEnd = new Date(Number( $stateParams.loanAtEnd ))|| undefined;
     vm.startHour = $stateParams.startHour || undefined;
     vm.endHour = $stateParams.endHour || undefined;
     vm.timePicker1 = $stateParams.timePicker1 || undefined;
     vm.timePicker2 = $stateParams.timePicker2 || undefined;
-    vm.size = $stateParams.pageSize || 10;
-    vm.page = $stateParams.pageNum || undefined;
-
-
-
-
-
-
 
 
     // $("#timePicker1").hunterTimePicker();
@@ -64,8 +57,8 @@ app.controller("messageCtrl",function ($http,$state,serviceHTTP,$stateParams) {
             createBy: vm.createBy,
             minTime:vm.minTime,
             maxTime:vm.maxTime,
-            size: vm.size,
-            page: vm.page
+            size: $stateParams.size || 10,
+            page: $stateParams.page || undefined
         };
         serviceHTTP.messageHTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
@@ -75,6 +68,8 @@ app.controller("messageCtrl",function ($http,$state,serviceHTTP,$stateParams) {
                 vm.createByList = response.data.data.createByList;
                 vm.totalItems = response.data.data.total;
                 console.log(vm.list);
+                vm.size = $stateParams.size || 10;
+                vm.page = $stateParams.page || undefined;
             }
             else {
                 bootbox.alert(response.data.message)
@@ -112,15 +107,19 @@ app.controller("messageCtrl",function ($http,$state,serviceHTTP,$stateParams) {
         // 清空起始时间
         vm.loanAtStart = undefined;
         vm.startHour = undefined;
+        $('#timePicker1').val(undefined);
 
         // 清空截止时间
         vm.loanAtEnd = undefined;
         vm.endHour = undefined;
+        $('#timePicker2').val(undefined);
+
 
         vm.size = 10;
         vm.page = 1;
-        vm.getList();
+        vm.search();
     };
+
 
 
 
@@ -216,8 +215,8 @@ app.controller("messageCtrl",function ($http,$state,serviceHTTP,$stateParams) {
             loanAtStart: vm.loanAtStart,
             startHour: vm.startHour,
             endHour : vm.endHour,
-            timePicker2:vm.timePicker2,
-            timePicker1:vm.timePicker1,
+            timePicker2:$('#timePicker2').val(),
+            timePicker1:$('#timePicker1').val(),
             size: vm.size,
             page: vm.page
         })

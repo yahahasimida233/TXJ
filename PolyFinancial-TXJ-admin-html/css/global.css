@@ -111,6 +111,9 @@ td {
   margin: .1rem 0;
   width: 1rem !important; }
 
+.btn {
+  padding: 0.05rem !important; }
+
 .flex {
   display: flex; }
 

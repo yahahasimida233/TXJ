@@ -60,5 +60,12 @@
     border: none;
     border-top: 1px solid #eeeeee;
     border-bottom: 1px solid #eee; }
+  .login-input .eye-btn {
+    position: absolute;
+    top: .15rem;
+    right: .15rem;
+    color: #daa955;
+    width: .2rem;
+    font-size: .2rem; }
 
 /*# sourceMappingURL=login.css.map */

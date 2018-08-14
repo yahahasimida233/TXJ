@@ -18,9 +18,22 @@
     line-height: .4rem;
     text-align: center; }
   .mine-title .glyphicon-comment {
+    position: relative;
     height: .4rem;
     line-height: .4rem;
     text-align: center; }
+    .mine-title .glyphicon-comment .news {
+      position: absolute;
+      top: 0;
+      right: -.1rem;
+      width: .2rem;
+      height: .2rem;
+      border-radius: 50%;
+      color: white;
+      background-color: red;
+      text-align: center;
+      line-height: .2rem;
+      font-size: .17rem; }
 
 .mine-login-btn {
   display: flex;

@@ -76,16 +76,16 @@
         <div class="messageEdit-title">推送设置</div>
 
         <div class="messageEdit-row">
-            <span>*推送时间</span>
+            <span >*推送时间</span>
             <label class="select">
-                <input type="radio" ng-click = "vm.dateChoice = false" id="rightNow" name="setTime" checked>
+                <input type="radio" ng-click = "vm.dateChoice = false" id="rightNow" ng-value="0" ng-model="vm.setTime" name="setTime" checked>
                 <label for="rightNow"  >马上推送</label>
             </label>
             <label class="select">
-                <input type="radio" ng-click = "vm.dateChoice = true" name="setTime" id="setTime" />
+                <input type="radio"  name="setTime" ng-value="1" ng-model="vm.setTime" id="setTime" />
                 <label for="setTime" >定时推送</label>
             </label>
-            <div class="flex dateInput" ng-show ="vm.dateChoice">
+            <div class="flex dateInput" ng-show ="vm.setTime == 1">
                 <input type="text"
                        class="form-control date-input"
                        uib-datepicker-popup="{{vm.startDate}}"
@@ -107,7 +107,7 @@
         </div>
         <div class="debtEditContent-row">
             <span>*推送对象</span>
-            <label>
+            <label class="select">
                 <input type="radio" id="all" name="all" checked>
                 <label for="all" >所有人</label>
             </label>

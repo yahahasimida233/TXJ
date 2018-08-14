@@ -12,8 +12,8 @@
             <button class="btn btn-default" ng-click = "vm.allOpen()">更换</button>
         </div>
 
-        <div>银行卡1：{{vm.card1}}</div>
-        <div>银行卡2：{{vm.card2}}</div>
+        <div>银行卡1：{{vm.card1| card}}</div>
+        <div>银行卡2：{{vm.card2 | card}}</div>
         <div>真实姓名：{{vm.list.actualName}}</div>
         <div>身份证号码：{{vm.list.cardID}}</div>
         <div>注册时间：{{vm.list.registrationTime  |date : 'yyyy-MM-dd hh:mm:ss'}}</div>

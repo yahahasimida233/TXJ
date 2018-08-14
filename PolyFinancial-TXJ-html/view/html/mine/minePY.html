@@ -4,15 +4,15 @@
         <div>我的交易记录</div>
     </div>
 
-    <div class="minePY-list">
+    <div class="minePY-list" ng-repeat="x in vm.list">
         <div class="top">
-            <span>付款-新手礼</span>
+            <span>{{x.productName}}</span>
         </div>
         <div class="content">
-            <span>998998</span>
+            <span>{{x.dealAmount}}</span>
         </div>
         <div class="bottom">
-            <span>2018-09-01 00:00:00</span><span>成功</span>
+            <span>{{x.dealTime|date : 'yyyy-MM-dd hh:mm:ss'}}</span><span>{{x.dealState | tradeFilter}}</span>
         </div>
     </div>
 </div>

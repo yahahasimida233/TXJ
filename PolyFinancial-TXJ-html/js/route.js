@@ -446,6 +446,25 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // 查看具体此消息
+        .state('home.messageDetail',{
+            url:"/messageDetail?id&articleType",
+            templateUrl: 'view/html/mine/messageDetail.html',
+            controller: 'messageDetailCtrl',
+            controllerAs:'vm',
+            resolve: {
+                loadMyFile: [
+                    "$ocLazyLoad",
+                    function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            "./js/ctrl/mine/messageDetail.js",
+                            "./css/modules/mine/messageDetail.css"
+                        ]);
+                    }
+                ]
+            }
+        })
+
         // 我的理财
         .state('home.mineTrade',{
             url:"/mineTrade",

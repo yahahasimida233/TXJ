@@ -31,7 +31,6 @@
                        uib-datepicker-popup="{{vm.startDate}}"
                        ng-model="vm.loanAtStart"
                        is-open="vm.popup.opened"
-                       ng-required="true"
                        close-text="关闭"
                        clear-text="清空"
                        current-text="今天"
@@ -51,7 +50,6 @@
                        uib-datepicker-popup="{{vm.startDate}}"
                        ng-model="vm.loanAtEnd"
                        is-open="vm.popup.opened2"
-                       ng-required="true"
                        close-text="关闭"
                        clear-text="清空"
                        current-text="今天"
@@ -128,10 +126,11 @@
         </tbody>
     </table>
 </div>
+<!-- 分页 -->
 <div class="table-foot">
     <div class="btn-list-size ">
         <span>每页显示</span>
-        <input type="text" class="form-control  small" ng-model="vm.size" ng-init="vm.size = 10 ">
+        <input type="text" class="form-control small" ng-model="vm.size" ng-bind="vm.size">
         <span>条</span>
     </div>
     <ul    class="apage "
@@ -143,7 +142,6 @@
            first-text="第一页"
            previous-text = "<"
            next-text = ">"
-           minMode = "minute"
            ng-click="vm.search()"
            rotate = "true"
            force-ellipses = "true"
@@ -153,7 +151,7 @@
     </ul>
     <div class="btn-list-page">
         <span>去第</span>
-        <input type="text" class="form-control small" ng-model="vm.newPage">
+        <input type="text" class="form-control small" ng-model="vm.page">
         <span>页</span>
         <button class="btn btn-default" ng-click="vm.search()" >确定</button>
     </div>

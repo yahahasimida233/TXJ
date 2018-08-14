@@ -1,21 +1,13 @@
 app.controller("debtCtrl",function ($http,$state,serviceHTTP,$stateParams){
     var vm = this;
-
-    // 从URL获取参数
-    vm.debtId = $stateParams.id || undefined;
-    vm.companyName = $stateParams.actualName || undefined;
-    vm.obligor = $stateParams.phoneNum || undefined;
-    vm.status = $stateParams.state || undefined;
-    vm.size = $stateParams.size || 10;
-    vm.page = $stateParams.page || undefined;
-
+    
     vm.getList = function(){
         let info = {
-            id: vm.debtId,
-            enterpriseName:vm.companyName,
-            creditor:vm.obligor ,
-            state:vm.status ,
-            size: vm.size,
+            id: $stateParams.id || undefined,
+            enterpriseName:$stateParams.actualName || undefined,
+            creditor:$stateParams.phoneNum || undefined ,
+            state:$stateParams.state || undefined ,
+            size: $stateParams.size || 10,
             page: vm.page
         };
         console.log("info:",info);
@@ -26,6 +18,13 @@ app.controller("debtCtrl",function ($http,$state,serviceHTTP,$stateParams){
                 vm.list = response.data.data;
                 vm.totalItems = response.data.total;
                 console.log(vm.list);
+                // 从URL获取参数
+                vm.debtId = $stateParams.id || undefined;
+                vm.companyName = $stateParams.actualName || undefined;
+                vm.obligor = $stateParams.phoneNum || undefined;
+                vm.status = $stateParams.state || undefined;
+                vm.size = $stateParams.size || 10;
+                vm.page = $stateParams.page || undefined;
             }
             else {
 

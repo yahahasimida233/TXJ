@@ -17,7 +17,8 @@
   background-color: white; }
   .minePY .minePY-list .top {
     padding: .1rem 0;
-    font-size: .18rem; }
+    font-size: .18rem;
+    color: #daa955; }
   .minePY .minePY-list .content {
     padding: .1rem 0;
     border-bottom: 1px solid #eee;
