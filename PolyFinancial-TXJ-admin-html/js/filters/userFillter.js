@@ -28,11 +28,38 @@ app.filter('statusFilter',function(){
 app.filter('userTradeType',function(){
     return function (a){
         switch (a){
-            case "0":
+            case 0:
                 a = "付款";
                 break;
-            case "1":
-                a = "回款";
+            case 1:
+                a = "本金回款";
+                break;
+            case 2:
+                a = "利息回款";
+                break;
+
+        }
+        return a;
+    }
+});
+
+// 银行卡号过滤 *+显示最后4位（默认银行卡号为19位）
+app.filter("card", function () {
+    return function (data) {
+        var b = data.slice(15);
+        var showNum = "**** **** **** *** " + b;
+        return showNum;
+    }
+});
+
+app.filter('userTradeState',function(){
+    return function (a){
+        switch (a){
+            case 0:
+                a = "未付款";
+                break;
+            case 1:
+                a = "付款成功";
                 break;
 
         }

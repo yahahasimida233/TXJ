@@ -112,21 +112,22 @@ angular.module("txj")
             },
 
             //获取用户的交易记录列表
-            userTradeHTTP: function (id) {
+            userTradeHTTP: function (info) {
                 return $http({
                     method: "get",
-                    url: serviceURL.userTradeURL+id,
-                    params: id,
+                    url: serviceURL.userTradeURL+info.id,
+                    params: info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
             },
 
             //获取用户的合同列表
-            userContractListHTTP: function (id) {
+            userContractListHTTP: function (info) {
                 return $http({
                     method: "get",
-                    url: serviceURL.userContractListURL+id,
+                    url: serviceURL.userContractListURL+info.id,
+                    params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
@@ -507,7 +508,7 @@ angular.module("txj")
         messageEditHTTP: function (info) {
             return $http({
                 method: "put",
-                url: serviceURL.messageEditURL,
+                url: serviceURL.messageEditURL+info.id,
                 params:info,
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"

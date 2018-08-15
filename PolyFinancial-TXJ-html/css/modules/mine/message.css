@@ -17,8 +17,7 @@
 .message .message-content {
   padding-top: .45rem; }
 .message .minirefresh-wrap {
-  margin-top: .4rem;
-  background-color: white; }
+  margin-top: .4rem; }
 
 .message-row {
   margin: .05rem 0;
@@ -32,9 +31,24 @@
     height: .4rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; }
+  .message-row .up {
     border-top: #eee solid 1px; }
+    .message-row .up .messageState {
+      padding: .035rem;
+      text-align: center;
+      border-radius: .05rem;
+      border: 2px solid; }
   .message-row .down {
-    height: .6rem; }
+    height: .6rem;
+    border-bottom: #eee solid 1px; }
+
+.newMessage {
+  color: #daa955;
+  border: #daa955; }
+
+.oldMessage {
+  color: #999;
+  border: #999; }
 
 /*# sourceMappingURL=message.css.map */

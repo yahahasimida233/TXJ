@@ -21,22 +21,22 @@
                 <td>{{x.actualName}}</td>
                 <td>{{x.phoneNum}}</td>
                 <td>{{x.productName}}</td>
-                <td>{{x.investmentMoney}}</td>
-                <td>{{x.transactionTime}}</td>
-                <td>{{x.transactionType | userTradeType}}</td>
-                <td>{{x.state | userState}}</td>
+                <td>{{x.investmentAmount}}</td>
+                <td>{{x.transactionTime|date : 'yyyy-MM-dd hh:mm:ss'}}</td>
+                <td>{{x.dealType | userTradeType}}</td>
+                <td>{{x.state | userTradeState}}</td>
                 <td>
-                    <div>{{x.bankType}}</div>
-                    <div>{{x.bankCard}}</div>
+                    <div>{{x.transactionType.slice(0,4)}}</div>
+                    <div>{{x.transactionType.slice(4)}}</div>
                 </td>
-
             </tr>
         </table>
     </div>
+    <!-- 分页 -->
     <div class="table-foot">
-        <div>
+        <div class="btn-list-size ">
             <span>每页显示</span>
-            <input type="text" class="form-control  small" ng-model="vm.size" ng-init="vm.size = 10 ">
+            <input type="text" class="form-control small" ng-model="vm.size" ng-bind="vm.size">
             <span>条</span>
         </div>
         <ul    class="apage "
@@ -57,7 +57,7 @@
         </ul>
         <div class="btn-list-page">
             <span>去第</span>
-            <input type="text" class="form-control small" ng-model="vm.newPage">
+            <input type="text" class="form-control small" ng-model="vm.page">
             <span>页</span>
             <button class="btn btn-default" ng-click="vm.search()" >确定</button>
         </div>

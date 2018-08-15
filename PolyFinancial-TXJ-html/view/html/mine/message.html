@@ -1,15 +1,14 @@
-<div class="message" >
+<div class="message">
     <div class="message-title">
         <span class="fa  fa-chevron-left" style="color: #dca854" ui-sref = "home.mine"></span>
         <div>消息中心</div>
     </div>
-    <div class="iscroll-wrapper message-content"
-         iscroll="{mouseWheel: true, momentum: true, refreshInterval: 500}">
-        <div  class="iscroll-scroller">
-            <div class="message-row" ng-repeat ="x in vm.list">
-                <div class="message-row-flex">
+    <div id="minirefresh" class="minirefresh-wrap">
+        <div class="minirefresh-scroll">
+            <div class="message-row" ng-repeat ="x in vm.list" ui-sref ="home.messageDetail({id:x.id,articleType:x.articleType})">
+                <div class="message-row-flex up">
                     <span style="color: #c39d71;font-size: .17rem">{{x.articleTitle}}</span>
-                    <span>{{x.articleState}}</span>
+                    <span class="messageState" ng-class="{'newMessage' :x.articleState == 1 , 'oldMessage' : x.articleState == 0}">{{x.articleState | messageStateFilter}}</span>
                 </div>
                 <div class="message-row-flex down">
                     <span>{{x.sendTime|date : 'yyyy-MM-dd hh:mm:ss'}}</span>
@@ -17,9 +16,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 
 
 </div>

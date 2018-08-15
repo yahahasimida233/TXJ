@@ -75,7 +75,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 用户管理交易记录查看
         .state('backStage.userTrade',{
-            url:"/userTrade?id",
+            url:"/userTrade?id&page&size",
             templateUrl: 'view/html/business/userTrade.html',
             controller: 'userTradeCtrl',
             controllerAs:'vm',
@@ -95,7 +95,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 用户管理投资合同列表查看
         .state('backStage.userContract',{
-            url:"/userContract?id",
+            url:"/userContract?id&page&size",
             templateUrl: 'view/html/business/userContract.html',
             controller: 'userContractCtrl',
             controllerAs:'vm',

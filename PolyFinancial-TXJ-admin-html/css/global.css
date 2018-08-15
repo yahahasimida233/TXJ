@@ -148,6 +148,9 @@ td {
   width: 1rem !important;
 }
 
+.btn {
+  padding: 0.05rem !important; }
+
 .flex {
   display: flex;
 }

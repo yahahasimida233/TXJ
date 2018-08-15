@@ -1,23 +1,15 @@
 app.controller("userCtrl",function ($scope,$http,$state,$stateParams,serviceHTTP) {
     let vm = this;
 
-    // 从URL获取参数
-    vm.userId = $stateParams.id || undefined;
-    vm.userName = $stateParams.actualName || undefined;
-    vm.phone = $stateParams.phoneNum || undefined;
-    vm.status = $stateParams.state || undefined;
-    vm.size = $stateParams.size || 10;
-    vm.page = $stateParams.page || undefined;
-
 
     vm.getList = function(){
         let info = {
-            id: vm.userId,
-            actualName:vm.userName,
-            phoneNum:vm.phone ,
-            state:vm.status ,
-            size: vm.size,
-            page: vm.page
+            id: $stateParams.id || undefined,
+            actualName:$stateParams.actualName || undefined,
+            phoneNum:$stateParams.phoneNum || undefined ,
+            state:$stateParams.state || undefined ,
+            size: $stateParams.size || 10,
+            page: $stateParams.page || undefined
         };
         console.log("info:",info);
         serviceHTTP.userListHTTP(info).then(function successCallback(response) {
@@ -27,6 +19,13 @@ app.controller("userCtrl",function ($scope,$http,$state,$stateParams,serviceHTTP
                 vm.list = response.data.data;
                 vm.totalItems = response.data.total;
                 console.log(vm.list);
+                // 从URL获取参数
+                vm.userId = $stateParams.id || undefined;
+                vm.userName = $stateParams.actualName || undefined;
+                vm.phone = $stateParams.phoneNum || undefined;
+                vm.status = $stateParams.state || undefined;
+                vm.size = $stateParams.size || 10;
+                vm.page = $stateParams.page || undefined;
             }
             else {
                 console.log(response.data.message);
@@ -38,8 +37,6 @@ app.controller("userCtrl",function ($scope,$http,$state,$stateParams,serviceHTTP
     };
     vm.getList();
 
-    // 目前分页数据假数据没有提供，先写一下，正式接口中再做修改
-    // vm.totalItems = 2;
 
     // 清除按钮
     vm.reset = function(){

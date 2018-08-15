@@ -1,6 +1,37 @@
 app.controller("messageEditCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams) {
     var vm = this;
-    let id = $stateParams.id;
+    vm.id = $stateParams.id;
+    if(vm.id == 0){
+        vm.messageTitle = "消息新增"
+
+    }else{
+        vm.messageTitle= "消息编辑";
+        serviceHTTP.messageDetailedHTTP(vm.id).then(function successCallback(response) {
+            // 请求成功执行代码
+            console.log(response);
+            if(response.data.code == "0") {
+                vm.list = response.data.data;
+                vm.articleTitle = vm.list.articleTitle;
+                vm.introduction = vm.list.articleContent;
+                vm.imgSrc = vm.list.articlePicture;
+                vm.success = 'success';
+                vm.onload = true;
+                vm.setTime = (vm.list.sendTime == 0)?0:1;
+                if(vm.setTime == 1){
+                    vm.date = new Date(Number( vm.list.sendTime));
+                    console.log((vm.date+"").slice(-25,-21));
+                    $('#timePicker').val((vm.date+"").slice(-25,-21));
+                }
+            }
+            else {
+
+            }
+        }, function errorCallback(res) {
+            // 请求失败执行代码
+        });
+
+    }
+
 
     // 下面是日历插件的配置
     vm.startDate = "yyyy/MM/dd";
@@ -79,18 +110,36 @@ app.controller("messageEditCtrl",function ($scope,$http,$state,serviceHTTP,$stat
     // 保存按钮
     vm.change = function(){
         var info = {};
-        info.title = vm.pictureName;
-        info.carouselTime = vm.carouselTime;
-        info.productUrl = vm.url ;
-        info.pictureUrl = vm.imgSrc ;
+        info.articleTitle = vm.articleTitle;
+        info.articleContent = vm.introduction;
+        info.articlePicture = vm.imgSrc;
+        info.sendTarget = 0;
+        if(vm.setTime == 0){
+            info.sendTime = 0
+        }else if(!vm.setTime){
+            bootbox.alert("您好，请选择消息推送的方式再提交。");
+            return false;
+        }else{
 
-        if(id == 0){
-            serviceHTTP.bannerNewHTTP(info).then(function successCallback(response) {
+            vm.startHour = Date.parse(new Date("1970-01-01 "+ $('#timePicker').val()));
+            console.log(vm.startHour);
+            if(!vm.date || !vm.startHour ){
+                bootbox.alert("您好，请选择推送消息的时间再推送消息");
+                return false;
+            }else{
+                info.setTime= Date.parse(vm.date)+ vm.startHour
+            }
+        }
+
+
+        if(vm.id == 0){
+            console.log(info);
+            serviceHTTP.messageNewHTTP(info).then(function successCallback(response) {
                 // 请求成功执行代码
                 console.log(response);
-                if(response.data.message === "success") {
+                if(response.data.code == 0) {
                     bootbox.alert("新增成功！");
-                    $state.go('backStage.banner');
+                    $state.go('backStage.article');
                 }
                 else {
 
@@ -100,14 +149,14 @@ app.controller("messageEditCtrl",function ($scope,$http,$state,serviceHTTP,$stat
             });
 
         }else{
-            info.pictureId= id;
+            info.id= vm.id;
             console.log(info);
-            serviceHTTP.bannerEditHTTP(info).then(function successCallback(response) {
+            serviceHTTP.messageEditHTTP(info).then(function successCallback(response) {
                 // 请求成功执行代码
                 console.log(response);
-                if(response.data.message === "success") {
+                if(response.data.code == 0) {
                     bootbox.alert("修改成功!");
-                    $state.go('backStage.banner');
+                    $state.go('backStage.article');
                 }
                 else {
 

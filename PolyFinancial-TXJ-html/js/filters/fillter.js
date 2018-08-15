@@ -36,6 +36,7 @@ app.filter("username", function () {
         return showName;
     }
 });
+
 // 身份证号隐藏中间8位
 app.filter("IdCard", function () {
     return function (IdCard) {
@@ -43,6 +44,15 @@ app.filter("IdCard", function () {
         return showIdCard;
     }
 });
+
+// 手机号隐藏中间4位（挤一挤）
+app.filter("phoneNum", function () {
+    return function (IdCard) {
+        var showIdCard = IdCard.slice(0, 3) + "*****" + IdCard.slice(6);
+        return showIdCard;
+    }
+});
+
 // 银行卡号过滤 *+显示最后4位（默认银行卡号为19位）
 app.filter("card", function () {
     return function (data) {
@@ -51,13 +61,14 @@ app.filter("card", function () {
         return showNum;
     }
 });
+
 // 银行卡过滤，只返回最后四位数字（默认银行卡号为19位）
 app.filter("cardNum",function () {
     return function (data) {
         var num = data.slice(15);
         return num;
     }
-})
+});
 //银行卡logo
 app.filter("showImg",function () {
     return function (data) {
@@ -124,6 +135,38 @@ app.filter('userInfoFilter',function(){
                 break;
             case 1:
                 a = "未实名";
+                break;
+
+        }
+        return a;
+    }
+});
+
+// 我的页面-交易记录-交易状态过滤器
+app.filter('tradeFilter',function(){
+    return function (a){
+        switch (a){
+            case 0:
+                a = "成功";
+                break;
+            case 1:
+                a = "失败";
+                break;
+
+        }
+        return a;
+    }
+});
+
+// 消息列表消息状态
+app.filter('messageStateFilter',function(){
+    return function (a){
+        switch (a){
+            case 0:
+                a = "已读";
+                break;
+            case 1:
+                a = "未读";
                 break;
 
         }

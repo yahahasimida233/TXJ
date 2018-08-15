@@ -1,16 +1,19 @@
 <div class="mine-top" >
     <div class="mine-title" >
         <div class="glyphicon glyphicon-cog" ui-sref="home.setting"></div>
-        <div class="glyphicon glyphicon-comment" ui-sref="home.message"></div>
+        <div class="glyphicon glyphicon-comment" ui-sref="home.message">
+            <span ng-if ="vm.list.unreadMessages >= 1" class="news">{{vm.list.unreadMessages}}</span>
+        </div>
+
     </div>
-    <div ng-show = "vm.loginOrNot" class="mine-userInfo" ui-sref = "home.userInfo">
+    <div ng-if = "vm.loginOrNot" class="mine-userInfo" ui-sref = "home.userInfo">
         <div class="left">
             <!-- <img src="img/photo_03.jpg" class="img-circle" alt=""> -->
             <img src="img/lucky.gif" class="img-circle" alt="天行健吉祥物">
         </div>
         <div class="right">
-            <div ng-show = "vm.list.realnameState == 0">你的名字：{{vm.list.userName}}</div>
-            <div>你的用户名：{{vm.list.phoneNum}}</div>
+            <div ng-if = "vm.list.realnameState == 0">你的名字：{{vm.list.userName}}</div>
+            <div>{{vm.list.phoneNum | phoneNum}}</div>
         </div>
     </div>
     <div class="mine-login-btn" ng-show = "!vm.loginOrNot">
@@ -20,7 +23,7 @@
 <div class="mine-content" >
     <div class="mine-blank"></div>
     <button class="btn mine-content-row" ui-sref = "home.mineTrade">
-        <span class="fa fa-calculator"></span><span>我的理财</span><span class="fa fa-chevron-right"></span>
+        <span class="fa fa-calculator"></span><span>我的理财</span><span style="color: #dca854;margin-left: .4rem">{{vm.list.userAssets}}</span><span class="fa fa-chevron-right"></span>
     </button>
     <button class="btn mine-content-row" ui-sref = "home.minePY">
         <span class="fa  fa-list-alt"></span><span>交易记录</span><span class="fa fa-chevron-right"></span>
