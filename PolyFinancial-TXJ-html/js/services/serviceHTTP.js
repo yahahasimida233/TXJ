@@ -222,11 +222,11 @@ angular.module("txj")
             },
 
             // 支付
-            payHTTP: function (data) { //获取产品详情
+            payHTTP: function (data) { 
                 return $http({
                     method: "POST",
                     url: serviceURL.payURL,
-                    data: data,
+                    params: data,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
