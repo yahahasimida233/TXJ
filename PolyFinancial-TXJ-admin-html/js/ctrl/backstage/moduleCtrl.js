@@ -10,8 +10,8 @@ app.controller("moduleCtrl", function ($state, $stateParams, serviceHTTP) {
             moduleName: $stateParams.moduleName, //模块名
             parentModuleId: $stateParams.parentModuleId, //父模块
             createBy: $stateParams.creater, //创建人
-            goPage: $stateParams.goPage,
-            size: $stateParams.size
+            goPage: $stateParams.goPage || 1,
+            size: $stateParams.size || 10
         }
         console.log(data);
         // 从服务器拿到相应数据
@@ -23,8 +23,9 @@ app.controller("moduleCtrl", function ($state, $stateParams, serviceHTTP) {
             vm.moduleName = $stateParams.moduleName, //模块名
             vm.parentModuleId = $stateParams.parentModuleId  , //父模块
             vm.creater = $stateParams.creater, //创建人
-            vm.goPage = $stateParams.goPage,
-            vm.size = $stateParams.size
+            vm.totalItems = res.data.total //分页总条数                
+            vm.page = $stateParams.goPage || 1,
+            vm.size = $stateParams.size || 10
             if (res.data.code == -5003) {
                 bootbox.alert({
                     title: "<strong>提示信息</strong>",
@@ -40,7 +41,7 @@ app.controller("moduleCtrl", function ($state, $stateParams, serviceHTTP) {
                     moduleName: '', //模块名
                     parentModuleId: '', //父模块
                     creater: '', //创建人
-                    goPage: vm.goPage,
+                    goPage: vm.page,
                     size: vm.size
                 }, 
                 {reload: true});
@@ -54,7 +55,7 @@ app.controller("moduleCtrl", function ($state, $stateParams, serviceHTTP) {
             moduleName: vm.moduleName, //模块名
             parentModuleId: vm.parentModuleId, //父模块
             creater: vm.creater, //创建人
-            goPage: vm.goPage,
+            goPage: vm.page,
             size: vm.size
         },
         {reload: true})

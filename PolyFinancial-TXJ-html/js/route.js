@@ -248,7 +248,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 实名页步骤2
         .state('home.RNStep2',{
-            url:"/RNStep2",
+            url: "/RNStep2?bankType",
             templateUrl: 'view/html/mine/RNStep2.html',
             controller: 'RNStep2Ctrl',
             controllerAs:'vm',
