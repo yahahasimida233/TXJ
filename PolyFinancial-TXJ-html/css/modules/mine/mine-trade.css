@@ -45,11 +45,16 @@
     border-top: 1px solid #eee; }
     .mineTrade .mineTrade-list .content .content-row {
       flex-basis: 33.333%; }
-  .mineTrade .mineTrade-list .bottom {
+  .mineTrade .mineTrade-list .trade-bottom {
     padding: .1rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center; }
+.mineTrade .minirefresh-wrap {
+  margin-top: .8rem;
+  background-color: #eee; }
+.mineTrade .minirefresh-scroll {
+  background-color: #eee; }
 
 .mTS {
   border-bottom: #daa955 2px solid;

@@ -1,6 +1,10 @@
 app.controller("RNStep2Ctrl",function ($scope,$http,$state,serviceHTTP,$stateParams,$timeout) {
     var vm = this;
 
+    vm.back = function(){
+        window.history.back(-1);
+    };
+
     vm.step = sessionStorage.getItem("step");
     vm.title = (vm.step == "addCard")? "添加银行卡":"实名认证";
     vm.step2Click = function(){

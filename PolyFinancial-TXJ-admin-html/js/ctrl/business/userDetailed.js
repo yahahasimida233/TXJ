@@ -8,6 +8,9 @@ app.controller("userDetailedCtrl",function ($http,$state,serviceHTTP,$stateParam
         if(response.data.message === "success") {
             vm.list = response.data.data;
             console.log(vm.list);
+            if(!vm.list.cardInfo){
+                vm.card1 = vm.card2 ="没有绑定银行卡呢";
+            }
             vm.card1 = (vm.list.cardInfo[0])?vm.list.cardInfo[0].bankCard:"没有绑定银行卡呢";
             vm.card2 = (vm.list.cardInfo[1])?vm.list.cardInfo[1].bankCard:"没有绑定银行卡呢";
         }

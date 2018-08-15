@@ -2,9 +2,9 @@
     <div class="home-title" >
         <div class="home-blank"></div>
         <div>首页</div>
-        <div class="glyphicon glyphicon-cog" ui-sref="home.setting"></div>
+        <div class="glyphicon glyphicon-cog"  ui-sref="home.setting"></div>
     </div>
-    <div id="myCarousel" class="carousel slide"  data-interval="2000">
+    <div id="myCarousel" class="carousel slide"  data-ride="carousel"  data-interval="4000">
         <!-- 轮播（Carousel）指标 -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -47,7 +47,7 @@
     </div>
     <div style="height: .2rem;background-color: #eee "></div>
     <div class="home-recommend">
-        新手体验计划
+        {{vm.list.title}}
         <span class="home-new"></span>
         <span class="home-hot"></span>
     </div>
@@ -57,7 +57,7 @@
                 height="200px"></canvas>
         <div class="canvas-content">
             <div>预期年化</div>
-            <div class="canvas-content-leek">999.99%</div>
+            <div class="canvas-content-leek">12.00%</div>
             <div class="canvas-content-bottom">
                 <div  >
                     <div>起购</div>

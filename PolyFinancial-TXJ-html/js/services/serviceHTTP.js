@@ -112,6 +112,17 @@ angular.module("txj")
                 })
             },
 
+            // 获取首页信息
+            indexHTTP: function () {
+                return $http({
+                    method: "GET",
+                    url: serviceURL.indexURL,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+            },
+
 
             // 获取用户个人消息还有未读消息
             mineHTTP: function () {  //获取产品列表

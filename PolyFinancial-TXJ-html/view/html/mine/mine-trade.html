@@ -1,6 +1,6 @@
 <div class="mineTrade">
     <div class="mineTrade-title">
-        <span class="fa  fa-chevron-left" style="color: #dca854" ui-sref = "home.mine"></span>
+        <span class="fa  fa-chevron-left" style="color: #dca854" ui-sref="home.mine"></span>
         <div>我的理财</div>
     </div>
     <div class="nav" ng-init ="vm.nav = 0">
@@ -8,30 +8,36 @@
         <div ng-class="{'mTS': vm.nav == 1}" ng-click ="vm.trade2()">已续投</div>
         <div ng-class="{'mTS': vm.nav == 2}" ng-click ="vm.trade3()">已退出</div>
     </div>
-    <div class="mineTrade-list" ng-repeat=" x in vm.list">
-        <div class="top">
-            <span>{{x.productName}}</span>
-            <button class="btn" ng-if="x.productName != '新手礼'">预约续投</button>
-        </div>
-        <div class="content">
-            <div class="content-row">
-                <div>预期年化收益率</div>
-                <div>{{x.annualRate}}%</div>
+
+    <div id="minirefresh" class="minirefresh-wrap">
+        <div class="minirefresh-scroll">
+            <div class="mineTrade-list" ng-repeat=" x in vm.list">
+                <div class="top">
+                    <span>{{x.productName}}</span>
+                    <button class="btn" ng-if="x.productName != '新手礼'" ng-click ="vm.continue(x.id)">{{x.continued | continued}}</button>
+                </div>
+                <div class="content">
+                    <div class="content-row">
+                        <div>预期年化收益率</div>
+                        <div>{{x.annualRate}}%</div>
+                    </div>
+                    <div class="content-row">
+                        <div>持有金额</div>
+                        <div>{{x.investment}}</div>
+                    </div>
+                    <div class="content-row">
+                        <div>预期收益</div>
+                        <div>{{x.expectedReturn}}</div>
+                    </div>
+                </div>
+                <div class="trade-bottom">
+                    <div>
+                        到期时间：{{x.expiryTime|date : 'yyyy-MM-dd hh:mm:ss'}}
+                    </div>
+                    <button class="btn" ui-sref="contract({id:x.id})">查看合同</button>
+                </div>
             </div>
-            <div class="content-row">
-                <div>持有金额</div>
-                <div>{{x.investment}}</div>
-            </div>
-            <div class="content-row">
-                <div>预期收益</div>
-                <div>{{x.expectedReturn}}</div>
-            </div>
-        </div>
-        <div class="bottom">
-            <div>
-                到期时间：{{x.expiryTime|date : 'yyyy-MM-dd hh:mm:ss'}}
-            </div>
-            <button class="btn" ui-sref="contract">查看合同</button>
         </div>
     </div>
+
 </div>
