@@ -60,7 +60,7 @@ angular.module("txj").factory("serviceURL", function() {
         personInfoURL: "/home/a/u/my/info/",
 
         //支付
-        payURL: "admin/home/a/u/pay/",
+        payURL: "/home/a/u/pay/",
 
         // 我的页面-获取消息列表
         messageURL: "/home/a/u/my/articles",
