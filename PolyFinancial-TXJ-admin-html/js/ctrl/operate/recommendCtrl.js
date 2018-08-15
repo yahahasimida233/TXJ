@@ -1,24 +1,14 @@
 app.controller("recommendCtrl",function ($http,$state,serviceHTTP,$stateParams) {
     var vm = this;
 
-
-
-    // 从URL获取参数
-    vm.id = $stateParams.id || undefined;
-    vm.title = $stateParams.title || undefined;
-    vm.createBy = $stateParams.createBy || undefined;
-    vm.updateBy = $stateParams.updateBy || undefined;
-    vm.size = $stateParams.pageSize || 10;
-    vm.page = $stateParams.pageNum || undefined;
-
     vm.getList = function(){
         let info = {
-            id: vm.id,
-            title:vm.title,
-            createBy:vm.createBy ,
-            updateBy:vm.updateBy ,
-            pageSize: vm.size,
-            pageNum: vm.page
+            id: $stateParams.id || undefined,
+            title:$stateParams.title || undefined,
+            createBy:$stateParams.createBy || undefined ,
+            updateBy:$stateParams.updateBy || undefined,
+            pageSize: $stateParams.pageSize || 10,
+            pageNum:  $stateParams.pageNum || undefined
         };
         console.log("info:",info);
         serviceHTTP.recommendHTTP(info).then(function successCallback(response) {
@@ -29,6 +19,13 @@ app.controller("recommendCtrl",function ($http,$state,serviceHTTP,$stateParams) 
                 vm.totalItems = response.data.banner.total;
                 console.log(vm.list);
 
+                // 从URL获取参数
+                vm.id = $stateParams.id || undefined;
+                vm.title = $stateParams.title || undefined;
+                vm.createBy = $stateParams.createBy || undefined;
+                vm.updateBy = $stateParams.updateBy || undefined;
+                vm.size = $stateParams.pageSize || 10;
+                vm.page = $stateParams.pageNum || undefined;
             }
             else {
                 bootbox.alert(response.data.message);
