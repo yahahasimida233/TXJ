@@ -1,4 +1,4 @@
-@import "../vendor/lib/scss/iscroll";
+
 
 html{
   font-size: 100px;
@@ -98,4 +98,9 @@ body{
 }
 .bootbox-close-button{
   //display: none;
+}
+
+//下拉刷新插件的返回到页面最上方按钮
+.minirefresh-totop{
+  bottom: .8rem;
 }

@@ -1,18 +1,23 @@
 <div class="minePY">
     <div class="minePY-title">
-        <span class="fa  fa-chevron-left" style="color: #dca854" ui-sref = "home.mine"></span>
+        <span class="fa  fa-chevron-left" style="color: #dca854" ng-click = "vm.back()"></span>
         <div>我的交易记录</div>
     </div>
 
-    <div class="minePY-list" ng-repeat="x in vm.list">
-        <div class="top">
-            <span>{{x.productName}}</span>
-        </div>
-        <div class="content">
-            <span>{{x.dealAmount}}</span>
-        </div>
-        <div class="bottom">
-            <span>{{x.dealTime|date : 'yyyy-MM-dd hh:mm:ss'}}</span><span>{{x.dealState | tradeFilter}}</span>
+    <div id="minirefresh" class="minirefresh-wrap">
+        <div class="minirefresh-scroll" id="dataList">
+            <div class="minePY-list" ng-repeat="x in vm.list">
+                <div class="top">
+                    <span>{{x.productName}}</span>
+                </div>
+                <div class="content">
+                    <span>{{x.dealAmount}}</span>
+                </div>
+                <div class="py-bottom">
+                    <span>{{x.dealTime|date : 'yyyy-MM-dd hh:mm:ss'}}</span><span>{{x.dealState | tradeFilter}}</span>
+                </div>
+            </div>
         </div>
     </div>
+
 </div>

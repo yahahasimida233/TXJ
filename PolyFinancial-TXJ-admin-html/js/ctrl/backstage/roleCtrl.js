@@ -9,8 +9,8 @@ app.controller("roleCtrl",function ($state, $stateParams, serviceHTTP) {
         vm.roleName = $stateParams.roleName, //角色名
         vm.creater = $stateParams.creater, //创建人
         vm.updateBy = $stateParams.updateBy, //父模块
-        vm.goPage = $stateParams.goPage,
-        vm.size = $stateParams.size
+        vm.goPage = $stateParams.goPage || 1,
+        vm.size = $stateParams.size || 10
         // 读取路由里的数据用于请求
         var data = {
             id: $stateParams.roleId, //模块ID
@@ -25,6 +25,9 @@ app.controller("roleCtrl",function ($state, $stateParams, serviceHTTP) {
         serviceHTTP.sRoleHTTP(data).then(function (res) {
             console.log(res);
             vm.lists = res.data.data //返回的数据列表
+            vm.totalItems = res.data.total //分页总条数                
+            vm.page = $stateParams.goPage || 1,
+            vm.size = $stateParams.size || 10
             if (res.data.code == -8001) {
                 bootbox.alert({
                     title: "<strong>提示信息</strong>",
@@ -43,7 +46,6 @@ app.controller("roleCtrl",function ($state, $stateParams, serviceHTTP) {
                 }, 
                     { reload: true}
             );}
-
         })
     }
     // 搜索
@@ -53,7 +55,7 @@ app.controller("roleCtrl",function ($state, $stateParams, serviceHTTP) {
             roleName: vm.roleName,  //角色名
             creater: vm.creater,    //创建人
             updateBy: vm.updateBy,  //更新人
-            goPage: vm.goPage,
+            goPage: vm.page,
             size: vm.size
             }, 
             { reload: true}

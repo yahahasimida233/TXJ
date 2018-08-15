@@ -2,22 +2,14 @@ app.controller("feedbackCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
     var vm = this;
 
 
-    // 从URL获取参数
-    vm.id = $stateParams.id || undefined;
-    vm.submitBy = $stateParams.submitBy || undefined;
-    vm.keyword = $stateParams.keyword || undefined;
-    vm.phoneNum = $stateParams.phoneNum || undefined;
-    vm.size = $stateParams.size || 10;
-    vm.page = $stateParams.page || undefined;
-
     vm.getList = function(){
         let info = {
-            id: vm.id,
-            submitBy:vm.submitBy,
-            keyword:vm.keyword,
-            phoneNum:vm.phoneNum,
-            size: vm.size,
-            page: vm.page
+            id: $stateParams.id || undefined,
+            submitBy:$stateParams.submitBy || undefined,
+            keyword:$stateParams.keyword || undefined,
+            phoneNum:$stateParams.phoneNum || undefined,
+            size:  $stateParams.size || 10,
+            page:$stateParams.page || undefined
         };
         console.log("info:",info);
         serviceHTTP.feedbackHTTP(info).then(function successCallback(response) {
@@ -28,6 +20,13 @@ app.controller("feedbackCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
                 console.log(vm.list);
                 vm.totalItems = response.data.data.total;
                 console.log(vm.list);
+                // 从URL获取参数
+                vm.id = $stateParams.id || undefined;
+                vm.submitBy = $stateParams.submitBy || undefined;
+                vm.keyword = $stateParams.keyword || undefined;
+                vm.phoneNum = $stateParams.phoneNum || undefined;
+                vm.size = $stateParams.size || 10;
+                vm.page = $stateParams.page || undefined;
             }
             else {
                 bootbox.alert(response.data.message)

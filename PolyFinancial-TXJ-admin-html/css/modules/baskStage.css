@@ -4,9 +4,10 @@
   height: .7rem;
   line-height: .7rem;
   width: 100%;
-  color: #29b078;
+  color: #5bc0de;
   font-weight: bolder;
-  font-size: .3rem; }
+  font-size: .3rem;
+}
 
 .backStage-title-right {
   padding-right: .2rem;
@@ -15,30 +16,40 @@
   font-size: .16rem;
   display: flex;
   flex-direction: row-reverse;
-  background-color: #fff; }
-  .backStage-title-right span {
-    padding: 0 .2rem;
-    transition: all 200ms ease; }
-  .backStage-title-right span:hover {
-    font-size: .25rem;
-    background-color: #29b078;
-    border-radius: .05rem; }
+  background-color: #fff;
+}
+
+.backStage-title-right span {
+  padding: 0 .2rem;
+  transition: all 200ms ease;
+}
+
+.backStage-title-right span:hover {
+  font-size: .25rem;
+  background-color: dodgerblue;
+  border-radius: .05rem;
+}
 
 .backStage-sign-out {
   height: .7rem;
-  line-height: .7rem; }
+  line-height: .7rem;
+}
 
 .backStage-view {
-  padding: .2rem; }
+  padding: .2rem;
+}
 
 .backStage-side-nav div {
   height: .6rem;
   line-height: .6rem;
   text-align: center;
-  font-size: .2rem; }
-  .backStage-side-nav div span {
-    text-align: center;
-    line-height: .6rem; }
+  font-size: .2rem;
+}
+
+.backStage-side-nav div span {
+  text-align: center;
+  line-height: .6rem;
+}
 
 .backStage-side-nav-menu {
   padding: .2rem;
@@ -46,23 +57,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #29b078; }
+  background-color: #5bc0de;
+}
 
 .backStage-nav-list {
-  background-color: khaki;
+  background-color: lightblue;
   font-size: .2rem;
-  font-weight: bold; }
-  .backStage-nav-list a {
-    display: block;
-    height: 100%;
-    text-decoration: none; }
-    .backStage-nav-list a span {
-      color: black; }
+  font-weight: bold;
+}
+
+.backStage-nav-list a {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+.backStage-nav-list a span {
+  color: black;
+}
 
 .backStage-nav-list:hover {
-  background-color: lightgreen; }
+  background-color: dodgerblue;
+}
 
 .backStage-active {
-  background-color: lightgreen; }
-
-/*# sourceMappingURL=baskStage.css.map */
+  background-color: dodgerblue;
+}

@@ -27,9 +27,11 @@ app.controller("loginCtrl",function ($scope,$http,$state,serviceHTTP,$stateParam
                 bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">密码错误请重新输入密码</div>' });
                 vm.passWord = undefined;
                 $timeout(function(){
-                    // $(".modal-dialog").hide(500);
-                    // $(".fade").hide(500);
-                },1000);
+                    $(".fade").css('opacity','0');
+                    $timeout(function(){
+                        $(".fade").hide();
+                    },500)
+                },3000);
                 return false;
 
             }
@@ -37,9 +39,9 @@ app.controller("loginCtrl",function ($scope,$http,$state,serviceHTTP,$stateParam
                 bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">该账号已被冻结，若有疑问请电询8008208820</div>' });
                 vm.passWord = undefined;
 
-                $timeout(function(){
-                    $(".bootbox").css('display','none');
-                },1000);
+                // $timeout(function(){
+                //     $(".bootbox").css('display','none');
+                // },1000);
                 return false;
             }
             else if(response.data.code === 2003){

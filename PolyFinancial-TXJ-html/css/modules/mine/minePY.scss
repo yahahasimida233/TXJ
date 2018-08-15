@@ -1,6 +1,7 @@
 .minePY{
   .minePY-title {
-    position: relative;
+    position: fixed;top: 0;
+    width: 100%;
     text-align: center;
     height: .4rem;
     line-height: .4rem;
@@ -16,27 +17,37 @@
     }
   }
 
-  .minePY-list{
-    padding: .1rem .2rem;
-    margin: .1rem 0;
-    background-color: white;
-    .top{
-      padding: .1rem 0;
-      font-size: .18rem;
-      color: #daa955;
-    }
-    .content{
-      padding: .1rem 0;
-      border-bottom: 1px solid #eee;
-      border-top: 1px solid #eee;
-    }
-    .bottom{
-      padding: .1rem 0;
-      font-size: .13rem;
-      color: #999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .minirefresh-wrap{
+    margin-top: .4rem;
+    background-color: #eee;
+  }
+  .minirefresh-scroll{
+    background-color: #eee;
+  }
+
+}
+
+
+.minePY-list{
+  padding: .1rem .2rem;
+  margin: .1rem 0;
+  background-color: white;
+  .top{
+    padding: .1rem 0;
+    font-size: .18rem;
+    color: #daa955;
+  }
+  .content{
+    padding: .1rem 0;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+  }
+  .py-bottom{
+    padding: .1rem 0;
+    font-size: .13rem;
+    color: #999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

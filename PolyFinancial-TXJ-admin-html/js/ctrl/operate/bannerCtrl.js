@@ -2,22 +2,16 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
     var vm = this;
 
 
-    // 从URL获取参数
-    vm.id = $stateParams.id || undefined;
-    vm.title = $stateParams.title || undefined;
-    vm.createBy = $stateParams.createBy || undefined;
-    vm.updateBy = $stateParams.updateBy || undefined;
-    vm.size = $stateParams.pageSize || 10;
-    vm.page = $stateParams.pageNum || undefined;
+
 
     vm.getList = function(){
         let info = {
-            id: vm.id,
-            title:vm.title,
-            createBy:vm.createBy ,
-            updateBy:vm.updateBy ,
-            pageSize: vm.size,
-            pageNum: vm.page
+            id: $stateParams.id || undefined,
+            title:$stateParams.title || undefined,
+            createBy:$stateParams.createBy || undefined ,
+            updateBy:$stateParams.updateBy || undefined,
+            pageSize: $stateParams.pageSize || 10,
+            pageNum: $stateParams.pageNum || undefined
         };
         console.log("info:",info);
         serviceHTTP.bannerHTTP(info).then(function successCallback(response) {
@@ -27,6 +21,13 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
                 vm.list = response.data.banner.list;
                 vm.totalItems = response.data.banner.total;
                 console.log(vm.list);
+                // 从URL获取参数
+                vm.id = $stateParams.id || undefined;
+                vm.title = $stateParams.title || undefined;
+                vm.createBy = $stateParams.createBy || undefined;
+                vm.updateBy = $stateParams.updateBy || undefined;
+                vm.size = $stateParams.pageSize || 10;
+                vm.page = $stateParams.pageNum || undefined;
             }
             else {
 
@@ -53,31 +54,6 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
         vm.page = 1;
         vm.getList();
     };
-
-    //
-    // //搜索功能
-    // vm.userSearch = function(){
-    //     //搜索的四个值
-    //     var Info = {
-    //         id: vm.id,
-    //         pictureName:vm.title,
-    //         createBy:vm.createBy,
-    //         updateBy:vm.updateBy
-    //     };
-    //     serviceHTTP.bannerHTTP(Info).then(function successCallback(response) {
-    //         // 请求成功执行代码
-    //         if(response.data.message === "success") {
-    //             vm.list = response.data.banner.list;
-    //
-    //             console.log(vm.totalItems);
-    //         }
-    //         else {
-    //
-    //         }
-    //     }, function errorCallback(res) {
-    //         // 请求失败执行代码
-    //     });
-    // };
 
     // 删除banner
     vm.delete = function(id){

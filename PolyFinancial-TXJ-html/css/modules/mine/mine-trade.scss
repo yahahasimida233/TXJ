@@ -57,13 +57,23 @@
         flex-basis: 33.333%;
       }
     }
-    .bottom{
+    .trade-bottom{
       padding: .1rem 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
   }
+
+
+  .minirefresh-wrap{
+    margin-top: .8rem;
+    background-color: #eee;
+  }
+  .minirefresh-scroll{
+    background-color: #eee;
+  }
+
 }
 .mTS{
   border-bottom: #daa955 2px solid;

@@ -20,7 +20,7 @@ app.controller("messageCtrl",function ($http,$state,serviceHTTP,$stateParams) {
         callback: function(e){
             vm.timePicker2 = $('#timePicker2').val();
             vm.endHour = Date.parse(new Date("1970-01-01 "+vm.timePicker2));
-            console.log(vm.endHour)
+            console.log(new Date("1970-01-01 "+vm.timePicker2))
         }
     });
 
