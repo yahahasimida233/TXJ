@@ -46,9 +46,15 @@ app.filter('userTradeType',function(){
 // 银行卡号过滤 *+显示最后4位（默认银行卡号为19位）
 app.filter("card", function () {
     return function (data) {
-        var b = data.slice(15);
-        var showNum = "**** **** **** *** " + b;
-        return showNum;
+        if(data == "没有绑定银行卡呢"){
+            return data
+        }else{
+            var b = data.slice(15);
+            var showNum = "**** **** **** *** " + b;
+            return showNum;
+        }
+
+
     }
 });
 

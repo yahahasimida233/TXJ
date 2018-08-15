@@ -38,5 +38,9 @@ app.controller("settingCtrl",function ($scope,$http,$state,serviceHTTP,$statePar
                 }
             }
         })
+    };
+
+    vm.back = function(){
+        window.history.back(-1);
     }
 });

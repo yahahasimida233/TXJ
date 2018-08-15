@@ -5,4 +5,8 @@ app.controller("contractCtrl", function ($state, $stateParams, serviceHTTP, $tim
         $(".indexLoading").hide(500);
     }, 0);
 
+    vm.back = function(){
+        window.history.back(-1);
+    }
+
 })

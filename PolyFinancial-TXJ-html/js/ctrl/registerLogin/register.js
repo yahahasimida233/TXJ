@@ -125,33 +125,37 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             // 请求成功执行代码
             console.log(response);
             if(response.data.message === "success") {
-
+                vm.goOn = true;
             }
             else {
                 bootbox.alert(response.data.message);
-            }
-        }, function errorCallback(res) {
-            // 请求失败执行代码
-        });
-
-        // 当报错三次时，需要增加一个图形验证码进行人机验证
-
-        serviceHTTP.registerHTTP(info).then(function successCallback(response) {
-            // 请求成功执行代码
-            console.log(response);
-            if(response.data.message === "success") {
-                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册成功马上转跳到登陆页面哦</div>' });
-                $state.go('login');
-                return false;
-            }
-            else if(response.data.code !==  0) {
-                bootbox.alert(response.data.message);
-                vm.imgCode = undefined;
                 verifyCode.refresh();
                 vm.countError ++;
             }
         }, function errorCallback(res) {
             // 请求失败执行代码
         });
+
+        if(vm.goOn){
+            // 当报错三次时，需要增加一个图形验证码进行人机验证
+            serviceHTTP.registerHTTP(info).then(function successCallback(response) {
+                // 请求成功执行代码
+                console.log(response);
+                if(response.data.message === "success") {
+                    bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册成功马上转跳到登陆页面哦</div>' });
+                    $state.go('login');
+                    return false;
+                }
+                else if(response.data.code !==  0) {
+                    bootbox.alert(response.data.message);
+                    vm.imgCode = undefined;
+                    verifyCode.refresh();
+                    vm.countError ++;
+                }
+            }, function errorCallback(res) {
+                // 请求失败执行代码
+            });
+        }
+
     }
 });

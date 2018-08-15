@@ -18,6 +18,8 @@
   padding-top: .45rem; }
 .message .minirefresh-wrap {
   margin-top: .4rem; }
+  .message .minirefresh-wrap .minirefresh-scroll {
+    background-color: #eee; }
 
 .message-row {
   margin: .05rem 0;

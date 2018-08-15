@@ -27,6 +27,10 @@ angular.module("txj").factory("serviceURL", function() {
         //图片上传
         imgUploadURL: "/admin/a/u/picture/",
 
+
+        // 获取首页信息
+        indexURL: "/home/a/u/index/",
+
         //获取用户个人信息
         userInfoURL: "/home/a/u/my/info/",
 
@@ -69,13 +73,13 @@ angular.module("txj").factory("serviceURL", function() {
         payedURL: "/home/a/u/my/investeds/",
 
         // 我的页面-续投功能
-        continuedInvestmentURL: "/home/a/u/my/continueds/",
+        continuedInvestmentURL: "/home/a/u/my/invest/continued/",
 
         // 我的页面-获取已续投列表
         continueURL: "/home/a/u/my/continueds/",
 
         // 我的页面-获取已退出列表
-        dropOutURL: "/admin//home/a/u/my/dropouts/",
+        dropOutURL: "/home/a/u/my/dropouts/",
 
 
         // 我的页面-获取我的交易记录

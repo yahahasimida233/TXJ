@@ -170,7 +170,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 投资合同
         .state('contract', {
-            url: "/contract",
+            url: "/contract?id",
             templateUrl: 'view/html/product/contract.html',
             controller: 'contractCtrl as vm',
             resolve: {

@@ -48,8 +48,13 @@ app.filter("IdCard", function () {
 // 手机号隐藏中间4位（挤一挤）
 app.filter("phoneNum", function () {
     return function (IdCard) {
-        var showIdCard = IdCard.slice(0, 3) + "*****" + IdCard.slice(6);
-        return showIdCard;
+        if(IdCard){
+            var showIdCard = IdCard.slice(0, 3) + "****" + IdCard.slice(7);
+            return showIdCard;
+        }else{
+            return false;
+        }
+
     }
 });
 
@@ -135,6 +140,22 @@ app.filter('userInfoFilter',function(){
                 break;
             case 1:
                 a = "未实名";
+                break;
+
+        }
+        return a;
+    }
+});
+
+// 判断是开始预约还是取消预约
+app.filter('continued',function(){
+    return function (a){
+        switch (a){
+            case 0:
+                a = "预约续投";
+                break;
+            case 1:
+                a = "预约续投";
                 break;
 
         }

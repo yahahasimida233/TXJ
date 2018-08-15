@@ -127,7 +127,8 @@ app.controller("messageEditCtrl",function ($scope,$http,$state,serviceHTTP,$stat
                 bootbox.alert("您好，请选择推送消息的时间再推送消息");
                 return false;
             }else{
-                info.setTime= Date.parse(vm.date)+ vm.startHour
+                console.log(Date.parse(vm.date));
+                info.sendTime= Date.parse(vm.date)+ vm.startHour
             }
         }
 
