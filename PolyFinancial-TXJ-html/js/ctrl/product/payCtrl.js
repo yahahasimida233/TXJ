@@ -42,6 +42,8 @@ app.controller("payCtrl",function ($state, $stateParams,$timeout, serviceHTTP ,$
             }
             console.log(data);
             serviceHTTP.payHTTP(data).then(function (res) {
+                console.log(res);
+                
                 console.log(res.data.respMsg);
                 vm.respMsg = res.data.respMsg
                 $timeout(function () {
