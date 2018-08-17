@@ -60,7 +60,7 @@ angular.module("txj").factory("serviceURL", function() {
         personInfoURL: "/admin/home/a/u/my/info/",
 
         //支付
-        payURL: "admin/home/a/u/pay/",
+        payURL: "/admin/home/a/u/pay/",
 
         // 我的页面-获取消息列表
         messageURL: "/admin/home/a/u/my/articles",
@@ -68,12 +68,12 @@ angular.module("txj").factory("serviceURL", function() {
         // 我的页面-消息详情
         messageDetailURL: "/admin/home/a/u/my/articles/",
 
-
         // 我的页面-获取理财已投资列表
         payedURL: "/admin/home/a/u/my/investeds/",
 
         // 我的页面-续投功能
         continuedInvestmentURL: "/admin/home/a/u/my/invest/continued/",
+
 
         // 我的页面-获取已续投列表
         continueURL: "/admin/home/a/u/my/continueds/",
@@ -81,13 +81,11 @@ angular.module("txj").factory("serviceURL", function() {
         // 我的页面-获取已退出列表
         dropOutURL: "/admin/home/a/u/my/dropouts/",
 
-
         // 我的页面-获取我的交易记录
         tradeListURL: "/admin/home/a/u/my/dealrecord",
 
         // 银行卡列表
         bankCardListURL: "/admin/home/a/u/my/bankcards/",
-
 
         // 设置-修改密码
         settingCPURL: "/admin/home/a/u/my/setup/changepwd/",

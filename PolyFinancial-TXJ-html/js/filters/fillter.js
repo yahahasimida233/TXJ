@@ -147,12 +147,20 @@ app.filter('userInfoFilter',function(){
     }
 });
 
+// 安全认证
+app.filter('secHtml', function ($sce) {
+    return function (data) {
+        var html = $sce.trustAsHtml(data);
+        return html;
+    }
+});
+
 // 判断是开始预约还是取消预约
 app.filter('continued',function(){
     return function (a){
         switch (a){
             case 0:
-                a = "预约续投";
+                a = "取消预约";
                 break;
             case 1:
                 a = "预约续投";

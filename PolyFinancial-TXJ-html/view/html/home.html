@@ -79,21 +79,21 @@
     <div ui-sref="home"
          class="home-bottom-btn"
          ng-class="{true:'home-active',false:''}[vm.homeTitle == '首页']"
-         ng-click ="vm.homeTitle ='首页'">
+         ng-click ="vm.btn1()">
         <span class="glyphicon glyphicon-home"></span>
         <span>首页</span>
     </div>
     <div ui-sref="home.product"
          class="home-bottom-btn"
          ng-class="{true:'home-active',false:''}[vm.homeTitle == '理财']"
-         ng-click ="vm.homeTitle ='理财'">
+         ng-click ="vm.btn2()">
         <span class="glyphicon glyphicon-usd"></span>
         <span>理财</span>
     </div>
     <div ui-sref="home.mine"
          class="home-bottom-btn"
          ng-class="{true:'home-active',false:''}[vm.homeTitle == '我的']"
-         ng-click ="vm.homeTitle ='我的'">
+         ng-click ="vm.btn3()">
         <span class="glyphicon glyphicon-user"></span>
         <span>我的</span>
     </div>
