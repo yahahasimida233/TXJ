@@ -43,7 +43,7 @@ $gold: #d7a64c;
 .card-warp{
     margin-top: .2rem;
     .card{
-        max-width: 60%;
+        max-width: 1.92rem;
         margin-left: -.2rem;
     }
     .cardNum{
@@ -51,8 +51,9 @@ $gold: #d7a64c;
         font-weight: bold;
     }
     .cardSure{
-        position: fixed;
-        top: 2rem;
+        position: absolute;
+        top: 34%;
+
         right: .2rem;
         font-size: 0.17rem;
         color: $gold;
