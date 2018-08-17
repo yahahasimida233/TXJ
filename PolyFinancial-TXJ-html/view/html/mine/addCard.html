@@ -22,15 +22,16 @@
     <div class="introduce">
         <strong>卡&emsp;号:</strong>&emsp;
         <input type="number" placeholder="无需网银/免手续费（16~19位数字）" class="form-control"
+        ng-change="vm.show(vm.card)"
         name="card"
-        ng-model="card"
+        ng-model="vm.card"
         required
         ng-pattern="/^\d{16,19}$/">
     </div>
     <!-- <div class="tips text-center" ng-show="vm.showTips">卡号格式错误，请重试！</div> -->
     <!-- 下一步 -->
     <div class="text-center next"> 
-        <button class="btn btn-primary" ng-click="vm.next(addCard.$invalid)">下一步</button>
+        <button class="btn btn-primary" ng-click="vm.next(addCard.$invalid,vm.card)">下一步</button>
     </div>
 </form>
 

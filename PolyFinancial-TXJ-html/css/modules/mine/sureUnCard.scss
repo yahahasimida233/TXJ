@@ -22,3 +22,14 @@ $gold: #d7a64c;
         font-weight: bold;
     }
 }
+// 解绑按钮
+.next-btn {
+    padding: 0.1rem 0 .5rem 0;
+    .unCard {
+        width: 90%;
+        padding: .1rem;
+        margin-top: .2rem;
+        font-size: .15rem;
+        border-radius: .1rem;
+    }
+}

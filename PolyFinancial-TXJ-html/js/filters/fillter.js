@@ -1,5 +1,3 @@
-
-
 app.filter('money',function(){
     return function (n){
         const fraction = ['角', '分'];
@@ -160,7 +158,7 @@ app.filter('continued',function(){
     return function (a){
         switch (a){
             case 0:
-                a = "取消预约";
+                a = "预约续投";
                 break;
             case 1:
                 a = "预约续投";

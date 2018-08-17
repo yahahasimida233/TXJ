@@ -1,18 +1,35 @@
 .bk-white {
-  background-color: #fff; }
+  background-color: #fff;
+}
 
 .mes-tips {
   padding: .4rem .2rem;
-  border-top: 1px solid; }
+  border-top: 1px solid;
+}
 
 .message-warp {
-  padding: .2rem; }
-  .message-warp .message {
-    display: inline-block !important;
-    width: 50% !important; }
-  .message-warp .getCode {
-    padding-left: .1rem;
-    color: #d7a64c;
-    font-weight: bold; }
+  padding: .2rem;
+}
 
-/*# sourceMappingURL=sureUnCard.css.map */
+.message-warp .message {
+  display: inline-block !important;
+  width: 50% !important;
+}
+
+.message-warp .getCode {
+  padding-left: .1rem;
+  color: #d7a64c;
+  font-weight: bold;
+}
+
+.next-btn {
+  padding: 0.1rem 0 .5rem 0;
+}
+
+.next-btn .unCard {
+  width: 90%;
+  padding: .1rem;
+  margin-top: .2rem;
+  font-size: .15rem;
+  border-radius: .1rem;
+}

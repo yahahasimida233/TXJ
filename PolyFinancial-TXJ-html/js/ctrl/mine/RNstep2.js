@@ -5,8 +5,8 @@ app.controller("RNStep2Ctrl",function ($scope,$http,$state,serviceHTTP,$statePar
         window.history.back(-1);
     };
 
-    vm.step = sessionStorage.getItem("step");
-    vm.title = (vm.step == "addCard")? "添加银行卡":"实名认证";
+    // 渲染银行卡类型
+    vm.bankType = $stateParams.bankType;
     vm.step2Click = function(){
         // 验证手机号码是否输入正确
         if (!vm.userName.match(/^(((\+86)|(86))?1[0-9]{10})$/)) {

@@ -176,7 +176,7 @@ angular.module("txj")
                 return $http({
                     method: "post",
                     url: serviceURL.realNameStep1URL,
-                    data:info,
+                    params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
