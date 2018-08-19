@@ -51,9 +51,9 @@ angular.module("txj").factory("serviceURL", function() {
         // banner管理
         bannerURL:"/admin/a/u/banner/pictures/keywords/",
         bannerDetailedURL:"/admin/a/u/banner/pictures/",
-        bannerEditURL:"/a/u/banner/pictures/",
-        bannerNewURL:"/a/u/banner/",
-        bannerDeleteURL:"/a/u/banner/pictures/",
+        bannerEditURL:"/admin/a/u/banner/pictures/",
+        bannerNewURL:"/admin/a/u/banner/",
+        bannerDeleteURL:"/admin/a/u/banner/pictures/",
         bannerGroundingURL:"/admin/a/u/banner/pictureshelf/",
 
         // 鼎力推荐
