@@ -41,6 +41,12 @@ app.controller("settingCtrl",function ($scope,$http,$state,serviceHTTP,$statePar
     };
 
     vm.back = function(){
-        window.history.back(-1);
+        var step  = sessionStorage.getItem('step');
+        if(step === 'mine'){
+            $state.go('home.mine');
+            return false
+        }
+        // window.history.back(-1);
+        $state.go('home');
     }
 });

@@ -5,6 +5,7 @@ html{
 }
 body{
   font-size: 15px;
+  overflow-y: auto;
 
 }
 *{
@@ -20,7 +21,11 @@ body{
   top: 0;
 }
 
-//整个应用的大小
+.black{
+  color: black!important;
+}
+
+//all app size
 .app{
   margin: 0 auto;
   max-width: 600px;
@@ -30,7 +35,7 @@ body{
   //border: 1px solid #29b078;
 }
 
-//启动页样式
+//loading page style
 .indexLoading{
   position: relative;
   margin: 0 auto;
@@ -103,4 +108,10 @@ body{
 //下拉刷新插件的返回到页面最上方按钮
 .minirefresh-totop{
   bottom: .8rem;
+}
+
+u{
+
+  border-bottom: black solid 1px;
+  min-width: .2rem;
 }

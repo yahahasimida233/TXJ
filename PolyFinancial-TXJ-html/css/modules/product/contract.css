@@ -12,22 +12,17 @@
 .back {
   padding-left: .2rem; }
 
-.contract {
-  position: fixed;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  padding: .2rem;
-  background-color: #fff; }
-  .contract .conText {
-    position: fixed;
-    top: 81px;
-    bottom: .2rem;
-    overflow-y: auto;
-    padding-right: .2rem; }
-    .contract .conText .chapter {
-      position: relative;
-      bottom: 0.8rem;
-      left: 1.5rem; }
+.contractContent {
+  padding: .2rem; }
+  .contractContent div {
+    margin-bottom: .1rem; }
+
+.contractContent-bottom {
+  display: flex;
+  justify-content: space-between; }
+  .contractContent-bottom div img {
+    margin: 0 0 -.5rem -.8rem;
+    width: 1.7rem;
+    height: 1.7rem; }
 
 /*# sourceMappingURL=contract.css.map */

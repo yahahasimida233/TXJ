@@ -20,5 +20,8 @@ app.controller("mineCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
         });
     }
 
+    vm.goSetting = function(){
+        sessionStorage.setItem('step','mine');
+    }
 
 });

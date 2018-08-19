@@ -1,40 +1,43 @@
-// 聚金融金色（）亮金色
+//app color
 $gold: #d7a64c;
-// 标题
+//title style
 .titleWarp {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: .4rem;
     line-height: .4rem;
-    font-size: .2rem; // 使标题处于居中位置
+    font-size: .2rem; // title center
     color: $gold;
     .title {
         padding-right: 0.2rem;
     }
 }
-// 返回按钮
+// back btn
 .back {
     padding-left: .2rem;
 }
-// 聚金融合同
-.contract {
-    position: fixed;
-    top: 0;
-    height: 100%;
-    width: 100%;
+//app contract
+.contract{
+
+}
+
+.contractContent{
     padding: .2rem;
-    background-color: #fff;
-    .conText {
-        position: fixed;
-        top: 81px;
-        bottom: .2rem;
-        overflow-y: auto;
-        padding-right: .2rem;
-        .chapter {
-            position: relative;
-            bottom: 0.8rem;
-            left: 1.5rem;
+    div{
+        margin-bottom: .1rem;
+    }
+}
+
+.contractContent-bottom{
+    display: flex;
+    justify-content: space-between;
+    div{
+        img{
+            margin: 0 0 -.5rem -.8rem;
+            width: 1.7rem;
+            height: 1.7rem;
         }
     }
+
 }

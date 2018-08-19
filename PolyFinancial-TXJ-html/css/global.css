@@ -2,7 +2,8 @@ html {
   font-size: 100px; }
 
 body {
-  font-size: 15px; }
+  font-size: 15px;
+  overflow-y: auto; }
 
 * {
   margin: 0;
@@ -15,6 +16,9 @@ body {
 
 .glyphicon {
   top: 0; }
+
+.black {
+  color: black !important; }
 
 .app {
   margin: 0 auto;
@@ -80,5 +84,9 @@ body {
 
 .minirefresh-totop {
   bottom: .8rem; }
+
+u {
+  border-bottom: black solid 1px;
+  min-width: .2rem; }
 
 /*# sourceMappingURL=global.css.map */

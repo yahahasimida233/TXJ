@@ -1,5 +1,6 @@
 app.controller("RNStep2Ctrl",function ($scope,$http,$state,serviceHTTP,$stateParams,$timeout) {
     var vm = this;
+    vm.cardType = $stateParams.bankType;
 
     vm.back = function(){
         window.history.back(-1);

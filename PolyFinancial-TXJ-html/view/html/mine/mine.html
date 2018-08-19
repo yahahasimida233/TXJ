@@ -1,6 +1,6 @@
 <div class="mine-top" >
     <div class="mine-title" >
-        <div class="glyphicon glyphicon-cog" ui-sref="home.setting"></div>
+        <div class="glyphicon glyphicon-cog" ui-sref="home.setting" ng-click = "vm.goSetting()"></div>
         <div class="glyphicon glyphicon-comment" ui-sref="home.message">
             <span ng-if ="vm.list.unreadMessages >= 1" class="news">{{vm.list.unreadMessages}}</span>
         </div>

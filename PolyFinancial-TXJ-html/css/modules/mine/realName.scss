@@ -1,7 +1,7 @@
 .realName{
   position: relative;
   height: 100%;
-  //标题样式
+  //title style
   .realName-title{
     margin-bottom: .1rem;
     position: relative;
@@ -17,7 +17,7 @@
     }
   }
 
-  //步骤一
+  //step 1
   .realName-step1{
     background-color: white;
     div{
@@ -134,7 +134,7 @@
   }
 
 
-  //合同样式
+  //contract style
   .Agreement{
     position: absolute;top: 0;
     width: 100%;
@@ -152,5 +152,16 @@
     h1{
       text-align: center;
     }
+  }
+}
+
+.contractSure{
+  margin: 0.2rem 0;
+  .btnSure{
+    font-size: .18rem;
+    color: #dcdcdc;
+  }
+  .contract{
+    color: #e1c18b;
   }
 }

@@ -21,7 +21,8 @@ app.controller("addCardCtrl", function ($state, $stateParams, serviceHTTP, $time
             });
         }
         else{
-            $state.go("home.RNStep2", { bankType:  });
+            console.log(bankCardAttribution(vm.card));
+            $state.go("home.RNStep2", { bankType: bankCardAttribution(vm.card).bankName });
         }
     }
 })

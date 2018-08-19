@@ -1,13 +1,13 @@
 <form name="realNameForm2" class="realName">
     <div class="realName-title">
-        <span class="fa  fa-chevron-left" style="color: #dca854"  ui-sref="(vm.back == '实名认证')？home.userInfo:home"></span>
+        <span class="fa  fa-chevron-left" style="color: #dca854" ng-click ="vm.back()"></span>
         <div>填写银行卡信息</div>
     </div>
 
-    <div class="realName-step2" ng-show="vm.step2 =  true">
+    <div class="realName-step2" >
         <div class="step-row">
             <span>*卡类型:</span>
-            <span style="margin-left: .1rem">修真院成都分行</span>
+            <span style="margin-left: .1rem">{{vm.cardType}}</span>
         </div>
         <div class="step-row">
             <span>*手机号:</span>
@@ -16,9 +16,18 @@
                    ng-model = "vm.userName"
                    placeholder="请输入银行预留手机号">
         </div>
-        <div class="agreement">
-            <input id="agreement" required type="checkbox"><label for="agreement" ng-click = "vm.agreement = true">我已阅读《富友综合支付服务协议》</label>
+        <div class="contractSure">
+                <span class="glyphicon glyphicon-check btnSure"
+                      ng-click="vm.sureC = !vm.sureC;"
+
+                      ng-class="{'black': vm.sureC}">
+                </span>
+            <span>我已阅读并同意</span>
+            <span class="contract" ng-click="vm.agreement = true">《聚金融投资合同》</span>
         </div>
+        <!--<div class="agreement">-->
+            <!--<input id="agreement" required type="checkbox"><label for="agreement" ng-click = "vm.agreement = true">我已阅读《富友综合支付服务协议》</label>-->
+        <!--</div>-->
         <div class="input-row">
             <button class="btn"
                     ng-disabled = "realNameForm2.$invalid "
