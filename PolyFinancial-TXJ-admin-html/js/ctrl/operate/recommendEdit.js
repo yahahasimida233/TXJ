@@ -16,6 +16,7 @@ app.controller("recommendEditCtrl",function ($scope,$http,$state,serviceHTTP,$st
                 vm.list = response.data.banner.list[0];
                 vm.pictureName = vm.list.title;
                 vm.success = 'success';
+                vm.url = vm.list.productUrl;
                 vm.imgSrc =vm.list.pictureUrl;
                 vm.imgName = vm.list.title;
                 vm.onload = true;
@@ -87,6 +88,7 @@ app.controller("recommendEditCtrl",function ($scope,$http,$state,serviceHTTP,$st
         var info = {};
         info.title = vm.pictureName;
         info.pictureUrl = vm.imgSrc ;
+        info.productUrl = vm.url ;
 
         if(id == 0){
             serviceHTTP.recommendNewHTTP(info).then(function successCallback(response) {

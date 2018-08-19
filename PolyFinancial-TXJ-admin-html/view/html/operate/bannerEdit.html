@@ -33,11 +33,17 @@
                   ng-show="bannerEditForm.carouselTime.$error.pattern ">轮播间隔错误，请重试。</span>
         </div>
         <div class="debtEditContent-row">
-            <span>*URL地址</span>
-            <input type="text"
+            <span>*bannerID</span>
+            <input type="tel"
+                   name="id"
                    class="form-control"
                    ng-model = "vm.url"
-                   placeholder="请输入URL地址，可为空。">
+                   required
+                   ng-pattern="/^[0-9]*$/"
+                   placeholder="请输入bannerID。">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="bannerEditForm.id.$error.pattern ">请输入ID</span>
         </div>
         <div class="debtEditContent-row"
              ng-class="{'has-error': bannerEditForm.cardID.$dirty && bannerEditForm.cardID.$invalid}">

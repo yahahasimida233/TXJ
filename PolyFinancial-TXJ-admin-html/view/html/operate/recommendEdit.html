@@ -19,7 +19,19 @@
                   style="color: red"
                   ng-show="bannerEditForm.pictureName.$error.pattern ">请输入2-10个汉字</span>
         </div>
-
+        <div class="debtEditContent-row">
+            <span>*鼎力推荐ID</span>
+            <input type="tel"
+                   name="id"
+                   class="form-control"
+                   ng-model = "vm.url"
+                   required
+                   ng-pattern="/^[0-9]*$/"
+                   placeholder="请输入鼎力推荐ID。">
+            <span class="debtEdit-attention"
+                  style="color: red"
+                  ng-show="bannerEditForm.id.$error.pattern ">请输入ID</span>
+        </div>
         <div class="debtEditContent-row"
              ng-class="{'has-error': bannerEditForm.cardID.$dirty && bannerEditForm.cardID.$invalid}">
             <span>*上传鼎力推荐图</span>

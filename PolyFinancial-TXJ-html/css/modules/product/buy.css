@@ -1,40 +1,96 @@
-/*
-Error: Invalid GBK character "\xE8"
-        on line 1 of buy.scss
+.bk-gray {
+  height: 100%;
+  background-color: #eee; }
 
-1: // 聚金融金色（）亮金色
-2: $gold: #d7a64c;
-3: // 背景置灰
-4: .bk-gray{
-5:     height: 100%;
-6:     background-color: #eee;
+.bk-white {
+  background-color: #fff; }
 
-Backtrace:
-buy.scss:1
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/util.rb:1041:in `rescue in block in find_encoding_error'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/util.rb:1038:in `block in find_encoding_error'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/util.rb:1037:in `each'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/util.rb:1037:in `each_with_index'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/util.rb:1037:in `find_encoding_error'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/util.rb:765:in `check_sass_encoding'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/engine.rb:444:in `check_encoding!'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/engine.rb:400:in `_to_tree'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/engine.rb:307:in `render_with_sourcemap'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/plugin.rb:82:in `update_stylesheets'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/exec/sass_scss.rb:338:in `watch_or_update'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/exec/sass_scss.rb:51:in `process_result'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/exec/base.rb:50:in `parse'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/exec/base.rb:18:in `parse!'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.7/bin/scss:13:in `<top (required)>'
-C:/Ruby25-x64/bin/scss:23:in `load'
-C:/Ruby25-x64/bin/scss:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid GBK character \"\xE8\"\A         on line 1 of buy.scss\A \A 1: // 聚金融金色（）亮金色\A 2: $gold: #d7a64c;\A 3: // 背景置灰\A 4: .bk-gray{\A 5:     height: 100%;\A 6:     background-color: #eee;"; }
+.titleWarp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: .4rem;
+  line-height: .4rem;
+  font-size: .2rem;
+  color: #d7a64c; }
+  .titleWarp .title {
+    padding-right: 0.2rem; }
+
+.back {
+  padding-left: .2rem; }
+
+.buyForm {
+  padding: .2rem; }
+  .buyForm .money {
+    margin: .1rem 0; }
+
+.tips {
+  font-size: .17rem; }
+
+.tipsRed {
+  color: red; }
+
+.card-warp {
+  margin-top: .2rem; }
+  .card-warp .card {
+    max-width: 1.92rem;
+    margin-left: -.2rem; }
+  .card-warp .cardNum {
+    margin: -.1rem;
+    font-weight: bold; }
+  .card-warp .cardSure {
+    position: absolute;
+    top: 34%;
+    right: .2rem;
+    font-size: 0.17rem;
+    color: #d7a64c; }
+
+.showList-warp {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(27, 27, 27, 0.5); }
+  .showList-warp .cardList-warp {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: .2rem;
+    background-color: #fff; }
+    .showList-warp .cardList-warp .add-warp {
+      margin-top: .2rem; }
+      .showList-warp .cardList-warp .add-warp .add {
+        font-size: 0.2rem; }
+
+.contractSure {
+  margin: 0.2rem 0; }
+  .contractSure .btnSure {
+    font-size: .18rem;
+    color: #dcdcdc; }
+  .contractSure .contract {
+    color: #d7a64c; }
+
+#contract {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: .2rem;
+  background-color: #fff; }
+  #contract .conText {
+    position: fixed;
+    top: 81px;
+    bottom: .2rem;
+    overflow-y: auto;
+    padding-right: .2rem; }
+    #contract .conText .chapter {
+      position: relative;
+      bottom: 0.8rem;
+      left: 1.5rem; }
+
+.buy-btn {
+  padding: 0.1rem 0 .5rem 0; }
+
+/*# sourceMappingURL=buy.css.map */

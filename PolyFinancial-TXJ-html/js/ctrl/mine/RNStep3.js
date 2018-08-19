@@ -1,6 +1,9 @@
 app.controller("RNStep3Ctrl",function ($scope,$http,$state,serviceHTTP,$stateParams,$timeout) {
     var vm = this;
-    vm.userName = sessionStorage.getItem("userName");
+    vm.userName = $stateParams.phone;
+    vm.name = sessionStorage.getItem('name');
+    vm.idCard = sessionStorage.getItem('idCard');
+    vm.bankCard = $stateParams.bankCard;
 
     // 获取验证码
     vm.countTime = "获取验证码";
@@ -22,19 +25,31 @@ app.controller("RNStep3Ctrl",function ($scope,$http,$state,serviceHTTP,$statePar
             }
 
         }
-        setTime();
+
 
         var info={
-            bankPhone: vm.userName
+            phoneNum: vm.userName,
+            bankCard:vm.bankCard,
+            vCode: vm.code,
+            userName: vm.name,
+            cardId :vm.idCard
+
         };
+        console.log(info);
         // 提交手机号码获取验证码的请求
         serviceHTTP.RGetCodeHTTPL(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
             vm.message = response.data.message;
-            if(response.data.message === "success") {
+            if(response.data.code == 0) {
+                setTime();
                 bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">获取验证码成功！</div>' });
-
+                $timeout(function(){
+                    $(".fade").css('opacity','0');
+                    $timeout(function(){
+                        $(".fade").hide();
+                    },500)
+                },3000);
             }
             else {
                 bootbox.alert(vm.message);
@@ -53,8 +68,13 @@ app.controller("RNStep3Ctrl",function ($scope,$http,$state,serviceHTTP,$statePar
 
     // 最后一步核对验证码是否正确
     vm.step3Click = function(){
-        var info = {
-            verifyCode: vm.code
+        var info={
+            phoneNum: vm.userName,
+            bankCard:vm.bankCard,
+            vCode: vm.code,
+            userName: vm.name,
+            cardId :vm.idCard
+
         };
 
         // 当出错3次时增加人机验证

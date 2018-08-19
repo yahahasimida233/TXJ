@@ -120,12 +120,10 @@
     .realName .Agreement h1 {
       text-align: center; }
 
-.contractSure {
-  margin: 0.2rem 0; }
-  .contractSure .btnSure {
-    font-size: .18rem;
-    color: #dcdcdc; }
-  .contractSure .contract {
-    color: #e1c18b; }
+.contractSure .btnSure {
+  font-size: .18rem;
+  color: #dcdcdc; }
+.contractSure .contract {
+  color: #e1c18b; }
 
 /*# sourceMappingURL=realName.css.map */

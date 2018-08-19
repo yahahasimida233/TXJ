@@ -29,13 +29,15 @@ angular.module("txj").factory("serviceURL", function() {
 
 
         // 获取首页信息
-        indexURL: "/admin/a/u/index/",
+        indexURL: "/admin/home/a/u/index/",
 
         //获取用户个人信息
         userInfoURL: "/admin/home/a/u/my/info/",
 
         //获取用户个人信息还有未读消息条数
         mineURL: "/admin/home/a/u/my/",
+
+        userContractListURL:"/admin/home/a/u/my/invest/contract/",
 
         // 实名认证第一步，提交用户名身份证号码，还有银行卡号码
         realNameStep1URL: "/admin/home/a/u/my/info/realname/",
@@ -73,7 +75,7 @@ angular.module("txj").factory("serviceURL", function() {
         payedURL: "/admin/home/a/u/my/investeds/",
 
         // 我的页面-续投功能
-        continuedInvestmentURL: "/admin/home/a/u/my/continueds/",
+        continuedInvestmentURL: "/admin/home/a/u/my/invest/continued/",
 
         // 我的页面-获取已续投列表
         continueURL: "/admin/home/a/u/my/continueds/",

@@ -22,7 +22,7 @@ body{
 .inline-block{
     display: inline-block;
 }
- //列表渲染
+ //list style
 table{
     background-color: #fff;
 }
@@ -34,32 +34,32 @@ td {
     width: 10%;
 }
 
-//日期输入框的长度
+//date input width
 .date-input{
   margin: .1rem 0;
   width: 1rem!important;
 }
 .date-input-min{
   margin: .1rem 0;
-  width: 1rem!important;
+  width: .6rem!important;
 }
 
 .btn{
   padding: .05rem!important;
 }
 
-//简单的flex属性
+//simple flex
 .flex{
   display: flex;
 }
 
 
-//所有u标签都有下划线
+//all the u have border-bottom
 u{
   border-bottom: #29b078 solid;
 }
 
-// bootstrap样式重置
+// bootstrap rest
 .form-control{
     display: inline-block;
     width: auto;
@@ -67,7 +67,7 @@ u{
 .border{
     border-radius: 4px; 
 }
-// 标题样式
+// title style
 .title-warp {
     display: flex;
     align-items: center;
@@ -80,12 +80,12 @@ u{
         font-size: .2rem;
     }
 }
-// 搜索模块
+// search modal
 .searchCondition{
     padding: 10px;
     background-color: #fff;
     border-radius: 4px;
-    .search-row{  //单行
+    .search-row{  //one row
         display: flex;
         align-items: center;
         justify-content: space-evenly;
@@ -100,7 +100,7 @@ u{
         }
     }
 }
-// 列表模块
+// list modal
 tr{
     .index-title{
         padding: 30px 0 20px 20px !important;
@@ -113,7 +113,7 @@ tr{
     } 
 }
 
-//图片上传的样式
+//img upload
 .img-input{
   position: relative;
   max-width: 4rem;
@@ -139,10 +139,10 @@ tr{
   width: 100%!important;
   margin: 0!important;
 }
-.col-md-2，.col-md-10，.col-md-3,.col-md-4，.col-md-9,.col-md-8,.col-xs-12{
+.col-md-2,.col-md-10,.col-md-3,.col-md-4,.col-md-9,.col-md-8,.col-xs-12{
   padding: 0 !important;
 }
-// 分页样式
+// page
 .table-foot{
     padding: 0 20px;
     background-color: #fff;

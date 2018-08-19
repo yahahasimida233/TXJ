@@ -24,7 +24,7 @@
 
 
 
-//首页底部按钮样式
+//home bottom style
 .home-bottom{
   position: fixed;bottom: 0;
   padding: .1rem 0;
@@ -45,23 +45,21 @@
   //  color: #c39d71;
   //}
 }
-//按钮被点击过后的样式
+//btn active
 .home-active{
   color: #c39d71;
 }
-//轮播图样式
 .carousel{
   padding-top: .4rem;
 }
 
-//轮播图的小点点间距变大
 .carousel-indicators{
   li{
     margin: 0 .07rem!important;
   }
 }
 
-//画布样式
+
 .canvas{
   position: relative;
   display: flex;
@@ -76,7 +74,7 @@
   border: solid 2px #dca854;
   border-radius: 50%
 }
-//画布中内容样式
+//canvas content
 .canvas-content{
   position: absolute;left: 0;right: 0;top: .5rem;
   text-align: center;
@@ -96,7 +94,7 @@
 }
 
 
-//鼎力推荐标题样式
+
 .home-recommend{
   position: relative;
   text-align: center;
@@ -123,7 +121,7 @@
   }
 }
 
-//中间路由样式
+
 .home-content{
   position: relative;
   height: 100vh;
@@ -132,7 +130,7 @@
   overflow-y: auto;
 }
 
-//立刻投资按钮
+
 .cutLeek{
   width: 100%;
   height: .8rem;

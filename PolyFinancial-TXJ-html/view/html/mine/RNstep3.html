@@ -5,7 +5,7 @@
     </div>
 
     <form name="step3Form" class="RNStep3" >
-        <div class="step-title">本次操作需要短信验证，请输入{{vm.userName}}收到的短信验证码。</div>
+        <div class="step-title">本次操作需要短信验证，请输入{{vm.userName | phoneNum}}收到的短信验证码。</div>
         <div class="forget-input">
             <input type="tel"
                    ng-model = "vm.code"

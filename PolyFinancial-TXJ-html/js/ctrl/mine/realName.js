@@ -33,9 +33,19 @@ app.controller("realNameCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             // 请求成功执行代码
             console.log(response);
             vm.message = response.data.message;
-            if(response.data.message === "success") {
-                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">提交成功，请输入您办卡时的预留卡号</div>' });
-                $state.go('home.RNStep2');
+            if(response.data.code == 0) {
+                // bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">提交成功，请输入您办卡时的预留卡号</div>' });
+
+                // $timeout(function(){
+                //     $(".fade").css('opacity','0');
+                //     $timeout(function(){
+                //         $(".fade").hide();
+                //     },500)
+                // },3000);
+                sessionStorage.setItem('name',vm.userName);
+                sessionStorage.setItem('idCard',vm.cardId);
+
+                $state.go("home.RNStep2", { bankCard:vm.bankCard })
             }
             else {
                 bootbox.alert(vm.message);

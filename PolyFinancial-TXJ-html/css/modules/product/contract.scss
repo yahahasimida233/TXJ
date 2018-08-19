@@ -2,6 +2,8 @@
 $gold: #d7a64c;
 //title style
 .titleWarp {
+    position: fixed;
+    top: 0;left: 0;right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,6 +11,8 @@ $gold: #d7a64c;
     line-height: .4rem;
     font-size: .2rem; // title center
     color: $gold;
+    background-color: white;
+    z-index: 200;
     .title {
         padding-right: 0.2rem;
     }
@@ -19,10 +23,13 @@ $gold: #d7a64c;
 }
 //app contract
 .contract{
-
+    //position: fixed;top: .4rem;left: 0;right: 0;
+    overflow-y: auto;
 }
 
 .contractContent{
+    position: absolute;top: .4rem;left: 0;right: 0;
+
     padding: .2rem;
     div{
         margin-bottom: .1rem;

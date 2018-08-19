@@ -1,6 +1,7 @@
 app.controller("RNStep2Ctrl",function ($scope,$http,$state,serviceHTTP,$stateParams,$timeout) {
     var vm = this;
-    vm.cardType = $stateParams.bankType;
+    vm.bankCard = $stateParams.bankCard;
+    vm.cardType = bankCardAttribution(vm.bankCard).bankName;
 
     vm.back = function(){
         window.history.back(-1);
@@ -16,16 +17,18 @@ app.controller("RNStep2Ctrl",function ($scope,$http,$state,serviceHTTP,$statePar
             return false;
         }
         var info={
-            bankPhone: vm.userName
+            bankCard:vm.bankCard,
+            phoneNum: vm.userName
         };
-        // 提交手机号码获取验证码的请求
-        serviceHTTP.RGetCodeHTTPL(info).then(function successCallback(response) {
+
+
+        serviceHTTP.realNameStep1HTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
             vm.message = response.data.message;
-            if(response.data.message === "success") {
-                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">提交成功，请输入您验证码进行最后一步验证</div>' });
-                $state.go('home.RNStep3');
+            if(response.data.code == 0) {
+
+                $state.go("home.RNStep3", { phone:vm.userName ,bankCard:vm.bankCard})
             }
             else {
                 bootbox.alert(vm.message);
@@ -34,5 +37,22 @@ app.controller("RNStep2Ctrl",function ($scope,$http,$state,serviceHTTP,$statePar
             // 请求失败执行代码
 
         });
+
+        // // 提交手机号码获取验证码的请求
+        // serviceHTTP.RGetCodeHTTPL(info).then(function successCallback(response) {
+        //     // 请求成功执行代码
+        //     console.log(response);
+        //     vm.message = response.data.message;
+        //     if(response.data.message === "success") {
+        //         // bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">提交成功，请输入您验证码进行最后一步验证</div>' });
+        //         // $state.go('home.RNStep3');
+        //     }
+        //     else {
+        //         bootbox.alert(vm.message);
+        //     }
+        // }, function errorCallback(res) {
+        //     // 请求失败执行代码
+        //
+        // });
     }
 });

@@ -24,6 +24,16 @@ angular.module("txj")
                 })
             },
 
+            //获取用户的合同的具体信息
+            userContractHTTP: function (id) {
+                return $http({
+                    method: "get",
+                    url: serviceURL.userContractListURL+id,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded" }
+                })
+            },
+
             //找回密码
             getbackPHTTP: function (info) {
                 return $http({
@@ -148,7 +158,7 @@ angular.module("txj")
             },
 
             // 实名认证获取手机号验证码
-            RGetCodeHTTPL: function (info) {  //获取产品列表
+            RGetCodeHTTPL: function (info) {
                 return $http({
                     method: "post",
                     url: serviceURL.RGetCodeURL,
@@ -160,7 +170,7 @@ angular.module("txj")
             },
 
             // 实名认证验证 验证码
-            RCheckCodeHTTP: function (info) {  //获取产品列表
+            RCheckCodeHTTP: function (info) {
                 return $http({
                     method: "post",
                     url: serviceURL.RCheckCodeURL,
@@ -172,11 +182,11 @@ angular.module("txj")
             },
 
             // 实名认证第一步
-            realNameStep1HTTP: function (info) {  //获取产品列表
+            realNameStep1HTTP: function (info) {
                 return $http({
                     method: "post",
                     url: serviceURL.realNameStep1URL,
-                    data:info,
+                    params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }

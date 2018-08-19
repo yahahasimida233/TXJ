@@ -7,6 +7,22 @@ app.controller("contractCtrl", function ($state, $stateParams, serviceHTTP, $tim
 
     vm.back = function(){
         window.history.back(-1);
-    }
+    };
 
-})
+    var id = $stateParams.id;
+
+    serviceHTTP.userContractHTTP(id).then(function successCallback(response) {
+        // 请求成功执行代码
+        console.log(response);
+        if(response.data.message === "success") {
+            vm.list = response.data.data[0];
+            console.log(vm.list);
+        }
+        else {
+            bootbox.alert(response.data.message)
+        }
+    }, function errorCallback(res) {
+        // 请求失败执行代码
+    });
+
+});

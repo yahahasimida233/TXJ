@@ -1,18 +1,31 @@
 .titleWarp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: .4rem;
   line-height: .4rem;
   font-size: .2rem;
-  color: #d7a64c; }
+  color: #d7a64c;
+  background-color: white;
+  z-index: 200; }
   .titleWarp .title {
     padding-right: 0.2rem; }
 
 .back {
   padding-left: .2rem; }
 
+.contract {
+  overflow-y: auto; }
+
 .contractContent {
+  position: absolute;
+  top: .4rem;
+  left: 0;
+  right: 0;
   padding: .2rem; }
   .contractContent div {
     margin-bottom: .1rem; }

@@ -131,8 +131,8 @@ app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
         // 请求成功执行代码
         console.log(response);
         if(response.data.code == 0) {
-            vm.list = response.data.recommend;
-            console.log(vm.list)
+            vm.list = response.data.recommend[0];
+            console.log(vm.list);
             if(vm.list){
                 var data = {
                     productId: vm.list.id,

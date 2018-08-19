@@ -22,7 +22,11 @@ app.controller("addCardCtrl", function ($state, $stateParams, serviceHTTP, $time
         }
         else{
             console.log(bankCardAttribution(vm.card));
-            $state.go("home.RNStep2", { bankType: bankCardAttribution(vm.card).bankName });
+            sessionStorage.setItem('step','addCard');
+            sessionStorage.setItem('name',vm.userName);
+            sessionStorage.setItem('idCard',vm.IdCard);
+            // $state.go("home.RNStep2", { bankType: bankCardAttribution(vm.card).bankName });
+            $state.go("home.RNStep2", { bankCard:vm.card })
         }
     }
 })
