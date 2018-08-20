@@ -45,13 +45,14 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             }
 
         }
-        setTime();
+
 
             serviceHTTP.verificationCodeHTTP(vm.userName).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
             vm.message = response.data.message;
             if(response.data.message === "success") {
+                setTime();
                 bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册码已发送请注意查收</div>' });
             }
             else {
@@ -71,7 +72,7 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
     var verifyCode = new GVerify("v_container");
     // 提交表单，注册信息
     vm.confirm = function(){
-
+        // vm.goOn = false;
         // 表单验证手机号是否符合
         if(vm.userName.match(/^(((\+86)|(86))?1[0-9]{10})$/) && vm.userName.length === 11){
         }else{
@@ -121,11 +122,27 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             phoneNum: vm.userName,
             pwd:vm.newP
         };
-        serviceHTTP.verificationCodeHTTP(phone).then(function successCallback(response) {
+        serviceHTTP.codeConfirmHTTP(phone).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "success") {
-                vm.goOn = true;
+            if(response.data.code == 0) {
+                serviceHTTP.phoneRegisterHTTP(info).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    console.log(response);
+                    if(response.data.code == 0) {
+                        bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册成功马上转跳到登陆页面哦</div>' });
+                        $state.go('login');
+                        return false;
+                    }
+                    else if(response.data.code !==  0) {
+                        bootbox.alert(response.data.message);
+                        vm.imgCode = undefined;
+                        verifyCode.refresh();
+                        vm.countError ++;
+                    }
+                }, function errorCallback(res) {
+                    // 请求失败执行代码
+                });
             }
             else {
                 bootbox.alert(response.data.message);
@@ -136,26 +153,7 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             // 请求失败执行代码
         });
 
-        if(vm.goOn){
-            // 当报错三次时，需要增加一个图形验证码进行人机验证
-            serviceHTTP.registerHTTP(info).then(function successCallback(response) {
-                // 请求成功执行代码
-                console.log(response);
-                if(response.data.message === "success") {
-                    bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册成功马上转跳到登陆页面哦</div>' });
-                    $state.go('login');
-                    return false;
-                }
-                else if(response.data.code !==  0) {
-                    bootbox.alert(response.data.message);
-                    vm.imgCode = undefined;
-                    verifyCode.refresh();
-                    vm.countError ++;
-                }
-            }, function errorCallback(res) {
-                // 请求失败执行代码
-            });
-        }
+
 
     }
 });
