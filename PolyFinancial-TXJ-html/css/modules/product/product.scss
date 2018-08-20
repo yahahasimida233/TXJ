@@ -67,6 +67,9 @@ $gold: #d7a64c;
     bottom: 55px;
     width: 100%;
     padding: .2rem;
+    th{
+        white-space:nowrap;
+    }
     .introduce{
         padding: .1rem;
     }
