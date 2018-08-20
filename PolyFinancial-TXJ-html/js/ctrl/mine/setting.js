@@ -44,6 +44,7 @@ app.controller("settingCtrl",function ($scope,$http,$state,serviceHTTP,$statePar
             $state.go('home.mine');
             return false
         }
+        $state.go('home');
         // window.history.back(-1);
     }
 });
