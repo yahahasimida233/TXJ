@@ -56,19 +56,22 @@ app.filter("phoneNum", function () {
     }
 });
 
-// 银行卡号过滤 *+显示最后4位（默认银行卡号为19位）
+// 银行卡号过滤为*➕显示最后4位数字（默认银行卡号为19位）
 app.filter("card", function () {
     return function (data) {
-        var b = data.slice(15);
-        var showNum = "**** **** **** *** " + b;
+        // var b = data.slice(15);
+        // var showNum = "**** **** **** *** " + b;
+        var b = data.slice(data.length-4);
+        var a = username.slice(0,data.length-4).replace(/./g, '*');
+        var showName = (a).concat(b);
         return showNum;
     }
 });
 
-// 银行卡过滤，只返回最后四位数字（默认银行卡号为19位）
+// 银行卡过滤，只返回最后四位数字
 app.filter("cardNum",function () {
     return function (data) {
-        var num = data.slice(15);
+        var num = data.slice(data.length-4);
         return num;
     }
 });
