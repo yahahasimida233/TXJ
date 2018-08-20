@@ -46,12 +46,11 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
 
         }
 
-
             serviceHTTP.verificationCodeHTTP(vm.userName).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
             vm.message = response.data.message;
-            if(response.data.message === "success") {
+            if(response.data.code == 0) {
                 setTime();
                 bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册码已发送请注意查收</div>' });
             }
@@ -126,6 +125,7 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             // 请求成功执行代码
             console.log(response);
             if(response.data.code == 0) {
+                setTime();
                 serviceHTTP.phoneRegisterHTTP(info).then(function successCallback(response) {
                     // 请求成功执行代码
                     console.log(response);

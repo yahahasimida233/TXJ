@@ -10,7 +10,7 @@ app.controller("messageDetailCtrl",function ($scope,$http,$state,serviceHTTP,$st
     serviceHTTP.messageDetailHTTP(info).then(function successCallback(response) {
         // 请求成功执行代码
         console.log(response);
-        if(response.data.message === "查询成功") {
+        if(response.data.code == 0) {
             vm.list = response.data.data;
             vm.imgSrc = (vm.list.articlePicture)?vm.list.articlePicture: "img/lucky.gif";
         }

@@ -32,7 +32,7 @@ app.controller("sureUnCardCtrl",function ($state, $stateParams, serviceHTTP) {
             console.log(response);
             
             // 请求成功执行代码
-            if (response.data.code === 0) {
+            if (response.data.code == 0) {
                 setTime(); //开始倒计时
             } 
             else{

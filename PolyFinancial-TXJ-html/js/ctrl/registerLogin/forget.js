@@ -37,13 +37,14 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
             }
 
         }
-        setTime();
+
 
         serviceHTTP.getCodeHTTP(vm.userName).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
             vm.message = response.data.message;
-            if(response.data.message === "success") {
+            if(response.data.message == 0) {
+                setTime();
                 bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册码已发送请注意查收</div>' });
             }
             else {
@@ -114,7 +115,7 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
         serviceHTTP.RCheckCodeHTTP(phone).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "success") {
+            if(response.data.code == 0) {
             }
             else {
                 bootbox.alert(response.data.message);
@@ -130,7 +131,7 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
         serviceHTTP.getbackPHTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "success") {
+            if(response.data.code == 0) {
                 bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">找回密码成功马上转跳到登陆页面哦</div>' });
                 $state.go('login')
             }

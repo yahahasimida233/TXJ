@@ -55,15 +55,15 @@ app.controller("changePhoneCtrl",function ($scope,$http,$state,serviceHTTP,$stat
             }
 
         }
-        setTime();
+
 
         // 获取验证码的请求
         serviceHTTP.getCodeHTTP(vm.userName).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
 
-            if(response.data.message === "success") {
-
+            if(response.data.code == 0) {
+                setTime();
             }
             else if(response.data.code !==  0) {
                 bootbox.alert(response.data.message);
@@ -104,7 +104,7 @@ app.controller("changePhoneCtrl",function ($scope,$http,$state,serviceHTTP,$stat
         serviceHTTP.codeConfirmHTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "认证通过") {
+            if(response.data.code == 0) {
                 $state.go('home.changePhoneStpe2')
 
             }
