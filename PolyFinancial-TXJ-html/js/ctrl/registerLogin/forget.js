@@ -43,7 +43,7 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
             // 请求成功执行代码
             console.log(response);
             vm.message = response.data.message;
-            if(response.data.message == 0) {
+            if(response.data.code == 0) {
                 setTime();
                 bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册码已发送请注意查收</div>' });
             }
@@ -65,6 +65,7 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
 
     // 提交表单，注册信息
     vm.confirm = function(){
+        vm.goOn = false;
         // 表单验证手机号是否符合
         if(vm.userName.match(/^(((\+86)|(86))?1[0-9]{10})$/) && vm.userName.length === 11){
         }else{
@@ -116,9 +117,10 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
             // 请求成功执行代码
             console.log(response);
             if(response.data.code == 0) {
+                vm.goOn = true;
             }
             else {
-                bootbox.alert(response.data.message);
+                // bootbox.alert(response.data.message);
                 vm.imgCode = undefined;
                 verifyCode.refresh();
                 vm.countError ++;
@@ -136,13 +138,17 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
                 $state.go('login')
             }
             else if(response.data.code !==  0) {
-                bootbox.alert(response.data.message);
-                vm.imgCode = undefined;
-                verifyCode.refresh();
-                vm.countError ++;
+                if(vm.goOn){
+                    bootbox.alert(response.data.message);
+                    vm.imgCode = undefined;
+                    verifyCode.refresh();
+                    vm.countError ++;
+                }
+
             }
         }, function errorCallback(res) {
             // 请求失败执行代码
         });
+
     }
 });

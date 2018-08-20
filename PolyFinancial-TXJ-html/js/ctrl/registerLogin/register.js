@@ -129,18 +129,6 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             // 请求失败执行代码
         });
 
-        $timeout(function () {
-            if(vm.goOn){
-                reigster();
-            }
-        },200)
-    };
-
-    // $scope.$watch(vm.goOn, function () {
-    //     reigster();
-    // });
-
-    function reigster() {
         var info = {
             phoneNum:vm.userName,
             pwd:vm.newP
@@ -154,6 +142,9 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
                 return false;
             }
             else if(response.data.code !==  200) {
+                if(!vm.goOn){
+                    return false;
+                }
                 bootbox.alert(response.data.message);
                 vm.imgCode = undefined;
                 verifyCode.refresh();
@@ -162,5 +153,9 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
         }, function errorCallback(res) {
             // 请求失败执行代码
         });
-    }
+    };
+
+
+
+
 });
