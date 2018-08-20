@@ -19,7 +19,7 @@ angular.module("txj").factory("serviceURL", function() {
         codeConfirmURL: "/home/a/u/verify/",
 
         // 提交注册信息
-        registerURL: "/home/a/u/register",
+        registerURL: "/home/a/u/register/",
 
         //图片（伪）验证码
         imgCodeURL: "/home/a/u/pverify/",
