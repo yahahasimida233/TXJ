@@ -7,10 +7,20 @@ app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
         $(".indexLoading").hide(500);
     },1000);
 
-    // vm.creat = function(){
-    //
-    // };
-    // vm.creat();
+    vm.btn1 = function(){
+        vm.homeTitle ='首页';
+        sessionStorage.setItem('homeTitle','首页')
+    };
+
+    vm.btn2 = function(){
+        vm.homeTitle ='理财';
+        sessionStorage.setItem('homeTitle','理财')
+    };
+
+    vm.btn3 = function(){
+        vm.homeTitle ='我的';
+        sessionStorage.setItem('homeTitle','我的')
+    };
 
 
     vm.yahaha = function(){
@@ -119,7 +129,6 @@ app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
     //     }
     //     loop();
     // },200);
-
 
     // // 设置轮播图图片间隔
     $("#myCarousel").carousel({

@@ -1,4 +1,3 @@
-
 app.filter('status', function() {
     return function(text) {
         if(text == 0){
