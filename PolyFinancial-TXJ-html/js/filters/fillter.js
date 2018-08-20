@@ -1,5 +1,3 @@
-
-
 app.filter('money',function(){
     return function (n){
         const fraction = ['角', '分'];
@@ -31,17 +29,24 @@ app.filter('money',function(){
 // 用户名过滤只显示姓
 app.filter("username", function () {
     return function (username) {
-        var a = username.slice(1).replace(/./g, '*');
-        var showName = username[0].concat(a);
-        return showName;
+        if(username){
+            var a = username.slice(1).replace(/./g, '*');
+            var showName = username[0].concat(a);
+            return showName;
+        }
+        return false;
     }
 });
 
 // 身份证号隐藏中间8位
 app.filter("IdCard", function () {
     return function (IdCard) {
-        var showIdCard = IdCard.slice(0, 6) + "********" + IdCard.slice(14);
-        return showIdCard;
+        if(IdCard){
+            var showIdCard = IdCard.slice(0, 6) + "********" + IdCard.slice(14);
+            return showIdCard;
+        }
+        return false;
+
     }
 });
 
@@ -58,19 +63,35 @@ app.filter("phoneNum", function () {
     }
 });
 
-// 银行卡号过滤 *+显示最后4位（默认银行卡号为19位）
+// 银行卡号过滤为*➕显示最后4位数字
 app.filter("card", function () {
     return function (data) {
-        var b = data.slice(15);
-        var showNum = "**** **** **** *** " + b;
+        var b = data.slice(data.length-4);
+        if (data.length == 16) {
+            var showNum = "**** **** **** " + b;
+        }
+        if (data.length == 17) {
+             var showNum = "**** **** **** " + "*"+b;
+        }
+        if (data.length == 18) {
+            var showNum = "**** **** **** " + "**" + b;
+        }
+        if (data.length == 19) {
+             var showNum = "**** **** **** *** " + b;
+        }
+        // 每4位数添加一个空格
+        // var b = data.slice(data.length-4);
+        // var a = data.slice(0,data.length-4).replace(/./g, '*');
+        // var c = (a).concat(b);
+        // var showNum = c.replace(/s/g, '').replace(/(.{4})/g, "$1 ");
         return showNum;
     }
 });
 
-// 银行卡过滤，只返回最后四位数字（默认银行卡号为19位）
+// 银行卡过滤，只返回最后四位数字
 app.filter("cardNum",function () {
     return function (data) {
-        var num = data.slice(15);
+        var num = data.slice(data.length-4);
         return num;
     }
 });
@@ -160,7 +181,7 @@ app.filter('continued',function(){
     return function (a){
         switch (a){
             case 0:
-                a = "预约续投";
+                a = "取消预约";
                 break;
             case 1:
                 a = "预约续投";

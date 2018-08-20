@@ -70,6 +70,7 @@ app.controller("messageCtrl",function ($http,$state,serviceHTTP,$stateParams) {
                 console.log(vm.list);
                 vm.size = $stateParams.size || 10;
                 vm.page = $stateParams.page || undefined;
+
             }
             else {
                 bootbox.alert(response.data.message)

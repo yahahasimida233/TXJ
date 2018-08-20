@@ -13,12 +13,23 @@ $gold: #d7a64c;
     padding: .2rem;
     .message{
         display: inline-block!important;
-        width: 50%!important;
+        width: 45%!important;
     }
     
     .getCode {
         padding-left: .1rem;
         color: $gold;
         font-weight: bold;
+    }
+}
+// 解绑按钮
+.next-btn {
+    padding: 0.1rem 0 .5rem 0;
+    .unCard {
+        width: 90%;
+        padding: .1rem;
+        margin-top: .2rem;
+        font-size: .15rem;
+        border-radius: .1rem;
     }
 }

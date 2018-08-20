@@ -8,9 +8,9 @@
 <div class="mes-tips bk-white">
     本次操作需要短信验证，请输入{{vm.userName}}收到的短信验证码。
 </div>
-<form name="messageForm">
+<form name="messageForm" class="bk-white">
     <!-- 验证码 -->
-    <div class="message-warp bk-white">
+    <div class="message-warp ">
         验证码：
         <input type="number" 
                class="message form-control"
@@ -30,5 +30,8 @@
                ng-show = "false"
                ng-click = "vm.sendCode()">
     </div>
-
+    <!-- 解绑按钮 -->
+    <div class="text-center next-btn">
+        <button class="btn btn-primary unCard" ng-click="vm.next(vm.message)">下一步</button>
+    </div>
 </form>
