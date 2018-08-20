@@ -82,7 +82,7 @@ angular.module("txj")
             phoneRegisterHTTP : function (info) {
                 return $http({
                     method: "POST",
-                    url: serviceURL.phoneRegisterURL,
+                    url: serviceURL.registerURL,
                     params: info ,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
