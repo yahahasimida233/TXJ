@@ -78,12 +78,12 @@ angular.module("txj")
                 })
             },
 
-            //手机号码注册验证
+            //提交注册信息
             phoneRegisterHTTP : function (info) {
                 return $http({
                     method: "POST",
                     url: serviceURL.registerURL,
-                    params: info ,
+                    params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
