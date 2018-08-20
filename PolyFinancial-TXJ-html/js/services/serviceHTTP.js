@@ -16,7 +16,7 @@ angular.module("txj")
             //登出
             logoutHTTP: function () {
                 return $http({
-                    method: "get",
+                    method: "delete",
                     url: serviceURL.logoutURL,
 
                     headers: { 
