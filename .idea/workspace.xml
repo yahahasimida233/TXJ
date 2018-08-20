@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="819dd31a-3431-4100-8b25-41ad794cb473" name="Default" comment="我也会摆龙门阵了">
+    <list default="true" id="819dd31a-3431-4100-8b25-41ad794cb473" name="Default" comment="a a a aa a">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/product/contractCtrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/product/contractCtrl.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,7 +28,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="8" />
-          <entry key="html" value="36" />
+          <entry key="html" value="37" />
           <entry key="js" value="47" />
           <entry key="map" value="3" />
           <entry key="scss" value="22" />
@@ -38,7 +37,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="8" />
-          <entry key="HTML" value="36" />
+          <entry key="HTML" value="37" />
           <entry key="JavaScript" value="47" />
           <entry key="SCSS" value="22" />
           <entry key="SourceMap" value="3" />
@@ -50,7 +49,7 @@
           <entry key="html" value="279" />
           <entry key="js" value="837" />
           <entry key="scss" value="758" />
-          <entry key="txt" value="9" />
+          <entry key="txt" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -58,7 +57,7 @@
           <entry key="CSS" value="1" />
           <entry key="HTML" value="279" />
           <entry key="JavaScript" value="837" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="PLAIN_TEXT" value="20" />
           <entry key="SCSS" value="758" />
         </counts>
       </usages-collector>
@@ -81,17 +80,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/product/contractCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            <state relative-caret-position="305">
+              <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/route.js">
+        <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/product/contract.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5149">
-              <caret line="271" column="41" selection-start-line="271" selection-start-column="41" selection-end-line="271" selection-end-column="41" />
+            <state relative-caret-position="481">
+              <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -255,7 +254,6 @@
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/modules/mine/mine.css" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/modules/mine/mine.scss" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-admin-html/view/html/business/userContractDetailed.html" />
-        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/product/contract.html" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/index.html" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/mine/addCard.html" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/css/global.scss" />
@@ -286,6 +284,7 @@
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/mine/realName.js" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/mine/addCardCtrl.js" />
         <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/product/contractCtrl.js" />
+        <option value="$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/product/contract.html" />
       </list>
     </option>
   </component>
@@ -302,8 +301,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="192" />
-    <option name="y" value="172" />
+    <option name="x" value="295" />
+    <option name="y" value="165" />
     <option name="width" value="1509" />
     <option name="height" value="919" />
   </component>
@@ -322,68 +321,6 @@
             <path>
               <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
               <item name="TXJ" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
-              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
-              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
-              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="ctrl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
-              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="ctrl" type="462c0819:PsiDirectoryNode" />
-              <item name="mine" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
-              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="ctrl" type="462c0819:PsiDirectoryNode" />
-              <item name="product" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
-              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
-              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
-              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TXJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TXJ" type="462c0819:PsiDirectoryNode" />
-              <item name="PolyFinancial-TXJ-html" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-              <item name="mine" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -513,14 +450,7 @@
       <workItem from="1534599985385" duration="2955000" />
       <workItem from="1534608436284" duration="904000" />
       <workItem from="1534634198225" duration="31090000" />
-      <workItem from="1534726819728" duration="619000" />
-    </task>
-    <task id="LOCAL-00004" summary="修改首页">
-      <created>1530802622670</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1530802622670</updated>
+      <workItem from="1534726819728" duration="954000" />
     </task>
     <task id="LOCAL-00005" summary="用户管理模块">
       <created>1531236272236</created>
@@ -858,14 +788,21 @@
       <option name="project" value="LOCAL" />
       <updated>1534662501732</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="a a a aa a">
+      <created>1534730512210</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1534730512210</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="639995000" />
+    <option name="totallyTimeSpent" value="640330000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="266" y="74" width="1207" height="735" extended-state="0" />
+    <frame x="241" y="37" width="1207" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28949615" />
@@ -920,7 +857,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改首页" />
     <MESSAGE value="用户管理模块" />
     <MESSAGE value="用户管理" />
     <MESSAGE value="懒加载有问题" />
@@ -945,7 +881,8 @@
     <MESSAGE value="同步走一波" />
     <MESSAGE value="提交了大量bug" />
     <MESSAGE value="我也会摆龙门阵了" />
-    <option name="LAST_COMMIT_MESSAGE" value="我也会摆龙门阵了" />
+    <MESSAGE value="a a a aa a" />
+    <option name="LAST_COMMIT_MESSAGE" value="a a a aa a" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
@@ -1046,13 +983,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/product/contract.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="68" lean-forward="true" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -1201,13 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/mine/realName.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/mine/RNstep2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -1260,10 +1183,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/mine/realName.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="40" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/view/html/product/contract.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PolyFinancial-TXJ-html/js/ctrl/product/contractCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        <state relative-caret-position="305">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
         </state>
       </provider>
     </entry>
