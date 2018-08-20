@@ -14,8 +14,8 @@ app.controller("contractCtrl", function ($state, $stateParams, serviceHTTP, $tim
     serviceHTTP.userContractHTTP(id).then(function successCallback(response) {
         // 请求成功执行代码
         console.log(response);
-        if(response.data.message === "success") {
-            vm.list = response.data.data[0];
+        if(response.data.code ==0) {
+            vm.list = response.data.data;
             console.log(vm.list);
         }
         else {
