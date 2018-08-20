@@ -1,10 +1,12 @@
 .white {
-  color: #fff !important; }
+  color: #fff !important;
+}
 
 .top-warp {
   color: #fff;
   padding-bottom: .1rem;
-  background-color: #d7a64c; }
+  background-color: #d7a64c;
+}
 
 .new {
   position: fixed;
@@ -13,7 +15,8 @@
   padding: 6px;
   font-weight: bold;
   border-radius: 10px;
-  background-color: red; }
+  background-color: red;
+}
 
 .titleWarp {
   display: flex;
@@ -21,32 +24,42 @@
   align-items: center;
   height: .4rem;
   line-height: .4rem;
-  font-size: .2rem; }
-  .titleWarp .title {
-    padding-right: 0.2rem; }
+  font-size: .2rem;
+}
+
+.titleWarp .title {
+  padding-right: 0.2rem;
+}
 
 .back {
-  padding-left: .2rem; }
+  padding-left: .2rem;
+}
 
 .rate-warp .rate {
-  font-size: .8rem; }
+  font-size: .8rem;
+}
 
 .rate-text {
-  margin-bottom: .2rem; }
+  margin-bottom: .2rem;
+}
 
 .flex-around {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+}
 
 .productMore {
   font-size: .18rem;
-  padding: .2rem 0; }
+  padding: .2rem 0;
+}
 
 .gray {
-  color: #999999; }
+  color: #999999;
+}
 
 .black {
-  color: black; }
+  color: black;
+}
 
 .infor {
   position: fixed;
@@ -54,19 +67,28 @@
   top: 304px;
   bottom: 55px;
   width: 100%;
-  padding: .2rem; }
-  .infor .introduce {
-    padding: .1rem; }
+  padding: .2rem;
+}
+
+.infor th {
+  white-space: nowrap;
+}
+
+.infor .introduce {
+  padding: .1rem;
+}
 
 table {
-  width: 100%; }
-  table th, table td {
-    border: none !important; }
+  width: 100%;
+}
+
+table th, table td {
+  border: none !important;
+}
 
 .bottom {
   position: fixed;
   width: 100%;
   bottom: 0;
-  margin: .1rem 0; }
-
-/*# sourceMappingURL=product.css.map */
+  margin: .1rem 0;
+}
