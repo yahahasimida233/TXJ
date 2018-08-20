@@ -29,17 +29,24 @@ app.filter('money',function(){
 // 用户名过滤只显示姓
 app.filter("username", function () {
     return function (username) {
-        var a = username.slice(1).replace(/./g, '*');
-        var showName = username[0].concat(a);
-        return showName;
+        if(username){
+            var a = username.slice(1).replace(/./g, '*');
+            var showName = username[0].concat(a);
+            return showName;
+        }
+        return false;
     }
 });
 
 // 身份证号隐藏中间8位
 app.filter("IdCard", function () {
     return function (IdCard) {
-        var showIdCard = IdCard.slice(0, 6) + "********" + IdCard.slice(14);
-        return showIdCard;
+        if(IdCard){
+            var showIdCard = IdCard.slice(0, 6) + "********" + IdCard.slice(14);
+            return showIdCard;
+        }
+        return false;
+
     }
 });
 
@@ -59,11 +66,11 @@ app.filter("phoneNum", function () {
 // 银行卡号过滤为*➕显示最后4位数字（默认银行卡号为19位）
 app.filter("card", function () {
     return function (data) {
-        // var b = data.slice(15);
-        // var showNum = "**** **** **** *** " + b;
-        var b = data.slice(data.length-4);
-        var a = username.slice(0,data.length-4).replace(/./g, '*');
-        var showName = (a).concat(b);
+        var b = data.slice(15);
+        var showNum = "**** **** **** *** " + b;
+        // var b = data.slice(data.length-4);
+        // var a = username.slice(0,data.length-4).replace(/./g, '*');
+        // var showName = (a).concat(b);
         return showNum;
     }
 });
@@ -161,7 +168,7 @@ app.filter('continued',function(){
     return function (a){
         switch (a){
             case 0:
-                a = "预约续投";
+                a = "取消预约";
                 break;
             case 1:
                 a = "预约续投";
