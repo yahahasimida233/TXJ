@@ -96,7 +96,13 @@ app.controller("RNStep3Ctrl",function ($scope,$http,$state,serviceHTTP,$statePar
         serviceHTTP.RCheckCodeHTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "success") {
+            if(response.data.code == 0) {
+                vm.step= sessionStorage.getItem('step');
+                if(vm.step == 'addCard'){
+                    bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">银行卡添加成功！</div>' });
+                    $state.go('home.mineCard');
+                    return false;
+                }
                 bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">实名认证成功！将回到个人信息页面！</div>' });
                 $state.go('home.userInfo')
             }

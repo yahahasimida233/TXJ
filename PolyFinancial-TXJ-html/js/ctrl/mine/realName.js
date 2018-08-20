@@ -1,5 +1,6 @@
 app.controller("realNameCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams,$timeout) {
     var vm = this;
+    sessionStorage.setItem('step','realName');
 
     // 第一步确认操作
     vm.step1Click = function(){
