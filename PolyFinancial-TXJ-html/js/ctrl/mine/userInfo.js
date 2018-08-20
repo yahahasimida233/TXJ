@@ -4,7 +4,7 @@ app.controller("userInfoCtrl",function ($http,$state,serviceHTTP,$stateParams,$t
     serviceHTTP.userInfoHTTP().then(function successCallback(response) {
         // 请求成功执行代码
         console.log(response);
-        if(response.data.message === "success") {
+        if(response.data.code == 0) {
             vm.list = response.data.user;
             console.log(vm.list)
 
@@ -19,7 +19,7 @@ app.controller("userInfoCtrl",function ($http,$state,serviceHTTP,$stateParams,$t
 
 
     vm.checkRealName = function(){
-        if(vm.list.realnameState === 1){
+        if(vm.list.realnameState == 1){
             $state.go('home.realName')
         }
 

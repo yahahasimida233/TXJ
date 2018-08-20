@@ -18,7 +18,7 @@ app.controller("loginCtrl",function ($scope,$http,$state,serviceHTTP,$stateParam
         serviceHTTP.loginHTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "success") {
+            if(response.data.message == 0) {
                 sessionStorage.setItem("login","true");
                 sessionStorage.setItem('userName',vm.userName);
                 $state.go('home.mine')

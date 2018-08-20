@@ -34,7 +34,7 @@ app.controller("mineTradeCtrl",function ($scope,$http,$state,serviceHTTP,$stateP
         serviceHTTP.payedHTTP().then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "查询成功") {
+            if(response.data.code == 0) {
                 vm.list = response.data.data;
 
             }
@@ -53,7 +53,7 @@ app.controller("mineTradeCtrl",function ($scope,$http,$state,serviceHTTP,$stateP
         serviceHTTP.continueHTTP().then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "查询成功") {
+            if(response.data.code == 0) {
                 vm.list = response.data.data;
 
             }
@@ -71,7 +71,7 @@ app.controller("mineTradeCtrl",function ($scope,$http,$state,serviceHTTP,$stateP
         serviceHTTP.dropOutHTTP().then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "查询成功") {
+            if(response.data.code == 0) {
                 vm.list = response.data.data;
 
             }

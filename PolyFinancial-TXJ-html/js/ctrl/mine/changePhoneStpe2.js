@@ -37,7 +37,7 @@ app.controller("changePhoneStep2Ctrl",function ($scope,$http,$state,serviceHTTP,
             // 请求成功执行代码
             console.log(response);
 
-            if(response.data.message === "success") {
+            if(response.data.code == 0) {
 
             }
             else if(response.data.code !==  0) {

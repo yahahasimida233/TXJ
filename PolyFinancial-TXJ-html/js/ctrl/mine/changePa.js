@@ -25,7 +25,7 @@ app.controller("changePaCtrl",function ($http,$state,serviceHTTP,$stateParams,$t
         serviceHTTP.settingCPHTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "success") {
+            if(response.data.code == 0) {
                 bootbox.dialog({ message: '<div class="text-center" style="color: #dca854;">修改成功，请重新登录</div>' });
                 sessionStorage.clear();
                 $state.go('login');

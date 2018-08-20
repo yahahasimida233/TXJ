@@ -6,7 +6,7 @@ app.controller("mineCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
         serviceHTTP.mineHTTP().then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "查询成功") {
+            if(response.data.code == 0) {
                 vm.list = response.data.data;
                 console.log(vm.list)
 

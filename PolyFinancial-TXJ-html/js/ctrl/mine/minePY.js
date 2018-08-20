@@ -9,14 +9,16 @@ app.controller("minePYCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
     // }
 
     vm.back = function(){
-        window.history.back(-1);
-    }
+
+        sessionStorage.setItem('homeTitle','我的');
+        $state.go('home.mine');
+    };
 
     vm.getList = function(){
         serviceHTTP.tradeListHTTP().then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "查询成功") {
+            if(response.data.code == 0) {
                 vm.data = response.data.data;
                 vm.dataLength = vm.data.length;
 
