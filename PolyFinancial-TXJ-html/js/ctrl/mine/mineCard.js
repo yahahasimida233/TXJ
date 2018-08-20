@@ -13,13 +13,6 @@ app.controller("mineCardCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
         vm.cardLists = res.data.data;
     })
 
-    var a = "6222084402012518";
-    console.log(a.length);
-    
-    var b = a.slice(a.length-1)
-    console.log(b);
-    
-
     //添加银行卡
     vm.addCard = function () {
         // 验证该用户是否实名认证
