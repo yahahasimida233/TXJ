@@ -19,6 +19,7 @@
                ng-model="vm.message"
                step="1"
                maxlength="6"
+               ng-pattern="/^\d{6}$/"
                required>
         <label for="code"
                class="getCode"
@@ -32,6 +33,6 @@
     </div>
     <!-- 解绑按钮 -->
     <div class="text-center next-btn">
-        <button class="btn btn-primary unCard" ng-click="vm.next(vm.message)">下一步</button>
+        <button class="btn btn-primary unCard" ng-click="vm.next()" ng-disabled="messageForm.message.$invalid">下一步</button>
     </div>
 </form>

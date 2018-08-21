@@ -325,7 +325,7 @@ angular.module("txj")
             },
 
             // 银行卡列表
-            bankCardListHTTP:function (userId) { //获取产品详情
+            bankCardListHTTP:function (userId) { 
                 return $http({
                     method: "GET",
                     url: serviceURL.bankCardListURL,
@@ -335,11 +335,11 @@ angular.module("txj")
                 })
             },
             
-            // 银行卡列表
-            unCardHTTP: function (userId) { //获取产品详情
+            // 解绑银行卡
+            unCardHTTP: function (card) { 
                 return $http({
                     method: "DELETE",
-                    url: serviceURL.unCardURL + card,
+                    url: serviceURL.bankCardListURL + card,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
