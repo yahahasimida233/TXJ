@@ -45,7 +45,7 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
             vm.message = response.data.message;
             if(response.data.code == 0) {
                 setTime();
-                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册码已发送请注意查收</div>' });
+                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">验证码已发送请注意查收</div>' });
             }
             else {
                 bootbox.alert(vm.message);
@@ -109,18 +109,16 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
             }
         }
 
-        var info = {
-            phoneNum: vm.userName,
-            pwd:vm.newP
-        };
-        serviceHTTP.RCheckCodeHTTP(phone).then(function successCallback(response) {
+
+        serviceHTTP.codeConfirmHTTP(phone).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
             if(response.data.code == 0) {
                 vm.goOn = true;
             }
             else {
-                // bootbox.alert(response.data.message);
+
+                bootbox.alert(response.data.message);
                 vm.imgCode = undefined;
                 verifyCode.refresh();
                 vm.countError ++;
@@ -130,25 +128,55 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
 
         });
 
-        serviceHTTP.getbackPHTTP(info).then(function successCallback(response) {
-            // 请求成功执行代码
-            console.log(response);
-            if(response.data.code == 0) {
-                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">找回密码成功马上转跳到登陆页面哦</div>' });
-                $state.go('login')
-            }
-            else if(response.data.code !==  0) {
-                if(vm.goOn){
-                    bootbox.alert(response.data.message);
-                    vm.imgCode = undefined;
-                    verifyCode.refresh();
-                    vm.countError ++;
+
+        // serviceHTTP.getbackPHTTP(info).then(function successCallback(response) {
+        //     // 请求成功执行代码
+        //     console.log(response);
+        //     if(response.data.code == 0) {
+        //         bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">找回密码成功马上转跳到登陆页面哦</div>' });
+        //         $state.go('login')
+        //     }
+        //     else if(response.data.code !==  0) {
+        //         if(vm.goOn){
+        //             bootbox.alert(response.data.message);
+        //             vm.imgCode = undefined;
+        //             verifyCode.refresh();
+        //             vm.countError ++;
+        //         }
+        //
+        //     }
+        // }, function errorCallback(res) {
+        //     // 请求失败执行代码
+        // });
+
+    };
+
+    $scope.$watch('vm.goOn',function(newValue,oldValue){
+        if(vm.goOn){
+            var info = {
+                phoneNum: vm.userName,
+                pwd:vm.newP
+            };
+
+            serviceHTTP.getbackPHTTP(info).then(function successCallback(response) {
+                // 请求成功执行代码
+                console.log(response);
+                if(response.data.code == 0) {
+                    bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">找回密码成功马上转跳到登陆页面哦</div>' });
+                    $state.go('login')
                 }
+                else if(response.data.code !==  0) {
+                    if(vm.goOn){
+                        bootbox.alert(response.data.message);
+                        vm.imgCode = undefined;
+                        verifyCode.refresh();
+                        vm.countError ++;
+                    }
 
-            }
-        }, function errorCallback(res) {
-            // 请求失败执行代码
-        });
-
-    }
+                }
+            }, function errorCallback(res) {
+                // 请求失败执行代码
+            });
+        }
+    });
 });

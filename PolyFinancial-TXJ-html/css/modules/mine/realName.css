@@ -55,6 +55,16 @@
     .realName .realName-step2 .agreement {
       background-color: #eee;
       border: none; }
+      .realName .realName-step2 .agreement .conText {
+        position: fixed;
+        top: 81px;
+        bottom: .2rem;
+        overflow-y: auto;
+        padding-right: .2rem; }
+        .realName .realName-step2 .agreement .conText .chapter {
+          position: relative;
+          bottom: 0.8rem;
+          left: 1.5rem; }
   .realName .RNStep3 {
     margin: .2rem 0; }
     .realName .RNStep3 .step-title {
