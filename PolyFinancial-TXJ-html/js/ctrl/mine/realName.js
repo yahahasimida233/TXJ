@@ -17,7 +17,7 @@ app.controller("realNameCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             return false;
 
             // 判断银行卡号码是否输入正确（应该使用luhn算法来进行验证）
-        }else if(!vm.bankCard.match(/^([1-9]{1})(\d{14}|\d{18})$/)){
+        }else if(!vm.bankCard.match(/^\d{16,19}$/)){
             bootbox.alert("请输入正确的银行卡号");
             vm.bankCard = undefined;
             return false;

@@ -73,6 +73,18 @@
     .agreement{
       background-color: #eee ;
       border: none;
+      .conText {
+        position: fixed;
+        top: 81px;
+        bottom: .2rem;
+        overflow-y: auto;
+        padding-right: .2rem;
+        .chapter {
+          position: relative;
+          bottom: 0.8rem;
+          left: 1.5rem;
+        }
+      }
     }
   }
 

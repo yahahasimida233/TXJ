@@ -52,7 +52,7 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             vm.message = response.data.message;
             if(response.data.code == 0) {
                 setTime();
-                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册码已发送请注意查收</div>' });
+                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">验证码已发送请注意查收</div>' });
             }
             else {
                 bootbox.alert(response.data.message);
@@ -129,33 +129,38 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             // 请求失败执行代码
         });
 
-        var info = {
-            phoneNum:vm.userName,
-            pwd:vm.newP
-        };
-        serviceHTTP.phoneRegisterHTTP(info).then(function successCallback(response) {
-            // 请求成功执行代码
-            console.log(response);
-            if(response.data.code == 200) {
-                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册成功马上转跳到登陆页面哦</div>' });
-                $state.go('login');
-                return false;
-            }
-            else if(response.data.code !==  200) {
-                if(!vm.goOn){
-                    return false;
-                }
-                bootbox.alert(response.data.message);
-                vm.imgCode = undefined;
-                verifyCode.refresh();
-                vm.countError ++;
-            }
-        }, function errorCallback(res) {
-            // 请求失败执行代码
-        });
+
+
     };
 
-
+    $scope.$watch('vm.goOn',function(newValue,oldValue) {
+        if (vm.goOn) {
+            var info = {
+                phoneNum:vm.userName,
+                pwd:vm.newP
+            };
+            serviceHTTP.phoneRegisterHTTP(info).then(function successCallback(response) {
+                // 请求成功执行代码
+                console.log(response);
+                if(response.data.code == 200) {
+                    bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">注册成功马上转跳到登陆页面哦</div>' });
+                    $state.go('login');
+                    return false;
+                }
+                else if(response.data.code !==  200) {
+                    if(!vm.goOn){
+                        return false;
+                    }
+                    bootbox.alert(response.data.message);
+                    vm.imgCode = undefined;
+                    verifyCode.refresh();
+                    vm.countError ++;
+                }
+            }, function errorCallback(res) {
+                // 请求失败执行代码
+            });
+        }
+    })
 
 
 });
