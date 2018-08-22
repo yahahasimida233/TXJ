@@ -6,7 +6,7 @@
 </div>
 <!-- tips -->
 <div class="mes-tips bk-white">
-    本次操作需要短信验证，请输入{{vm.userName}}收到的短信验证码。
+    本次操作需要短信验证，请输入{{vm.userName | phoneNum}}收到的短信验证码。
 </div>
 <form name="messageForm" class="bk-white">
     <!-- 验证码 -->
@@ -19,6 +19,7 @@
                ng-model="vm.message"
                step="1"
                maxlength="6"
+               ng-pattern="/^\d{6}$/"
                required>
         <label for="code"
                class="getCode"
@@ -32,6 +33,6 @@
     </div>
     <!-- 解绑按钮 -->
     <div class="text-center next-btn">
-        <button class="btn btn-primary unCard" ng-click="vm.next(vm.message)">下一步</button>
+        <button class="btn btn-primary unCard" ng-click="vm.next()" ng-disabled="messageForm.message.$invalid">下一步</button>
     </div>
 </form>

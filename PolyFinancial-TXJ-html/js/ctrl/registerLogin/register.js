@@ -3,7 +3,7 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
     // vm.goOn = false;
     console.log(bootbox);
 
-    // 调试用
+    // 调试用，隐藏启动页
     $timeout(function(){
         $(".indexLoading").hide(500);
     },0);
@@ -31,6 +31,7 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
 
         vm.countdown=60;
 
+        // 开始60s倒计时的函数
         function setTime() {
             if (vm.countdown == 0) {
                 vm.countTime = "获取验证码";
@@ -46,7 +47,8 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
 
         }
 
-            serviceHTTP.verificationCodeHTTP(vm.userName).then(function successCallback(response) {
+        // 获取验证码的请求
+        serviceHTTP.verificationCodeHTTP(vm.userName).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
             vm.message = response.data.message;
@@ -69,6 +71,7 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
 
     // 初始化图形验证
     var verifyCode = new GVerify("v_container");
+
     // 提交表单，注册信息
     vm.confirm = function(){
         vm.goOn = false;
@@ -114,6 +117,7 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
                 return false;
             }
         }
+        // 验证 验证码的请求
         serviceHTTP.codeConfirmHTTP(phone).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
@@ -133,12 +137,14 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
 
     };
 
+    // 监听验证码是否验证成功
     $scope.$watch('vm.goOn',function(newValue,oldValue) {
         if (vm.goOn) {
             var info = {
                 phoneNum:vm.userName,
                 pwd:vm.newP
             };
+            // 当验证成功时，出发提交请求
             serviceHTTP.phoneRegisterHTTP(info).then(function successCallback(response) {
                 // 请求成功执行代码
                 console.log(response);

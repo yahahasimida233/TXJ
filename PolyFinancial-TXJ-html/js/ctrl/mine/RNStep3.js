@@ -1,5 +1,7 @@
 app.controller("RNStep3Ctrl",function ($scope,$http,$state,serviceHTTP,$stateParams,$timeout) {
     var vm = this;
+
+    // 从url获取需要提交的信息
     vm.userName = $stateParams.phone;
     vm.name = sessionStorage.getItem('name');
     vm.idCard = sessionStorage.getItem('idCard');
@@ -8,9 +10,7 @@ app.controller("RNStep3Ctrl",function ($scope,$http,$state,serviceHTTP,$statePar
     // 获取验证码
     vm.countTime = "获取验证码";
     vm.sendCode = function(){
-
         vm.countdown=60;
-
         function setTime() {
             if (vm.countdown == 0) {
                 vm.countTime = "获取验证码";
@@ -18,24 +18,23 @@ app.controller("RNStep3Ctrl",function ($scope,$http,$state,serviceHTTP,$statePar
             } else {
                 vm.countTime = "重新发送(" + vm.countdown + "S)";
                 vm.countdown--;
-
                 $timeout(function () {
                     setTime()
                 }, 1000)
             }
-
         }
 
 
+        // 用于实名认证的信息都保存在对象中
         var info={
             phoneNum: vm.userName,
             bankCard:vm.bankCard,
             vCode: vm.code,
             userName: vm.name,
             cardId :vm.idCard
-
         };
         console.log(info);
+
         // 提交手机号码获取验证码的请求
         serviceHTTP.RGetCodeHTTPL(info).then(function successCallback(response) {
             // 请求成功执行代码
@@ -54,9 +53,6 @@ app.controller("RNStep3Ctrl",function ($scope,$http,$state,serviceHTTP,$statePar
             else {
                 bootbox.alert(vm.message);
             }
-        }, function errorCallback(res) {
-            // 请求失败执行代码
-
         });
     };
 
@@ -93,11 +89,13 @@ app.controller("RNStep3Ctrl",function ($scope,$http,$state,serviceHTTP,$statePar
             }
         }
 
+        // 实名认证最后一步提交所有信息
         serviceHTTP.RCheckCodeHTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
             if(response.data.code == 0) {
                 vm.step= sessionStorage.getItem('step');
+                // 看当前进行的是哪一步，从而返回到正确的路由
                 if(vm.step == 'addCard'){
                     bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">银行卡添加成功！</div>' });
                     $state.go('home.mineCard');

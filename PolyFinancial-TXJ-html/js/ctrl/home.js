@@ -1,7 +1,7 @@
 app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams,$timeout,$location) {
     var vm = this;
     vm.homeTitle = (sessionStorage.getItem('homeTitle'))? (sessionStorage.getItem('homeTitle')):'首页';
-    console.log($location.$$path);
+    // console.log($location.$$path);
     // 启动页面定时消失
     $timeout(function(){
         $(".indexLoading").hide(500);
@@ -23,6 +23,7 @@ app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
     };
 
 
+    // 画布启动函数
     vm.yahaha = function(){
         $timeout(function(){
             var canvas = document.getElementById('myCanvas');
@@ -63,7 +64,7 @@ app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
                 requestAnimFrame(loop);
             }
             loop();
-        },100);
+        },200);
     };
 
     // 延迟200ms执行，让画布加载完再执行函数避免报错
@@ -71,6 +72,25 @@ app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
         vm.yahaha();
     }
 
+    // vm.path = $location.$$path;
+    //
+    // console.log(vm.path);
+    // $scope.$watch('vm.path',function(newValue,oldValue){
+    //     // 延迟200ms执行，让画布加载完再执行函数避免报错
+    //     console.log(vm.path);
+    //     if(vm.path == '/home'){
+    //         vm.yahaha();
+    //     }
+    // });
+
+    // 当从设置返回时，开始画波浪
+    $scope.$on('backFS',function(event,data) {
+        if(data == 'go'){
+            vm.yahaha()
+        }
+    });
+
+    // 点击首页，启动画布
     vm.home = function(){
         vm.homeTitle ='首页';
         sessionStorage.setItem('homeTitle','首页');
