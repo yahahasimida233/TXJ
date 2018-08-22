@@ -1,4 +1,4 @@
-app.controller("sureUnCardCtrl",function ($state, $stateParams, serviceHTTP) {
+app.controller("sureUnCardCtrl",function ($state, $stateParams, serviceHTTP, $timeout) {
     var vm = this;
     // 用于返回上一级页面渲染信息
     vm.bankType = $stateParams.bankType;
@@ -53,10 +53,14 @@ app.controller("sureUnCardCtrl",function ($state, $stateParams, serviceHTTP) {
 
             if(res.data.code == 0){
                 // 银行卡解绑
-                var card = JSON.parse(sessionStorage.getItem("unCardId"));
-                console.log(card);
+                var data = {
+                    bankId: $stateParams.id,
+                    phoneNum: vm.userName,
+                    verifyCode: vm.message
+                }
+                console.log(data);
                 
-                serviceHTTP.unCardHTTP(card).then(function (res) {
+                serviceHTTP.unCardHTTP(data).then(function (res) {
                     console.log(res);
                 })
             }

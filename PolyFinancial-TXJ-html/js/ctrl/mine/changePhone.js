@@ -91,7 +91,7 @@ app.controller("changePhoneCtrl",function ($scope,$http,$state,serviceHTTP,$stat
             // 请求成功执行代码
             console.log(response);
             if(response.data.code == 0) {
-                $state.go('home.changePhoneStpe2')
+                $state.go('home.changePhoneStep2')
 
             }
             else if(response.data.code !==  0) {

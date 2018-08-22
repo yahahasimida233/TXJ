@@ -19,7 +19,12 @@ app.controller("unCardCtrl", function ($state, $stateParams, serviceHTTP) {
             },
             callback: function (result) {
                 if (result == true) {
-                    $state.go('home.SureUnCard', {bankType: vm.bankType});
+                    $state.go('home.SureUnCard', 
+                        {
+                            bankType: vm.bankType, 
+                            id: $stateParams.id
+                        }
+                    );
                 }
                 if (result == false) {
                     $state.go("home.mineCard");

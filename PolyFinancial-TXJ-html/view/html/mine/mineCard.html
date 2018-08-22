@@ -10,7 +10,7 @@
 </div>
 <!-- 银行卡列表 -->
 <div ng-repeat="x in vm.cardLists" class="cardWarp text-center"
-     ng-click="vm.chose(x.bankCard, x.bankType)"
+     ng-click="vm.chose(x.bankCard, x.bankType, x.id)"
      ng-if="(vm.cardLists).length != 0">
     <div class="cardList">
         <img class="card" ng-src="{{x.bankType | showImg}}">

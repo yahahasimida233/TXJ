@@ -336,10 +336,11 @@ angular.module("txj")
             },
             
             // 解绑银行卡
-            unCardHTTP: function (card) { 
+            unCardHTTP: function (data) { 
                 return $http({
                     method: "DELETE",
-                    url: serviceURL.bankCardListURL + card,
+                    url: serviceURL.bankCardListURL,
+                    params: data,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
