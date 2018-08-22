@@ -339,8 +339,7 @@ angular.module("txj")
             unCardHTTP: function (data) { 
                 return $http({
                     method: "DELETE",
-                    url: serviceURL.bankCardListURL,
-                    params: data,
+                    url: serviceURL.bankCardListURL + data.id +"/"+ data.phone +"/"+ data.code,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
