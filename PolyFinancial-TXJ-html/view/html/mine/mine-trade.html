@@ -14,7 +14,7 @@
             <div class="mineTrade-list" ng-repeat=" x in vm.list">
                 <div class="top">
                     <span>{{x.productName}}</span>
-                    <button class="btn" ng-if="x.productName != '新手礼'" ng-click ="vm.continue(x.id)">{{x.continued | continued}}</button>
+                    <button class="btn" ng-if="x.productName != '新手礼' && vm.nav != 2"  ng-click ="vm.continue(x.id)">{{x.continued | continued}}</button>
                 </div>
                 <div class="content">
                     <div class="content-row">
@@ -32,7 +32,7 @@
                 </div>
                 <div class="trade-bottom">
                     <div>
-                        到期时间：{{x.expiryTime|date : 'yyyy-MM-dd hh:mm:ss'}}
+                        到期时间：{{x.expiryTime|date : 'yyyy-MM-dd HH:mm:ss'}}
                     </div>
                     <button class="btn" ui-sref="contract({id:x.id})">查看合同</button>
                 </div>

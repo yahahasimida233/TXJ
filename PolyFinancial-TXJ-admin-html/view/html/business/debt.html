@@ -82,8 +82,8 @@
             <td class="text-center">{{x.cardID}}</td>
             <td class="text-center">{{x.loanAmount}}</td>
             <td class="text-center">{{x.loanPeriod}}</td>
-            <td class="text-center">{{x.loanAt |date : 'yyyy-MM-dd hh:mm:ss'}}</td>
-            <td class="text-center">{{x.repaymentAt |date : 'yyyy-MM-dd hh:mm:ss' }}</td>
+            <td class="text-center">{{x.loanAt |date : 'yyyy-MM-dd HH:mm:ss'}}</td>
+            <td class="text-center">{{x.repaymentAt |date : 'yyyy-MM-dd HH:mm:ss' }}</td>
             <td class="text-center" ><div ng-repeat ="a in x.contractList">TXJ0002{{a.contractId}}</div></td>
             <td class="text-center"><div ng-repeat ="a in x.contractList">{{a.investment}}</div></td>
             <td class="text-center"><div ng-repeat ="a in x.contractList">{{a.productTerm}}</div></td>
