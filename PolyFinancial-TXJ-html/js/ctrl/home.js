@@ -9,7 +9,7 @@ app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
 
     vm.btn1 = function(){
         vm.homeTitle ='首页';
-        sessionStorage.setItem('homeTitle','首页')
+        sessionStorage.setItem('homeTitle','首页');
     };
 
     vm.btn2 = function(){

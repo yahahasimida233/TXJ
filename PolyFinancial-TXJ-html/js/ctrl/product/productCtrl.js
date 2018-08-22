@@ -4,6 +4,8 @@ app.controller("productCtrl", function ($state, $stateParams, serviceHTTP, $time
         $(".indexLoading").hide(500);
     }, 0);
     var vm = this;
+
+
     // 通过路由拿到产品ID
     var productId = $stateParams.productId;
     //初始化列表
