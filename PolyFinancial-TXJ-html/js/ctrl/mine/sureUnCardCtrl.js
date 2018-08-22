@@ -54,14 +54,25 @@ app.controller("sureUnCardCtrl",function ($state, $stateParams, serviceHTTP, $ti
             if(res.data.code == 0){
                 // 银行卡解绑
                 var data = {
-                    bankId: $stateParams.id,
-                    phoneNum: vm.userName,
-                    verifyCode: vm.message
+                    id: $stateParams.id,
+                    phone: vm.userName,
+                    code: vm.message
                 }
                 console.log(data);
                 
                 serviceHTTP.unCardHTTP(data).then(function (res) {
                     console.log(res);
+                    if (res.data.code == 0) {
+                        bootbox.alert({
+                            message: "银行卡解绑成功！",
+                            callback: function () {
+                                $state.go('home.mineCard')
+                            }
+                        })
+                    }
+                    else{
+                        bootbox.alert(response.data.message);
+                    }
                 })
             }
         })
