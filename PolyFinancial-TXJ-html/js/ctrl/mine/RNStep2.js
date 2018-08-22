@@ -2,7 +2,9 @@ app.controller("RNStep2Ctrl",function ($scope,$http,$state,serviceHTTP,$statePar
     var vm = this;
     vm.bankCard = $stateParams.bankCard;
 
+
     // 获取银行卡的类型
+
     vm.cardType = bankCardAttribution(vm.bankCard).bankName;
 
     vm.back = function(){
@@ -18,14 +20,18 @@ app.controller("RNStep2Ctrl",function ($scope,$http,$state,serviceHTTP,$statePar
             return false;
         }
 
+
         // 二要素认证的信息保存在对象中
+
         var info={
             bankCard:vm.bankCard,
             phoneNum: vm.userName
         };
 
 
+
         // 提交二要素的认证信息
+
         serviceHTTP.realNameStep1HTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
