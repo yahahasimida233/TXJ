@@ -22,7 +22,6 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
         }
 
         vm.countdown=60;
-
         function setTime() {
             if (vm.countdown == 0) {
                 vm.countTime = "获取验证码";
@@ -39,6 +38,7 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
         }
 
 
+        // 获取验证码的请求
         serviceHTTP.getCodeHTTP(vm.userName).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
@@ -110,6 +110,7 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
         }
 
 
+        // 验证验证码的请求
         serviceHTTP.codeConfirmHTTP(phone).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
@@ -151,13 +152,14 @@ app.controller("forgetCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
 
     };
 
+    // 监听验证码验证是否成功
     $scope.$watch('vm.goOn',function(newValue,oldValue){
         if(vm.goOn){
             var info = {
                 phoneNum: vm.userName,
                 pwd:vm.newP
             };
-
+            // 当验证码验证成功时，提交新密码
             serviceHTTP.getbackPHTTP(info).then(function successCallback(response) {
                 // 请求成功执行代码
                 console.log(response);

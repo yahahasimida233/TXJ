@@ -23,6 +23,7 @@ app.controller("realNameCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             return false;
         }
 
+        // 用于三要素的认证的信息保存在对象中
         var info ={
             userName: vm.userName,
             cardId: vm.cardId,

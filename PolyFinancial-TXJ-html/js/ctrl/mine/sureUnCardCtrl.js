@@ -44,7 +44,11 @@ app.controller("sureUnCardCtrl",function ($state, $stateParams, serviceHTTP) {
     //下一步按钮
     vm.next = function (code) {
         // 验证短信验证码是否一致
-        serviceHTTP.codeConfirmHTTP(code).then(function (res) {
+        var phone = {
+            phoneNum :vm.userName,
+            verifyCode:vm.message,
+        };
+        serviceHTTP.codeConfirmHTTP(phone).then(function (res) {
             console.log(res);
             
         })

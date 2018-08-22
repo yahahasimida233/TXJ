@@ -1,14 +1,15 @@
 app.controller("RNStep2Ctrl",function ($scope,$http,$state,serviceHTTP,$stateParams,$timeout) {
     var vm = this;
     vm.bankCard = $stateParams.bankCard;
+
+    // 获取银行卡的类型
     vm.cardType = bankCardAttribution(vm.bankCard).bankName;
 
     vm.back = function(){
         window.history.back(-1);
     };
 
-    // 渲染银行卡类型
-    // vm.bankType = $stateParams.bankType;
+
     vm.step2Click = function(){
         // 验证手机号码是否输入正确
         if (!vm.userName.match(/^(((\+86)|(86))?1[0-9]{10})$/)) {
@@ -16,12 +17,15 @@ app.controller("RNStep2Ctrl",function ($scope,$http,$state,serviceHTTP,$statePar
             vm.userName = undefined;
             return false;
         }
+
+        // 二要素认证的信息保存在对象中
         var info={
             bankCard:vm.bankCard,
             phoneNum: vm.userName
         };
 
 
+        // 提交二要素的认证信息
         serviceHTTP.realNameStep1HTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);

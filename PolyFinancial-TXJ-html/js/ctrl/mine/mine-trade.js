@@ -2,16 +2,18 @@ app.controller("mineTradeCtrl",function ($scope,$http,$state,serviceHTTP,$stateP
     var vm = this;
 
     // 验证是否登录，否则转跳到登陆页面
-    // vm.loginOrNot = (sessionStorage.getItem("login") == "true")? 1:0;
-    // if(vm.loginOrNot === 0){
-    //     $state.go('login');
-    //     return false;
-    // }
+    vm.loginOrNot = (sessionStorage.getItem("login") == "true")? 1:0;
+    if(vm.loginOrNot === 0){
+        $state.go('login');
+        return false;
+    }
 
-    // vm.back = function(){
-    //     window.history.back(-1);
-    // };
+    // 返回按钮
+    vm.back = function(){
+        window.history.back(-1);
+    };
 
+    // 续投功能，只有在理财时间到期后，续投功能才会生效，否则只是理财产品状态的改变
     vm.continue = function(id){
         serviceHTTP.continuedInvestmentHTTP(id).then(function successCallback(response) {
             // 请求成功执行代码
@@ -83,13 +85,13 @@ app.controller("mineTradeCtrl",function ($scope,$http,$state,serviceHTTP,$stateP
         });
     };
 
+    // 实例化minifresh
     $timeout(function(){
         var miniRefresh = new MiniRefresh({
             container: '#minirefresh',
             down: {
                 callback: function() {
                     // 下拉事件
-
                     miniRefresh.endDownLoading();
                     if(vm.nav == 0){
                         vm.trade1();
@@ -105,10 +107,8 @@ app.controller("mineTradeCtrl",function ($scope,$http,$state,serviceHTTP,$stateP
                 }
             },
             up: {
-
                 callback: function() {
                     // 上拉事件
-
                     // 注意，由于默认情况是开启满屏自动加载的，所以请求失败时，请务必endUpLoading(true)，防止无限请求
                     miniRefresh.endUpLoading(true);
                 }

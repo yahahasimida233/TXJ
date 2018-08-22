@@ -30,20 +30,20 @@ app.controller("settingCtrl",function ($scope,$http,$state,serviceHTTP,$statePar
                     }, function errorCallback(res) {
                         // 请求失败执行代码
                     });
-
-
-
                 }
             }
         })
     };
 
+    // 返回按钮
     vm.back = function(){
         var step  = sessionStorage.getItem('step');
         if(step === 'mine'){
             $state.go('home.mine');
             return false
         }
+        // 向父级作用域发送“我又肥来啦”的信息，用于启动画布
+        $scope.$emit("backFS", 'go');
         $state.go('home');
         // window.history.back(-1);
     }
