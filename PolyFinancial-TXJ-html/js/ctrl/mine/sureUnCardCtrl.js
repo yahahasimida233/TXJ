@@ -1,4 +1,4 @@
-app.controller("sureUnCardCtrl",function ($state, $stateParams, serviceHTTP) {
+app.controller("sureUnCardCtrl",function ($state, $stateParams, serviceHTTP, $timeout) {
     var vm = this;
     // 用于返回上一级页面渲染信息
     vm.bankType = $stateParams.bankType;
@@ -58,6 +58,8 @@ app.controller("sureUnCardCtrl",function ($state, $stateParams, serviceHTTP) {
                     phoneNum: vm.userName,
                     verifyCode: vm.message
                 }
+                console.log(data);
+                
                 serviceHTTP.unCardHTTP(data).then(function (res) {
                     console.log(res);
                 })

@@ -15,7 +15,7 @@ app.controller("productListCtrl", function ($state, $stateParams, serviceHTTP, $
 
     // 每次下拉刷新触发这个函数
     vm.changeList = function(){
-        var length = vm.lists.length+10;
+        var length = vm.lists.length + 10;
         if(vm.lists.length < vm.dataLength){
             if(vm.lists.length + 10 < vm.dataLength){
                 vm.lists = vm.data.slice(0,length);
@@ -57,9 +57,13 @@ app.controller("productListCtrl", function ($state, $stateParams, serviceHTTP, $
     // 跳转至产品页
     vm.product = function (id) {
         vm.logo = sessionStorage.getItem("login"); //验证是否登录
+<<<<<<< HEAD
+        if (vm.logo !== "true") {
+=======
         console.log(!vm.logo);
         if (vm.logo !== "true"  ||  !vm.logo) {
             sessionStorage.setItem('homeTitle','我的');
+>>>>>>> b934b96ef5883ab6f8fd34468c6652bf6dfced89
             $state.go('login');
         }
         else{
