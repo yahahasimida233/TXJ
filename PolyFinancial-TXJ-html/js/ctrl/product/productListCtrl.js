@@ -56,14 +56,17 @@ app.controller("productListCtrl", function ($state, $stateParams, serviceHTTP, $
 
     // 跳转至产品页
     vm.product = function (id) {
-        vm.logo = sessionStorage.getItem("logo"); //验证是否登录
-        if (vm.logo !== "true") {
+        vm.logo = sessionStorage.getItem("login"); //验证是否登录
+        console.log(!vm.logo);
+        if (vm.logo !== "true"  ||  !vm.logo) {
+            sessionStorage.setItem('homeTitle','我的');
             $state.go('login');
         }
         else{
-            $state.go("product", {productId: list.id} )
+            $state.go("product", {productId:id} )
         }
     }
+
 
     // 下拉刷新
     // 引入任何一个主题后，都会有一个 MiniRefresh 全局变量

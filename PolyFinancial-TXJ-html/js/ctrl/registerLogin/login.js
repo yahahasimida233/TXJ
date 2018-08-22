@@ -1,6 +1,13 @@
 app.controller("loginCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams,$timeout) {
     var vm = this;
 
+
+    vm.back = function(){
+        sessionStorage.setItem('homeTitle','我的');
+        $state.go('home.mine');
+
+    };
+
     vm.show = function(){
         console.log($scope.loginForm);
     };

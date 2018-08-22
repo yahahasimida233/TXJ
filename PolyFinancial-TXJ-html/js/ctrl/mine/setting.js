@@ -37,8 +37,8 @@ app.controller("settingCtrl",function ($scope,$http,$state,serviceHTTP,$statePar
 
     // 返回按钮
     vm.back = function(){
-        var step  = sessionStorage.getItem('step');
-        if(step === 'mine'){
+        var step  = sessionStorage.getItem('homeTitle');
+        if(step == '我的'){
             $state.go('home.mine');
             return false
         }
