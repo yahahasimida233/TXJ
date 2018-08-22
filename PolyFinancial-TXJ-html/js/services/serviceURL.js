@@ -89,6 +89,9 @@ angular.module("txj").factory("serviceURL", function() {
         // 银行卡列表
         bankCardListURL: "/home/a/u/my/bankcards/",
 
+        // // 解绑银行卡
+        // unCardURL: "/home/a/u/my/bankcards/",
+
         // 设置-修改密码
         settingCPURL: "/home/a/u/my/setup/changepwd/",
 
