@@ -543,7 +543,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 解绑银行卡
         .state('home.unCard', {
-            url: "/unCard?bankType",
+            url: "/unCard?bankType&id",
             templateUrl: 'view/html/mine/unCard.html',
             controller: 'unCardCtrl as vm',
             resolve: {
@@ -561,7 +561,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         
         // 确认解绑银行卡
         .state('home.SureUnCard', {
-            url: "/sureUnCard?bankType",
+            url: "/sureUnCard?bankType&id",
             templateUrl: 'view/html/mine/sureUnCard.html',
             controller: 'sureUnCardCtrl as vm',
             resolve: {

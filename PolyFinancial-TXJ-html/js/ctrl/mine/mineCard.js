@@ -59,10 +59,10 @@ app.controller("mineCardCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
         })
     }
     // 点击对应银行卡进入解绑银行卡页面
-    vm.chose = function (bankCard, bankType) {
+    vm.chose = function (bankCard, bankType, id) {
         var unCardId = bankCard;
         sessionStorage.setItem("unCardId", JSON.stringify(unCardId));
-        $state.go("home.unCard", {bankType: bankType})
+        $state.go("home.unCard", {bankType: bankType, id:id})
     }
 
 });
