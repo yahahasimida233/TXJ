@@ -24,8 +24,8 @@
                 <td>{{x.phoneNum}}</td>
                 <td>{{x.productName}}</td>
                 <td>{{x.investment}}</td>
-                <td>{{x.effectiveTime |date : 'yyyy-MM-dd hh:mm:ss'}}</td>
-                <td>{{x.expirationTime |date : 'yyyy-MM-dd hh:mm:ss'}}</td>
+                <td>{{x.effectiveTime |date : 'yyyy-MM-dd HH:mm:ss'}}</td>
+                <td>{{x.expirationTime |date : 'yyyy-MM-dd HH:mm:ss'}}</td>
                 <td>{{x.state | userContract}}</td>
                 <td>
                     <button class="btn btn-default" ui-sref ="backStage.userContractDetailed({id:vm.id,contractId:x.contractId})">查看</button>
