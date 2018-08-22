@@ -35,9 +35,9 @@ app.controller("sureUnCardCtrl",function ($state, $stateParams, serviceHTTP, $ti
             if (response.data.code == 0) {
                 setTime(); //开始倒计时
             } 
-            else{
+            // else{
                 bootbox.alert(response.data.message);
-            }
+            // }
         });
     };
     
