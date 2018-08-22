@@ -2,16 +2,16 @@ app.controller("mineCardCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
     var vm = this;
 
     // 验证是否登录，否则转跳到登陆页面
-    // vm.loginOrNot = (sessionStorage.getItem("login") == "true")? 1:0;
-    // if(vm.loginOrNot === 0){
-    //     $state.go('login');
-    //     return false;
-    // }
+    vm.loginOrNot = (sessionStorage.getItem("login") == "true")? 1:0;
+    if(vm.loginOrNot === 0){
+        $state.go('login');
+        return false;
+    }
     // 用户银行卡列表信息
     serviceHTTP.bankCardListHTTP().then(function (res) {
         console.log(res);
         vm.cardLists = res.data.data;
-    })
+    });
 
     //添加银行卡
     vm.addCard = function () {

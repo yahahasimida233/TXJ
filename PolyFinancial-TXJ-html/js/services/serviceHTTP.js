@@ -45,7 +45,7 @@ angular.module("txj")
                 })
             },
 
-            //普通手机注册短信验证码发送
+            //普通手机注册短信验证码发送用于忘记密码等场景
             getCodeHTTP: function (phoneNum) {
                 return $http({
                     method: "POST",

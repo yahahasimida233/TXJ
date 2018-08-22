@@ -8,6 +8,7 @@ app.controller("feedBackCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
         return false;
     }
 
+    // 提交反馈信息
     vm.change = function(){
         var info = {
             opinionContent:vm.feedBackContent

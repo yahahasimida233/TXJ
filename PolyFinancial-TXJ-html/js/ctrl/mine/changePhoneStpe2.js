@@ -13,24 +13,18 @@ app.controller("changePhoneStep2Ctrl",function ($scope,$http,$state,serviceHTTP,
     // 获取新手机验证码
     vm.sendCode = function () {
         vm.countdown = 60;
-
         function setTime() {
             if (vm.countdown == 0) {
                 vm.countTime = "获取验证码";
-
                 vm.countdown = 60;
             } else {
                 vm.countTime = "重新发送(" + vm.countdown + "S)";
-
                 vm.countdown--;
-
                 $timeout(function () {
                     setTime()
                 }, 1000)
             }
-
         }
-        setTime();
 
         // 获取新手机验证码的请求
         serviceHTTP.verificationCodeHTTP(vm.userName).then(function successCallback(response) {
@@ -38,7 +32,7 @@ app.controller("changePhoneStep2Ctrl",function ($scope,$http,$state,serviceHTTP,
             console.log(response);
 
             if(response.data.code == 0) {
-
+                setTime();
             }
             else if(response.data.code !==  0) {
                 bootbox.alert(response.data.message);

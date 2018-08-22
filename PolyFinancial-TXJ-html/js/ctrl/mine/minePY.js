@@ -1,19 +1,20 @@
 app.controller("minePYCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams,$timeout) {
     var vm = this;
 
-    // // 验证是否登录，否则转跳到登陆页面
-    // vm.loginOrNot = (sessionStorage.getItem("login") == "true")? 1:0;
-    // if(vm.loginOrNot === 0){
-    //     $state.go('login');
-    //     return false;
-    // }
+    // 验证是否登录，否则转跳到登陆页面
+    vm.loginOrNot = (sessionStorage.getItem("login") == "true")? 1:0;
+    if(vm.loginOrNot === 0){
+        $state.go('login');
+        return false;
+    }
 
+    // 返回按钮
     vm.back = function(){
-
         sessionStorage.setItem('homeTitle','我的');
         $state.go('home.mine');
     };
 
+    // 获取我的理财列表
     vm.getList = function(){
         serviceHTTP.tradeListHTTP().then(function successCallback(response) {
             // 请求成功执行代码
@@ -24,7 +25,6 @@ app.controller("minePYCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
 
                 // 创建一个数组用于存放部分数据，初始化为10条
                 vm.list = vm.data.slice(0,9)
-
 
             }
             else if(response.data.code !==  0) {
@@ -57,7 +57,6 @@ app.controller("minePYCtrl",function ($scope,$http,$state,serviceHTTP,$statePara
                     // 下拉事件
                     vm.getList();
                     miniRefresh.endDownLoading();
-
                 },
                 successAnim:{
                     isEnable : true,

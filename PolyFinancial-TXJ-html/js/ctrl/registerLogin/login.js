@@ -10,11 +10,14 @@ app.controller("loginCtrl",function ($scope,$http,$state,serviceHTTP,$stateParam
         $(".indexLoading").hide(500);
     },0);
 
+    // 登陆功能
     vm.login = function(){
         var info = {
             phoneNum: vm.userName,
             pwd: vm.passWord
         };
+
+        // 登陆请求
         serviceHTTP.loginHTTP(info).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
@@ -37,23 +40,29 @@ app.controller("loginCtrl",function ($scope,$http,$state,serviceHTTP,$stateParam
             }
             else if(response.data.code === 5000){
                 bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">该账号已被冻结，若有疑问请电询8008208820</div>' });
+                $timeout(function(){
+                    $(".fade").css('opacity','0');
+                    $timeout(function(){
+                        $(".fade").hide();
+                    },500)
+                },3000);
                 vm.passWord = undefined;
-
-                // $timeout(function(){
-                //     $(".bootbox").css('display','none');
-                // },1000);
                 return false;
             }
             else if(response.data.code === 2003){
                 bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">该手机号还未注册账号，请前往注册</div>' });
+                $timeout(function(){
+                    $(".fade").css('opacity','0');
+                    $timeout(function(){
+                        $(".fade").hide();
+                    },500)
+                },3000);
                 vm.passWord = undefined;
                 return false;
             }else{
                 bootbox.alert(response.data.message)
             }
 
-        }, function errorCallback(res) {
-            // 请求失败执行代码
         });
     };
 });
