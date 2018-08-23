@@ -60,6 +60,7 @@ app.controller("productListCtrl", function ($state, $stateParams, serviceHTTP, $
         console.log(!vm.logo);
         if (vm.logo !== "true"  ||  !vm.logo) {
             sessionStorage.setItem('homeTitle','我的');
+
             $state.go('login');
         }
         else{
