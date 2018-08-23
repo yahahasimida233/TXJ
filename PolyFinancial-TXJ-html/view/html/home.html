@@ -4,7 +4,7 @@
         <div>首页</div>
         <div class="glyphicon glyphicon-cog"  ui-sref="home.setting"></div>
     </div>
-    <div id="myCarousel" class="carousel slide"  data-ride="carousel"  data-interval="4000">
+    <div id="myCarousel" class="carousel slide"  data-ride="carousel"  data-interval="5000">
         <!-- 轮播（Carousel）指标 -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -18,22 +18,22 @@
         <!--今天学会了摆龙门阵-->
         <div class="carousel-inner">
             <div class="item active">
-                <img ng-src="img/banner.png" alt="First slide" style="max-height: 2rem" width="100%">
+                <img ng-src={{vm.imgList[0].picture_url}} alt="First slide" style="max-height: 2rem" width="100%">
             </div>
             <div class="item">
-                <img ng-src="img/banner.png" alt="" style="max-height: 2rem" width="100%">
+                <img ng-src={{vm.imgList[1].picture_url}} alt="" style="max-height: 2rem" width="100%">
             </div>
             <div class="item">
-                <img ng-src="img/banner.png" alt="" style="max-height: 2rem" width="100%">
+                <img ng-src={{vm.imgList[2].picture_url}} alt="" style="max-height: 2rem" width="100%">
             </div>
             <div class="item">
-                <img ng-src="img/banner.png" alt="" style="max-height: 2rem" width="100%">
+                <img ng-src={{vm.imgList[3].picture_url}} alt="" style="max-height: 2rem" width="100%">
             </div>
             <div class="item">
-                <img ng-src="img/banner.png" alt="" style="max-height: 2rem" width="100%">
+                <img ng-src={{vm.imgList[4].picture_url}} alt="" style="max-height: 2rem" width="100%">
             </div>
             <div class="item">
-                <img ng-src="img/banner.png" alt="" style="max-height: 2rem" width="100%">
+                <img ng-src={{vm.imgList[5].picture_url}} alt="" style="max-height: 2rem" width="100%">
             </div>
         </div>
         <!-- 轮播（Carousel）导航 -->
@@ -72,7 +72,7 @@
         </div>
     </div>
     <div class="cutLeek">
-        <button class="btn" ui-sref="product({productId: vm.list.product_url})" ng-click ="vm.trade()" >立即投资</button>
+        <button class="btn"  ng-click ="vm.pay()" >立即投资</button>
     </div>
 
 </div>

@@ -21,10 +21,18 @@ app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
         vm.homeTitle ='我的';
         sessionStorage.setItem('homeTitle','我的')
     };
-
+    // 设置轮播图图片间隔
+    $("#myCarousel").carousel({
+        pause: true,
+        interval: 4000
+    });
 
     // 画布启动函数
     vm.yahaha = function(){
+
+
+
+
         $timeout(function(){
             var canvas = document.getElementById('myCanvas');
             var ctx = canvas.getContext('2d');
@@ -109,6 +117,18 @@ app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
         sessionStorage.setItem('homeTitle','我的');
     };
 
+    vm.pay = function(){
+        vm.homeTitle ='理财';
+        sessionStorage.setItem('homeTitle','理财');
+        // 验证是否登录，否则转跳到登陆页面
+        vm.loginOrNot = (sessionStorage.getItem("login") == "true")? 1:0;
+        if(vm.loginOrNot === 0){
+            $state.go('login');
+            return false;
+        }
+        $state.go('product',{productId: vm.list.product_url})
+    };
+
     // $timeout(function(){
     //     var canvas = document.getElementById('myCanvas');
     //     var ctx = canvas.getContext('2d');
@@ -150,17 +170,14 @@ app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
     //     loop();
     // },200);
 
-    // // 设置轮播图图片间隔
-    $("#myCarousel").carousel({
-        pause: true,
-        interval: false
-    });
+
 
     serviceHTTP.indexHTTP().then(function successCallback(response) {
         // 请求成功执行代码
         console.log(response);
         if(response.data.code == 0) {
             vm.list = response.data.recommend[0];
+            vm.imgList = response.data.banner;
             console.log(vm.list);
             if(vm.list){
                 var data = {
