@@ -14,7 +14,7 @@ angular.module("txj").factory("serviceURL", function() {
         codeConfirmURL: "/home/a/u/verify/",
 
         //更换手机号
-        newPhoneNumURL: "/home/a/u/my/info/newnum/",
+        newPhoneNumURL: "/home/a/u/my/info/newnum",
 
         //图片（伪）验证码
         imgCodeURL: "/home/a/u/pverify/",
