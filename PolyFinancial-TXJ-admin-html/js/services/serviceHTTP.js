@@ -46,13 +46,25 @@ angular.module("txj")
             },
 
             //更换手机号
-            newPhoneNumHTTP : function (info) {
+            // newPhoneNumHTTP : function (info) {
+            //     return $http({
+            //         method: "PUT",
+            //         url: serviceURL.phoneRegisterURL,
+            //         params: info ,
+            //         headers: {
+            //             "Content-Type": "application/x-www-form-urlencoded" }
+            //     })
+            // },
+
+            // 提交更换手机的请求
+            newNumberHTTP: function (info) {  //获取产品列表
                 return $http({
-                    method: "PUT",
-                    url: serviceURL.phoneRegisterURL,
-                    params: info ,
+                    method: "put",
+                    url: serviceURL.newNumberURL,
+                    params:info,
                     headers: {
-                        "Content-Type": "application/x-www-form-urlencoded" }
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
                 })
             },
 

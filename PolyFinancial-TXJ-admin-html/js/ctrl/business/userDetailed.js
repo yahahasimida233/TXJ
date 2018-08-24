@@ -43,19 +43,35 @@ app.controller("userDetailedCtrl",function ($http,$state,serviceHTTP,$stateParam
         var info = {};
         info.phoneNum = vm.phoneNum;
         // 获取新手机验证码的请求
+
+        vm.countdown = 60;
+        function setTime() {
+            if (vm.countdown == 0) {
+                vm.countTime = "获取验证码";
+                vm.countdown = 60;
+            } else {
+                vm.countTime = "重新发送(" + vm.countdown + "S)";
+                vm.countdown--;
+                $timeout(function () {
+                    setTime()
+                }, 1000)
+            }
+
+        }
+
+
         serviceHTTP.verificationCodeHTTP(info.phoneNum).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
 
-            if(response.data.message === "success") {
-                bootbox.alert('获取成功！')
+            if(response.data.code ==  0) {
+                bootbox.alert('获取验证码成功！');
+                setTime();
             }
             else if(response.data.code !==  0) {
                 bootbox.alert(response.data.message);
 
             }
-        }, function errorCallback(res) {
-            // 请求失败执行代码
         });
     };
 

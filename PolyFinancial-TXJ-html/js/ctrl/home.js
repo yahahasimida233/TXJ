@@ -21,15 +21,15 @@ app.controller("homeCtrl",function ($scope,$http,$state,serviceHTTP,$stateParams
         vm.homeTitle ='我的';
         sessionStorage.setItem('homeTitle','我的')
     };
-    // 设置轮播图图片间隔
-    $("#myCarousel").carousel({
-        pause: true,
-        interval: 4000
-    });
+
 
     // 画布启动函数
     vm.yahaha = function(){
-
+         // 设置轮播图图片间隔
+        $("#myCarousel").carousel({
+            pause: true,
+            interval: 4000
+        });
 
 
 
