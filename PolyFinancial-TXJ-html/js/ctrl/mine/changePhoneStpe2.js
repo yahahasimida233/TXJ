@@ -68,21 +68,37 @@ app.controller("changePhoneStep2Ctrl",function ($scope,$http,$state,serviceHTTP,
             newPhoneNum: vm.userName,
             newCode: vm.code
         };
+        var phone = {
+            phoneNum :vm.userName,
+            verifyCode:vm.code,
+        };
 
-        serviceHTTP.newNumberHTTP(info).then(function successCallback(response) {
+        // 验证 验证码的请求
+        serviceHTTP.codeConfirmHTTP(phone).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "success") {
-                vm.message = 'success';
+            if(response.data.code == 0) {
+                serviceHTTP.newNumberHTTP(info).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    console.log(response);
+                    if(response.data.message === "success") {
+                        vm.message = 'success';
+                    }
+                    else if(response.data.code !==  0) {
+                        bootbox.alert(response.data.message);
+                        vm.imgCode = undefined;
+                        verifyCode.refresh();
+                        vm.countError ++;
+                    }
+                });
             }
-            else if(response.data.code !==  0) {
+            else {
                 bootbox.alert(response.data.message);
-                vm.imgCode = undefined;
                 verifyCode.refresh();
                 vm.countError ++;
             }
-        }, function errorCallback(res) {
-            // 请求失败执行代码
         });
+
+
     }
 });

@@ -46,10 +46,17 @@
 
            </form>
            <div class="right">
-               <label for="getCode" class="btn btn-default">获取短信验证码</label>
-               <input class="btn btn-default" id="getCode" ng-disable ="vm.error2" ng-click = "vm.getCode()" ng-show ="false">
+               <label for="getCode"
+                      ng-bind = "vm.countTime"
+                      class="btn btn-default"></label>
+               <input class="btn btn-default"
+                      id="getCode"
+                      ng-model = "vm.countTime"
+                      ng-disabled = "vm.countTime != '获取短信验证码'"
+                      ng-click = "vm.getCode()"
+                      ng-show ="false">
                <div class="imgCode" ng-show = "vm.countError > 2">
-                   <input type="tel"
+                   <input type="text"
                           class="form-control"
                           ng-model = "vm.imgCode"
                           placeholder="请输入图形验证码">

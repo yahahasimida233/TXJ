@@ -1,6 +1,6 @@
-app.controller("userDetailedCtrl",function ($http,$state,serviceHTTP,$stateParams) {
+app.controller("userDetailedCtrl",function ($http,$state,serviceHTTP,$stateParams,$timeout) {
     var vm = this;
-    let id = $stateParams.id;
+    var id = $stateParams.id;
     // 获取用户具体信息
     serviceHTTP.userDetailedHTTP(id).then(function successCallback(response) {
         // 请求成功执行代码
@@ -33,7 +33,7 @@ app.controller("userDetailedCtrl",function ($http,$state,serviceHTTP,$stateParam
 
 
 
-
+    vm.countTime = "获取短信验证码";
 
     vm.getCode = function(){
         if(!vm.phoneNum){
@@ -47,7 +47,7 @@ app.controller("userDetailedCtrl",function ($http,$state,serviceHTTP,$stateParam
         vm.countdown = 60;
         function setTime() {
             if (vm.countdown == 0) {
-                vm.countTime = "获取验证码";
+                vm.countTime = "获取短信验证码";
                 vm.countdown = 60;
             } else {
                 vm.countTime = "重新发送(" + vm.countdown + "S)";
@@ -100,25 +100,48 @@ app.controller("userDetailedCtrl",function ($http,$state,serviceHTTP,$stateParam
         }
 
         var info = {
+            uid: id,
             newPhoneNum: vm.phoneNum,
             newCode: vm.code
         };
 
-        serviceHTTP.newNumberHTTP(info).then(function successCallback(response) {
+        var phone = {
+            phoneNum :vm.userName,
+            verifyCode:vm.code,
+        };
+
+        // 验证 验证码的请求
+        serviceHTTP.codeConfirmHTTP(phone).then(function successCallback(response) {
             // 请求成功执行代码
             console.log(response);
-            if(response.data.message === "success") {
-                vm.message = 'success';
+            if(response.data.code == 0) {
+                serviceHTTP.newNumberHTTP(info).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    console.log(response);
+                    if(response.data.code == 0) {
+                        bootbox.alert('手机号码更换成功');
+                        $state.reload('backStage.userDetailed',{id:id})
+                    }
+                    else if(response.data.code !==  0) {
+                        bootbox.alert(response.data.message);
+                        vm.imgCode = undefined;
+                        verifyCode.refresh();
+                        vm.countError ++;
+                    }
+                }, function errorCallback(res) {
+                    // 请求失败执行代码
+                });
             }
-            else if(response.data.code !==  0) {
+            else {
                 bootbox.alert(response.data.message);
-                vm.imgCode = undefined;
                 verifyCode.refresh();
                 vm.countError ++;
             }
         }, function errorCallback(res) {
             // 请求失败执行代码
         });
+
+
     }
 
 
