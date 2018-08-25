@@ -6,6 +6,10 @@
   .messageEdit-row .dateInput {
     flex-basis: 100%;
     justify-content: center; }
+    .messageEdit-row .dateInput .date-input {
+      width: 1.5rem !important; }
+    .messageEdit-row .dateInput .date-input-min {
+      width: 1rem !important; }
   .messageEdit-row .select {
     margin: .1rem; }
 

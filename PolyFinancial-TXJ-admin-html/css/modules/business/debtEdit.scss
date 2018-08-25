@@ -7,10 +7,10 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  //span{
-  //  height: .4rem;
-  //  line-height: .4rem;
-  //}
+  span{
+    height: .4rem;
+    line-height: .4rem;
+  }
   //button{
   //  margin: .2rem;
   //}
@@ -18,9 +18,12 @@
 
 //避免日历插件样式被覆盖单独写
 .debtEditContent-data{
-  margin: .2rem 0;
   display: flex;
   justify-content: center;
+  .date-input{
+    width: 2rem!important;
+    margin: 0!important;
+  }
 }
 .debtEditContent-span{
   height: .4rem;

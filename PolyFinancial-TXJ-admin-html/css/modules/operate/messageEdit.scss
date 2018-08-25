@@ -6,6 +6,12 @@
   .dateInput{
     flex-basis: 100%;
     justify-content: center;
+    .date-input{
+      width: 1.5rem!important;
+    }
+    .date-input-min{
+      width: 1rem!important;
+    }
   }
   //span{
   //  margin: 0 .2rem ;
