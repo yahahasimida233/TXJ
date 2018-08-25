@@ -8,13 +8,15 @@ angular.module("txj").factory("serviceURL", function() {
         logoutURL: "/admin/admin/a/u/logout/",
 
         //注册用手机短信验证码发送
-        verificationCodeURL: "/admin/home/a/u/sendcode/",
+
+        verificationCodeURL: "/admin/admin/a/u/sendcode/",
 
         // 验证注册验证码是否有效
-        codeConfirmURL: "/admin/home/a/u/verify/",
+        codeConfirmURL: "/admin/admin/a/u/verify/",
 
         //更换手机号
-        newPhoneNumURL: "/admin/home/a/u/my/info/newnum",
+        newPhoneNumURL: "/admin/admin/a/u/my/info/newnum",
+
 
         //图片（伪）验证码
         imgCodeURL: "/admin/home/a/u/pverify/",
