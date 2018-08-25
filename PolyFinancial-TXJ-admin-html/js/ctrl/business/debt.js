@@ -4,7 +4,7 @@ app.controller("debtCtrl",function ($http,$state,serviceHTTP,$stateParams){
     vm.getList = function(){
         let info = {
             id: $stateParams.id || undefined,
-            enterpriseName:$stateParams.actualName || undefined,
+            enterpriseName:$stateParams.enterpriseName || undefined,
             creditor:$stateParams.phoneNum || undefined ,
             state:$stateParams.state || undefined ,
             size: $stateParams.size || 10,
@@ -20,7 +20,7 @@ app.controller("debtCtrl",function ($http,$state,serviceHTTP,$stateParams){
                 console.log(vm.list);
                 // 从URL获取参数
                 vm.debtId = $stateParams.id || undefined;
-                vm.companyName = $stateParams.actualName || undefined;
+                vm.companyName = $stateParams.enterpriseName || undefined;
                 vm.obligor = $stateParams.phoneNum || undefined;
                 vm.status = $stateParams.state || undefined;
                 vm.size = $stateParams.size || 10;
