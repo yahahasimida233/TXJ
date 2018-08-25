@@ -182,7 +182,7 @@ angular.module("txj")
                 return $http({
                     method: "put",
                     url: serviceURL.debtNewURL+info.id,
-                    data: info,
+                    params: info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded" }
                 })
