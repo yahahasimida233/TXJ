@@ -39,13 +39,14 @@ app.controller("debtEditCtrl",function ($http,$state,serviceHTTP,$stateParams){
     };
 
     vm.change = function(){
+        console.log(vm.loanAt);
         var info = {};
         info.id = vm.id;
         info.enterpriseName = vm.enterpriseName;
         info.creditor = vm.creditor;
         info.phoneNum = vm.phoneNum;
         info.cardId = vm.cardID;
-        info.loanAt= Date.parse(vm.loanAt);
+        info.loanAt= Date.parse(vm.loanAt) || vm.loanAt;
         info.loanAmount= vm.loanAmount;
         info.loanPeriod = vm.loanPeriod;
         console.log(info);
@@ -53,7 +54,7 @@ app.controller("debtEditCtrl",function ($http,$state,serviceHTTP,$stateParams){
             serviceHTTP.debtNewHTTP(info).then(function successCallback(response) {
                 // 请求成功执行代码
                 console.log(response);
-                if(response.data.message === "success") {
+                if(response.data.code == 0 ) {
                     bootbox.alert("新增成功！");
                     $state.go('backStage.debt');
                 }
@@ -68,9 +69,9 @@ app.controller("debtEditCtrl",function ($http,$state,serviceHTTP,$stateParams){
             serviceHTTP.debtEditHTTP(info).then(function successCallback(response) {
                 // 请求成功执行代码
                 console.log(response);
-                if(response.data.message === "success") {
+                if(response.data.code == 0) {
                     bootbox.alert("修改成功!");
-                    $state.reload('backStage.debt');
+                    $state.go('backStage.debt');
                 }
                 else {
                     bootbox.alert(response.data.message);
