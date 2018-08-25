@@ -58,7 +58,9 @@ app.controller("debtCtrl",function ($http,$state,serviceHTTP,$stateParams){
         vm.companyName = undefined;
         vm.obligor= undefined;
         vm.status = undefined;
-        vm.getList();
+        vm.size = 10;
+        vm.page = 1;
+        vm.search();
     };
 
 

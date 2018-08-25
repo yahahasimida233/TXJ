@@ -57,10 +57,10 @@ angular.module("txj")
             // },
 
             // 提交更换手机的请求
-            newNumberHTTP: function (info) {  //获取产品列表
+            newNumberHTTP: function (info) {
                 return $http({
                     method: "put",
-                    url: serviceURL.newNumberURL,
+                    url: serviceURL.newPhoneNumURL,
                     params:info,
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
