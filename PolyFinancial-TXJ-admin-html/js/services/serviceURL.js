@@ -44,7 +44,7 @@ angular.module("txj").factory("serviceURL", function() {
         productURL:"/admin/a/u/product/search/",
         productDetailURL:"/admin/a/u/product/updateBy/",
         productEditURL:"/admin/a/u/product/updater/",
-        productNewURL:"/admin/a/u/admin/product/creater/",
+        productNewURL:"/admin/a/u/product/creater/",
         productDeleteURL:"/admin/a/u/product/",
         porductGroundingURL:"/admin/a/u/product/state/",
 
