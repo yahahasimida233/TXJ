@@ -48,7 +48,7 @@ app.controller("productCtrl",function ($http,$state,serviceHTTP,$stateParams){
         vm.status = undefined;
         vm.size = 10;
         vm.page = 1;
-        vm.getList();
+        vm.search();
     };
 
 

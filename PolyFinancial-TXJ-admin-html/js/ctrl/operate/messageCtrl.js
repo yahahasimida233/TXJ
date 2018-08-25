@@ -190,7 +190,8 @@ app.controller("messageCtrl",function ($http,$state,serviceHTTP,$stateParams) {
         }else if(!vm.endHour){
             vm.maxTime = vm.loanAtEnd
         }else{
-            vm.maxTime =  vm.loanAtEnd + vm.endHour
+            console.log(vm.loanAtEnd ,vm.endHour);
+            vm.maxTime =  vm.loanAtEnd + parseInt(vm.endHour)
         }
 
 
@@ -200,7 +201,7 @@ app.controller("messageCtrl",function ($http,$state,serviceHTTP,$stateParams) {
         console.log("end2:",vm.endHour);
 
         console.log('minTime:',vm.minTime);
-        console.log('minTime:',vm.maxTime);
+        console.log('maxTime:',vm.maxTime);
     };
 
     // 搜索功能

@@ -47,7 +47,7 @@ app.controller("feedbackCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
         vm.phoneNum = undefined;
         vm.page = 1;
         vm.size = 10;
-        vm.getList();
+        vm.search();
     };
 
     // 搜索功能

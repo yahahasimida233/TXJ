@@ -46,7 +46,7 @@ app.controller("userCtrl",function ($scope,$http,$state,$stateParams,serviceHTTP
         vm.status = undefined;
         vm.size = 10;
         vm.page = 1;
-        vm.getList();
+        vm.search();
     };
 
 

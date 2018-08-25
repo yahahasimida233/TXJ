@@ -52,7 +52,7 @@ app.controller("bannerCtrl",function ($http,$state,serviceHTTP,$stateParams) {
         vm.updateBy = undefined;
         vm.size = 10;
         vm.page = 1;
-        vm.getList();
+        vm.search();
     };
 
     // 删除banner
