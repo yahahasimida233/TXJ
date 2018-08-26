@@ -82,7 +82,16 @@ app.controller("changePhoneStep2Ctrl",function ($scope,$http,$state,serviceHTTP,
                     // 请求成功执行代码
                     console.log(response);
                     if(response.data.message === "success") {
-                        vm.message = 'success';
+                        bootbox.dialog({ message: '<div class="text-center" style="color: #dca854;">修改成功，请重新登录</div>' });
+                        // bootbox3s后自动消失
+                        $timeout(function(){
+                            $(".fade").css('opacity','0');
+                            $timeout(function(){
+                                $(".fade").hide();
+                            },500)
+                        },3000);
+                        sessionStorage.clear();
+                        $state.go('login');
                     }
                     else if(response.data.code !==  0) {
                         bootbox.alert(response.data.message);
