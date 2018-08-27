@@ -115,6 +115,7 @@ app.controller("productCtrl", function ($state, $stateParams, serviceHTTP, $time
                     callback: function (result) {
                         if (result == true) {
                             $state.go('home.realName');
+                            sessionStorage.setItem('homeTitle','我的');
                         }
                         if (result == false) {
                             $state.go("product", {productId: 1});

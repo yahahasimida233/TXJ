@@ -16,9 +16,9 @@
                    ng-model = "vm.userName"
                    placeholder="请输入银行预留手机号">
         </div>
-        <div class="contractSure">
+        <div class="contractSure" ng-click="vm.sureC = !vm.sureC;">
                 <span class="glyphicon glyphicon-check btnSure"
-                      ng-click="vm.sureC = !vm.sureC;"
+
 
                       ng-class="{'black': vm.sureC}">
                 </span>

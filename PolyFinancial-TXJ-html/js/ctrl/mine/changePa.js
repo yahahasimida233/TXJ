@@ -10,13 +10,27 @@ app.controller("changePaCtrl",function ($http,$state,serviceHTTP,$stateParams,$t
 
     // 点击提交新旧密码
     vm.changePassword  = function(){
+        // 验证新密码是否符合输入规则
+        if(vm.newP.match(/^(?![A-Z]+$)(?![a-z]+$)(?!\d+$)(?![\W_]+$)\S+$/) && vm.oldP.length <= 18 && vm.oldP.length >= 6){
+        }else{
+            alertt('新密码的格式不对呢，请重新输入');
+            vm.newP = vm.sureP = undefined;
+            return false;
+        }
+        // 验证密码是否符合输入规则
+        if(vm.oldP.match(/^(?![A-Z]+$)(?![a-z]+$)(?!\d+$)(?![\W_]+$)\S+$/) && vm.oldP.length <= 18 && vm.oldP.length >= 6){
+        }else{
+            alertt('旧密码的格式不对呢，请重新输入');
+            vm.oldP = undefined;
+            return false;
+        }
         // 首次输入新密码是否一致
         if(vm.sureP != vm.newP){
-            bootbox.dialog({ message: '<div class="text-center" style="color: #dca854;">两次密码不一致哦请重新输入</div>' });
+            alertt('两次新密码不一致哦请重新输入');
             vm.sureP = vm.newP =undefined;
             return false;
         }else if(vm.oldP == vm.newP){
-            bootbox.dialog({ message: '<div class="text-center" style="color: #dca854;">新旧密码不能一样哦</div>' });
+            alertt('新旧密码不能一样哦');
             vm.oldP =vm.newP =vm.sureP =undefined;
             return false;
         }
@@ -30,22 +44,17 @@ app.controller("changePaCtrl",function ($http,$state,serviceHTTP,$stateParams,$t
             // 请求成功执行代码
             console.log(response);
             if(response.data.code == 0) {
-                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854;">修改成功，请重新登录</div>' });
-                // bootbox3s后自动消失
-                $timeout(function(){
-                    $(".fade").css('opacity','0');
-                    $timeout(function(){
-                        $(".fade").hide();
-                    },500)
-                },3000);
+                alertt('修改成功，请重新登录');
                 sessionStorage.clear();
                 $state.go('login');
-            }
-            else {
-
+            }else if(response.data.code == -9009) {
+                alertt('旧密码输入错误，请重新输入');
+            }else {
+                bootbox.alert(response.data.message)
             }
         }, function errorCallback(res) {
             // 请求失败执行代码
         });
     }
+
 });

@@ -9,16 +9,17 @@ app.controller("addCardCtrl", function ($state, $stateParams, serviceHTTP, $time
     // 下一步按钮
     vm.next = function (data) {
         if (data == true) {
-            bootbox.alert({
-                title: "<p>提示</p>",
-                message: "<p style='text-align: center; color: red; font-weight: bold'>卡号格式错误，请重试！</p>",
-                buttons: {
-                    ok: {
-                        label: "确认",
-                        className: "btn-primary"
-                    }
-                }
-            });
+            alertt('卡号格式错误，请重试！');
+            // bootbox.alert({
+            //     title: "<p>提示</p>",
+            //     message: "<p style='text-align: center; color: red; font-weight: bold'>卡号格式错误，请重试！</p>",
+            //     buttons: {
+            //         ok: {
+            //             label: "确认",
+            //             className: "btn-primary"
+            //         }
+            //     }
+            // });
         }
         else{
             console.log(bankCardAttribution(vm.card));

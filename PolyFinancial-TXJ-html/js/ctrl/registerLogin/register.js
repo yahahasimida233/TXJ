@@ -91,6 +91,14 @@ app.controller("registerCtrl",function ($scope,$http,$state,serviceHTTP,$statePa
             return false;
         }
 
+        // // 验证密码是否符合输入规则
+        // if(vm.newP.match(/^(?![A-Z]+$)(?![a-z]+$)(?!\d+$)(?![\W_]+$)\S+$/) && vm.oldP.length <= 18 && vm.oldP.length >= 6){
+        // }else{
+        //     bootbox.dialog({ message: '<div class="text-center" style="color: #dca854;">密码的格式不对呢，请重新输入</div>' });
+        //     vm.oldP = vm.newP = undefined;
+        //     return false;
+        // }
+
 
         var phone = {
             phoneNum :vm.userName,

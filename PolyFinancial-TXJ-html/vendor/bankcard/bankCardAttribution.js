@@ -1,3 +1,13 @@
+//来挤一挤，不想再写个js文件了
+function alertt(a){
+    var dia = bootbox.dialog({
+        message:  '<div class="text-center" style="color: #dca854;">'+ a + '</div>',
+        closeButton: false
+    });
+    setTimeout(function () {
+        dia.modal('hide');
+    },3000)
+}
 //test url : https://ccdcapi.alipay.com/validateAndCacheCardInfo.json?cardNo=6222005865412565805&cardBinCheck=true
 //cardType:DC->储蓄卡,CC->信用卡
 function bankCardAttribution(bankCard){

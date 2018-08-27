@@ -11,15 +11,17 @@
         <div class="list-warp">
             <div id="minirefresh" class="minirefresh-wrap">
                 <div class="minirefresh-scroll">
-                    <div ng-repeat="list in vm.lists" ng-click="vm.product(list.id)" class="list">
+                    <div ng-repeat="list in vm.lists" ng-click="vm.product(list.id)" class="pList">
                         <div class="list-product">
-                            <div class="listRow">
+                            <div class="listRow left">
                                 <div class="productName">{{list.productName}}</div>
-                                <dir class="annualRate">{{list.annualRate}}%</dir>
+                                <div class="annualRate">{{list.annualRate}}%</div>
+                                <div style="color: #999999">预期年化收益率</div>
                             </div>
-                            <div class="listRow">
+                            <div class="listRow right">
+
                                 <div>{{list.productTerm}}天</div>
-                                <div>预期年化收益率</div>
+                                <div class="productName">{{list.startAmount}}起</div>
                             </div>
                         </div>
                     </div>

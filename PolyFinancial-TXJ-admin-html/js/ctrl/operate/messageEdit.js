@@ -18,9 +18,12 @@ app.controller("messageEditCtrl",function ($scope,$http,$state,serviceHTTP,$stat
                 vm.onload = true;
                 vm.setTime = (vm.list.sendTime == 0)?0:1;
                 if(vm.setTime == 1){
-                    vm.date = new Date(Number( vm.list.sendTime));
-                    console.log((vm.date+"").slice(-25,-21));
-                    $('#timePicker').val((vm.date+"").slice(-25,-21));
+                    vm.bigDate = new Date(Number( vm.list.sendTime));
+                    console.log(vm.bigDate);
+                    // console.log((vm.date+"").slice(-26,-21));
+
+                    $('#timePicker').val((vm.bigDate+"").slice(-26,-21));
+                    vm.date = Number( vm.list.sendTime) - Date.parse(new Date("1970-01-01 "+(vm.bigDate+"").slice(-26,-21)))
                 }
             }
             else {
@@ -127,8 +130,13 @@ app.controller("messageEditCtrl",function ($scope,$http,$state,serviceHTTP,$stat
                 bootbox.alert("您好，请选择推送消息的时间再推送消息");
                 return false;
             }else{
-                console.log(Date.parse(vm.date));
-                info.sendTime= Date.parse(vm.date)+ vm.startHour
+                if(!Date.parse(vm.date)){
+                    info.sendTime= vm.date + vm.startHour
+                }else {
+                    console.log(vm.date);
+                    info.sendTime= Date.parse(vm.date) + vm.startHour
+                }
+
             }
         }
 

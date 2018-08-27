@@ -92,5 +92,9 @@
 
 .buy-btn {
   padding: 0.1rem 0 .5rem 0; }
+  .buy-btn .btn {
+    width: 85%;
+    color: white;
+    background-color: #d7a64c; }
 
 /*# sourceMappingURL=buy.css.map */
