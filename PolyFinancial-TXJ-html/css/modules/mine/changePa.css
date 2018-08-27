@@ -12,21 +12,53 @@
     left: .2rem;
     top: .1rem; }
 
-.CP-Form {
-  padding: .2rem;
-  text-align: center;
-  background-color: #fff; }
-  .CP-Form .password {
-    padding: .15rem;
-    display: flex;
-    flex-wrap: wrap; }
-    .CP-Form .password .tips {
-      margin-right: .15rem; }
-    .CP-Form .password .tipsRed {
-      flex-basis: 100%;
-      padding-top: .1rem;
-      color: red; }
-  .CP-Form .btnSure {
-    margin-top: .4rem; }
+.CP-Form .register-bottom {
+  padding: .2rem; }
+  .CP-Form .register-bottom button {
+    width: 100%;
+    height: .4rem;
+    color: white;
+    background-color: #daa955; }
+.CP-Form .register-input {
+  position: relative; }
+  .CP-Form .register-input .getCode {
+    position: absolute;
+    top: .17rem;
+    right: .2rem;
+    color: #daa955;
+    padding-left: .1rem;
+    border-left: 2px solid #eee; }
+  .CP-Form .register-input .register-img {
+    position: absolute;
+    top: .37rem;
+    left: .1rem;
+    width: .17rem;
+    height: .2rem;
+    margin-top: -.2rem;
+    padding-right: .3rem;
+    border-right: 2px solid #eee; }
+  .CP-Form .register-input .phone-img {
+    background: url("../../../img/login/iphone.png") no-repeat;
+    background-size: .17rem .2rem; }
+  .CP-Form .register-input .code-img {
+    background: url("../../../img/forgetpassword/code.jpg") no-repeat;
+    background-size: .17rem .2rem; }
+  .CP-Form .register-input .newP-img {
+    background: url("../../../img/forgetpassword/newpassword.jpg") no-repeat;
+    background-size: .17rem .2rem; }
+  .CP-Form .register-input .oldP-img {
+    background: url("../../../img/forgetpassword/oldpassword.jpg") no-repeat;
+    background-size: .17rem .2rem; }
+  .CP-Form .register-input input {
+    width: 100%;
+    padding: .15rem 0  .15rem .5rem;
+    border: none;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eee; }
+  .CP-Form .register-input #v_container {
+    position: absolute;
+    top: .1rem;
+    right: .2rem;
+    width: 1rem; }
 
 /*# sourceMappingURL=changePa.css.map */

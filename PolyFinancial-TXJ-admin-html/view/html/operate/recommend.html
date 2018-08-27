@@ -37,6 +37,7 @@
 
         <button class="btn btn-primary"
                 ng-click = "vm.search()"
+                ng-disabled ="!vm.id && !vm.title && !vm.createBy && !vm.updateBy"
         >查询</button>
     </div>
 </form>
@@ -75,11 +76,11 @@
             <td class="text-center time" ng-bind="x.createAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
             <td class="text-center " ng-bind="x.updateBy"></td>
             <td class="text-center time" ng-bind="x.updateAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
-            <td class="text-center ">{{x.state | bannerStateFilter }}</td>
+            <td class="text-center " ng-class="{'red': x.state ==1}">{{x.state | bannerStateFilter }}</td>
             <td class="text-center">
                 <button class="btn btn-default"  ng-click = "vm.stateChange(x.id,x.state)">{{x.state | productStateChange}}</button>
                 <button class="btn btn-info" ui-sref ="backStage.recommendEdit({id:x.id})">编辑</button>
-                <button class="btn btn-default"  ng-click = "vm.delete(x.id,x.state)">删除</button>
+                <button class="btn btn-danger"  ng-click = "vm.delete(x.id,x.state)">删除</button>
 
             </td>
         </tr>

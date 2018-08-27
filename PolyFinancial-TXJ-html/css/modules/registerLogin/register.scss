@@ -3,6 +3,38 @@
   height: 100vh;
   background-color: #eee;
 
+  .contractSure{
+    margin: .1rem;
+    .btnSure{
+      font-size: .18rem;
+      color: #dcdcdc;
+    }
+    .contract{
+      color: #e1c18b;
+    }
+  }
+
+  //contract style
+  .Agreement{
+    position: absolute;top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: .4rem .2rem .2rem .2rem;
+    background-color: white;
+    z-index: 500;
+    .fa{
+      position: absolute;top: .2rem;
+    }
+    div{
+      margin: .1rem 0;
+      text-align: left;
+    }
+    h1{
+      text-align: center;
+    }
+  }
+
   form{
     margin: .2rem 0;
     .register-bottom{
@@ -80,3 +112,4 @@
     width: 1rem;
   }
 }
+

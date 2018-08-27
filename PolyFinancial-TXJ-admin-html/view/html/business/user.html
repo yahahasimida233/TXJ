@@ -38,6 +38,7 @@
 
         <button class="btn btn-primary"
                 ng-click = "vm.search()"
+                ng-disabled ="!vm.userId && !vm.userName && !vm.phone && !vm.status"
         >查询</button>
     </div>
 </div>
@@ -70,9 +71,9 @@
             <td class="text-center">{{x.totalAssets}}</td>
             <td class="text-center">{{x.cumulativeIncome}}</td>
             <td class="text-center">{{x.registrationTime |date : 'yyyy-MM-dd HH:mm:ss'}}</td>
-            <td class="text-center">{{x.state | statusFilter}}</td>
+            <td class="text-center" ng-class="{'red': x.state ==1}">{{x.state | statusFilter}}</td>
             <td class="text-center">
-                <button class="btn btn-default"  ng-click = "vm.frozen(x.id,x.state)">{{x.state | status}}</button>
+                <button class="btn btn-danger"  ng-click = "vm.frozen(x.id,x.state)">{{x.state | status}}</button>
                 <button class="btn btn-info" ui-sref ="backStage.userDetailed({id:x.id})" >查看</button>
             </td>
         </tr>

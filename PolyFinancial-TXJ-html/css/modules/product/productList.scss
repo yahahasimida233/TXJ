@@ -17,7 +17,7 @@ $gold: #c39d71;
 //列表
 .listRow{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 0.2rem;
 }
 .list-warp{
@@ -26,15 +26,40 @@ $gold: #c39d71;
     width: 100%;
     top: 43px;
     bottom: 52px;
+    //background-color: #999;
+    .minirefresh-wrap{
+        .minirefresh-scroll{
+            background-color: #eee;
+        }
+
+    }
+}
+.pList{
+
     .list-product{
-        border-bottom: 1px solid;
+        display: flex;
+        margin: .1rem 0;
+        border: none;
         background-color: #fff;
+        text-align: left;
+        //font-family: '黑体';
+        .left{
+            padding: .2rem .3rem;
+            flex-basis: 60%;
+        }
+        .right{
+            flex-basis: 40%;
+            justify-content: center;
+            div{
+                margin: .05rem 0;
+            }
+        }
         .productName{
-            font-size: 20px;
+            font-size: .16rem;
         }
         .annualRate{
-            font-size: 20px;
-            color: $gold; 
+            font-size: .33rem;
+            color: #fa5050;
         }
     }
 }

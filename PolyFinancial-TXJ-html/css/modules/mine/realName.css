@@ -54,7 +54,8 @@
       background-color: white; }
     .realName .realName-step2 .agreement {
       background-color: #eee;
-      border: none; }
+      border: none;
+      padding: .4rem .2rem .2rem; }
       .realName .realName-step2 .agreement .conText {
         position: fixed;
         top: 81px;

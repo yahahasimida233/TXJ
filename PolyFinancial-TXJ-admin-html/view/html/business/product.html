@@ -38,6 +38,7 @@
 
         <button class="btn btn-primary"
                 ng-click = "vm.search()"
+                ng-disabled ="!vm.productId && !vm.productName && !vm.createBy && !vm.status"
         >查询</button>
     </div>
 </form>
@@ -78,7 +79,7 @@
             <td class="text-center ">{{x.repaymentMode | productMode }}</td>
             <td class="text-center ">{{x.createBy }}</td>
             <td class="text-center ">{{x.createAt|date : 'yyyy-MM-dd HH:mm:ss'}}</td>
-            <td class="text-center ">{{x.state | productState}}</td>
+            <td class="text-center " ng-class="{'red': x.state ==1}">{{x.state | productState}}</td>
 
             <td>
                 <button class="btn btn-default"  ng-click = "vm.stateChange(x.id,x.state)">{{x.state | productStateChange}}</button>

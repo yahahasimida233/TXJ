@@ -75,6 +75,7 @@
 
         <button class="btn btn-primary"
                 ng-click = "vm.search()"
+                ng-disabled ="!vm.createBy && !vm.timePicker2 && !vm.loanAtEnd && !vm.timePicker1 &&!vm.loanAtStart &&!vm.articleState &&!vm.keyWord"
         >查询</button>
     </div>
 </form>
@@ -110,7 +111,7 @@
             <td class="text-center time" ng-bind="x.createAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
             <td class="text-center " ng-bind="x.udpateBy"></td>
             <td class="text-center time" ng-bind="x.updateAt | date:'yyyy/MM/dd HH:mm:ss'"></td>
-            <td class="text-center ">{{x.articleState | messageState}}</td>
+            <td class="text-center " ng-class="{'red': x.articleState ==2,'orange':x.articleState ==1}">{{x.articleState | messageState}}</td>
             <td class="text-center time" ng-bind="x.sendTime  |date : 'yyyy-MM-dd HH:mm:ss'"></td>
 
             <td class="text-center">

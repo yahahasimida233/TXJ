@@ -59,7 +59,7 @@
         <td class="text-center time" ng-bind=" list.createAt | date:'yyyy/MM/dd HH:mm:ss'"></td> 
         <td class="text-center" ng-bind="list.updateBy"></td>
         <td class="text-center time" ng-bind=" list.updateAt | date:'yyyy/MM/dd HH:mm:ss'"></td> 
-        <td class="text-center" ng-bind="list.state | userState"></td>
+        <td class="text-center" ng-bind="list.state | userState" ng-class="{'red': list.state ==1}"></td>
         <!-- 操作按钮 -->
         <td class="text-center">
 

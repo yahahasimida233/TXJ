@@ -41,6 +41,7 @@
 
         <button class="btn btn-primary"
                 ng-click = "vm.search()"
+                ng-disabled ="!vm.obligor && !vm.companyName && !vm.debtId && !vm.status"
         >查询</button>
     </div>
 </form>

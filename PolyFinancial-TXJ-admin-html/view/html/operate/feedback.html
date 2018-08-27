@@ -37,6 +37,7 @@
 
         <button class="btn btn-primary"
                 ng-click = "vm.search()"
+                ng-disabled ="!vm.id && !vm.keyword && !vm.submitBy && !vm.phoneNum"
         >查询</button>
     </div>
 </form>

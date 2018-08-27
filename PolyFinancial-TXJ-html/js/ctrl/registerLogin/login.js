@@ -31,43 +31,26 @@ app.controller("loginCtrl",function ($scope,$http,$state,serviceHTTP,$stateParam
             if(response.data.code == 0) {
                 sessionStorage.setItem("login","true");
                 sessionStorage.setItem('userName',vm.userName);
-                $state.go('home.mine')
+                $state.go('home');
+                sessionStorage.setItem('homeTitle','首页');
             }
             else if(response.data.code === 5005){
-                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">密码错误请重新输入密码</div>' });
+                alertt('密码错误请重新输入密码');
                 vm.passWord = undefined;
-                $timeout(function(){
-                    $(".fade").css('opacity','0');
-                    $timeout(function(){
-                        $(".fade").hide();
-                    },500)
-                },3000);
                 return false;
 
             }
             else if(response.data.code === 5000){
-                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">该账号已被冻结，若有疑问请电询8008208820</div>' });
-                $timeout(function(){
-                    $(".fade").css('opacity','0');
-                    $timeout(function(){
-                        $(".fade").hide();
-                    },500)
-                },3000);
+                alertt('该账号已被冻结，若有疑问请电询8008208820');
                 vm.passWord = undefined;
                 return false;
             }
             else if(response.data.code === 2003){
-                bootbox.dialog({ message: '<div class="text-center" style="color: #dca854">该手机号还未注册账号，请前往注册</div>' });
-                $timeout(function(){
-                    $(".fade").css('opacity','0');
-                    $timeout(function(){
-                        $(".fade").hide();
-                    },500)
-                },3000);
+                alertt('该手机号还未注册账号，请前往注册');
                 vm.passWord = undefined;
                 return false;
             }else{
-                bootbox.alert(response.data.message)
+                alertt(response.data.message);
             }
 
         });

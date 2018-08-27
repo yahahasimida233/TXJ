@@ -88,7 +88,7 @@ app.controller("messageCtrl",function ($http,$state,serviceHTTP,$stateParams) {
             // 请求成功执行代码
             if(response.data.message === "success") {
                 bootbox.alert("取消推送成功");
-                $state.reload('backStage.article');
+                $state.go('backStage.article');
             }
             else {
                 bootbox.alert(response.data.message)
@@ -144,7 +144,7 @@ app.controller("messageCtrl",function ($http,$state,serviceHTTP,$stateParams) {
                         console.log(response);
                         if(response.data.message === "删除成功") {
                             bootbox.alert("删除成功，页面即将刷新");
-                            $state.reload('backStage.article');
+                            $state.go('backStage.article');
                         }
                         else {
                             bootbox.alert(response.data.message);

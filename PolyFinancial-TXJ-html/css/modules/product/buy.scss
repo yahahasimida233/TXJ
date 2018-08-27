@@ -121,5 +121,11 @@ $gold: #d7a64c;
 }
 // buy btn
 .buy-btn{
+    .btn{
+        width: 85%;
+        color: white;
+        background-color: #d7a64c;
+    }
+
     padding: 0.1rem 0 .5rem 0;
 }

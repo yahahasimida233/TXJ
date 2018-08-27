@@ -11,7 +11,7 @@
 
 .listRow {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 0.2rem; }
 
 .list-warp {
@@ -20,13 +20,27 @@
   width: 100%;
   top: 43px;
   bottom: 52px; }
-  .list-warp .list-product {
-    border-bottom: 1px solid;
-    background-color: #fff; }
-    .list-warp .list-product .productName {
-      font-size: 20px; }
-    .list-warp .list-product .annualRate {
-      font-size: 20px;
-      color: #c39d71; }
+  .list-warp .minirefresh-wrap .minirefresh-scroll {
+    background-color: #eee; }
+
+.pList .list-product {
+  display: flex;
+  margin: .1rem 0;
+  border: none;
+  background-color: #fff;
+  text-align: left; }
+  .pList .list-product .left {
+    padding: .2rem .3rem;
+    flex-basis: 60%; }
+  .pList .list-product .right {
+    flex-basis: 40%;
+    justify-content: center; }
+    .pList .list-product .right div {
+      margin: .05rem 0; }
+  .pList .list-product .productName {
+    font-size: .16rem; }
+  .pList .list-product .annualRate {
+    font-size: .33rem;
+    color: #fa5050; }
 
 /*# sourceMappingURL=productList.css.map */
