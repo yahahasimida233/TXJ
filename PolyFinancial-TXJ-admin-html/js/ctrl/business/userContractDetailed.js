@@ -7,7 +7,7 @@ app.controller("userContractDetailedCtrl",function ($http,$state,serviceHTTP,$st
         // 请求成功执行代码
         console.log(response);
         if(response.data.message === "success") {
-            vm.list = response.data.data[0];
+            vm.list = response.data.data.list[0];
             console.log(vm.list);
         }
         else {

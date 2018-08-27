@@ -509,7 +509,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         // 角色管理
         .state('backStage.role',{
-            url: "/role?roleId&roleName&creater&updateBy",
+            url: "/role?roleId&roleName&creater&updateBy&goPage&size",
             templateUrl:'view/html/backstage/role.html',
             controller:'roleCtrl as vm',
             resolve:{
