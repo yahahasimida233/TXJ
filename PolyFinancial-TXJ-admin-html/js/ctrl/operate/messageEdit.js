@@ -23,7 +23,8 @@ app.controller("messageEditCtrl",function ($scope,$http,$state,serviceHTTP,$stat
                     // console.log((vm.date+"").slice(-26,-21));
 
                     $('#timePicker').val((vm.bigDate+"").slice(-26,-21));
-                    vm.date = Number( vm.list.sendTime) - Date.parse(new Date("1970-01-01 "+(vm.bigDate+"").slice(-26,-21)))
+                    vm.date = Number(vm.list.sendTime) - Date.parse(new Date("1970-01-01 "+(vm.bigDate+"").slice(-26,-21)))
+                    debugger
                 }
             }
             else {

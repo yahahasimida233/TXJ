@@ -68,6 +68,8 @@ app.controller("roleCtrl",function ($state, $stateParams, serviceHTTP) {
             roleName: undefined, //角色名
             creater: undefined, //用户名
             updateBy: undefined, //创建人
+            goPage:1,
+            size:10
             }, 
             { reload: true}
         )
